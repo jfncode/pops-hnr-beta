@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/PICHAU/Downloads/index.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POPs HNR — Leitura e Avaliação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./assets/fonts.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f8fc; --surface:#fff; --surface-2:#eaf1f9;
+    --ink:#1b2733; --muted:#5a6b7b; --faint:#90a3b3;
+    --primary:#0a4da2; --primary-dark:#063a7a; --primary-soft:#eaf1f9;
+    --line:#dde7f1; --line-strong:#c5d6e8;
+    --accent:#d3202a; --accent-soft:#fdeaeb;
+    --success:#1a8f54; --success-soft:#e4f4ea;
+    --warn:#c97a00; --warn-soft:#fbefd9;
+    --danger:#d3202a; --danger-soft:#fdeaeb;
+    --pending:#90a3b3; --pending-soft:#eef3f7;
+    --gold:#b98a1d; --gold-soft:#fdf6e3;
+    --shadow:0 1px 2px rgba(10,77,162,.06),0 8px 24px rgba(10,77,162,.10);
+    --radius:16px;
+  }
+  [data-theme="dark"]{
+    --bg:#0e1622; --surface:#16202e; --surface-2:#1c2939;
+    --ink:#e8eef5; --muted:#9db0c3; --faint:#64798e;
+    --primary:#4d8fe0; --primary-dark:#7db2f0; --primary-soft:#1d3a5c;
+    --line:#243447; --line-strong:#33485f;
+    --accent:#f0606a; --accent-soft:#3a1d22;
+    --success:#46c082; --success-soft:#15301f;
+    --warn:#e0a23e; --warn-soft:#332714;
+    --danger:#f0606a; --danger-soft:#3a1d22;
+    --pending:#64798e; --pending-soft:#1c2939;
+    --gold:#e3b54a; --gold-soft:#2e2611;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased;
+    transition:background .25s,color .25s;
+  }
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  button{font-family:inherit;cursor:pointer}
+  h1,h2,h3,h4{margin:0;letter-spacing:-.01em}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes popIn{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.06)}100%{transform:scale(1);opacity:1}}
+  @keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(3px)}30%,70%{transform:translateX(-5px)}40%,60%{transform:translateX(5px)}50%{transform:translateX(-4px)}}
+  @keyframes drawCheck{to{stroke-dashoffset:0}}
+  .fade-up{animation:fadeUp .3s ease both}
+  .shake{animation:shake .5s ease}
+
+  /* ---- top bar ---- */
+  .topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+  .topbar::before{content:"";display:block;height:3px;
+    background:linear-gradient(90deg,var(--primary) 0 50%,var(--accent) 50% 100%)}
+  .topbar-inner{max-width:1080px;margin:0 auto;padding:12px 20px;
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .brand .logo-chip{width:46px;height:46px;border-radius:12px;background:#fff;flex:none;
+    border:1px solid var(--line);box-shadow:var(--shadow);padding:4px;display:grid;place-items:center}
+  .brand .logo-chip img{width:100%;height:100%;object-fit:contain}
+  .logo-chip.logo-fail img{display:none}
+  .logo-chip.logo-fail::after{content:"HNR";font-weight:900;font-size:13px;color:var(--primary);letter-spacing:.02em}
+  .brand b{font-size:15px;font-weight:800;display:block;line-height:1.15;color:var(--primary-dark)}
+  .brand span{font-size:12px;color:var(--muted)}
+  #topbar-right{display:flex;align-items:center;gap:12px}
+  .theme-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);
+    background:var(--surface);display:grid;place-items:center;font-size:16px;transition:.15s}
+  .theme-btn:hover{border-color:var(--primary)}
+  .who2{display:flex;align-items:center;gap:9px}
+  .who2 .nm b{font-weight:600;color:var(--ink);display:block;font-size:13px;line-height:1.2}
+  .who2 .nm small{color:var(--muted);font-size:11.5px}
+  .avatar{width:32px;height:32px;border-radius:50%;background:var(--primary-soft);
+    color:var(--primary);display:grid;place-items:center;font-weight:700;font-size:12px;flex:none}
+  .logout{border:1px solid var(--line);background:var(--surface);border-radius:9px;
+    padding:8px 13px;font-size:13px;font-weight:600;color:var(--muted);transition:.15s}
+  .logout:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---- layout ---- */
+  main{max-width:1080px;margin:0 auto;padding:26px 20px 80px}
+  .pagehead{margin-bottom:20px}
+  .pagehead h2{font-size:22px}
+  .pagehead p{margin:4px 0 0;color:var(--muted);font-size:14px}
+  .proto-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;
+    color:var(--warn);background:var(--warn-soft);border-radius:20px;
+    padding:3px 10px;font-weight:600;margin-top:10px}
+
+  /* ---- progress summary ---- */
+  .mybar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;box-shadow:var(--shadow);margin-bottom:22px;
+    display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .mybar .ring{--p:0;width:64px;height:64px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--primary) calc(var(--p)*1%),var(--line) 0);
+    display:grid;place-items:center}
+  .mybar .ring i{width:48px;height:48px;background:var(--surface);border-radius:50%;
+    display:grid;place-items:center;font-style:normal;font-weight:700;font-size:14px}
+  .mybar .txt b{font-size:15px}
+  .mybar .txt p{margin:2px 0 0;color:var(--muted);font-size:13px}
+
+  /* ---- certificate banner ---- */
+  .cert-banner{background:linear-gradient(120deg,var(--gold-soft),var(--surface));
+    border:1px solid var(--gold);border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:18px 20px;margin-bottom:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    animation:fadeUp .4s ease both}
+  .cert-banner .medal{width:48px;height:48px;border-radius:50%;background:var(--gold);
+    color:#fff;display:grid;place-items:center;font-size:22px;flex:none}
+  .cert-banner .tx{flex:1;min-width:200px}
+  .cert-banner b{font-size:15px}
+  .cert-banner p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+  .btn-gold{border:0;border-radius:9px;font-weight:700;font-size:13.5px;padding:10px 18px;
+    background:var(--gold);color:#fff;transition:.15s}
+  .btn-gold:hover{filter:brightness(1.08)}
+
+  /* ---- pop cards ---- */
+  .grid{display:grid;gap:14px}
+  .popcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center;
+    transition:border-color .15s,transform .15s;animation:fadeUp .3s ease both}
+  .popcard:hover{border-color:var(--line-strong);transform:translateY(-1px)}
+  .popcard .code{font-size:12px;font-weight:700;color:var(--primary);
+    background:var(--primary-soft);border-radius:7px;padding:4px 9px;flex:none}
+  .popcard .meta{flex:1;min-width:0}
+  .popcard h3{font-size:16px;line-height:1.3}
+  .popcard .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .seal{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+    color:var(--gold);margin-top:5px}
+  .badge{font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;
+    display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .badge.pending{color:var(--pending);background:var(--pending-soft)}
+  .badge.read{color:var(--warn);background:var(--warn-soft)}
+  .badge.pass{color:var(--success);background:var(--success-soft)}
+  .badge.fail{color:var(--danger);background:var(--danger-soft)}
+  .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+  .btn{border:0;border-radius:9px;font-weight:600;font-size:13.5px;padding:9px 16px;
+    background:var(--primary);color:#fff;transition:.15s}
+  .btn:hover{background:var(--primary-dark)}
+  [data-theme="dark"] .btn{color:#0e1622}
+  .btn.ghost{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{background:var(--line)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .btn.block{width:100%;padding:13px;font-size:15px}
+
+  /* ---- reading top ---- */
+  .readtop{position:sticky;top:66px;z-index:40;background:var(--bg);margin:-26px -20px 0;padding:14px 20px 12px}
+  .readtop .row{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px}
+  .readtop .back{border:1px solid var(--line);background:var(--surface);border-radius:8px;
+    padding:7px 12px;font-size:13px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .readtop .label{font-size:12.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+  .readbar{height:6px;background:var(--line);border-radius:20px;flex:1;overflow:hidden}
+  .readbar i{display:block;height:100%;width:0;background:var(--primary);border-radius:20px;transition:width .12s}
+
+  /* ---- article + carimbo institucional ---- */
+  .article{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;margin-top:16px;animation:fadeUp .3s ease both}
+  .stamp{border-bottom:1px solid var(--line);background:var(--surface-2);padding:20px 24px}
+  .stamp-grid{border:1.5px solid var(--line-strong);border-radius:10px;overflow:hidden;
+    display:grid;grid-template-columns:88px 1fr 170px;background:var(--surface)}
+  .stamp-grid>div{padding:12px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;justify-content:center}
+  .stamp-logo{grid-row:1/3;align-items:center}
+  .stamp-logo img{width:58px;height:58px;object-fit:contain}
+  .stamp-logo small{font-size:8.5px;font-weight:700;color:var(--muted);text-align:center;margin-top:5px;letter-spacing:.03em}
+  .stamp-title small{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  .stamp-title h2{font-size:17px;margin-top:3px;color:var(--primary-dark)}
+  .stamp-meta{gap:3px}
+  .stamp-meta div{font-size:11.5px;color:var(--muted)}
+  .stamp-meta b{color:var(--ink);font-weight:700}
+  .stamp-code{font-size:13px;font-weight:800;color:var(--primary)}
+  .stamp-row{grid-column:1/4;flex-direction:row !important;gap:26px;border-bottom:0 !important;flex-wrap:wrap}
+  .stamp-row span{font-size:11.5px;color:var(--muted)}
+  .stamp-row b{color:var(--ink)}
+  .stamp-grid>div:nth-child(3),.stamp-grid>div:nth-child(5){border-right:0}
+
+  .article .body{padding:26px 28px;max-width:78ch;margin:0 auto}
+  .sec{margin-bottom:34px}
+  .sec:last-child{margin-bottom:0}
+  .sec h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--primary);
+    display:flex;align-items:center;gap:9px;margin-bottom:14px}
+  .sec h3 .n{width:23px;height:23px;border-radius:6px;background:var(--primary-soft);
+    color:var(--primary);display:grid;place-items:center;font-size:12px;flex:none}
+  .sec p{margin:0 0 12px;font-size:16px;line-height:1.65;color:var(--ink)}
+  .sec p,.sec li{opacity:.92}
+  .sec ul{margin:0;padding-left:0;list-style:none}
+  .sec li{font-size:16px;line-height:1.6;padding:6px 0 6px 24px;position:relative}
+  .sec li::before{content:"";position:absolute;left:4px;top:15px;width:6px;height:6px;
+    border-radius:2px;background:var(--primary)}
+  .sec li b{font-weight:700;opacity:1}
+  .alert{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:8px;
+    padding:13px 16px;font-size:15px;line-height:1.55;margin-top:10px}
+  .ptable{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:14.5px;border:1px solid var(--line-strong);border-radius:8px;overflow:hidden}
+  .ptable th{background:var(--primary-soft);color:var(--primary-dark);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;padding:9px 13px;text-align:left}
+  [data-theme="dark"] .ptable th{color:var(--primary)}
+  .ptable td{padding:9px 13px;border-top:1px solid var(--line)}
+  .ptable tr:nth-child(even) td{background:var(--surface-2)}
+  .ptable tr.hl td{background:var(--success-soft);font-weight:600}
+  .ptable td:first-child{font-weight:600}
+  .endmark{text-align:center;padding:18px;color:var(--faint);font-size:13px;
+    border-top:1px dashed var(--line-strong);margin-top:14px}
+
+  .quizgate{margin-top:18px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;text-align:center;animation:fadeUp .3s ease both}
+  .quizgate h3{font-size:17px}
+  .quizgate p{color:var(--muted);font-size:14px;margin:6px 0 16px}
+  .quizgate .lock{font-size:13px;color:var(--warn);font-weight:600;margin-bottom:14px;
+    display:flex;align-items:center;justify-content:center;gap:7px}
+  .rules{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  .rule{font-size:12px;font-weight:600;color:var(--muted);background:var(--surface-2);
+    border:1px solid var(--line);border-radius:20px;padding:5px 12px;display:inline-flex;gap:6px;align-items:center}
+
+  /* ---- quiz stepper ---- */
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;margin-top:16px;animation:fadeUp .25s ease both}
+  .quiz-head{padding:20px 26px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .quiz-head .info{flex:1;min-width:180px}
+  .quiz-head h2{font-size:17px}
+  .quiz-head p{color:var(--muted);font-size:13px;margin:3px 0 0}
+  .steps{display:flex;gap:6px}
+  .step{width:26px;height:6px;border-radius:4px;background:var(--line)}
+  .step.cur{background:var(--primary)}
+  .step.done{background:var(--success)}
+  .timer{position:relative;width:54px;height:54px;flex:none}
+  .timer svg{transform:rotate(-90deg)}
+  .timer circle{fill:none;stroke-width:5}
+  .timer .tk{stroke:var(--line)}
+  .timer .tv{stroke:var(--primary);stroke-linecap:round;transition:stroke-dashoffset 1s linear,stroke .3s}
+  .timer.warn .tv{stroke:var(--warn)}
+  .timer.crit .tv{stroke:var(--danger)}
+  .timer b{position:absolute;inset:0;display:grid;place-items:center;font-size:14px}
+  .timer.crit b{color:var(--danger)}
+  .question{padding:24px 26px}
+  .question .qn{font-size:12px;font-weight:700;color:var(--primary)}
+  .question .qt{font-size:16.5px;font-weight:600;margin:8px 0 18px;line-height:1.5}
+  .opt{display:flex;align-items:flex-start;gap:11px;padding:13px 15px;border:1px solid var(--line);
+    border-radius:10px;margin-bottom:9px;cursor:pointer;font-size:15px;transition:.12s;line-height:1.45}
+  .opt:hover{border-color:var(--primary);background:var(--surface-2)}
+  .opt input{margin-top:3px;accent-color:var(--primary)}
+  .opt.sel{border-color:var(--primary);background:var(--primary-soft)}
+  .opt.correct{border-color:var(--success);background:var(--success-soft)}
+  .opt.wrong{border-color:var(--danger);background:var(--danger-soft)}
+  .quiz-foot{padding:18px 26px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
+
+  /* ---- result ---- */
+  .result{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:34px 28px;text-align:center;animation:fadeUp .3s ease both}
+  .result .score{--p:0;width:124px;height:124px;border-radius:50%;margin:0 auto 18px;
+    background:conic-gradient(var(--rc) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;
+    animation:popIn .5s cubic-bezier(.2,.9,.3,1.4) both}
+  .result .score i{width:98px;height:98px;background:var(--surface);border-radius:50%;
+    display:grid;place-items:center;font-style:normal}
+  .result .score b{font-size:26px;line-height:1.1;display:block}
+  .result .score em{font-style:normal;font-size:11px;color:var(--muted)}
+  .checkmark{width:64px;height:64px;margin:0 auto 14px;display:block}
+  .checkmark circle{fill:var(--success-soft);stroke:var(--success);stroke-width:2}
+  .checkmark path{fill:none;stroke:var(--success);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:34;stroke-dashoffset:34;animation:drawCheck .5s .25s ease forwards}
+  .result h2{font-size:22px}
+  .result .verdict{font-size:14px;color:var(--muted);margin:8px auto 22px;max-width:400px}
+  .result .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+  /* ---- certificado ---- */
+  .cert{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:8px;margin-top:16px;animation:fadeUp .3s ease both}
+  .cert-inner{border:2.5px solid var(--primary);border-radius:12px;padding:6px}
+  .cert-inner2{border:1px solid var(--gold);border-radius:9px;padding:42px 38px;text-align:center;position:relative}
+  .cert-inner2 .logo-chip{width:62px;height:62px;border-radius:14px;background:#fff;
+    border:1px solid var(--line);margin:0 auto 16px;padding:6px;display:grid;place-items:center}
+  .cert-inner2 .logo-chip img{width:100%;height:100%;object-fit:contain}
+  .cert-eyebrow{font-size:11px;font-weight:800;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+  .cert-inner2 h2{font-size:26px;color:var(--primary-dark);margin:8px 0 22px}
+  .cert-inner2 .conf{font-size:14px;color:var(--muted)}
+  .cert-name{font-size:28px;font-weight:800;color:var(--ink);margin:10px 0 2px}
+  .cert-role{font-size:13.5px;color:var(--muted);margin-bottom:22px}
+  .cert-body{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto 24px;line-height:1.7}
+  .cert-pops{display:grid;gap:6px;max-width:520px;margin:0 auto 26px;text-align:left}
+  .cert-pop{display:flex;align-items:center;gap:10px;font-size:13px;background:var(--surface-2);
+    border:1px solid var(--line);border-radius:8px;padding:8px 13px}
+  .cert-pop .ck{color:var(--success);font-weight:800}
+  .cert-pop b{flex:1}
+  .cert-pop span{color:var(--muted);font-size:12px}
+  .cert-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
+    max-width:560px;margin:0 auto;padding-top:10px}
+  .cert-sign{flex:1;text-align:center}
+  .cert-sign .ln{border-top:1.5px solid var(--ink);margin-bottom:6px;opacity:.6}
+  .cert-sign b{font-size:12.5px;display:block}
+  .cert-sign small{font-size:11px;color:var(--muted)}
+  .cert-date{font-size:12.5px;color:var(--muted)}
+  .cert-actions{display:flex;gap:10px;justify-content:center;margin-top:18px}
+
+  /* ---- gestor ---- */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 18px;box-shadow:var(--shadow);animation:fadeUp .3s ease both}
+  .kpi .v{font-size:26px;font-weight:700;line-height:1}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:5px}
+  .kpi .v.green{color:var(--success)}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;margin-bottom:22px;animation:fadeUp .3s ease both}
+  .panel-head{padding:16px 22px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between}
+  .panel-head h3{font-size:15px}
+  .panel-head span{font-size:12.5px;color:var(--muted)}
+  .matrix{width:100%;border-collapse:collapse;font-size:13px}
+  .matrix th,.matrix td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  .matrix thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;
+    color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody tr:last-child td{border-bottom:0}
+  .matrix .person{display:flex;align-items:center;gap:10px}
+  .matrix .person b{font-weight:600;font-size:13.5px}
+  .matrix .person small{color:var(--faint);font-size:11.5px;display:block}
+  .cell{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12.5px}
+  .cell.pass{color:var(--success)} .cell.fail{color:var(--danger)}
+  .cell.read{color:var(--warn)} .cell.pending{color:var(--faint)}
+  .cell .ic{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
+  .cellbtn{border:0;background:transparent;padding:4px 6px;margin:-4px -6px;border-radius:8px;
+    display:inline-flex;align-items:center;gap:7px;transition:.12s}
+  .cellbtn:hover{background:var(--surface-2);outline:1px solid var(--line-strong)}
+  .cellbtn .eye{font-size:12px;opacity:.45}
+  .cellbtn:hover .eye{opacity:1}
+  .pbar{height:7px;background:var(--line);border-radius:20px;overflow:hidden;min-width:90px}
+  .pbar i{display:block;height:100%;background:var(--primary);border-radius:20px}
+  .pcompact{display:flex;align-items:center;gap:10px}
+  .pcompact b{font-size:13px;width:38px;text-align:right}
+  .perpop-row{display:flex;align-items:center;gap:14px;padding:11px 22px;border-bottom:1px solid var(--line)}
+  .perpop-row:last-child{border-bottom:0}
+  .perpop-row .nm{flex:1;min-width:0}
+  .perpop-row .nm b{font-size:13.5px;font-weight:600}
+  .perpop-row .nm small{display:block;color:var(--faint);font-size:11.5px}
+  .perpop-row .code{font-size:12px;font-weight:700;color:var(--primary);
+    background:var(--primary-soft);border-radius:7px;padding:4px 9px;flex:none}
+
+  /* ---- empty state ---- */
+  .empty{padding:36px 20px;text-align:center;color:var(--muted)}
+  .empty .ic{font-size:30px;margin-bottom:8px}
+  .empty b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
+  .empty p{font-size:13px;margin:0}
+
+  /* ---- auth ---- */
+  .auth-wrap{min-height:calc(100vh - 120px);display:grid;place-items:center;padding:28px 16px}
+  .auth-card{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;animation:fadeUp .3s ease both}
+  .auth-head{text-align:center;margin-bottom:22px}
+  .auth-head .logo-chip{width:56px;height:56px;border-radius:13px;background:#fff;
+    border:1px solid var(--line);box-shadow:var(--shadow);padding:5px;display:grid;place-items:center;margin:0 auto 14px}
+  .auth-head .logo-chip img{width:100%;height:100%;object-fit:contain}
+  .auth-head h2{font-size:20px}
+  .auth-head p{color:var(--muted);font-size:13.5px;margin-top:5px}
+  .auth-choice{display:grid;gap:12px}
+  .choice-btn{display:flex;align-items:center;gap:14px;text-align:left;width:100%;
+    border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:16px 18px;transition:.15s;color:var(--ink)}
+  .choice-btn:hover{border-color:var(--primary);background:var(--surface-2);transform:translateY(-1px)}
+  .choice-btn .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none}
+  .choice-btn .ic svg{width:21px;height:21px}
+  .ic-blue{background:var(--primary-soft);color:var(--primary)}
+  .ic-red{background:var(--accent-soft);color:var(--accent)}
+  .choice-btn b{font-size:15px;display:block}
+  .choice-btn small{color:var(--muted);font-size:12.5px}
+  .choice-btn .chev{margin-left:auto;color:var(--faint);font-size:18px}
+  .auth-tabs{display:flex;background:var(--surface-2);border:1px solid var(--line);
+    border-radius:10px;padding:3px;margin-bottom:20px}
+  .auth-tabs button{flex:1;border:0;background:transparent;color:var(--muted);
+    font-weight:600;font-size:13.5px;padding:9px;border-radius:7px}
+  .auth-tabs button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(10,77,162,.12)}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:6px}
+  .field input,.field select{width:100%;font-family:inherit;font-size:14.5px;padding:11px 13px;
+    border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--primary);
+    box-shadow:0 0 0 3px var(--primary-soft)}
+  .auth-err{display:none;background:var(--danger-soft);color:var(--danger);border-radius:9px;
+    padding:10px 13px;font-size:13px;margin-bottom:14px;font-weight:500}
+  .auth-back{background:transparent;border:0;color:var(--muted);font-size:13px;font-weight:600;
+    margin-top:14px;padding:8px;width:100%}
+  .auth-back:hover{color:var(--ink)}
+  .hint{margin-top:18px;background:var(--surface-2);border:1px dashed var(--line-strong);
+    border-radius:10px;padding:11px 13px;font-size:12px;color:var(--muted);text-align:center}
+  .hint b{color:var(--ink)}
+
+  @media(max-width:640px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .topbar-inner{padding:10px 14px}
+    main{padding:18px 14px 70px}
+    .brand span{display:none}
+    .popcard{flex-wrap:wrap}
+    .popcard .badge{order:3}
+    .article .body{padding-left:18px;padding-right:18px}
+    .stamp{padding:14px}
+    .stamp-grid{grid-template-columns:64px 1fr}
+    .stamp-grid>div:nth-child(3){grid-column:1/3;border-right:0;flex-direction:row;gap:14px}
+    .stamp-logo img{width:44px;height:44px}
+    .stamp-row{grid-column:1/3}
+    .matrix .hidesm{display:none}
+    .cert-inner2{padding:28px 16px}
+    .cert-name{font-size:22px}
+  }
+
+  @media print{
+    body{background:#fff}
+    .topbar,.no-print,.proto-note{display:none !important}
+    main{padding:0;max-width:none}
+    .cert{box-shadow:none;padding:0;margin:0}
+    .cert-actions{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="logo-chip"><img id="logo-src" alt="Hospital Nereu Ramos" onerror="logoFail(this)" src="data:image/png;base64,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"></span>
+      <div><b>POPs HNR</b><span>Hospital Nereu Ramos · Enfermagem</span></div>
+    </div>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button>
+    <div id="topbar-right"></div>
+  </div>
+</div>
+
+<main id="app"><div class="auth-wrap"><div class="auth-card">
+      <div class="auth-head"><span class="logo-chip"><img src="data:image/png;base64,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" alt="HNR" onerror="logoFail(this)"></span>
+        <h2>Portal de POPs</h2><p>Hospital Nereu Ramos · Enfermagem</p></div>
+      <div class="auth-choice">
+        <button class="choice-btn" onclick="goAuth(&#39;colab&#39;)">
+          <span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+          <span><b>Sou colaborador</b><small>Ler POPs e fazer as avaliações</small></span>
+          <span class="chev">›</span></button>
+        <button class="choice-btn" onclick="goAuth(&#39;gestor&#39;)">
+          <span class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+          <span><b>Acesso do gestor</b><small>Acompanhar a equipe</small></span>
+          <span class="chev">›</span></button>
+      </div></div></div></main>
+
+<script src="./js/config.js"></script>
+<script src="./data/pops.js"></script>
+<script src="./js/core.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/local-backend.js"></script>
+<script>
+/* =========================================================================
+   PROTÓTIPO — dados em memória. Espelha schema Supabase futuro:
+   pops + pop_sections(json) + question_pool / users / gestores / attempts.
+   REGRAS: quiz sorteia QUIZ_SIZE questões do pool (alternativas embaralhadas),
+   cronômetro de QTIME s por questão, aprovação com PASS_MIN acertos,
+   certificado ao concluir todos os POPs.
+   ========================================================================= */
+
+const LOGO_B64='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';
+const LOGO_URI='data:image/png;base64,'+LOGO_B64;
+function logoFail(img){ const c=img.closest('.logo-chip'); if(c) c.classList.add('logo-fail'); }
+
+const QUIZ_SIZE = 5;     // questões sorteadas por tentativa
+const PASS_MIN  = 3;     // acertos mínimos para aprovação
+const QTIME     = 60;    // segundos por questão
+
+const db = { pops: window.POPS };
+
+/* ---------- state ---------- */
+let session = JSON.parse(localStorage.getItem('pops_sessao') || 'null'); // colaborador {role,matricula,nome,setor} ou {role:'gestor'}
+let authView = 'home';
+let screen = 'list';
+let activePop = null;
+let lastResult = null;
+let quizState = null;   // {list:[{q,o,a}], cur, answers[], tLeft, timerId}
+let theme = 'light';
+let aprovadosServidor = [];   // pop_ids aprovados no servidor (lockout central)
+let meuProgresso = {};        // cache local do colaborador: pop_id -> {status,hits,score,date,detail}
+let resultadosGestor = [];    // resultados das provas (servidor)
+let colaboradoresGestor = []; // todos os colaboradores cadastrados (servidor)
+
+function salvarSessao(){ if(session) localStorage.setItem('pops_sessao', JSON.stringify(session)); else localStorage.removeItem('pops_sessao'); }
+function chaveProg(){ return 'pops_prog_' + (session && session.matricula ? session.matricula : 'anon'); }
+function carregarProgressoLocal(){ try{ meuProgresso = JSON.parse(localStorage.getItem(chaveProg())||'{}'); }catch{ meuProgresso={}; } }
+function salvarProgressoLocal(){ localStorage.setItem(chaveProg(), JSON.stringify(meuProgresso)); }
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const pop = id => db.pops.find(p=>p.id===id);
+const initials = n => n.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+const LOGO = () => LOGO_URI;
+
+function statusOf(pid){
+  if(POPCore.isLocked(pid, aprovadosServidor)){
+    const m=meuProgresso[pid]||{};
+    return {k:'pass', label:'Aprovado', locked:true, hits:m.hits, score:m.score, date:m.date};
+  }
+  const m=meuProgresso[pid];
+  if(m && m.status==='reprovado') return {k:'fail', label:'Refazer', hits:m.hits, score:m.score, date:m.date};
+  return {k:'pending', label:'Pendente'};
+}
+function userProgress(){
+  const total=db.pops.length;
+  const done=db.pops.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length;
+  return {done,total,pct: total?Math.round(done/total*100):0};
+}
+function allDone(){ return db.pops.length>0 && db.pops.every(p=>POPCore.isLocked(p.id, aprovadosServidor)); }
+function todayBR(){ return new Date().toLocaleDateString('pt-BR'); }
+
+/* ---------- theme ---------- */
+function toggleTheme(){
+  theme = theme==='light'?'dark':'light';
+  document.documentElement.dataset.theme = theme==='dark'?'dark':'';
+  document.getElementById('theme-btn').textContent = theme==='dark'?'☀️':'🌙';
+}
+
+/* ---------- nav ---------- */
+function goAuth(v){ authView=v; render(); }
+async function entrarColaborador(){
+  const nome=fval('#c-nome'), matricula=fval('#c-matricula'), setor=fval('#c-setor');
+  if(!nome||!matricula||!setor){ authErr('Preencha nome completo, matrícula e setor.'); return; }
+  session={role:'colaborador', matricula, nome, setor};
+  salvarSessao(); carregarProgressoLocal();
+  await carregarAprovados();
+  screen='list'; render(); window.scrollTo(0,0);
+}
+async function carregarAprovados(){
+  if(!session || session.role!=='colaborador'){ aprovadosServidor=[]; return; }
+  try{
+    try{ await POPApi.cadastrar({matricula:session.matricula, nome:session.nome, setor:session.setor}); }catch{}
+    await POPApi.flushPendentes();
+    const r=await POPApi.status(session.matricula);
+    aprovadosServidor=r.aprovados||[];
+  }catch{ aprovadosServidor=[]; }
+}
+function logout(){ clearQuizTimer(); session=null; salvarSessao(); aprovadosServidor=[]; meuProgresso={}; resultadosGestor=[]; authView='home'; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
+function openPop(id){ clearQuizTimer(); activePop=id; screen='reader'; render(); window.scrollTo(0,0); }
+function backToList(){ clearQuizTimer(); screen='list'; activePop=null; render(); window.scrollTo(0,0); }
+function goCert(){ screen='cert'; render(); window.scrollTo(0,0); }
+
+/* ---------- quiz engine (sorteio + cronômetro) ---------- */
+function startQuiz(){
+  const p=pop(activePop);
+  if(POPCore.isLocked(activePop, aprovadosServidor)){ alert('Você já foi aprovado neste POP. Não é possível refazer.'); return; }
+  const drawn=POPCore.drawQuiz(p.pool, QUIZ_SIZE);
+  quizState={list:drawn,cur:0,answers:Array(QUIZ_SIZE).fill(null),tLeft:QTIME,timerId:null};
+  screen='quiz'; render(); window.scrollTo(0,0);
+  startTimer();
+}
+function clearQuizTimer(){ if(quizState&&quizState.timerId){clearInterval(quizState.timerId);quizState.timerId=null;} }
+function startTimer(){
+  clearQuizTimer();
+  quizState.tLeft=QTIME;
+  updateTimerUI();
+  quizState.timerId=setInterval(()=>{
+    quizState.tLeft--;
+    if(quizState.tLeft<=0){ nextQuestion(true); return; }
+    updateTimerUI();
+  },1000);
+}
+function updateTimerUI(){
+  const t=$('#timer'); if(!t||!quizState) return;
+  const tv=t.querySelector('.tv'), b=t.querySelector('b');
+  const C=2*Math.PI*24;
+  tv.style.strokeDasharray=C;
+  tv.style.strokeDashoffset=C*(1-quizState.tLeft/QTIME);
+  b.textContent=quizState.tLeft;
+  t.classList.toggle('warn',quizState.tLeft<=15&&quizState.tLeft>6);
+  t.classList.toggle('crit',quizState.tLeft<=6);
+}
+function pickOpt(j){
+  if(!quizState) return;
+  quizState.answers[quizState.cur]=j;
+  document.querySelectorAll('.opt').forEach((el,k)=>el.classList.toggle('sel',k===j));
+  const b=$('#nextbtn'); if(b) b.disabled=false;
+}
+function nextQuestion(timedOut=false){
+  clearQuizTimer();
+  if(quizState.cur < QUIZ_SIZE-1){
+    quizState.cur++;
+    render(); window.scrollTo(0,0);
+    startTimer();
+  } else {
+    finishQuiz();
+  }
+}
+async function finishQuiz(){
+  clearQuizTimer();
+  const {hits,total}=POPCore.scoreQuiz(quizState.list, quizState.answers);
+  const score=Math.round(hits/total*100);
+  const passed=POPCore.aprovou(hits, PASS_MIN);
+  const p=pop(activePop);
+  const today=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+  const detail={qs:quizState.list, ans:quizState.answers.slice()};
+  meuProgresso[p.id]={status:passed?'aprovado':'reprovado', hits, score, date:today, detail};
+  salvarProgressoLocal();
+  const resultado={matricula:session.matricula,nome:session.nome,setor:session.setor,pop_id:p.id,pop_codigo:p.code,status:passed?'aprovado':'reprovado',score,acertos:hits,total,detalhe:detail};
+  try{ await POPApi.salvar(resultado); }catch{ console.warn('resultado enfileirado para reenvio'); }
+  if(passed && !aprovadosServidor.includes(p.id)) aprovadosServidor.push(p.id);
+  lastResult={score,hits,total,passed,drawn:quizState.list,answers:quizState.answers.slice()};
+  quizState=null;
+  screen='result'; render(); window.scrollTo(0,0);
+}
+
+/* ---------- auth ---------- */
+const SVG_USER='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+const SVG_SHIELD='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>';
+
+function renderTopRight(){
+  if(!session) return '';
+  let nm,sub;
+  if(session.role==='gestor'){ nm='Gestor'; sub='Educação Continuada'; }
+  else { nm=session.nome; sub=session.setor+' · mat. '+session.matricula; }
+  return `<div class="who2"><div class="avatar">${initials(nm)}</div>
+      <div class="nm"><b>${nm}</b><small>${sub}</small></div></div>
+    <button class="logout" onclick="logout()">Sair</button>`;
+}
+
+function renderAuth(){
+  if(authView==='home'){
+    return `<div class="auth-wrap"><div class="auth-card">
+      <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+        <h2>Portal de POPs</h2><p>Hospital Nereu Ramos · Enfermagem</p></div>
+      <div class="auth-choice">
+        <button class="choice-btn" onclick="goAuth('colab')">
+          <span class="ic ic-blue">${SVG_USER}</span>
+          <span><b>Sou colaborador</b><small>Ler POPs e fazer as avaliações</small></span>
+          <span class="chev">›</span></button>
+        <button class="choice-btn" onclick="goAuth('gestor')">
+          <span class="ic ic-red">${SVG_SHIELD}</span>
+          <span><b>Acesso do gestor</b><small>Acompanhar a equipe</small></span>
+          <span class="chev">›</span></button>
+      </div></div></div>`;
+  }
+  if(authView==='gestor'){
+    return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
+      <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+        <h2>Acesso do gestor</h2><p>Educação Continuada · HNR</p></div>
+      <div class="auth-err" id="auth-err"></div>
+      <div class="field"><label>Senha</label><input id="g-pass" type="password" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doGestorLogin()"></div>
+      <button class="btn block" onclick="doGestorLogin()">Entrar</button>
+      <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
+    </div></div>`;
+  }
+  return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
+    <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+      <h2>Identificação</h2><p>Acesso do colaborador</p></div>
+    <div class="auth-err" id="auth-err"></div>
+    <div class="field"><label>Nome completo</label><input id="c-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
+    <div class="field"><label>Matrícula</label><input id="c-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
+    <div class="field"><label>Setor</label><select id="c-setor">
+      <option value="">Selecione o setor…</option>
+      <option>EGY</option>
+      <option>TISIOLOGIA</option>
+      <option>DIP I</option>
+      <option>DIP II</option>
+      <option>PAVILHAO</option>
+      <option>UTI</option>
+      <option>CC</option>
+      <option>AMBULATORIO</option>
+      <option>CME</option>
+    </select></div>
+    <button class="btn block" onclick="entrarColaborador()">Entrar</button>
+    <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
+  </div></div>`;
+}
+
+function authErr(msg){
+  const e=document.getElementById('auth-err'); if(e){e.textContent=msg;e.style.display='block';}
+  const c=document.getElementById('auth-card');
+  if(c){c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake');}
+}
+function fval(sel){const e=document.querySelector(sel);return e?e.value.trim():'';}
+
+async function doGestorLogin(){
+  const pass=fval('#g-pass');
+  const r=await POPApi.gestorLogin(pass);
+  if(!r.ok){ authErr('Senha incorreta.'); return; }
+  session={role:'gestor'}; salvarSessao();
+  await carregarResultadosGestor();
+  render(); window.scrollTo(0,0);
+}
+async function carregarResultadosGestor(){
+  try{ const r=await POPApi.getResultados(); resultadosGestor=r.resultados||[]; colaboradoresGestor=r.colaboradores||[]; }
+  catch{ resultadosGestor=[]; colaboradoresGestor=[]; }
+}
+
+/* ---------- colaborador: lista ---------- */
+function renderColabList(){
+  const pr=userProgress();
+  const done=allDone();
+  const certBanner=done?`
+    <div class="cert-banner">
+      <div class="medal">🏅</div>
+      <div class="tx"><b>Parabéns, ${session.nome.split(' ')[0]}! Trilha concluída.</b>
+        <p>Você foi aprovado em todos os ${pr.total} POPs. Seu certificado está disponível.</p></div>
+      <button class="btn-gold" onclick="goCert()">Ver certificado</button>
+    </div>`:'';
+  const hello = pr.done===0
+    ? `Comece sua trilha: leia o primeiro POP e faça a avaliação.`
+    : `${pr.done} de ${pr.total} POPs aprovados · ${pr.total-pr.done} pendente(s)`;
+  const cards=db.pops.map((p,idx)=>{
+    const s=statusOf(p.id);
+    const cls={pending:'pending',pass:'pass',fail:'fail'}[s.k];
+    const label=s.score!=null?`${s.label} · ${s.hits}/${QUIZ_SIZE}`:s.label;
+    const cta=s.k==='pass'?'Revisar leitura':(s.k==='fail'?'Reler e refazer':'Ler POP');
+    const seal=s.k==='pass'?`<span class="seal">🎖 Aprovado${s.date?' · '+s.date:''}</span>`:'';
+    return `<div class="popcard" style="animation-delay:${idx*60}ms">
+      <span class="code mono">${p.code}</span>
+      <div class="meta">
+        <h3>${p.title}</h3>
+        <div class="sub">Versão ${p.version} · ${p.executantes}</div>
+        ${seal}
+      </div>
+      <span class="badge ${cls}"><span class="dot"></span>${label}</span>
+      <button class="btn" onclick="openPop('${p.id}')">${cta}</button>
+    </div>`;
+  }).join('');
+  return `
+    <div class="pagehead fade-up">
+      <h2>Meus procedimentos</h2>
+      <p>Leia cada POP e conclua a avaliação. Aprovação: <b>acerte ao menos ${PASS_MIN} de ${QUIZ_SIZE}</b>.</p>
+    </div>
+    ${certBanner}
+    <div class="mybar fade-up">
+      <div class="ring" style="--p:${pr.pct}"><i>${pr.pct}%</i></div>
+      <div class="txt"><b>Olá, ${session.nome.split(' ')[0]}</b><p>${hello}</p></div>
+    </div>
+    <div class="grid">${cards}</div>`;
+}
+
+/* ---------- leitor ---------- */
+function sectionHTML(s){
+  let inner='';
+  if(s.sub) inner+=`<p style="color:var(--muted);font-size:14px">${s.sub}</p>`;
+  if(s.note) inner+=`<p>${s.note}</p>`;
+  if(s.table){
+    const hl=s.table.hl||[];
+    inner+=`<table class="ptable"><thead><tr>${s.table.cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead>
+      <tbody>${s.table.rows.map((r,i)=>`<tr class="${hl.includes(i)?'hl':''}">${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  }
+  if(s.items) inner+=`<ul>${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+  if(s.alert) inner+=`<div class="alert">⚠ ${s.alert}</div>`;
+  return `<div class="sec"><h3><span class="n">${s.n}</span>${s.h}</h3>${inner}</div>`;
+}
+
+function renderReader(){
+  const p=pop(activePop);
+  return `
+    <div class="readtop no-print">
+      <div class="row">
+        <button class="back" onclick="backToList()">← Voltar</button>
+        <div class="readbar"><i id="readfill"></i></div>
+        <span class="label" id="readpct">0% lido</span>
+      </div>
+    </div>
+    <article class="article" id="article">
+      <div class="stamp">
+        <div class="stamp-grid">
+          <div class="stamp-logo"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"><small>HOSPITAL<br>NEREU RAMOS</small></div>
+          <div class="stamp-title"><small>POP · Procedimento Operacional Padrão</small><h2>${p.title}</h2></div>
+          <div class="stamp-meta"><span class="stamp-code mono">${p.code}</span>
+            <div><b>Emissão:</b> ${p.emission}</div><div><b>Versão:</b> ${p.version}</div></div>
+          <div class="stamp-row"><span><b>Origem:</b> ${p.origem}</span><span><b>Executante(s):</b> ${p.executantes}</span></div>
+        </div>
+      </div>
+      <div class="body">
+        ${p.sections.map(sectionHTML).join('')}
+        <div class="endmark" id="endmark">— fim do procedimento —</div>
+      </div>
+    </article>
+    ${POPCore.isLocked(activePop, aprovadosServidor) ? `
+    <div class="quizgate no-print" id="gate">
+      <div class="lock" style="color:var(--success)">✅ Você já foi aprovado neste POP</div>
+      <h3>Avaliação concluída</h3>
+      <button class="btn block" disabled>Aprovado</button>
+    </div>` : `
+    <div class="quizgate no-print" id="gate">
+      <div class="lock" id="gatelock">🔒 Role a leitura até o fim para liberar a avaliação</div>
+      <h3>Avaliação de leitura</h3>
+      <div class="rules">
+        <span class="rule">🎲 ${QUIZ_SIZE} questões sorteadas</span>
+        <span class="rule">⏱ ${QTIME}s por questão</span>
+        <span class="rule">✅ mínimo ${PASS_MIN}/${QUIZ_SIZE} acertos</span>
+      </div>
+      <button class="btn block" id="startbtn" disabled onclick="startQuiz()">Iniciar avaliação</button>
+    </div>`}`;
+}
+
+function wireReadGate(){
+  const end=$('#endmark'),fill=$('#readfill'),pctEl=$('#readpct'),
+        btn=$('#startbtn'),lock=$('#gatelock'),art=$('#article');
+  if(!end||!btn||!lock) return;
+  let unlocked=false;
+  const onScroll=()=>{
+    const rect=art.getBoundingClientRect();
+    const total=art.offsetHeight-window.innerHeight*0.6;
+    const seen=Math.min(Math.max(-rect.top,0),total);
+    const pct=total>0?Math.min(Math.round(seen/total*100),100):100;
+    fill.style.width=pct+'%';pctEl.textContent=pct+'% lido';
+    const endSeen=end.getBoundingClientRect().top<window.innerHeight-40;
+    if(endSeen&&!unlocked){
+      unlocked=true;btn.disabled=false;
+      fill.style.width='100%';pctEl.textContent='100% lido';
+      lock.innerHTML='✅ Leitura concluída — avaliação liberada';
+      lock.style.color='var(--success)';
+    }
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+}
+
+/* ---------- quiz UI ---------- */
+function renderQuiz(){
+  const p=pop(activePop);
+  const i=quizState.cur, q=quizState.list[i];
+  const steps=quizState.list.map((_,k)=>
+    `<span class="step ${k<i?'done':(k===i?'cur':'')}"></span>`).join('');
+  const C=2*Math.PI*24;
+  return `
+    <div class="quiz">
+      <div class="quiz-head">
+        <div class="info">
+          <h2>Avaliação · ${p.code}</h2>
+          <p>Questão ${i+1} de ${QUIZ_SIZE} · sorteio individual · mínimo ${PASS_MIN} acertos</p>
+        </div>
+        <div class="steps">${steps}</div>
+        <div class="timer" id="timer">
+          <svg width="54" height="54"><circle class="tk" cx="27" cy="27" r="24"/>
+            <circle class="tv" cx="27" cy="27" r="24" stroke-dasharray="${C}" stroke-dashoffset="0"/></svg>
+          <b>${QTIME}</b>
+        </div>
+      </div>
+      <div class="question">
+        <div class="qn">QUESTÃO ${i+1}</div>
+        <div class="qt">${q.q}</div>
+        ${q.o.map((opt,j)=>`
+          <label class="opt ${quizState.answers[i]===j?'sel':''}" onclick="pickOpt(${j})">
+            <input type="radio" name="q" ${quizState.answers[i]===j?'checked':''}>
+            <span>${opt}</span>
+          </label>`).join('')}
+      </div>
+      <div class="quiz-foot">
+        <button class="btn" id="nextbtn" ${quizState.answers[i]===null?'disabled':''} onclick="nextQuestion()">
+          ${i===QUIZ_SIZE-1?'Finalizar avaliação':'Confirmar e avançar'}</button>
+      </div>
+    </div>`;
+}
+
+/* ---------- resultado ---------- */
+function renderResult(){
+  const p=pop(activePop), r=lastResult;
+  const rc=r.passed?'var(--success)':'var(--danger)';
+  const certCTA=(r.passed&&allDone())?
+    `<button class="btn-gold" onclick="goCert()">🏅 Ver meu certificado</button>`:'';
+  const check=r.passed?`
+    <svg class="checkmark" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/>
+      <path d="M15 27l8 8 15-17"/></svg>`:'';
+  const reviews=reviewHTML(r.drawn,r.answers);
+  return `
+    <div class="result" style="--rc:${rc}">
+      ${check}
+      <div class="score" style="--p:${r.score}"><i><div>
+        <b style="color:${rc}">${r.hits}/${QUIZ_SIZE}</b><em>${r.score}% de acerto</em></div></i></div>
+      <h2>${r.passed?'Aprovado!':'Quase lá'}</h2>
+      <p class="verdict">${r.passed
+        ? 'Você atingiu o mínimo de '+PASS_MIN+' acertos. O registro já aparece no painel do gestor.'
+        : 'Você precisa acertar ao menos '+PASS_MIN+' de '+QUIZ_SIZE+'. Releia o procedimento e refaça — as questões serão sorteadas novamente.'}</p>
+      <div class="actions">
+        ${r.passed?'':`<button class="btn" onclick="openPop('${activePop}')">Reler e refazer</button>`}
+        ${certCTA}
+        <button class="btn ghost" onclick="backToList()">Voltar aos POPs</button>
+      </div>
+    </div>
+    <div class="quiz" style="margin-top:18px">
+      <div class="quiz-head"><div class="info"><h2>Gabarito da sua prova</h2>
+        <p>${p.title} · questões sorteadas desta tentativa</p></div></div>
+      ${reviews}
+    </div>`;
+}
+
+/* ---------- certificado ---------- */
+function renderCert(){
+  const rows=db.pops.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).map(p=>{
+    const s=statusOf(p.id);
+    return `<div class="cert-pop"><span class="ck">✓</span>
+      <b>${p.code} — ${p.title}</b><span>${s.hits!=null?s.hits+'/'+QUIZ_SIZE:''}${s.date?' · '+s.date:''}</span></div>`;
+  }).join('');
+  return `
+    <div class="readtop no-print"><div class="row">
+      <button class="back" onclick="backToList()">← Voltar</button></div></div>
+    <div class="cert">
+      <div class="cert-inner"><div class="cert-inner2">
+        <span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+        <div class="cert-eyebrow">Hospital Nereu Ramos · Educação Continuada</div>
+        <h2>Certificado de Conclusão</h2>
+        <p class="conf">Conferido a</p>
+        <div class="cert-name">${session.nome}</div>
+        <div class="cert-role">${session.setor} · Matrícula ${session.matricula}</div>
+        <p class="cert-body">pela leitura integral e aprovação nas avaliações dos
+          <b>${db.pops.length} Procedimentos Operacionais Padrão</b> do programa de
+          educação permanente em enfermagem, com aproveitamento mínimo de
+          ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.</p>
+        <div class="cert-pops">${rows}</div>
+        <div class="cert-foot">
+          <div class="cert-date">Florianópolis, ${todayBR()}</div>
+          <div class="cert-sign"><div class="ln"></div><b>Educação Continuada</b><small>Hospital Nereu Ramos</small></div>
+        </div>
+      </div></div>
+      <div class="cert-actions no-print">
+        <button class="btn" onclick="window.print()">Imprimir / salvar PDF</button>
+        <button class="btn ghost" onclick="backToList()">Voltar</button>
+      </div>
+    </div>`;
+}
+
+
+/* ---------- revisão de prova (reuso: resultado do colaborador + drill-down do gestor) ---------- */
+function reviewHTML(qs,ans){
+  return qs.map((q,i)=>`
+    <div class="question" style="border-top:1px solid var(--line)">
+      <div class="qn">QUESTÃO ${i+1} ${ans[i]===null?'· <span style="color:var(--danger)">tempo esgotado</span>':''}
+        ${ans[i]===q.a?'· <span style="color:var(--success)">acertou</span>':(ans[i]!==null?'· <span style="color:var(--danger)">errou</span>':'')}</div>
+      <div class="qt">${q.q}</div>
+      ${q.o.map((opt,j)=>{
+        let c='';if(j===q.a)c='correct';else if(ans[i]===j)c='wrong';
+        return `<div class="opt ${c}" style="cursor:default">${opt}${j===q.a?' ✓':(ans[i]===j?' ✗':'')}</div>`;
+      }).join('')}
+    </div>`).join('');
+}
+
+/* ---------- gestor ---------- */
+function renderGestor(){
+  const colabs=colaboradoresGestor;
+  const res=resultadosGestor;
+  const byKey={};
+  res.forEach(r=>{ byKey[r.matricula+'|'+r.pop_id]=r; });
+  const totalPops=db.pops.length;
+  const aprovacoes=res.filter(r=>r.status==='aprovado').length;
+  let certificados=0;
+  colabs.forEach(col=>{
+    const aprov=new Set(res.filter(r=>r.matricula===col.matricula&&r.status==='aprovado').map(r=>r.pop_id));
+    if(totalPops>0 && db.pops.every(p=>aprov.has(p.id))) certificados++;
+  });
+  const pendencias=Math.max(0, colabs.length*totalPops - aprovacoes);
+
+  const rows=colabs.map(col=>{
+    let done=0;
+    const cells=db.pops.map(p=>{
+      const r=byKey[col.matricula+'|'+p.id];
+      let cls='pending', lbl='Pendente';
+      if(r){ if(r.status==='aprovado'){ cls='pass'; lbl='Aprovado'; done++; } else { cls='fail'; lbl='Refazer'; } }
+      const extra=r?` ${r.acertos}/${r.total}`:'';
+      return `<td><span class="cell ${cls}"><span class="ic"></span>${lbl}${extra}</span></td>`;
+    }).join('');
+    const pct=totalPops?Math.round(done/totalPops*100):0;
+    const medal=(totalPops>0&&done===totalPops)?' 🏅':'';
+    return `<tr>
+      <td><div class="person"><div class="avatar">${initials(col.nome)}</div>
+        <div><b>${col.nome}${medal}</b><small>${col.setor} · mat. ${col.matricula}</small></div></div></td>
+      ${cells}
+      <td class="hidesm"><div class="pcompact"><div class="pbar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div></td>
+    </tr>`;
+  }).join('');
+
+  const vazio = colabs.length===0
+    ? `<div class="empty"><div class="ic">🗂</div><b>Nenhum colaborador cadastrado</b><p>Os colaboradores aparecem aqui assim que se identificarem na tela inicial.</p></div>` : '';
+
+  const perpop=db.pops.map(p=>{
+    const aprov=res.filter(r=>r.pop_id===p.id&&r.status==='aprovado').length;
+    const pct=colabs.length?Math.round(aprov/colabs.length*100):0;
+    return `<div class="perpop-row">
+      <span class="code mono">${p.code}</span>
+      <div class="nm"><b>${p.title}</b><small>Versão ${p.version}</small></div>
+      <div class="pcompact"><div class="pbar" style="min-width:120px"><i style="width:${pct}%"></i></div><b>${aprov}/${colabs.length}</b></div>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="pagehead fade-up">
+      <h2>Painel do gestor</h2>
+      <p>Acompanhamento de leitura e avaliação dos POPs por colaborador. Aprovação: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos em questões sorteadas.</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">${colabs.length}</div><div class="l">Colaboradores</div></div>
+      <div class="kpi"><div class="v green">${aprovacoes}</div><div class="l">Aprovações</div></div>
+      <div class="kpi"><div class="v" style="color:var(--gold)">${certificados}</div><div class="l">Certificados</div></div>
+      <div class="kpi"><div class="v" style="color:var(--warn)">${pendencias}</div><div class="l">Pendências</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Matriz de conclusão</h3><span>colaborador × POP</span></div>
+      ${vazio || `<div style="overflow-x:auto"><table class="matrix">
+        <thead><tr><th>Colaborador</th>${db.pops.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th class="hidesm">Progresso</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>`}
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Conclusão por POP</h3><span>aprovados / total</span></div>
+      <div>${perpop}</div>
+    </div>`;
+}
+
+/* ---------- main render ---------- */
+function render(){
+  const right=document.getElementById('topbar-right');
+  if(!session){if(right)right.innerHTML='';$('#app').innerHTML=renderAuth();return;}
+  if(right)right.innerHTML=renderTopRight();
+  let html='';
+  if(session.role==='gestor'){html=renderGestor();}
+  else{
+    if(screen==='list')html=renderColabList();
+    else if(screen==='reader')html=renderReader();
+    else if(screen==='quiz')html=renderQuiz();
+    else if(screen==='result')html=renderResult();
+    else if(screen==='cert')html=renderCert();
+  }
+  $('#app').innerHTML=html;
+  if(session.role==='colaborador'&&screen==='reader')wireReadGate();
+  if(session.role==='colaborador'&&screen==='quiz')updateTimerUI();
+}
+
+document.getElementById('logo-src').src=LOGO_URI;
+
+(async function init(){
+  if(session && session.role==='colaborador'){ carregarProgressoLocal(); await carregarAprovados(); }
+  else if(session && session.role==='gestor'){ await carregarResultadosGestor(); }
+  render();
+})();
+</script>
+
+
+</body></html>
