@@ -3,6 +3,187 @@
   else root.POPS = factory();
 }(typeof self !== "undefined" ? self : this, function () {
   const POPS = [
+
+    {
+      id:'pop-44', code:'POP-ENF-44', version:'1.0', emission:'27/05/2026',
+      title:'Administração de insulina',
+      executantes:'Equipe de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar as condutas relacionadas às técnicas de aplicação de insulina por via subcutânea.',
+          'Controlar os níveis glicêmicos.',
+          'Fornecer subsídios para a implementação e o acompanhamento da terapêutica medicamentosa.'
+        ],note:'<b>Definições:</b> <b>DM1</b> — origem autoimune/genética, destruição das células beta e deficiência absoluta de insulina (início abrupto, mais jovens). <b>DM2</b> — hiperglicemia persistente associada a excesso de peso, com alteração na secreção e na sensibilidade à insulina. A <b>insulina é medicamento de alta vigilância (potencialmente perigoso)</b> e exige <b>dupla checagem</b> no preparo e na administração.'},
+        {n:2,h:'Tipos de insulina',sub:'Classificadas pela velocidade de início e pela duração de ação:',items:[
+          '<b>Basais / lentas — Intermediária (NPH):</b> aspecto leitoso; início em 1–3 h e duração de 12–18 h; geralmente 2 a 3 aplicações ao dia.',
+          '<b>Basais / lentas — Longa duração (Glargina, Detemir, Degludeca):</b> transparentes; agem por 24 h ou mais e quase não têm "pico", reduzindo o risco de hipoglicemia noturna.',
+          '<b>Refeição / rápidas — Regular:</b> ação rápida; aplicar cerca de 30 minutos antes de comer; dura de 5 a 8 h.',
+          '<b>Refeição / ultrarrápidas (Lispro, Aspart, Glulisina):</b> agem em 5–15 min; aplicar logo antes ou logo após a refeição; duram de 3 a 5 h.'
+        ]},
+        {n:3,h:'Materiais necessários',items:[
+          'EPI, prontuário físico e eletrônico (prescrição), bandeja.',
+          'Álcool 70% ou clorexidina alcoólica; algodão ou gaze.',
+          'Frasco da insulina prescrita; seringa de 1 ml graduada em UI.',
+          'Agulha para aspiração (13x4,5) e agulha para aplicação (13x4,5); solução desinfetante padronizada.'
+        ]},
+        {n:4,h:'Preparo (frasco e seringa)',items:[
+          'Verificar a prescrição (a NPH costuma ser prescrita por horário; a Regular conforme o HGT do paciente) e organizar a bandeja.',
+          'Homogeneizar a suspensão rolando o frasco levemente entre as mãos; higienizar as mãos e fazer assepsia da borracha do frasco com álcool 70% ou clorexidina alcoólica.',
+          'Aspirar ar até a graduação da dose prescrita, injetar esse ar no frasco e, com o frasco de cabeça para baixo, aspirar a insulina até a dose; eliminar bolhas e trocar a agulha antes da aplicação.',
+          '<b>Mistura de dois tipos na mesma seringa:</b> aspirar <b>primeiro a Regular e depois a NPH</b>; o total deve corresponder à soma das duas doses.',
+          'Se a dose aspirada exceder a soma prescrita, <b>não devolver nem desprezar o excesso no frasco</b> — descartar a seringa e reiniciar com uma nova.'
+        ]},
+        {n:5,h:'Aplicação',items:[
+          'No quarto, paramentar EPI conforme precaução/isolamento, identificar-se e conferir os dados na pulseira (confirmação verbal).',
+          'Fazer assepsia do local com álcool 70%/clorexidina alcoólica e aguardar secar; utilizar <b>rodízio dos locais</b> para reduzir a variabilidade glicêmica e a lipodistrofia.',
+          'Fazer prega cutânea com polegar e indicador e introduzir a agulha a <b>90°</b>; injetar mantendo a prega, aguardar de 5 a 10 segundos, retirar a agulha e desfazer a prega. <b>Não massagear</b> o local.',
+          '<b>Caneta:</b> de uso individual; trocar a agulha diariamente; homogeneizar rolando entre as mãos; selecionar a dose de 1 em 1 unidade; manter o botão pressionado contando lentamente até 10 antes de retirar a agulha.',
+          'Recolher o material, higienizar a bandeja, higienizar as mãos, checar no prontuário físico e registrar no eletrônico (HGT e correções). Havendo recusa, comunicar o enfermeiro e registrar.'
+        ]},
+        {n:6,h:'Observações',items:[
+          'A seringa de 1 ml para insulina comporta 100 UI: cada 10 UI equivalem a 0,1 ml.',
+          'Inspecionar e palpar o local antes de cada aplicação; não aplicar em áreas de lipohipertrofia, inflamação ou lesões.',
+          'Insulinas de uso domiciliar do paciente: armazenar na geladeira do posto, identificadas. Insulinas de uso coletivo: armazenar na geladeira do setor com a data de abertura do frasco.',
+          'Insulina em bomba de infusão contínua é procedimento crítico (geralmente na UTI), com diluição de insulina regular, monitorização frequente da glicemia e ajuste de vazão por protocolo.'
+        ],alert:'<b>Alta vigilância.</b> A insulina exige <b>dupla checagem</b> no preparo e na administração — confira sempre o tipo, a concentração e a dose.'},
+      ],
+      pool:[
+        {q:'Por que a insulina exige dupla checagem no preparo e na administração?',
+         o:['Porque é uma vacina','Porque é um medicamento de alta vigilância (potencialmente perigoso)','Porque é administrada por via endovenosa','Porque não tem prescrição médica'],a:1,d:1},
+        {q:'Ao preparar NPH e Regular na mesma seringa, a ordem correta de aspiração é:',
+         o:['Primeiro a NPH e depois a Regular','Primeiro a Regular e depois a NPH','Tanto faz a ordem','Aspirar em seringas separadas sempre'],a:1,d:2},
+        {q:'Durante a mistura, a dose aspirada ficou maior que a soma das doses prescritas. A conduta correta é:',
+         o:['Devolver o excesso ao frasco','Desprezar o excesso empurrando o êmbolo','Descartar a seringa e reiniciar com uma nova','Aplicar assim mesmo, pois a diferença é pequena'],a:2,d:3},
+        {q:'O ângulo recomendado para introduzir a agulha na aplicação subcutânea com prega cutânea é:',
+         o:['15 graus','45 graus','90 graus','Paralelo à pele'],a:2,d:2},
+        {q:'Sobre a insulina NPH, é correto afirmar:',
+         o:['É transparente e age em 5 minutos','Tem aspecto leitoso, início em 1–3 h e duração de 12–18 h','Não apresenta pico e dura mais de 24 h','É de ação ultrarrápida e aplicada após a refeição'],a:1,d:2},
+        {q:'Na seringa de insulina de 1 ml (100 UI), a graduação de 0,1 ml corresponde a:',
+         o:['1 UI','5 UI','10 UI','100 UI'],a:2,d:2},
+        {q:'Por que se recomenda o rodízio dos locais de aplicação de insulina?',
+         o:['Para acelerar a absorção','Para reduzir a variabilidade glicêmica e a ocorrência de lipodistrofia','Para dispensar a antissepsia','Para poder massagear o local'],a:1,d:2},
+        {q:'Após injetar a insulina subcutânea, a conduta correta é:',
+         o:['Massagear vigorosamente o local','Aguardar de 5 a 10 segundos, retirar a agulha e não massagear','Reaplicar imediatamente no mesmo ponto','Aspirar de volta um pouco da dose'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-45', code:'POP-ENF-45', version:'1.3', emission:'01/10/2020',
+      title:'Mensuração do peso e altura',
+      executantes:'Equipe de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Mensurar o peso e a altura corporal.',
+          'Avaliar o estado nutricional do paciente.',
+          'Fornecer parâmetros para o cálculo de dose de medicamentos.'
+        ]},
+        {n:2,h:'Materiais necessários',items:[
+          'Balança plataforma digital ou balança digital portátil.',
+          'EPI, prontuário eletrônico, caneta e papel.',
+          'Fita métrica e micropore.',
+          'Solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Verificação do peso',items:[
+          'Higienizar as mãos, paramentar EPI, identificar-se e conferir os dados na pulseira (confirmação verbal).',
+          'Avaliar a condição clínica do paciente quanto à locomoção até a balança ou levar o equipamento para próximo ao leito; higienizar a balança com a solução desinfetante.',
+          'Orientar o paciente a usar roupas leves, retirar os sapatos e esvaziar a bexiga.',
+          'A balança deve estar <b>ligada e zerada</b> antes de o paciente subir; posicioná-lo no centro, descalço, ereto, com os pés juntos e os braços estendidos ao longo do corpo.',
+          'Realizar a leitura somente após o valor estabilizar no visor e anotar o peso.'
+        ]},
+        {n:4,h:'Verificação da altura',items:[
+          'Pode-se utilizar a métrica da própria balança; posicionar o paciente de costas para a métrica, descalço e com a cabeça livre de adereços, no centro do equipamento.',
+          'Manter o paciente em pé, ereto, com os braços ao longo do corpo e a cabeça erguida, olhando para um ponto fixo na altura dos olhos.',
+          'Elevar a haste graduada com cuidado e colocá-la perpendicularmente sobre a cabeça; fazer a leitura em centímetros.',
+          'Auxiliar o paciente a descer e encaminhá-lo ao leito; higienizar a balança e as mãos; registrar os valores no prontuário eletrônico.'
+        ],note:'<b>Se usar fita métrica:</b> fixá-la na parede lisa com o micropore. Posicionar o paciente descalço, de costas, encostando os calcanhares, os glúteos e a parte posterior da cabeça (região occipital) na parede, e fazer a leitura em centímetros.'},
+      ],
+      pool:[
+        {q:'Antes de o paciente subir na balança, ela deve estar:',
+         o:['Ligada, porém sem zerar','Ligada e zerada','Desligada para economizar bateria','Com o paciente segurando o apoio'],a:1,d:1},
+        {q:'Qual orientação deve ser dada ao paciente antes da pesagem?',
+         o:['Usar roupas pesadas e manter os sapatos','Usar roupas leves, retirar os sapatos e esvaziar a bexiga','Beber bastante água antes de pesar','Permanecer com adereços na cabeça'],a:1,d:1},
+        {q:'A leitura do peso deve ser realizada:',
+         o:['Assim que o paciente sobe, mesmo com o valor oscilando','Somente após o valor estabilizar (ficar fixo) no visor','Pela média de três tentativas em movimento','Com o paciente sentado na balança'],a:1,d:2},
+        {q:'Na verificação da altura pela métrica da balança, o paciente deve ficar:',
+         o:['De frente para a métrica, com a cabeça baixa','De costas, ereto, descalço e com a cabeça livre de adereços, olhando para um ponto fixo','Sentado, com os joelhos flexionados','De lado, apoiado na parede'],a:1,d:2},
+        {q:'Ao usar fita métrica fixada na parede, quais pontos do corpo devem encostar na parede?',
+         o:['Apenas os calcanhares','Apenas a cabeça','Calcanhares, glúteos e região occipital (parte posterior da cabeça)','Apenas os glúteos e as escápulas'],a:2,d:2},
+        {q:'Um dos objetivos da mensuração de peso e altura é:',
+         o:['Substituir o exame físico completo','Fornecer parâmetros para o cálculo de dose de medicamentos','Dispensar a avaliação nutricional','Definir o diagnóstico médico'],a:1,d:1},
+        {q:'Em relação à higienização do equipamento, a conduta correta é:',
+         o:['Higienizar a balança com solução desinfetante antes e após o uso','Higienizar apenas no fim do plantão','Nunca higienizar para não danificar o sensor','Higienizar somente se houver sujidade visível'],a:0,d:2},
+        {q:'Quando o paciente não tem condição clínica de se locomover até a balança, a conduta é:',
+         o:['Estimar o peso visualmente','Levar a balança (portátil) para próximo ao leito','Adiar a mensuração por tempo indeterminado','Usar o peso da última internação'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-46', code:'POP-ENF-46', version:'1.3', emission:'01/10/2020',
+      title:'Monitorização cardíaca',
+      executantes:'Técnico de Enfermagem e Enfermeiro',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Registrar a atividade cardíaca.',
+          'Diagnosticar e documentar o tratamento de pacientes graves.',
+          'Detectar arritmias, isquemias, distúrbios hidroeletrolíticos e outras complicações cardíacas.'
+        ],note:'<b>Definição:</b> ferramenta diagnóstica não invasiva que monitora em tempo real a atividade elétrica e o ritmo cardíaco. Pode usar sistema de 3 ou 5 cabos. Com <b>5 eletrodos</b> registram-se as 6 derivações de membros (DI, DII, DIII, aVR, aVL, aVF) e uma derivação precordial (V1 é a mais comum).'},
+        {n:2,h:'Materiais necessários',items:[
+          'EPI, monitor cardíaco, cabo de derivações e eletrodos.',
+          'Tricótomo e biombo (se necessário); gaze.',
+          'Álcool 70% ou clorexidina alcoólica 0,5%; solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Preparo e instalação',items:[
+          'Verificar a prescrição, organizar o material, paramentar EPI, identificar-se e conferir os dados na pulseira (confirmação verbal).',
+          'Questionar sobre doenças cardíacas prévias; expor a região torácica e abdominal; em paciente do sexo feminino, garantir a privacidade com biombo.',
+          'Realizar tricotomia na região do tórax se necessário e limpar o local de fixação dos eletrodos com gaze embebida em solução alcoólica.',
+          'Ligar o monitor, ajustar os alarmes e parâmetros e posicionar os eletrodos.'
+        ]},
+        {n:4,h:'Posicionamento dos eletrodos',items:[
+          '<b>5 derivações:</b> RA — linha infraclavicular direita; LA — linha infraclavicular esquerda; V1 — 4º espaço intercostal; RL — linha infradiafragmática direita; LL — linha infradiafragmática esquerda.',
+          '<b>3 derivações:</b> RA e LA na linha infraclavicular; LL na linha infradiafragmática esquerda.',
+          '<b>Siglas:</b> R = right (direito), L = left (esquerdo), A = arm (braço), L = leg (perna), V/G/C = fio terra (condutor).'
+        ]},
+        {n:5,h:'Finalização',items:[
+          'Deixar o paciente em posição confortável e o ambiente organizado.',
+          'Higienizar os cabos e o monitor após o uso com a solução desinfetante padronizada.',
+          'Registrar o procedimento no prontuário eletrônico.'
+        ]},
+        {n:6,h:'Observações e intercorrências',items:[
+          'Evitar fixar eletrodos sobre saliências ósseas, pelos e locais de aplicação de placas de desfibrilador ou de compressão cardíaca.',
+          'Avaliar a integridade da pele e reposicionar os eletrodos a cada 24 h (após o banho) ou sempre que necessário.',
+          'Se o traçado não estiver satisfatório, verificar e reposicionar os eletrodos. Problemas comuns: interferências elétricas, desconexão de cabo/eletrodo e irritação cutânea.',
+          'Alarmes falsos de <b>bradicardia</b> podem decorrer de mau contato (sudorese excessiva); de <b>taquicardia</b>, de mudança de posição ou tremores musculares. Defeitos no monitor/cabos: encaminhar à engenharia clínica (biomédica).'
+        ]},
+      ],
+      pool:[
+        {q:'No sistema de 5 eletrodos, quantas derivações são registradas?',
+         o:['Apenas 3 derivações de membros','As 6 derivações de membros e 1 derivação precordial','Somente as 6 derivações precordiais','Apenas a derivação V1'],a:1,d:2},
+        {q:'No posicionamento de 5 derivações, o eletrodo V1 deve ficar:',
+         o:['Na linha infraclavicular direita','No 4º espaço intercostal','Na linha infradiafragmática esquerda','Sobre o esterno'],a:1,d:3},
+        {q:'Um alarme falso de bradicardia é frequentemente causado por:',
+         o:['Mau contato entre a pele e o eletrodo devido a sudorese excessiva','Uso correto do gel condutor','Tricotomia adequada do tórax','Posicionamento no 4º espaço intercostal'],a:0,d:2},
+        {q:'A integridade da pele e o reposicionamento dos eletrodos devem ser avaliados:',
+         o:['Somente na alta do paciente','A cada 24 h (após o banho) ou sempre que necessário','Apenas se o monitor apresentar defeito','A cada 7 dias'],a:1,d:2},
+        {q:'Ao fixar os eletrodos, deve-se EVITAR posicioná-los sobre:',
+         o:['A região do tórax limpa e seca','Saliências ósseas, pelos e locais de placas de desfibrilador','A linha infraclavicular','O 4º espaço intercostal'],a:1,d:2},
+        {q:'Nas siglas de identificação dos eletrodos, "RA" corresponde a:',
+         o:['Left arm (braço esquerdo)','Right arm (braço direito)','Right leg (perna direita)','Fio terra/condutor'],a:1,d:2},
+        {q:'Caso o traçado eletrocardiográfico não esteja satisfatório, a primeira conduta é:',
+         o:['Encaminhar imediatamente o monitor à engenharia clínica','Verificar se os eletrodos estão bem posicionados e, se necessário, reposicioná-los','Aumentar o ganho do monitor ao máximo','Desligar os alarmes'],a:1,d:2},
+        {q:'Antes de fixar os eletrodos, o local de fixação deve ser:',
+         o:['Hidratado com creme','Tricotomizado se necessário e limpo com gaze embebida em solução alcoólica','Apenas seco com papel-toalha','Coberto com filme transparente'],a:1,d:2}
+      ]
+    },
+
     {
       id:'pop-21', code:'POP-ENF-21', version:'1.5', emission:'15/05/2015',
       title:'Preparo e administração de medicações por via endovenosa',
