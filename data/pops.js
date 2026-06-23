@@ -645,6 +645,214 @@
         {q:'Quanto ao uso de EPI por visitantes de pacientes com bactérias multirresistentes, o POP orienta:',
          o:['Uso obrigatório de avental e luva por todos os visitantes','Visitantes não utilizam avental e luva; reforça-se a higienização das mãos (exceções discutidas com o SCIH)','Uso de macacão e óculos de proteção','Proibição total de visitas'],a:1}
       ]
+    },
+
+    {
+      id:'pop-60', code:'POP-ENF-60', version:'1.3', emission:'10/10/2015',
+      title:'Aspiração naso e orofaríngea',
+      executantes:'Equipe de enfermagem e fisioterapeutas',
+      origem:'Todas as unidades de atendimento do HNR',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Remover secreções das vias aéreas superiores.',
+          'Evitar a broncoaspiração.',
+          'Manter as vias aéreas desobstruídas.'
+        ],note:'<b>Definição:</b> a aspiração nasofaríngea e orofaríngea é indicada para pacientes impossibilitados de remover/eliminar secreções de maneira espontânea, por fatores como alteração do nível de consciência, falência da musculatura diafragmática e intercostal ou tosse ineficaz. Consiste na remoção de secreção (da traqueia ou brônquios) por uma sonda introduzida pelo nariz, boca ou traqueostomia.'},
+        {n:2,h:'Materiais/equipamentos necessários',items:[
+          'EPI (equipamentos de proteção individual).',
+          'Rede de vácuo funcionante, frasco de aspiração e intermediário de látex.',
+          'Sondas de aspiração e gaze.',
+          'Água destilada e copo descartável.',
+          'Oxímetro, luvas de procedimento e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Descrição das atividades',items:[
+          'Organizar os materiais, encaminhar-se ao leito e testar a rede de vácuo antes de iniciar.',
+          'Higienizar as mãos (Protocolo Institucional de Higiene de Mãos) e paramentar os EPIs conforme a precaução/isolamento do paciente.',
+          'Identificar-se ao paciente e ao acompanhante, explicar o procedimento e conferir os dados (nome completo e data de nascimento) na pulseira, confirmando-os verbalmente.',
+          'Higienizar o estetoscópio com a solução desinfetante padronizada e fazer ausculta pulmonar antes do procedimento, para identificar ruídos adventícios.',
+          'Posicionar o paciente com a cabeceira elevada entre <b>30° e 45°</b>.',
+          'Conectar a sonda no sistema de aspiração e verificar a oxigenação do paciente.',
+          'Abrir o pacote da sonda e conectá-la ao látex (mantendo-a dentro do invólucro); retirar a sonda com a mão dominante, auxiliando a retirada do invólucro com a outra mão.',
+          'Se o paciente estiver em oxigenioterapia, retirar o dispositivo de oferta e monitorar a saturação.',
+          'Pinçar o intermediário/látex do vácuo ou a sonda de aspiração e avisar ao paciente que irá iniciar o procedimento.'
+        ],note:'<b>Ordem obrigatória:</b> aspirar sempre a narina primeiro e, depois, a cavidade oral — nunca o contrário.'},
+        {n:4,h:'Aspiração nasotraqueal',items:[
+          'Introduzir lentamente a sonda por uma das narinas até encontrar resistência ou tosse do paciente.',
+          'Realizar movimentos rotativos na narina durante a aspiração.',
+          'Pinçar novamente o intermediário do vácuo e retirar a sonda da narina; observar a saturação.',
+          'Se em uso de oxigênio, recolocar o dispositivo até a recuperação da saturação antes de realizar nova aspiração.',
+          'Realizar o procedimento quantas vezes forem necessárias.'
+        ]},
+        {n:5,h:'Aspiração oral',items:[
+          'Introduzir lentamente a sonda na cavidade oral, provocando tosse, e aspirar as secreções.',
+          'Repetir o procedimento quantas vezes forem necessárias.',
+          'Desligar o sistema de vácuo e retirar a sonda.',
+          'Colocar água destilada ou água corrente no copo descartável e lavar o intermediário de aspiração.',
+          'Proteger a ponta do látex com plástico, para posterior aspiração.',
+          'Recolher o que deve ser guardado e desprezar o restante do material no lixo apropriado.',
+          'Higienizar a bandeja com a solução desinfetante padronizada e guardá-la.',
+          'Higienizar as mãos e registrar o procedimento no prontuário eletrônico.'
+        ]},
+        {n:6,h:'Observações',items:[
+          'Monitorizar os sinais vitais e os sinais de desconforto respiratório antes, durante e após o procedimento.',
+          'Não limpar a sonda entre as aspirações com líquidos colocados em recipiente não estéril; caso apresente muita sujidade, trocá-la.',
+          'Recomenda-se o ajuste da pressão de vácuo em <b>80–120 mmHg</b>.',
+          'Não manter nova sonda de aspiração conectada ao látex.',
+          'Realizar o procedimento após a fisioterapia respiratória e/ou sempre que houver sinais de acúmulo de secreções em pacientes com tosse ineficaz.',
+          'Quando o frasco de aspiração estiver com dois terços da capacidade, esvaziá-lo antes do procedimento ou trocá-lo.',
+          'Trocar os intermediários na saída do paciente, quando apresentarem secreções que não saem com facilidade na limpeza com água, ou quando a ponta distal entrar em contato com o chão sem proteção.'
+        ]}
+      ],
+      pool:[
+        {q:'A ordem correta de aspiração nas vias aéreas superiores é:',
+         o:['Cavidade oral primeiro e depois a narina','Narina primeiro e depois a cavidade oral, nunca ao contrário','Tanto faz a ordem, desde que se troque a sonda','Apenas a cavidade oral, pois a narina é contraindicada'],a:1},
+        {q:'A pressão de vácuo recomendada para a aspiração é de:',
+         o:['40–60 mmHg','80–120 mmHg','150–200 mmHg','Pressão máxima do sistema'],a:1},
+        {q:'Para o procedimento, o paciente deve ser posicionado com a cabeceira elevada entre:',
+         o:['0° e 15°','30° e 45°','60° e 90°','Decúbito dorsal plano'],a:1},
+        {q:'Durante a aspiração nasotraqueal, ao introduzir a sonda na narina, recomenda-se:',
+         o:['Realizar movimentos rotativos durante a aspiração','Manter a sonda imóvel e aspirar continuamente por 30 s','Introduzir e retirar rapidamente, sem aspirar','Aspirar apenas na introdução da sonda'],a:0},
+        {q:'No paciente em uso de oxigênio, antes de realizar nova aspiração, deve-se:',
+         o:['Aspirar repetidamente sem pausas','Recolocar o dispositivo de O₂ até a recuperação da saturação','Aumentar a pressão de vácuo','Manter o oxigênio retirado durante todo o procedimento'],a:1},
+        {q:'Quando o frasco de aspiração atinge dois terços da capacidade, a conduta é:',
+         o:['Continuar até encher completamente','Esvaziá-lo antes do procedimento ou trocá-lo','Inverter o frasco para ganhar espaço','Reduzir a sucção'],a:1},
+        {q:'Sobre a limpeza da sonda entre as aspirações, é correto:',
+         o:['Limpar com líquidos em qualquer recipiente disponível','Não usar líquidos em recipiente não estéril; se a sonda estiver muito suja, trocá-la','Reaproveitar a mesma sonda por 24 horas','Lavar a sonda com álcool 70%'],a:1},
+        {q:'A aspiração nasofaríngea e orofaríngea está indicada principalmente para pacientes:',
+         o:['Com tosse eficaz e secreção fluida','Impossibilitados de eliminar secreções de forma espontânea (alteração de consciência, falência muscular ou tosse ineficaz)','Em ventilação mecânica com sistema fechado','Sem qualquer secreção em vias aéreas'],a:1}
+      ]
+    },
+
+    {
+      id:'pop-61', code:'POP-ENF-61', version:'1.1', emission:'25/10/2021',
+      title:'Aspiração de Traqueostomia (TQT)',
+      executantes:'Equipe de enfermagem, fisioterapia e medicina',
+      origem:'Todas as unidades de atendimento do HNR',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Remover secreções traqueais.',
+          'Manter as vias aéreas desobstruídas.',
+          'Prevenir infecções do trato respiratório.'
+        ],note:'<b>Definição:</b> o procedimento visa manter a permeabilidade das vias aéreas, removendo líquidos e secreções para melhorar a eficácia ventilatória e prevenir infecções respiratórias. Consiste na remoção de secreções da traqueia e dos brônquios por uma sonda inserida no orifício traqueal de forma asséptica, atraumática e eficaz.'},
+        {n:2,h:'Materiais/equipamentos necessários',items:[
+          'EPI (equipamentos de proteção individual).',
+          'Rede de vácuo funcionante, frasco de aspiração e intermediário de látex.',
+          'Sondas de aspiração e gaze estéril.',
+          'Água destilada ou água corrente e solução fisiológica 0,9%.',
+          'Oxímetro, luvas de procedimento, copo descartável e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Descrição das atividades',items:[
+          'Organizar os materiais, encaminhar-se ao leito e testar a rede de vácuo antes de iniciar.',
+          'Higienizar as mãos (Protocolo Institucional de Higiene de Mãos) e paramentar os EPIs conforme a precaução/isolamento do paciente.',
+          'Identificar-se ao paciente e ao acompanhante, explicar o procedimento e conferir os dados (nome completo e data de nascimento) na pulseira, confirmando-os verbalmente.',
+          'Higienizar o estetoscópio com a solução desinfetante padronizada e fazer ausculta pulmonar antes do procedimento.',
+          'Se o paciente estiver consciente, posicioná-lo em semi-Fowler; se inconsciente, em decúbito lateral, voltado para o profissional.',
+          'Conectar a sonda no sistema de aspiração e verificar a oxigenação do paciente.',
+          'Abrir o pacote da sonda e conectá-la ao látex (mantendo-a dentro do invólucro, sem contaminar).',
+          'Calçar a luva plástica estéril na mão dominante, por cima da luva de procedimento.',
+          'Retirar a sonda do pacote com a mão dominante (na falta de luva plástica estéril, segurar a sonda com uma gaze estéril).',
+          'Se em suporte ventilatório, hiperoxigenar o paciente antes de iniciar e, durante a aspiração, retirar o suporte e monitorar a saturação.',
+          'Pinçar o intermediário do vácuo ou a sonda e introduzir a sonda na traqueostomia.',
+          'Realizar a sucção apenas durante a retirada do cateter, <b>não prolongando por mais de 10 a 15 segundos</b> de cada vez, para minimizar o trauma tecidual.',
+          'Se necessário, instilar 2 ml de SF seguida de aspiração, para facilitar a introdução da sonda, estimular a tosse e remover secreções espessas ("rolhas").',
+          'Repetir o procedimento se houver necessidade e reconectar o suporte ventilatório após a aspiração.',
+          'Após finalizar a aspiração traqueal, realizar a aspiração naso e orofaríngea conforme o POP-ENF-60.',
+          'Desligar o sistema de vácuo e desconectar a sonda.',
+          'Colocar água destilada ou água corrente no copo descartável e lavar o intermediário de aspiração; proteger a ponta do látex com plástico, para posterior aspiração.',
+          'Recolher o que deve ser guardado e desprezar o restante no lixo apropriado; higienizar a bandeja com a solução desinfetante padronizada.',
+          'Higienizar as mãos e registrar o procedimento no prontuário eletrônico.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Monitorizar os sinais vitais e os sinais de desconforto respiratório antes, durante e após o procedimento.',
+          'Não se recomenda injetar soro fisiológico pela traqueostomia nem ambuzar o paciente, pelo possível deslocamento de bactérias do biofilme da via aérea artificial para o trato respiratório inferior.',
+          'Não limpar a sonda entre as aspirações com líquidos em recipiente não estéril; caso apresente muita sujidade, trocá-la.',
+          'O tamanho da sonda deve ser o de menor diâmetro possível para uma sucção adequada; recomenda-se a fórmula: <b>nº da sonda = (nº do TOT/TQT - 2) x 2</b>.',
+          'Recomenda-se o ajuste da pressão de vácuo em <b>80–120 mmHg</b>.'
+        ],alert:'<b>Sucção apenas durante a retirada da sonda</b>, por no máximo 10 a 15 segundos de cada vez, para minimizar o trauma tecidual e o risco de hipoxemia.'}
+      ],
+      pool:[
+        {q:'Quanto ao posicionamento do paciente para a aspiração de traqueostomia:',
+         o:['Consciente em decúbito dorsal plano; inconsciente sentado','Consciente em semi-Fowler; inconsciente em decúbito lateral, voltado para o profissional','Sempre em Trendelenburg','Sempre em decúbito ventral'],a:1},
+        {q:'A sucção durante a aspiração de traqueostomia deve ser realizada:',
+         o:['Na introdução e na retirada da sonda','Apenas durante a retirada do cateter, por no máximo 10 a 15 segundos','De forma contínua por até 1 minuto','Somente com a sonda parada na carina'],a:1},
+        {q:'A fórmula recomendada para escolher o tamanho ideal da sonda de aspiração é:',
+         o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT + 4','nº da sonda = nº do TOT/TQT ÷ 2','Sempre a sonda de maior calibre disponível'],a:0},
+        {q:'Para manter a técnica asséptica, a luva plástica estéril é calçada:',
+         o:['Na mão não dominante, sob a luva de procedimento','Na mão dominante, por cima da luva de procedimento','Em ambas as mãos, substituindo as luvas de procedimento','Dispensada quando se usa gaze estéril em ambas as mãos'],a:1},
+        {q:'Após finalizar a aspiração traqueal pela traqueostomia, deve-se:',
+         o:['Encerrar o procedimento imediatamente','Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Instilar 10 ml de SF na traqueostomia','Reposicionar o paciente em decúbito ventral'],a:1},
+        {q:'Sobre a instilação de soro fisiológico pela traqueostomia, o POP orienta:',
+         o:['Instilar rotineiramente antes de cada aspiração','Não é recomendada de rotina; se necessário, instilar 2 ml seguida de aspiração','Substituir a aspiração pela instilação','Ambuzar o paciente após a instilação'],a:1},
+        {q:'A pressão de vácuo recomendada para a aspiração de traqueostomia é:',
+         o:['80–120 mmHg','150–200 mmHg','40–60 mmHg','A máxima do sistema de vácuo'],a:0},
+        {q:'A sonda de aspiração de traqueostomia deve ter:',
+         o:['O maior diâmetro possível, para aspirar mais rápido','O menor diâmetro possível que permita sucção adequada','Sempre o mesmo calibre do tubo','Diâmetro indiferente'],a:1}
+      ]
+    },
+
+    {
+      id:'pop-62', code:'POP-ENF-62', version:'1.4', emission:'08/02/2022',
+      title:'Aspiração de TOT e TQT em ventilação mecânica — sistema aberto',
+      executantes:'Equipe de enfermagem, fisioterapia e medicina',
+      origem:'UTI',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Orientar e padronizar o procedimento de aspiração endotraqueal das vias aéreas inferiores.',
+          'Manter as vias aéreas desobstruídas.',
+          'Prevenir infecções do trato respiratório.'
+        ]},
+        {n:2,h:'Materiais e equipamentos necessários',items:[
+          'EPI (equipamentos de proteção individual) e luva estéril.',
+          'Rede de vácuo funcionante, frasco de aspiração e intermediário de látex.',
+          'Sondas de aspiração e gaze estéril.',
+          'Água destilada e soro fisiológico.',
+          'Oxímetro, copo descartável e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Descrição das atividades',items:[
+          'Organizar os materiais, encaminhar-se ao leito e testar a rede de vácuo antes de iniciar.',
+          'Higienizar as mãos (Protocolo Institucional de Higiene de Mãos) e paramentar os EPIs conforme a precaução/isolamento do paciente.',
+          'Identificar-se ao paciente e ao acompanhante, explicar o procedimento e conferir os dados (nome completo e data de nascimento) na pulseira, confirmando-os verbalmente.',
+          'Higienizar o estetoscópio com a solução desinfetante padronizada e fazer ausculta pulmonar antes do procedimento.',
+          'Abrir e testar o funcionamento do sistema de aspiração; abrir o pacote da sonda e conectá-la ao intermediário do aspirador (mantendo-a dentro do invólucro).',
+          'Setar no ventilador mecânico (VM) a <b>FiO₂ a 100%</b> ou o modo acesso rápido, para elevar o conteúdo arterial de O₂ antes do procedimento.',
+          'Calçar a luva plástica estéril na mão dominante, por cima da luva de procedimento, e retirar a sonda do pacote com a mão dominante.',
+          'Desconectar a traqueia do respirador com a mão não dominante (ou solicitar ajuda de outra pessoa), deixando a extremidade distal suspensa — sem contato com o paciente ou com as roupas de cama.',
+          'Pinçar o intermediário do vácuo ou a sonda e avisar ao paciente que irá iniciar o procedimento.',
+          'Introduzir a sonda no tubo orotraqueal, nasotraqueal ou na traqueostomia; ao perceber resistência (carina), recuá-la <b>1 a 2 cm</b> e então liberar o vácuo, com movimentos lentos de vai e vem, retirando lentamente a sonda. <b>Não ultrapassar 10 segundos</b>, pelo risco de hipoxemia.',
+          'Reconectar a traqueia ao ventilador e repetir o procedimento quantas vezes forem necessárias.',
+          'Após, realizar a aspiração naso e orofaríngea conforme o POP-ENF-60.',
+          'Desligar o sistema de vácuo e desconectar a sonda; colocar água destilada no copo descartável e lavar o intermediário de aspiração.',
+          'Proteger a ponta do látex com plástico, para posterior aspiração; recolher o que deve ser guardado e desprezar o restante no lixo apropriado.',
+          'Higienizar a bandeja com a solução desinfetante padronizada e guardá-la; higienizar as mãos e registrar o procedimento no prontuário eletrônico.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Monitorizar os sinais vitais e os sinais de desconforto respiratório antes, durante e após o procedimento.',
+          'Certificar-se de que a FiO₂ no VM retornou ao valor anterior.',
+          'Não se recomenda injetar soro fisiológico ou água destilada pelo tubo/traqueostomia, nem ambuzar o paciente, pelo possível deslocamento de bactérias do biofilme da via aérea artificial para o trato respiratório inferior. Se necessário, instilar 2 ml de solução seguida de aspiração, para facilitar a introdução da sonda, estimular a tosse e remover secreções espessas ("rolhas").',
+          'Não limpar a sonda entre as aspirações com líquidos em recipiente não estéril; caso a sonda suje, trocá-la.',
+          'O tamanho da sonda deve ser o de menor diâmetro possível para uma sucção adequada; recomenda-se a fórmula: <b>nº da sonda = (nº do TOT/TQT - 2) x 2</b>.',
+          'Recomenda-se o ajuste da pressão de vácuo em <b>80–120 mmHg</b>.',
+          'Não manter nova sonda de aspiração conectada ao látex.'
+        ],alert:'<b>Sistema aberto:</b> a desconexão do ventilador expõe a via aérea — utilize técnica asséptica e luva estéril na mão dominante, e não ultrapasse 10 segundos de aspiração, pelo risco de hipoxemia.'}
+      ],
+      pool:[
+        {q:'A principal característica do sistema ABERTO de aspiração endotraqueal é que:',
+         o:['O paciente permanece conectado ao ventilador durante a aspiração','O paciente é desconectado do ventilador para a introdução da sonda','Não há necessidade de luva estéril','Não eleva a FiO₂ antes do procedimento'],a:1},
+        {q:'Antes do procedimento, para elevar o conteúdo arterial de O₂, deve-se setar no VM:',
+         o:['A FiO₂ a 21%','A FiO₂ a 100% ou o modo acesso rápido','O modo de pressão negativa','A PEEP no valor máximo'],a:1},
+        {q:'O tempo máximo de aspiração contínua, pelo risco de hipoxemia, é de:',
+         o:['10 segundos','30 segundos','45 segundos','Sem limite definido'],a:0},
+        {q:'Ao introduzir a sonda e perceber resistência (carina), a conduta correta é:',
+         o:['Liberar o vácuo imediatamente na carina','Recuar a sonda 1 a 2 cm e só então liberar o vácuo, retirando-a lentamente','Forçar a progressão da sonda','Retirar a sonda sem aspirar'],a:1},
+        {q:'Ao desconectar a traqueia do respirador, a extremidade distal deve ficar:',
+         o:['Apoiada sobre o tórax do paciente','Suspensa, sem contato com o paciente ou com as roupas de cama','Dentro do copo de água destilada','Conectada ao intermediário do vácuo'],a:1},
+        {q:'Para manter a assepsia no sistema aberto, a luva estéril é calçada:',
+         o:['Na mão não dominante','Na mão dominante, por cima da luva de procedimento','Dispensada neste procedimento','Em ambas as mãos, sem luva de procedimento'],a:1},
+        {q:'Após a aspiração endotraqueal pelo sistema aberto, deve-se:',
+         o:['Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Manter a FiO₂ a 100% pelas próximas horas','Encerrar sem reconectar o ventilador','Instilar rotineiramente 10 ml de SF'],a:0},
+        {q:'A fórmula recomendada para o tamanho ideal da sonda de aspiração é:',
+         o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT x 3','nº da sonda = nº do TOT/TQT - 4','O maior calibre disponível'],a:0}
+      ]
     }
   ];
   return POPS;
