@@ -89,6 +89,22 @@
   .proto-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;
     color:var(--warn);background:var(--warn-soft);border-radius:20px;
     padding:3px 10px;font-weight:600;margin-top:10px}
+  .gestor-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+  .btn-report{flex:none;border:0;border-radius:11px;font-weight:700;font-size:13.5px;
+    letter-spacing:.01em;padding:11px 20px;cursor:pointer;color:#fff;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    box-shadow:0 2px 4px rgba(10,77,162,.26),0 7px 18px rgba(10,77,162,.22),
+      inset 0 1px 0 rgba(255,255,255,.22);
+    transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+  [data-theme="dark"] .btn-report{color:#0e1622}
+  .btn-report svg{width:16px;height:16px;flex:none}
+  .btn-report:hover{transform:translateY(-1px);filter:brightness(1.06);
+    box-shadow:0 4px 7px rgba(10,77,162,.30),0 12px 24px rgba(10,77,162,.28),
+      inset 0 1px 0 rgba(255,255,255,.26)}
+  .btn-report:active{transform:translateY(0);
+    box-shadow:0 1px 3px rgba(10,77,162,.32),inset 0 1px 2px rgba(0,0,0,.14)}
+  .btn-report:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 
   /* ---- progress summary ---- */
   .mybar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
@@ -112,9 +128,20 @@
   .cert-banner .tx{flex:1;min-width:200px}
   .cert-banner b{font-size:15px}
   .cert-banner p{margin:2px 0 0;font-size:13px;color:var(--muted)}
-  .btn-gold{border:0;border-radius:9px;font-weight:700;font-size:13.5px;padding:10px 18px;
-    background:var(--gold);color:#fff;transition:.15s}
-  .btn-gold:hover{filter:brightness(1.08)}
+  .btn-gold{position:relative;border:0;border-radius:11px;font-weight:700;font-size:13.5px;
+    letter-spacing:.01em;padding:11px 20px;cursor:pointer;color:#fff;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,#d8a830,#b98a1d 52%,#9a6f12);
+    box-shadow:0 2px 4px rgba(140,103,20,.28),0 7px 18px rgba(140,103,20,.24),
+      inset 0 1px 0 rgba(255,255,255,.30);
+    transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+  .btn-gold svg{width:16px;height:16px;flex:none}
+  .btn-gold:hover{transform:translateY(-1px);filter:brightness(1.05);
+    box-shadow:0 4px 7px rgba(140,103,20,.30),0 12px 24px rgba(140,103,20,.30),
+      inset 0 1px 0 rgba(255,255,255,.34)}
+  .btn-gold:active{transform:translateY(0);
+    box-shadow:0 1px 3px rgba(140,103,20,.32),inset 0 1px 2px rgba(0,0,0,.14)}
+  .btn-gold:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
   /* ---- pop cards ---- */
   .grid{display:grid;gap:14px}
@@ -458,6 +485,8 @@ function logoFail(img){ const c=img.closest('.logo-chip'); if(c) c.classList.add
 const QUIZ_SIZE = 5;     // questões sorteadas por tentativa
 const PASS_MIN  = 3;     // acertos mínimos para aprovação
 const QTIME     = 60;    // segundos por questão
+const ICON_CERT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.6 7 22l5-3 5 3-1.5-9.4"/></svg>`;
+const ICON_REPORT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg>`;
 
 const db = { pops: window.POPS };
 
@@ -689,7 +718,7 @@ function renderColabList(){
       <div class="medal">🏅</div>
       <div class="tx"><b>Parabéns, ${session.nome.split(' ')[0]}! Trilha concluída.</b>
         <p>Você foi aprovado em todos os ${pr.total} POPs. Seu certificado está disponível.</p></div>
-      <button class="btn-gold" onclick="goCert()">Ver certificado</button>
+      <button class="btn-gold" onclick="goCert()">${ICON_CERT}Ver certificado</button>
     </div>`:'';
   const hello = pr.done===0
     ? `Comece sua trilha: leia o primeiro POP e faça a avaliação.`
@@ -847,7 +876,7 @@ function renderResult(){
   const p=pop(activePop), r=lastResult;
   const rc=r.passed?'var(--success)':'var(--danger)';
   const certCTA=(r.passed&&allDone())?
-    `<button class="btn-gold" onclick="goCert()">🏅 Ver meu certificado</button>`:'';
+    `<button class="btn-gold" onclick="goCert()">${ICON_CERT}Ver meu certificado</button>`:'';
   const check=r.passed?`
     <svg class="checkmark" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/>
       <path d="M15 27l8 8 15-17"/></svg>`:'';
@@ -972,9 +1001,12 @@ function renderGestor(){
   }).join('');
 
   return `
-    <div class="pagehead fade-up">
-      <h2>Painel do gestor</h2>
-      <p>Acompanhamento de leitura e avaliação dos POPs por colaborador. Aprovação: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos em questões sorteadas.</p>
+    <div class="pagehead gestor-head fade-up">
+      <div>
+        <h2>Painel do gestor</h2>
+        <p>Acompanhamento de leitura e avaliação dos POPs por colaborador. Aprovação: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos em questões sorteadas.</p>
+      </div>
+      <button class="btn-report no-print" onclick="generateReport()">${ICON_REPORT}Gerar relatório completo</button>
     </div>
     <div class="kpis">
       <div class="kpi"><div class="v">${colabs.length}</div><div class="l">Colaboradores</div></div>
@@ -993,6 +1025,159 @@ function renderGestor(){
       <div class="panel-head"><h3>Conclusão por POP</h3><span>aprovados / total</span></div>
       <div>${perpop}</div>
     </div>`;
+}
+
+/* ---------- relatório completo (gestor) ---------- */
+function generateReport(){
+  const colabs = colaboradoresGestor;
+  const res = resultadosGestor;
+  const byKey = {};
+  res.forEach(r=>{ byKey[r.matricula+'|'+r.pop_id]=r; });
+  const now = new Date();
+  const stamp = now.toLocaleDateString('pt-BR') + ' às ' + now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+
+  // métricas globais
+  const totalPops = db.pops.length;
+  const totalCells = colabs.length*totalPops;
+  const aprovacoes = res.filter(r=>r.status==='aprovado').length;
+  const overall = totalCells?Math.round(aprovacoes/totalCells*100):0;
+  const isCertified = col=>{
+    const aprov=new Set(res.filter(r=>r.matricula===col.matricula&&r.status==='aprovado').map(r=>r.pop_id));
+    return totalPops>0 && db.pops.every(p=>aprov.has(p.id));
+  };
+  const certified = colabs.filter(isCertified).length;
+  const pendings = Math.max(0, totalCells - aprovacoes);
+
+  const stColor = {pass:'#1a8f54',fail:'#d3202a',pending:'#90a3b3'};
+  const stLabel = {pass:'Aprovado',fail:'Refazer',pending:'Pendente'};
+
+  // tabela por colaborador
+  const userRows = colabs.map(col=>{
+    let done=0;
+    const cells = db.pops.map(p=>{
+      const r = byKey[col.matricula+'|'+p.id];
+      let k='pending';
+      if(r){ k = r.status==='aprovado' ? 'pass' : 'fail'; if(k==='pass') done++; }
+      const extra = r ? `<small>${r.acertos}/${r.total}</small>` : '';
+      return `<td class="st"><span class="tag" style="color:${stColor[k]};border-color:${stColor[k]}33;background:${stColor[k]}14">${stLabel[k]}</span>${extra}</td>`;
+    }).join('');
+    const pct = totalPops?Math.round(done/totalPops*100):0;
+    const cert = isCertified(col)?'<span class="yes">✔ Sim</span>':'<span class="no">—</span>';
+    return `<tr>
+      <td class="nm"><b>${col.nome}</b><small>mat. ${col.matricula}</small></td>
+      <td class="em">${col.setor||'—'}</td>
+      ${cells}
+      <td class="pc"><b>${pct}%</b><small>${done}/${totalPops}</small></td>
+      <td class="ct">${cert}</td>
+    </tr>`;
+  }).join('');
+
+  // tabela por POP
+  const popRows = db.pops.map(p=>{
+    const done = res.filter(r=>r.pop_id===p.id&&r.status==='aprovado').length;
+    const pct = colabs.length?Math.round(done/colabs.length*100):0;
+    return `<tr>
+      <td class="mono">${p.code}</td>
+      <td><b>${p.title}</b></td>
+      <td class="cc">v${p.version}</td>
+      <td class="cc">${done}/${colabs.length}</td>
+      <td class="cc"><b>${pct}%</b></td>
+    </tr>`;
+  }).join('');
+
+  const certList = colabs.filter(isCertified)
+    .map(c=>`<li><b>${c.nome}</b>${c.setor?` · ${c.setor}`:''}${c.matricula?` · mat. ${c.matricula}`:''}</li>`).join('')
+    || '<li class="muted">Nenhum colaborador concluiu todos os POPs até o momento.</li>';
+
+  const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+  <title>Relatório de Conclusão · Hospital Nereu Ramos</title>
+  <style>
+    *{box-sizing:border-box}
+    body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1b2733;margin:0;padding:32px 36px;background:#fff;font-size:13px;line-height:1.5}
+    .head{display:flex;align-items:center;gap:16px;border-bottom:3px solid #0a4da2;padding-bottom:18px;margin-bottom:8px}
+    .head img{width:54px;height:54px;object-fit:contain}
+    .head h1{font-size:19px;margin:0;color:#063a7a}
+    .head .eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#5a6b7b;margin-bottom:3px}
+    .head .meta{margin-left:auto;text-align:right;font-size:11px;color:#5a6b7b;line-height:1.6}
+    h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#0a4da2;margin:26px 0 10px;border-bottom:1px solid #dde7f1;padding-bottom:6px}
+    .kpis{display:flex;gap:12px;margin-top:18px}
+    .kpi{flex:1;border:1px solid #dde7f1;border-radius:10px;padding:12px 14px;text-align:center;background:#f7fafd}
+    .kpi .v{font-size:24px;font-weight:800;color:#0a4da2}
+    .kpi .l{font-size:10.5px;color:#5a6b7b;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+    table{width:100%;border-collapse:collapse;font-size:11.5px}
+    th{background:#0a4da2;color:#fff;text-align:left;padding:7px 8px;font-size:10px;text-transform:uppercase;letter-spacing:.03em;font-weight:700}
+    td{padding:7px 8px;border-bottom:1px solid #e7eef6;vertical-align:middle}
+    tr:nth-child(even) td{background:#f7fafd}
+    td.nm b{display:block}td.nm small,td.pc small,td.em{color:#5a6b7b}
+    td.nm small{font-size:10px}
+    td.st{text-align:center;white-space:nowrap}
+    td.st small{display:block;color:#90a3b3;font-size:9.5px;margin-top:2px}
+    .tag{display:inline-block;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;border:1px solid}
+    td.pc{text-align:center}td.pc small{display:block;font-size:9.5px}
+    td.ct{text-align:center}.yes{color:#1a8f54;font-weight:700}.no{color:#90a3b3}
+    td.cc{text-align:center}.mono{font-family:'Consolas',monospace;font-size:10.5px;color:#0a4da2;font-weight:700}
+    .scroll{overflow-x:auto}
+    ul.cert{margin:6px 0 0;padding-left:18px}ul.cert li{margin:3px 0}.muted{color:#90a3b3;list-style:none;margin-left:-18px}
+    .foot{margin-top:40px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+    .sign{text-align:center;min-width:230px}.sign .ln{border-top:1px solid #1b2733;margin-bottom:6px}
+    .sign b{display:block;font-size:12px}.sign small{color:#5a6b7b;font-size:10.5px}
+    .disc{font-size:10px;color:#90a3b3;max-width:340px}
+    .toolbar{position:sticky;top:0;background:#0a4da2;color:#fff;padding:10px 14px;border-radius:8px;margin-bottom:20px;display:flex;gap:10px;align-items:center}
+    .toolbar b{flex:1}
+    .toolbar button{font:inherit;font-size:12.5px;font-weight:700;border:0;border-radius:7px;padding:8px 16px;cursor:pointer}
+    .toolbar .print{background:#fff;color:#0a4da2}.toolbar .close{background:rgba(255,255,255,.18);color:#fff}
+    @media print{.toolbar{display:none}body{padding:0}@page{margin:14mm}}
+  </style></head><body>
+    <div class="toolbar no-print">
+      <b>Relatório pronto — use “Imprimir / Salvar PDF”.</b>
+      <button class="print" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+      <button class="close" onclick="window.close()">Fechar</button>
+    </div>
+    <div class="head">
+      <img src="${LOGO()}" alt="HNR">
+      <div>
+        <div class="eyebrow">Hospital Nereu Ramos · Educação Continuada</div>
+        <h1>Relatório de Conclusão — Programa de POPs de Enfermagem</h1>
+      </div>
+      <div class="meta">
+        <div>Emitido em <b>${stamp}</b></div>
+        <div>Responsável: <b>Educação Continuada</b></div>
+        <div>Critério de aprovação: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos</div>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="v">${overall}%</div><div class="l">Conclusão geral</div></div>
+      <div class="kpi"><div class="v">${colabs.length}</div><div class="l">Colaboradores</div></div>
+      <div class="kpi"><div class="v">${certified}</div><div class="l">Certificados</div></div>
+      <div class="kpi"><div class="v">${pendings}</div><div class="l">Pendências</div></div>
+      <div class="kpi"><div class="v">${totalPops}</div><div class="l">POPs ativos</div></div>
+    </div>
+
+    <h2 class="sec">Situação por colaborador</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Colaborador</th><th>Setor</th>${db.pops.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th>Progresso</th><th>Certificado</th></tr></thead>
+      <tbody>${userRows||`<tr><td colspan="${totalPops+4}" style="text-align:center;color:#90a3b3;padding:18px">Nenhum colaborador cadastrado.</td></tr>`}</tbody>
+    </table></div>
+
+    <h2 class="sec">Conclusão por POP</h2>
+    <table>
+      <thead><tr><th>Código</th><th>Procedimento</th><th>Versão</th><th>Aprovados</th><th>%</th></tr></thead>
+      <tbody>${popRows}</tbody>
+    </table>
+
+    <h2 class="sec">Colaboradores certificados (${certified})</h2>
+    <ul class="cert">${certList}</ul>
+
+    <div class="foot">
+      <div class="disc">Documento gerado automaticamente pelo sistema de POPs do Hospital Nereu Ramos. Dados referentes à data/hora de emissão.</div>
+      <div class="sign"><div class="ln"></div><b>Educação Continuada</b><small>Educação Continuada · Hospital Nereu Ramos</small></div>
+    </div>
+  </body></html>`;
+
+  const w = window.open('', '_blank');
+  if(!w){ alert('Permita pop-ups para gerar o relatório.'); return; }
+  w.document.open(); w.document.write(html); w.document.close();
 }
 
 /* ---------- main render ---------- */
