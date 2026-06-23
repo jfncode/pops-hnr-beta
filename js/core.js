@@ -18,8 +18,13 @@
   // Sorteia n questões do pool e embaralha as alternativas, recalculando o
   // índice da correta. O gabarito (índice) fica no objeto retornado — correção
   // é no cliente (ver spec).
-  function drawQuiz(pool, n) {
-    return sample(pool, n).map((q) => {
+  function drawQuiz(pool, n, minD) {
+    // Sorteia questões com dificuldade >= minD (padrão 2 = média). A etapa 2
+    // usa minD=3 (somente alta). Nunca sorteia questões fáceis (d<2).
+    const floor = Math.max(2, minD || 2);
+    let eligible = pool.filter((q) => (q.d == null ? 2 : q.d) >= floor);
+    if (eligible.length < n) eligible = pool.filter((q) => (q.d == null ? 2 : q.d) >= 2);
+    return sample(eligible, n).map((q) => {
       const order = shuffle(q.o.map((t, i) => ({ t, ok: i === q.a })));
       return { q: q.q, o: order.map((x) => x.t), a: order.findIndex((x) => x.ok) };
     });

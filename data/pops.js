@@ -8,6 +8,8 @@
       title:'Preparo e administração de medicações por via endovenosa',
       executantes:'Técnico de Enfermagem e Enfermeiro',
       origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Padronizar e normatizar as ações de enfermagem frente à administração de medicamentos por via endovenosa.',
@@ -59,21 +61,21 @@
       ],
       pool:[
         {q:'Durante a administração, o técnico percebe que o antibiótico prescrito é incompatível com a solução que já está sendo infundida no mesmo acesso. Qual dos 13 certos está em jogo e qual a conduta correta?',
-         o:['Dose certa — reduzir a velocidade de infusão do antibiótico','Compatibilidade certa — fechar a válvula de controle do fluxo da outra solução, se necessário, antes de administrar','Horário certo — aguardar o término da solução e administrar no próximo horário sem comunicar','Via certa — trocar a administração para via oral'],a:1},
+         o:['Dose certa — reduzir a velocidade de infusão do antibiótico','Compatibilidade certa — fechar a válvula de controle do fluxo da outra solução, se necessário, antes de administrar','Horário certo — aguardar o término da solução e administrar no próximo horário sem comunicar','Via certa — trocar a administração para via oral'],a:1,d:3},
         {q:'Sobre o uso de agulhas no preparo, a sequência correta é:',
-         o:['Aspirar com 25x7 e administrar com 40x12','Aspirar e administrar com a mesma agulha 40x12, desde que desinfetada','Aspirar com 40x12 e trocar pela agulha 25x7 ou 25x8 para administrar','Aspirar com 13x4,5 e administrar com 40x12'],a:2},
+         o:['Aspirar com 25x7 e administrar com 40x12','Aspirar e administrar com a mesma agulha 40x12, desde que desinfetada','Aspirar com 40x12 e trocar pela agulha 25x7 ou 25x8 para administrar','Aspirar com 13x4,5 e administrar com 40x12'],a:2,d:2},
         {q:'No preparo a partir de frasco-ampola, a conduta correta antes da aspiração é:',
-         o:['Retirar a proteção metálica com a mão e aspirar imediatamente','Retirar a proteção metálica com auxílio de algodão ou extrator de grampos e fazer a desinfecção do local com álcool 70%','Aquecer o frasco para facilitar a reconstituição','Perfurar a tampa sem desinfecção, pois o conteúdo é estéril'],a:1},
+         o:['Retirar a proteção metálica com a mão e aspirar imediatamente','Retirar a proteção metálica com auxílio de algodão ou extrator de grampos e fazer a desinfecção do local com álcool 70%','Aquecer o frasco para facilitar a reconstituição','Perfurar a tampa sem desinfecção, pois o conteúdo é estéril'],a:1,d:2},
         {q:'O paciente recusa a medicação do horário. A conduta correta do técnico é:',
-         o:['Registrar como administrado para não gerar pendência','Insistir até o paciente aceitar','Desprezar a dose e aguardar o próximo horário, sem registro','Comunicar o enfermeiro e registrar a recusa no prontuário eletrônico'],a:3},
+         o:['Registrar como administrado para não gerar pendência','Insistir até o paciente aceitar','Desprezar a dose e aguardar o próximo horário, sem registro','Comunicar o enfermeiro e registrar a recusa no prontuário eletrônico'],a:3,d:2},
         {q:'Durante uma infusão EV, o paciente apresenta calafrios intensos, sudorese, pele fria e hipotensão. Esse quadro sugere:',
-         o:['Resposta terapêutica esperada do medicamento','Reação pirogênica ou bacteriana — observar e comunicar','Ansiedade do paciente, sem relevância clínica','Sinal de acesso obstruído'],a:1},
+         o:['Resposta terapêutica esperada do medicamento','Reação pirogênica ou bacteriana — observar e comunicar','Ansiedade do paciente, sem relevância clínica','Sinal de acesso obstruído'],a:1,d:3},
         {q:'Segundo o POP, o rótulo da medicação deve ser conferido obrigatoriamente:',
-         o:['Apenas no momento de retirar o frasco da gaveta','Apenas antes de aspirar o medicamento','Antes de retirar da gaveta, antes de aspirar e antes de recolocar no armário','Somente na dupla checagem com o enfermeiro'],a:2},
+         o:['Apenas no momento de retirar o frasco da gaveta','Apenas antes de aspirar o medicamento','Antes de retirar da gaveta, antes de aspirar e antes de recolocar no armário','Somente na dupla checagem com o enfermeiro'],a:2,d:2},
         {q:'Na organização da bandeja de medicações, é correto afirmar:',
-         o:['Medicações de até dois pacientes podem dividir a bandeja, se identificadas','A bandeja deve ser individual por paciente, com copo descartável e algodão/gaze com álcool 70%','A bandeja dispensa desinfecção se for de uso exclusivo do setor','As medicações de todos os leitos do quarto vão juntas para otimizar o tempo'],a:1},
+         o:['Medicações de até dois pacientes podem dividir a bandeja, se identificadas','A bandeja deve ser individual por paciente, com copo descartável e algodão/gaze com álcool 70%','A bandeja dispensa desinfecção se for de uso exclusivo do setor','As medicações de todos os leitos do quarto vão juntas para otimizar o tempo'],a:1,d:2},
         {q:'Para a infusão de hemocomponentes, o POP-ENF-21 orienta:',
-         o:['Seguir as recomendações descritas no POP-ENF-50','Aplicar as mesmas regras de qualquer medicação EV','Administrar somente em bomba de infusão, sem outro requisito','Diluir o hemocomponente conforme o guia de diluição'],a:0}
+         o:['Seguir as recomendações descritas no POP-ENF-50','Aplicar as mesmas regras de qualquer medicação EV','Administrar somente em bomba de infusão, sem outro requisito','Diluir o hemocomponente conforme o guia de diluição'],a:0,d:2}
       ]
     },
 
@@ -82,6 +84,8 @@
       title:'Cuidados de enfermagem com dreno de tórax',
       executantes:'Enfermeiros e Técnicos de Enfermagem',
       origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:2,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Evitar infecções do sítio cirúrgico.',
@@ -120,21 +124,21 @@
       ],
       pool:[
         {q:'Durante o transporte do paciente para um exame, a conduta correta com o sistema de drenagem é:',
-         o:['Clampear o dreno para evitar refluxo durante o trajeto','Não clampear e manter o frasco coletor sempre abaixo do ponto de inserção','Elevar o frasco ao nível do tórax para facilitar a oscilação','Desconectar temporariamente o circuito'],a:1},
+         o:['Clampear o dreno para evitar refluxo durante o trajeto','Não clampear e manter o frasco coletor sempre abaixo do ponto de inserção','Elevar o frasco ao nível do tórax para facilitar a oscilação','Desconectar temporariamente o circuito'],a:1,d:3},
         {q:'Na mensuração do débito do dreno, o profissional deve:',
-         o:['Anotar o volume total do frasco graduado','Desconsiderar os 500 ml referentes ao selo d\u2019água e anotar o restante','Somar 500 ml ao volume observado','Considerar apenas o volume drenado nas últimas 2 horas'],a:1},
+         o:['Anotar o volume total do frasco graduado','Desconsiderar os 500 ml referentes ao selo d\u2019água e anotar o restante','Somar 500 ml ao volume observado','Considerar apenas o volume drenado nas últimas 2 horas'],a:1,d:3},
         {q:'O dreno saiu acidentalmente durante a mobilização do paciente. A sequência correta é:',
-         o:['Reintroduzir o dreno e comunicar na passagem de plantão','Comunicar o médico imediatamente e ocluir a ferida com curativo compressivo até a reavaliação','Clampear o dreno com pinça sem dente e aguardar','Lavar o local com SF 0,9% e aguardar o próximo curativo'],a:1},
+         o:['Reintroduzir o dreno e comunicar na passagem de plantão','Comunicar o médico imediatamente e ocluir a ferida com curativo compressivo até a reavaliação','Clampear o dreno com pinça sem dente e aguardar','Lavar o local com SF 0,9% e aguardar o próximo curativo'],a:1,d:3},
         {q:'Houve desconexão acidental do circuito do dreno. Além de comunicar o médico, a conduta inclui:',
-         o:['Reconectar imediatamente o mesmo circuito para não perder a pressão','Clampear com pinça sem dente, higienizar a extremidade com álcool 70% e reconectar acompanhado do médico','Ocluir o dreno com gaze e esparadrapo até o dia seguinte','Trocar o selo d\u2019água e religar a aspiração'],a:1},
+         o:['Reconectar imediatamente o mesmo circuito para não perder a pressão','Clampear com pinça sem dente, higienizar a extremidade com álcool 70% e reconectar acompanhado do médico','Ocluir o dreno com gaze e esparadrapo até o dia seguinte','Trocar o selo d\u2019água e religar a aspiração'],a:1,d:3},
         {q:'Na montagem com regulador de vácuo, o nível de água destilada deve atingir:',
-         o:['10 cm de H₂O','20 cm de H₂O (ou conforme prescrição médica)','50 cm de H₂O','O nível não interfere na aspiração'],a:1},
+         o:['10 cm de H₂O','20 cm de H₂O (ou conforme prescrição médica)','50 cm de H₂O','O nível não interfere na aspiração'],a:1,d:3},
         {q:'No sistema com rede de vácuo padrão (frascos A e B), é correto afirmar:',
-         o:['O respiro subaquático do frasco B deve ficar ocluído','O frasco A recebe 1500 ml de SF e o frasco B conecta ao paciente','O respiro subaquático do frasco B deve ficar aberto para a atmosfera','Os dois frascos devem ficar acima do tórax do paciente'],a:2},
+         o:['O respiro subaquático do frasco B deve ficar ocluído','O frasco A recebe 1500 ml de SF e o frasco B conecta ao paciente','O respiro subaquático do frasco B deve ficar aberto para a atmosfera','Os dois frascos devem ficar acima do tórax do paciente'],a:2,d:3},
         {q:'Segundo a CTLN/COFEN, os cuidados com dreno de tórax competem:',
-         o:['A qualquer membro da equipe de enfermagem, indistintamente','Somente a Enfermeiros, podendo ser auxiliados por Técnicos mediante a SAE','Exclusivamente à equipe médica','Somente a Técnicos de Enfermagem treinados'],a:1},
+         o:['A qualquer membro da equipe de enfermagem, indistintamente','Somente a Enfermeiros, podendo ser auxiliados por Técnicos mediante a SAE','Exclusivamente à equipe médica','Somente a Técnicos de Enfermagem treinados'],a:1,d:3},
         {q:'A troca do selo d\u2019água é realizada diariamente às 06h e, adicionalmente, sempre que:',
-         o:['O paciente referir dor','A drenagem atingir 1500 ml','A oscilação do fluido estiver presente','Completar 12 horas da última troca'],a:1}
+         o:['O paciente referir dor','A drenagem atingir 1500 ml','A oscilação do fluido estiver presente','Completar 12 horas da última troca'],a:1,d:3}
       ]
     },
 
@@ -143,6 +147,8 @@
       title:'Punção Venosa Periférica',
       executantes:'Auxiliar de Enfermagem, Técnico de Enfermagem e Enfermeiro',
       origem:'Todas as Unidades de Atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Fornecer via de acesso venoso para administrar sangue e hemoderivados, líquidos, eletrólitos, contraste, nutrientes e medicamentos.',
@@ -188,21 +194,21 @@
       ],
       pool:[
         {q:'Ao garrotear o membro para a punção, o tempo máximo de permanência do torniquete é:',
-         o:['30 segundos','60 segundos','2 minutos','Até localizar a veia, sem limite'],a:1},
+         o:['30 segundos','60 segundos','2 minutos','Até localizar a veia, sem limite'],a:1,d:2},
         {q:'A antissepsia da pele antes da punção venosa periférica é feita com:',
-         o:['Álcool 70%','Clorexidina alcoólica 0,5%, do centro para fora','Iodopovidona degermante','SF 0,9% com gaze estéril'],a:1},
+         o:['Álcool 70%','Clorexidina alcoólica 0,5%, do centro para fora','Iodopovidona degermante','SF 0,9% com gaze estéril'],a:1,d:2},
         {q:'Após a segunda tentativa de punção malsucedida, a conduta preconizada é:',
-         o:['Tentar uma terceira vez em veia mais calibrosa','Solicitar ajuda a outro profissional','Usar o mesmo cateter em outro local','Puncionar a veia jugular externa'],a:1},
+         o:['Tentar uma terceira vez em veia mais calibrosa','Solicitar ajuda a outro profissional','Usar o mesmo cateter em outro local','Puncionar a veia jugular externa'],a:1,d:2},
         {q:'Durante a infusão, o paciente relata dor no local e não há retorno venoso. A conduta correta é:',
-         o:['Reduzir o gotejamento e observar','Reposicionar a agulha dentro do mesmo cateter','Retirar o cateter e realizar nova punção em outra veia','Aplicar compressa morna e manter a infusão'],a:2},
+         o:['Reduzir o gotejamento e observar','Reposicionar a agulha dentro do mesmo cateter','Retirar o cateter e realizar nova punção em outra veia','Aplicar compressa morna e manter a infusão'],a:2,d:3},
         {q:'Sobre a troca da cobertura do cateter, é correto:',
-         o:['Película transparente estéril: não trocar antes de 96h; micropore: a cada 72h','Película transparente: a cada 24h; micropore: a cada 48h','Ambas as coberturas: troca diária','A cobertura só é trocada na retirada do cateter'],a:0},
+         o:['Película transparente estéril: não trocar antes de 96h; micropore: a cada 72h','Película transparente: a cada 24h; micropore: a cada 48h','Ambas as coberturas: troca diária','A cobertura só é trocada na retirada do cateter'],a:0,d:3},
         {q:'Quanto à troca de equipos, o intervalo correto é:',
-         o:['Contínuo: 24h · intermitente: 12h · lipídica: 6h','Contínuo: não inferior a 96h · intermitente: 24h · lipídica: 12h','Todos os equipos: troca a cada 72h','Contínuo: 48h · intermitente: 96h · lipídica: 24h'],a:1},
+         o:['Contínuo: 24h · intermitente: 12h · lipídica: 6h','Contínuo: não inferior a 96h · intermitente: 24h · lipídica: 12h','Todos os equipos: troca a cada 72h','Contínuo: 48h · intermitente: 96h · lipídica: 24h'],a:1,d:3},
         {q:'É contraindicação para escolha do local de punção venosa periférica:',
-         o:['Braço não dominante','Veias do dorso da mão','Membro homolateral à mastectomia ou com fístula artério-venosa','Veia cefálica do antebraço'],a:2},
+         o:['Braço não dominante','Veias do dorso da mão','Membro homolateral à mastectomia ou com fístula artério-venosa','Veia cefálica do antebraço'],a:2,d:2},
         {q:'Por que a agulha NÃO deve ser reintroduzida no cateter após o recuo do mandril?',
-         o:['Porque prolonga o tempo do procedimento','Pelo risco de fragmentação do cateter e embolia','Porque compromete a esterilidade da agulha','Porque dificulta a fixação do curativo'],a:1}
+         o:['Porque prolonga o tempo do procedimento','Pelo risco de fragmentação do cateter e embolia','Porque compromete a esterilidade da agulha','Porque dificulta a fixação do curativo'],a:1,d:3}
       ]
     },
 
@@ -211,6 +217,8 @@
       title:'Verificação de Sinais Vitais',
       executantes:'Equipe de Enfermagem',
       origem:'Unidades de internação e ambulatório',
+      setores:['assistencial','uti','ambulatorio'],
+      etapa:1,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Avaliar as funções vitais e padronizar a rotina de verificação, garantindo a segurança do paciente.',
@@ -279,24 +287,24 @@
         ]}
       ],
       pool:[
-        {q:'Paciente adulto com temperatura axilar de 37,5 °C é classificado como:',
-         o:['Afebril','Subfebril','Febre moderada','Febre alta'],a:1},
+        {q:'Paciente adulto evolui com temperatura axilar de 38,5 °C fora do horário de rotina. A classificação e a conduta corretas são:',
+         o:['Subfebril — apenas reaferir em 6 horas','Febre moderada — comunicar o enfermeiro e medicar conforme prescrição','Febre alta — medicar imediatamente sem comunicar','Afebril — nenhuma conduta necessária'],a:1,d:2},
         {q:'Na aferição da PA, identifica-se a pressão sistólica e a diastólica, respectivamente:',
-         o:['Fase V e fase I de Korotkoff','Primeiro som auscultado (fase I) e desaparecimento do som (fase V)','Início da insuflação e abertura da válvula','Desaparecimento do pulso radial e retorno do pulso'],a:1},
+         o:['Fase V e fase I de Korotkoff','Primeiro som auscultado (fase I) e desaparecimento do som (fase V)','Início da insuflação e abertura da válvula','Desaparecimento do pulso radial e retorno do pulso'],a:1,d:2},
         {q:'PA aferida de 150 x 95 mmHg em adulto corresponde a:',
-         o:['Pré-hipertensão','Hipertensão estágio I','Hipertensão estágio II','PA normal para idosos'],a:1},
+         o:['Pré-hipertensão','Hipertensão estágio I','Hipertensão estágio II','PA normal para idosos'],a:1,d:2},
         {q:'Por que a FR é contada com a mão no pulso radial do paciente, "como se fosse controlar o pulso"?',
-         o:['Para aferir FC e FR simultaneamente com mais precisão','Para disfarçar a contagem, evitando que o paciente altere voluntariamente o padrão respiratório','Para estabilizar o braço e facilitar a visualização','Porque a FR só pode ser aferida com contato físico'],a:1},
+         o:['Para aferir FC e FR simultaneamente com mais precisão','Para disfarçar a contagem, evitando que o paciente altere voluntariamente o padrão respiratório','Para estabilizar o braço e facilitar a visualização','Porque a FR só pode ser aferida com contato físico'],a:1,d:3},
         {q:'A ausculta do pulso apical é realizada em qual referência anatômica?',
-         o:['2º espaço intercostal direito, linha paraesternal','5º espaço intercostal esquerdo, linha hemiclavicular','4º espaço intercostal esquerdo, linha axilar anterior','Fúrcula esternal'],a:1},
+         o:['2º espaço intercostal direito, linha paraesternal','5º espaço intercostal esquerdo, linha hemiclavicular','4º espaço intercostal esquerdo, linha axilar anterior','Fúrcula esternal'],a:1,d:2},
         {q:'São valores normais para um adulto em repouso:',
-         o:['FR 12–20 mrpm e FC 60–100 bpm','FR 16–28 mrpm e FC 50–80 bpm','FR 20–30 mrpm e FC 90–140 bpm','FR 8–12 mrpm e FC 100–120 bpm'],a:0},
+         o:['FR 12–20 mrpm e FC 60–100 bpm','FR 16–28 mrpm e FC 50–80 bpm','FR 20–30 mrpm e FC 90–140 bpm','FR 8–12 mrpm e FC 100–120 bpm'],a:0,d:2},
         {q:'Além dos horários de rotina (07h30, 13h30, 19h30 e a cada 6h), os sinais vitais devem ser obrigatoriamente verificados:',
-         o:['Somente se o paciente solicitar','Após administração de anti-hipertensivos, antitérmicos, betabloqueadores e antiarrítmicos','Apenas em pacientes em precaução de contato','A cada visita do acompanhante'],a:1},
+         o:['Somente se o paciente solicitar','Após administração de anti-hipertensivos, antitérmicos, betabloqueadores e antiarrítmicos','Apenas em pacientes em precaução de contato','A cada visita do acompanhante'],a:1,d:2},
         {q:'Antes de aferir a PA, deve-se controlar fatores que elevam artificialmente a leitura. São exemplos:',
-         o:['Jejum prolongado e sono','Bexiga cheia, dor, ansiedade e esforço físico','Uso de antitérmico na última hora','Posição supina e braço apoiado'],a:1},
+         o:['Jejum prolongado e sono','Bexiga cheia, dor, ansiedade e esforço físico','Uso de antitérmico na última hora','Posição supina e braço apoiado'],a:1,d:2},
         {q:'Sobre a Escala Visual Analógica (EVA), é correto afirmar:',
-         o:['É uma régua numerada de 0 a 10','É uma régua de 10 cm sem graduações, entre "nenhuma dor" e "a pior dor possível"','Utiliza descritores verbais como leve e severa','É aplicável somente em pediatria'],a:1}
+         o:['É uma régua numerada de 0 a 10','É uma régua de 10 cm sem graduações, entre "nenhuma dor" e "a pior dor possível"','Utiliza descritores verbais como leve e severa','É aplicável somente em pediatria'],a:1,d:2}
       ]
     },
 
@@ -305,6 +313,8 @@
       title:'Aspiração de TOT e TQT em ventilação mecânica — sistema fechado',
       executantes:'Equipe de enfermagem, fisioterapia e medicina',
       origem:'UTI',
+      setores:['uti'],
+      etapa:2,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Remover secreções traqueais de pacientes mecanicamente ventilados que não devem ser desconectados do ventilador mecânico (VM).'
@@ -341,21 +351,21 @@
       ],
       pool:[
         {q:'O sistema fechado de aspiração é indicado, entre outras situações, quando:',
-         o:['O PEEP estiver acima de 10 cmH₂O e/ou a FiO₂ for ≥ 60%, ou houver precaução por aerossóis','O paciente estiver em ar ambiente, sem ventilação mecânica','A secreção for escassa e fluida','Não houver risco de hipoxemia'],a:0},
+         o:['O PEEP estiver acima de 10 cmH₂O e/ou a FiO₂ for ≥ 60%, ou houver precaução por aerossóis','O paciente estiver em ar ambiente, sem ventilação mecânica','A secreção for escassa e fluida','Não houver risco de hipoxemia'],a:0,d:3},
         {q:'O tempo máximo de aspiração contínua, pelo risco de hipoxemia, é de:',
-         o:['30 segundos','20 segundos','10 segundos','Não há limite, até remover toda a secreção'],a:2},
+         o:['30 segundos','20 segundos','10 segundos','Não há limite, até remover toda a secreção'],a:2,d:3},
         {q:'Ao introduzir a sonda e perceber resistência (carina), a conduta correta é:',
-         o:['Forçar a progressão da sonda até vencer a resistência','Recuar a sonda 1 a 2 cm e só então liberar o vácuo, retirando-a lentamente','Liberar o vácuo imediatamente na carina, sem recuar','Retirar a sonda e reiniciar com outra de maior calibre'],a:1},
+         o:['Forçar a progressão da sonda até vencer a resistência','Recuar a sonda 1 a 2 cm e só então liberar o vácuo, retirando-a lentamente','Liberar o vácuo imediatamente na carina, sem recuar','Retirar a sonda e reiniciar com outra de maior calibre'],a:1,d:3},
         {q:'Antes do procedimento, para elevar o conteúdo arterial de O₂, deve-se:',
-         o:['Reduzir a FiO₂ para 21%','Setar a FiO₂ a 100% (ou modo aspiração, se disponível)','Desligar o ventilador mecânico','Hiperinsuflar manualmente com o ambú'],a:1},
+         o:['Reduzir a FiO₂ para 21%','Setar a FiO₂ a 100% (ou modo aspiração, se disponível)','Desligar o ventilador mecânico','Hiperinsuflar manualmente com o ambú'],a:1,d:3},
         {q:'Sobre a instilação de soro fisiológico pelo tubo/traqueostomia, o POP orienta:',
-         o:['Instilar rotineiramente 10 ml antes de cada aspiração','Não é recomendada de rotina; se necessário, instilar apenas 2 ml seguida de aspiração','Substituir a aspiração pela instilação contínua','Ambuzar o paciente após cada instilação'],a:1},
+         o:['Instilar rotineiramente 10 ml antes de cada aspiração','Não é recomendada de rotina; se necessário, instilar apenas 2 ml seguida de aspiração','Substituir a aspiração pela instilação contínua','Ambuzar o paciente após cada instilação'],a:1,d:3},
         {q:'A lavagem da sonda entre as aspirações e ao final é feita com:',
-         o:['Seringa de 20 ml com água destilada ou solução fisiológica, injetando e sugando ao mesmo tempo','Álcool 70% sob pressão','Gaze estéril embebida em clorexidina','Apenas ar comprimido'],a:0},
+         o:['Seringa de 20 ml com água destilada ou solução fisiológica, injetando e sugando ao mesmo tempo','Álcool 70% sob pressão','Gaze estéril embebida em clorexidina','Apenas ar comprimido'],a:0,d:3},
         {q:'Imediatamente antes da aspiração, além de higienizar as mãos e paramentar, deve-se:',
-         o:['Realizar ausculta pulmonar para identificar ruídos adventícios','Aspirar primeiro a orofaringe','Desinflar o balonete (cuff) do tubo','Desconectar o paciente do ventilador'],a:0},
+         o:['Realizar ausculta pulmonar para identificar ruídos adventícios','Aspirar primeiro a orofaringe','Desinflar o balonete (cuff) do tubo','Desconectar o paciente do ventilador'],a:0,d:3},
         {q:'Após concluir a aspiração pelo sistema fechado, o profissional deve:',
-         o:['Encerrar o procedimento sem outras aspirações','Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Reabrir imediatamente o sistema de vácuo','Manter a FiO₂ em 100% pelas próximas horas'],a:1}
+         o:['Encerrar o procedimento sem outras aspirações','Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Reabrir imediatamente o sistema de vácuo','Manter a FiO₂ em 100% pelas próximas horas'],a:1,d:3}
       ]
     },
 
@@ -364,6 +374,8 @@
       title:'Transporte e acomodação do corpo no necrotério',
       executantes:'Equipe de enfermagem',
       origem:'Todas as unidades de internação do HNR',
+      setores:['assistencial','uti'],
+      etapa:1,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Padronizar o procedimento de transporte e acomodação do corpo no necrotério.',
@@ -423,21 +435,21 @@
       ],
       pool:[
         {q:'Antes do transporte ao necrotério, o corpo deve ser preparado conforme qual POP?',
-         o:['POP-ENF-08 (Sinais vitais)','POP-ENF-37 (Preparo e identificação do corpo pós-morte)','POP-ENF-60 (Aspiração)','POP-ENF-50 (Hemocomponentes)'],a:1},
+         o:['POP-ENF-08 (Sinais vitais)','POP-ENF-37 (Preparo e identificação do corpo pós-morte)','POP-ENF-60 (Aspiração)','POP-ENF-50 (Hemocomponentes)'],a:1,d:2},
         {q:'A temperatura da câmara mortuária, conforme orientação do fabricante, deve ser mantida entre:',
-         o:['2 °C e 6 °C','15 °C e 18 °C','0 °C e 2 °C','8 °C e 12 °C'],a:0},
+         o:['2 °C e 6 °C','15 °C e 18 °C','0 °C e 2 °C','8 °C e 12 °C'],a:0,d:2},
         {q:'A sala do necrotério, antes de transferir o corpo para a mesa, deve permanecer refrigerada entre:',
-         o:['2 °C e 6 °C','10 °C e 14 °C','15 °C e 18 °C','20 °C e 24 °C'],a:2},
+         o:['2 °C e 6 °C','10 °C e 14 °C','15 °C e 18 °C','20 °C e 24 °C'],a:2,d:2},
         {q:'A maca de transporte hidráulica é utilizada para acomodar o corpo na:',
-         o:['Mesa do necrotério','Gaveta superior da câmara mortuária','Gaveta inferior da câmara mortuária','Rampa de elevação'],a:2},
+         o:['Mesa do necrotério','Gaveta superior da câmara mortuária','Gaveta inferior da câmara mortuária','Rampa de elevação'],a:2,d:2},
         {q:'Em caso de óbito por Covid-19, febre amarela ou meningite, o corpo deve ser:',
-         o:['Mantido na mesa do necrotério por 6 horas','Acomodado direto na câmara mortuária','Liberado imediatamente à família','Acomodado na gaveta superior, sem identificação'],a:1},
+         o:['Mantido na mesa do necrotério por 6 horas','Acomodado direto na câmara mortuária','Liberado imediatamente à família','Acomodado na gaveta superior, sem identificação'],a:1,d:2},
         {q:'No óbito por outras patologias com espera de até 6 horas, a acomodação é:',
-         o:['Direto na câmara mortuária','Na mesa do necrotério','No leito de origem','Na rampa de elevação'],a:1},
+         o:['Direto na câmara mortuária','Na mesa do necrotério','No leito de origem','Na rampa de elevação'],a:1,d:2},
         {q:'Ao acomodar o corpo na gaveta inferior, puxando a parte móvel da gaveta, é necessário:',
-         o:['Que um funcionário fique apoiando a parte móvel durante a transferência','Remover totalmente a parte móvel e apoiá-la no chão','Inclinar a maca para deslizar o corpo','Realizar o procedimento sozinho, para reduzir o contato'],a:0},
+         o:['Que um funcionário fique apoiando a parte móvel durante a transferência','Remover totalmente a parte móvel e apoiá-la no chão','Inclinar a maca para deslizar o corpo','Realizar o procedimento sozinho, para reduzir o contato'],a:0,d:2},
         {q:'Após acomodar o corpo na câmara mortuária, a conduta correta inclui:',
-         o:['Levar o lençol de volta ao leito do paciente','Fixar a folha de identificação na parte externa da câmara, comunicar a zeladoria e higienizar as mãos','Deixar a gaveta destravada para facilitar a entrega','Desligar a câmara mortuária para economia de energia'],a:1}
+         o:['Levar o lençol de volta ao leito do paciente','Fixar a folha de identificação na parte externa da câmara, comunicar a zeladoria e higienizar as mãos','Deixar a gaveta destravada para facilitar a entrega','Desligar a câmara mortuária para economia de energia'],a:1,d:2}
       ]
     },
 
@@ -446,6 +458,8 @@
       title:'Conferência do carro de emergência',
       executantes:'Enfermeiro, técnico de enfermagem e farmacêutico',
       origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Padronizar o abastecimento dos materiais e medicamentos nos carros de emergência, visando ao pronto atendimento adequado aos pacientes em situação de emergência.',
@@ -552,21 +566,21 @@
       ],
       pool:[
         {q:'A conferência diária do carro de emergência é realizada pelo Enfermeiro, no início de cada turno, e inclui:',
-         o:['Todos os medicamentos da maleta, um a um','Laringoscópio, lanterna e torpedos de oxigênio','Apenas o lacre do carrinho','Somente as soluções da 4ª gaveta'],a:1},
+         o:['Todos os medicamentos da maleta, um a um','Laringoscópio, lanterna e torpedos de oxigênio','Apenas o lacre do carrinho','Somente as soluções da 4ª gaveta'],a:1,d:2},
         {q:'Na UTI, a conferência do desfibrilador/cardioversor deve ser realizada:',
-         o:['Uma vez por semana','Diariamente, 3 vezes ao dia, no início de cada turno','Apenas na conferência mensal','Somente após cada uso'],a:1},
+         o:['Uma vez por semana','Diariamente, 3 vezes ao dia, no início de cada turno','Apenas na conferência mensal','Somente após cada uso'],a:1,d:2},
         {q:'A conferência mensal dos medicamentos da maleta (integridade, validade e lotes) é de responsabilidade do:',
-         o:['Técnico de enfermagem','Enfermeiro','Farmacêutico','Médico plantonista'],a:2},
+         o:['Técnico de enfermagem','Enfermeiro','Farmacêutico','Médico plantonista'],a:2,d:2},
         {q:'A 1ª gaveta do carro de emergência contém:',
-         o:['Materiais para controle de vias aéreas','A maleta lacrada com fármacos de primeira linha para emergência','Soluções endovenosas e ambú reserva','Materiais para punção de acessos venosos'],a:1},
+         o:['Materiais para controle de vias aéreas','A maleta lacrada com fármacos de primeira linha para emergência','Soluções endovenosas e ambú reserva','Materiais para punção de acessos venosos'],a:1,d:2},
         {q:'Os materiais para controle de vias aéreas ficam armazenados na:',
-         o:['1ª gaveta','2ª gaveta','3ª gaveta','4ª gaveta'],a:1},
+         o:['1ª gaveta','2ª gaveta','3ª gaveta','4ª gaveta'],a:1,d:2},
         {q:'Após a abertura do lacre ou uso de medicamento da maleta, o enfermeiro deve:',
-         o:['Repor os medicamentos por conta própria e relacrar','Encaminhar a maleta usada à farmácia com a prescrição e receber uma nova maleta lacrada e enumerada','Aguardar a conferência mensal para repor','Descartar a maleta e abrir outra do estoque do setor'],a:1},
-        {q:'Quanto à energia, o carro de emergência deve permanecer:',
-         o:['Desligado para economizar bateria','Ligado na tomada, para manter a autonomia elétrica','Ligado apenas durante o atendimento','Conectado somente à bateria interna'],a:1},
+         o:['Repor os medicamentos por conta própria e relacrar','Encaminhar a maleta usada à farmácia com a prescrição e receber uma nova maleta lacrada e enumerada','Aguardar a conferência mensal para repor','Descartar a maleta e abrir outra do estoque do setor'],a:1,d:2},
+        {q:'Sobre a manutenção do carro de emergência entre os atendimentos, é correto afirmar que ele deve permanecer:',
+         o:['Aberto e desligado, para agilizar o acesso e poupar energia','Sempre lacrado, completo e ligado na tomada; após cada uso, conferir, repor, higienizar e solicitar novo lacre','Lacrado, porém desligado, ligando-o apenas durante o atendimento','Aberto e ligado, repondo os itens somente na conferência mensal'],a:1,d:2},
         {q:'Após o uso, o ressuscitador manual e a lâmina do laringoscópio devem ser:',
-         o:['Apenas borrifados com álcool e recolocados no carro','Encaminhados ao CME para reprocessamento, solicitando-se a reposição','Descartados como lixo infectante','Lavados e guardados sem reprocessamento'],a:1}
+         o:['Apenas borrifados com álcool e recolocados no carro','Encaminhados ao CME para reprocessamento, solicitando-se a reposição','Descartados como lixo infectante','Lavados e guardados sem reprocessamento'],a:1,d:2}
       ]
     },
 
@@ -575,6 +589,8 @@
       title:'Rotina de liberação de visitas na UTI',
       executantes:'Técnicos de Enfermagem',
       origem:'Gerência de Enfermagem',
+      setores:['uti'],
+      etapa:2,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Descrever o procedimento de acolhimento e liberação de visitas, a instrução dos familiares sobre acompanhamento/visita estendida e a avaliação da permanência de visitas na Unidade de Terapia Intensiva (UTI).'
@@ -628,22 +644,22 @@
         ]}
       ],
       pool:[
-        {q:'O horário de início da liberação das visitas na UTI, sob responsabilidade do Técnico de Enfermagem, é:',
-         o:['13h30min','14h45min','16h00min','12h00min'],a:1},
+        {q:'Na rotina de visitas da UTI, o Técnico de Enfermagem inicia a liberação às 14h45. Às 16h00, salvo exceções (visita estendida), ele deve:',
+         o:['Prorrogar automaticamente a visita de todos os leitos','Comunicar aos visitantes o fim da visita','Liberar a entrada de novos visitantes','Trancar a sala de visitas sem aviso prévio'],a:1,d:3},
         {q:'Sobre o fluxo de visitantes por paciente, o POP estabelece:',
-         o:['Até quatro familiares juntos no leito','Dois familiares por paciente, um por vez, com único revezamento','Visitas livres, sem limite de pessoas','Apenas um familiar por dia, sem revezamento'],a:1},
+         o:['Até quatro familiares juntos no leito','Dois familiares por paciente, um por vez, com único revezamento','Visitas livres, sem limite de pessoas','Apenas um familiar por dia, sem revezamento'],a:1,d:3},
         {q:'A entrada na UTI é proibida para menores de:',
-         o:['18 anos','16 anos','12 anos','6 anos'],a:2},
+         o:['18 anos','16 anos','12 anos','6 anos'],a:2,d:3},
         {q:'Ao identificar um familiar que está visitando pela primeira vez, o Técnico de Enfermagem deve:',
-         o:['Liberar a entrada normalmente','Solicitar que aguarde e comunicar o Enfermeiro para o acolhimento','Encaminhá-lo diretamente ao médico','Negar a visita naquele dia'],a:1},
+         o:['Liberar a entrada normalmente','Solicitar que aguarde e comunicar o Enfermeiro para o acolhimento','Encaminhá-lo diretamente ao médico','Negar a visita naquele dia'],a:1,d:3},
         {q:'Requerem visita estendida/acompanhamento integral os pacientes:',
-         o:['Todos os internados na UTI','Menores de 18 anos ou com condição especial avaliada pela equipe','Apenas os que solicitarem por escrito','Somente pacientes em isolamento'],a:1},
+         o:['Todos os internados na UTI','Menores de 18 anos ou com condição especial avaliada pela equipe','Apenas os que solicitarem por escrito','Somente pacientes em isolamento'],a:1,d:3},
         {q:'Sobre o boletim médico, é correto orientar o visitante a:',
-         o:['Procurar o médico na sala de visitas antes de entrar','Aguardar no leito, pois é passado durante ou ao final da visita','Ligar para a recepção após a visita','Solicitá-lo por escrito na portaria'],a:1},
-        {q:'Dentro da UTI, durante a visita, é vedado:',
-         o:['Higienizar as mãos com álcool em gel','Permanecer ao lado do leito do familiar','Filmar ou fotografar e mexer nos aparelhos da UTI','Conversar com o paciente'],a:2},
+         o:['Procurar o médico na sala de visitas antes de entrar','Aguardar no leito, pois é passado durante ou ao final da visita','Ligar para a recepção após a visita','Solicitá-lo por escrito na portaria'],a:1,d:3},
+        {q:'Sobre pertences e registro de imagens durante a visita na UTI, a orientação correta é:',
+         o:['É permitido fotografar o familiar para registro da família','Não é permitido filmar/fotografar; evitar a entrada com bolsas e celulares e não dispô-los sobre o leito','Celulares são liberados desde que no modo silencioso','Bolsas podem ficar sobre o leito, desde que fechadas'],a:1,d:3},
         {q:'Quanto ao uso de EPI por visitantes de pacientes com bactérias multirresistentes, o POP orienta:',
-         o:['Uso obrigatório de avental e luva por todos os visitantes','Visitantes não utilizam avental e luva; reforça-se a higienização das mãos (exceções discutidas com o SCIH)','Uso de macacão e óculos de proteção','Proibição total de visitas'],a:1}
+         o:['Uso obrigatório de avental e luva por todos os visitantes','Visitantes não utilizam avental e luva; reforça-se a higienização das mãos (exceções discutidas com o SCIH)','Uso de macacão e óculos de proteção','Proibição total de visitas'],a:1,d:3}
       ]
     },
 
@@ -652,6 +668,8 @@
       title:'Aspiração naso e orofaríngea',
       executantes:'Equipe de enfermagem e fisioterapeutas',
       origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Remover secreções das vias aéreas superiores.',
@@ -705,21 +723,21 @@
       ],
       pool:[
         {q:'A ordem correta de aspiração nas vias aéreas superiores é:',
-         o:['Cavidade oral primeiro e depois a narina','Narina primeiro e depois a cavidade oral, nunca ao contrário','Tanto faz a ordem, desde que se troque a sonda','Apenas a cavidade oral, pois a narina é contraindicada'],a:1},
+         o:['Cavidade oral primeiro e depois a narina','Narina primeiro e depois a cavidade oral, nunca ao contrário','Tanto faz a ordem, desde que se troque a sonda','Apenas a cavidade oral, pois a narina é contraindicada'],a:1,d:2},
         {q:'A pressão de vácuo recomendada para a aspiração é de:',
-         o:['40–60 mmHg','80–120 mmHg','150–200 mmHg','Pressão máxima do sistema'],a:1},
+         o:['40–60 mmHg','80–120 mmHg','150–200 mmHg','Pressão máxima do sistema'],a:1,d:2},
         {q:'Para o procedimento, o paciente deve ser posicionado com a cabeceira elevada entre:',
-         o:['0° e 15°','30° e 45°','60° e 90°','Decúbito dorsal plano'],a:1},
+         o:['0° e 15°','30° e 45°','60° e 90°','Decúbito dorsal plano'],a:1,d:2},
         {q:'Durante a aspiração nasotraqueal, ao introduzir a sonda na narina, recomenda-se:',
-         o:['Realizar movimentos rotativos durante a aspiração','Manter a sonda imóvel e aspirar continuamente por 30 s','Introduzir e retirar rapidamente, sem aspirar','Aspirar apenas na introdução da sonda'],a:0},
+         o:['Realizar movimentos rotativos durante a aspiração','Manter a sonda imóvel e aspirar continuamente por 30 s','Introduzir e retirar rapidamente, sem aspirar','Aspirar apenas na introdução da sonda'],a:0,d:2},
         {q:'No paciente em uso de oxigênio, antes de realizar nova aspiração, deve-se:',
-         o:['Aspirar repetidamente sem pausas','Recolocar o dispositivo de O₂ até a recuperação da saturação','Aumentar a pressão de vácuo','Manter o oxigênio retirado durante todo o procedimento'],a:1},
+         o:['Aspirar repetidamente sem pausas','Recolocar o dispositivo de O₂ até a recuperação da saturação','Aumentar a pressão de vácuo','Manter o oxigênio retirado durante todo o procedimento'],a:1,d:2},
         {q:'Quando o frasco de aspiração atinge dois terços da capacidade, a conduta é:',
-         o:['Continuar até encher completamente','Esvaziá-lo antes do procedimento ou trocá-lo','Inverter o frasco para ganhar espaço','Reduzir a sucção'],a:1},
+         o:['Continuar até encher completamente','Esvaziá-lo antes do procedimento ou trocá-lo','Inverter o frasco para ganhar espaço','Reduzir a sucção'],a:1,d:2},
         {q:'Sobre a limpeza da sonda entre as aspirações, é correto:',
-         o:['Limpar com líquidos em qualquer recipiente disponível','Não usar líquidos em recipiente não estéril; se a sonda estiver muito suja, trocá-la','Reaproveitar a mesma sonda por 24 horas','Lavar a sonda com álcool 70%'],a:1},
+         o:['Limpar com líquidos em qualquer recipiente disponível','Não usar líquidos em recipiente não estéril; se a sonda estiver muito suja, trocá-la','Reaproveitar a mesma sonda por 24 horas','Lavar a sonda com álcool 70%'],a:1,d:2},
         {q:'A aspiração nasofaríngea e orofaríngea está indicada principalmente para pacientes:',
-         o:['Com tosse eficaz e secreção fluida','Impossibilitados de eliminar secreções de forma espontânea (alteração de consciência, falência muscular ou tosse ineficaz)','Em ventilação mecânica com sistema fechado','Sem qualquer secreção em vias aéreas'],a:1}
+         o:['Com tosse eficaz e secreção fluida','Impossibilitados de eliminar secreções de forma espontânea (alteração de consciência, falência muscular ou tosse ineficaz)','Em ventilação mecânica com sistema fechado','Sem qualquer secreção em vias aéreas'],a:1,d:3}
       ]
     },
 
@@ -728,6 +746,8 @@
       title:'Aspiração de Traqueostomia (TQT)',
       executantes:'Equipe de enfermagem, fisioterapia e medicina',
       origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:2,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Remover secreções traqueais.',
@@ -772,21 +792,21 @@
       ],
       pool:[
         {q:'Quanto ao posicionamento do paciente para a aspiração de traqueostomia:',
-         o:['Consciente em decúbito dorsal plano; inconsciente sentado','Consciente em semi-Fowler; inconsciente em decúbito lateral, voltado para o profissional','Sempre em Trendelenburg','Sempre em decúbito ventral'],a:1},
+         o:['Consciente em decúbito dorsal plano; inconsciente sentado','Consciente em semi-Fowler; inconsciente em decúbito lateral, voltado para o profissional','Sempre em Trendelenburg','Sempre em decúbito ventral'],a:1,d:3},
         {q:'A sucção durante a aspiração de traqueostomia deve ser realizada:',
-         o:['Na introdução e na retirada da sonda','Apenas durante a retirada do cateter, por no máximo 10 a 15 segundos','De forma contínua por até 1 minuto','Somente com a sonda parada na carina'],a:1},
+         o:['Na introdução e na retirada da sonda','Apenas durante a retirada do cateter, por no máximo 10 a 15 segundos','De forma contínua por até 1 minuto','Somente com a sonda parada na carina'],a:1,d:3},
         {q:'A fórmula recomendada para escolher o tamanho ideal da sonda de aspiração é:',
-         o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT + 4','nº da sonda = nº do TOT/TQT ÷ 2','Sempre a sonda de maior calibre disponível'],a:0},
+         o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT + 4','nº da sonda = nº do TOT/TQT ÷ 2','Sempre a sonda de maior calibre disponível'],a:0,d:3},
         {q:'Para manter a técnica asséptica, a luva plástica estéril é calçada:',
-         o:['Na mão não dominante, sob a luva de procedimento','Na mão dominante, por cima da luva de procedimento','Em ambas as mãos, substituindo as luvas de procedimento','Dispensada quando se usa gaze estéril em ambas as mãos'],a:1},
+         o:['Na mão não dominante, sob a luva de procedimento','Na mão dominante, por cima da luva de procedimento','Em ambas as mãos, substituindo as luvas de procedimento','Dispensada quando se usa gaze estéril em ambas as mãos'],a:1,d:3},
         {q:'Após finalizar a aspiração traqueal pela traqueostomia, deve-se:',
-         o:['Encerrar o procedimento imediatamente','Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Instilar 10 ml de SF na traqueostomia','Reposicionar o paciente em decúbito ventral'],a:1},
+         o:['Encerrar o procedimento imediatamente','Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Instilar 10 ml de SF na traqueostomia','Reposicionar o paciente em decúbito ventral'],a:1,d:3},
         {q:'Sobre a instilação de soro fisiológico pela traqueostomia, o POP orienta:',
-         o:['Instilar rotineiramente antes de cada aspiração','Não é recomendada de rotina; se necessário, instilar 2 ml seguida de aspiração','Substituir a aspiração pela instilação','Ambuzar o paciente após a instilação'],a:1},
+         o:['Instilar rotineiramente antes de cada aspiração','Não é recomendada de rotina; se necessário, instilar 2 ml seguida de aspiração','Substituir a aspiração pela instilação','Ambuzar o paciente após a instilação'],a:1,d:3},
         {q:'A pressão de vácuo recomendada para a aspiração de traqueostomia é:',
-         o:['80–120 mmHg','150–200 mmHg','40–60 mmHg','A máxima do sistema de vácuo'],a:0},
+         o:['80–120 mmHg','150–200 mmHg','40–60 mmHg','A máxima do sistema de vácuo'],a:0,d:3},
         {q:'A sonda de aspiração de traqueostomia deve ter:',
-         o:['O maior diâmetro possível, para aspirar mais rápido','O menor diâmetro possível que permita sucção adequada','Sempre o mesmo calibre do tubo','Diâmetro indiferente'],a:1}
+         o:['O maior diâmetro possível, para aspirar mais rápido','O menor diâmetro possível que permita sucção adequada','Sempre o mesmo calibre do tubo','Diâmetro indiferente'],a:1,d:3}
       ]
     },
 
@@ -795,6 +815,8 @@
       title:'Aspiração de TOT e TQT em ventilação mecânica — sistema aberto',
       executantes:'Equipe de enfermagem, fisioterapia e medicina',
       origem:'UTI',
+      setores:['uti'],
+      etapa:2,
       sections:[
         {n:1,h:'Objetivo',items:[
           'Orientar e padronizar o procedimento de aspiração endotraqueal das vias aéreas inferiores.',
@@ -837,21 +859,21 @@
       ],
       pool:[
         {q:'A principal característica do sistema ABERTO de aspiração endotraqueal é que:',
-         o:['O paciente permanece conectado ao ventilador durante a aspiração','O paciente é desconectado do ventilador para a introdução da sonda','Não há necessidade de luva estéril','Não eleva a FiO₂ antes do procedimento'],a:1},
+         o:['O paciente permanece conectado ao ventilador durante a aspiração','O paciente é desconectado do ventilador para a introdução da sonda','Não há necessidade de luva estéril','Não eleva a FiO₂ antes do procedimento'],a:1,d:3},
         {q:'Antes do procedimento, para elevar o conteúdo arterial de O₂, deve-se setar no VM:',
-         o:['A FiO₂ a 21%','A FiO₂ a 100% ou o modo acesso rápido','O modo de pressão negativa','A PEEP no valor máximo'],a:1},
+         o:['A FiO₂ a 21%','A FiO₂ a 100% ou o modo acesso rápido','O modo de pressão negativa','A PEEP no valor máximo'],a:1,d:3},
         {q:'O tempo máximo de aspiração contínua, pelo risco de hipoxemia, é de:',
-         o:['10 segundos','30 segundos','45 segundos','Sem limite definido'],a:0},
+         o:['10 segundos','30 segundos','45 segundos','Sem limite definido'],a:0,d:3},
         {q:'Ao introduzir a sonda e perceber resistência (carina), a conduta correta é:',
-         o:['Liberar o vácuo imediatamente na carina','Recuar a sonda 1 a 2 cm e só então liberar o vácuo, retirando-a lentamente','Forçar a progressão da sonda','Retirar a sonda sem aspirar'],a:1},
+         o:['Liberar o vácuo imediatamente na carina','Recuar a sonda 1 a 2 cm e só então liberar o vácuo, retirando-a lentamente','Forçar a progressão da sonda','Retirar a sonda sem aspirar'],a:1,d:3},
         {q:'Ao desconectar a traqueia do respirador, a extremidade distal deve ficar:',
-         o:['Apoiada sobre o tórax do paciente','Suspensa, sem contato com o paciente ou com as roupas de cama','Dentro do copo de água destilada','Conectada ao intermediário do vácuo'],a:1},
+         o:['Apoiada sobre o tórax do paciente','Suspensa, sem contato com o paciente ou com as roupas de cama','Dentro do copo de água destilada','Conectada ao intermediário do vácuo'],a:1,d:3},
         {q:'Para manter a assepsia no sistema aberto, a luva estéril é calçada:',
-         o:['Na mão não dominante','Na mão dominante, por cima da luva de procedimento','Dispensada neste procedimento','Em ambas as mãos, sem luva de procedimento'],a:1},
+         o:['Na mão não dominante','Na mão dominante, por cima da luva de procedimento','Dispensada neste procedimento','Em ambas as mãos, sem luva de procedimento'],a:1,d:3},
         {q:'Após a aspiração endotraqueal pelo sistema aberto, deve-se:',
-         o:['Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Manter a FiO₂ a 100% pelas próximas horas','Encerrar sem reconectar o ventilador','Instilar rotineiramente 10 ml de SF'],a:0},
+         o:['Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Manter a FiO₂ a 100% pelas próximas horas','Encerrar sem reconectar o ventilador','Instilar rotineiramente 10 ml de SF'],a:0,d:3},
         {q:'A fórmula recomendada para o tamanho ideal da sonda de aspiração é:',
-         o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT x 3','nº da sonda = nº do TOT/TQT - 4','O maior calibre disponível'],a:0}
+         o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT x 3','nº da sonda = nº do TOT/TQT - 4','O maior calibre disponível'],a:0,d:3}
       ]
     }
   ];

@@ -104,6 +104,9 @@
       inset 0 1px 0 rgba(255,255,255,.26)}
   .btn-report:active{transform:translateY(0);
     box-shadow:0 1px 3px rgba(10,77,162,.32),inset 0 1px 2px rgba(0,0,0,.14)}
+  .report-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .matrix th.selcol,.matrix td.selcol{width:34px;text-align:center;padding-left:6px;padding-right:6px}
+  .matrix .sel-colab,.matrix .selcol input{width:16px;height:16px;cursor:pointer;accent-color:var(--primary)}
   .btn-report:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 
   /* ---- progress summary ---- */
@@ -162,10 +165,20 @@
   .badge.read{color:var(--warn);background:var(--warn-soft)}
   .badge.pass{color:var(--success);background:var(--success-soft)}
   .badge.fail{color:var(--danger);background:var(--danger-soft)}
+  .badge.locked{color:var(--faint);background:var(--pending-soft)}
   .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+  /* etapas */
+  .etapa-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+    margin:22px 0 10px;flex-wrap:wrap}
+  .etapa-head h2,.etapa-head h3{font-size:15px;font-weight:700}
+  .etapa-prog{font-size:12.5px;color:var(--muted)}
+  .etapa-lock{font-size:12.5px;color:var(--faint);font-weight:600}
+  .popcard.is-locked{opacity:.62}
+  .popcard.is-locked:hover{transform:none;border-color:var(--line)}
   .btn{border:0;border-radius:9px;font-weight:600;font-size:13.5px;padding:9px 16px;
     background:var(--primary);color:#fff;transition:.15s}
   .btn:hover{background:var(--primary-dark)}
+  .btn:disabled{background:var(--pending-soft);color:var(--faint);cursor:not-allowed}
   [data-theme="dark"] .btn{color:#0e1622}
   .btn.ghost{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
   .btn.ghost:hover{background:var(--line)}
@@ -319,6 +332,36 @@
   .cert-sign small{font-size:11px;color:var(--muted)}
   .cert-date{font-size:12.5px;color:var(--muted)}
   .cert-actions{display:flex;gap:10px;justify-content:center;margin-top:18px}
+  /* certificado final (2º) — visual dourado diferenciado */
+  .cert.final .cert-inner{border-color:var(--gold)}
+  .cert.final .cert-inner2{border-color:var(--gold);
+    background:linear-gradient(160deg,var(--gold-soft),var(--surface) 60%)}
+  .cert.final .cert-eyebrow{color:var(--primary)}
+  .cert.final .cert-inner2 h2{color:#8a6a12}
+  .cert.final .cert-name{color:#7a5d10}
+  .cert-seal{position:absolute;top:16px;right:16px;width:78px;height:78px;border-radius:50%;
+    background:radial-gradient(circle at 32% 28%,#f8df8c,var(--gold));color:#5b4708;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(176,138,20,.4);transform:rotate(8deg)}
+  .cert-seal b{font-size:24px;line-height:1}
+  .cert-seal span{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;text-align:center;margin-top:2px;line-height:1.15}
+  /* modal de pré-visualização do modelo de certificado (gestor) */
+  .cert-modal{position:fixed;inset:0;z-index:60;display:none;background:rgba(8,18,33,.62);
+    padding:26px 14px;overflow:auto}
+  .cert-modal.open{display:flex;align-items:flex-start;justify-content:center}
+  .cm-card{background:var(--surface);border-radius:14px;max-width:780px;width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .cm-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .cm-head b{flex:1;font-size:14.5px}
+  .cm-note{font-size:11.5px;color:var(--muted)}
+  .cm-close{border:0;background:var(--surface-2);color:var(--ink);border-radius:8px;
+    padding:7px 13px;font-weight:600;cursor:pointer}
+  .cm-close:hover{background:var(--line)}
+  .cm-body{padding:18px}
+  .cm-body .cert.cert-preview{box-shadow:none;padding:0}
+  .kpi-link{cursor:pointer;transition:transform .15s,border-color .15s}
+  .kpi-link:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .kpi .see{display:block;font-size:10px;color:var(--primary);font-weight:600;margin-top:3px}
 
   /* ---- gestor ---- */
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
@@ -344,6 +387,7 @@
   .cell{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12.5px}
   .cell.pass{color:var(--success)} .cell.fail{color:var(--danger)}
   .cell.read{color:var(--warn)} .cell.pending{color:var(--faint)}
+  .cell.na{color:var(--faint);opacity:.55;font-weight:500}
   .cell .ic{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
   .cellbtn{border:0;background:transparent;padding:4px 6px;margin:-4px -6px;border-radius:8px;
     display:inline-flex;align-items:center;gap:7px;transition:.12s}
@@ -463,6 +507,17 @@
           <span class="chev">›</span></button>
       </div></div></div></main>
 
+<div id="cert-modal" class="cert-modal" onclick="if(event.target===this)closeCertModal()">
+  <div class="cm-card">
+    <div class="cm-head">
+      <b class="cm-title">Modelo de certificado</b>
+      <span class="cm-note">Modelo ilustrativo — apenas visualização</span>
+      <button class="cm-close" onclick="closeCertModal()">Fechar</button>
+    </div>
+    <div class="cm-body"></div>
+  </div>
+</div>
+
 <script src="./js/config.js"></script>
 <script src="./data/pops.js"></script>
 <script src="./js/core.js"></script>
@@ -495,6 +550,7 @@ let session = JSON.parse(localStorage.getItem('pops_sessao') || 'null'); // cola
 let authView = 'home';
 let screen = 'list';
 let activePop = null;
+let certStage = 1;            // qual certificado exibir na tela de certificado (1 ou 2)
 let lastResult = null;
 let quizState = null;   // {list:[{q,o,a}], cur, answers[], tLeft, timerId}
 let theme = 'light';
@@ -514,21 +570,48 @@ const pop = id => db.pops.find(p=>p.id===id);
 const initials = n => n.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
 const LOGO = () => LOGO_URI;
 
+/* ---------- setores ---------- */
+const SETOR_LABELS = {assistencial:'Assistencial', uti:'UTI', cc:'Centro Cirúrgico', ambulatorio:'Ambulatório / Hospital Dia', cme:'CME'};
+const setorLabel = s => SETOR_LABELS[s] || s || '—';
+// POPs disponíveis para um setor. Setor desconhecido/vazio → todos (fallback p/ dados legados).
+function popsDoSetor(setor){
+  if(!setor || !SETOR_LABELS[setor]) return db.pops;
+  return db.pops.filter(p => Array.isArray(p.setores) && p.setores.includes(setor));
+}
+function meusPops(){ return popsDoSetor(session && session.setor); }
+// ordenação alfabética (pt-BR) — colaboradores por nome, POPs por código
+const byNome = (a,b) => (a.nome||'').localeCompare(b.nome||'', 'pt-BR', {sensitivity:'base'});
+const byCode = (a,b) => (a.code||'').localeCompare(b.code||'', 'pt-BR', {numeric:true});
+
+/* ---------- etapas / 2 certificados ----------
+   Trilha do colaborador = POPs do seu setor, divididos por etapa (campo p.etapa).
+   Etapa 1 → 1º certificado. Etapa 2 (questões só de alta dificuldade) fica
+   bloqueada até concluir a Etapa 1; ao concluí-la, libera o certificado final. */
+const ETAPA_LABEL = {1:'Etapa 1 · Fundamentos', 2:'Etapa 2 · Avançado'};
+const popEtapa = p => (p && p.etapa===2) ? 2 : 1;
+function popsEtapa(setor, e){ return popsDoSetor(setor).filter(p => popEtapa(p)===e).sort(byCode); }
+function etapaDoneSet(setor, e, aprovSet){ const ps=popsEtapa(setor,e); return ps.length>0 && ps.every(p=>aprovSet.has(p.id)); }
+function etapaDone(e){ const ps=popsEtapa(session && session.setor, e); return ps.length>0 && ps.every(p=>POPCore.isLocked(p.id, aprovadosServidor)); }
+function etapa2Unlocked(){ return etapaDone(1); }
+function temEtapa2(){ return popsEtapa(session && session.setor, 2).length>0; }
+
 function statusOf(pid){
   if(POPCore.isLocked(pid, aprovadosServidor)){
     const m=meuProgresso[pid]||{};
     return {k:'pass', label:'Aprovado', locked:true, hits:m.hits, score:m.score, date:m.date};
   }
+  const p=pop(pid);
+  if(p && popEtapa(p)===2 && !etapa2Unlocked()) return {k:'locked', label:'Bloqueado'};
   const m=meuProgresso[pid];
   if(m && m.status==='reprovado') return {k:'fail', label:'Refazer', hits:m.hits, score:m.score, date:m.date};
   return {k:'pending', label:'Pendente'};
 }
 function userProgress(){
-  const total=db.pops.length;
-  const done=db.pops.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length;
+  const mine=meusPops();
+  const total=mine.length;
+  const done=mine.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length;
   return {done,total,pct: total?Math.round(done/total*100):0};
 }
-function allDone(){ return db.pops.length>0 && db.pops.every(p=>POPCore.isLocked(p.id, aprovadosServidor)); }
 function todayBR(){ return new Date().toLocaleDateString('pt-BR'); }
 
 /* ---------- theme ---------- */
@@ -558,15 +641,23 @@ async function carregarAprovados(){
   }catch{ aprovadosServidor=[]; }
 }
 function logout(){ clearQuizTimer(); session=null; salvarSessao(); aprovadosServidor=[]; meuProgresso={}; resultadosGestor=[]; authView='home'; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
-function openPop(id){ clearQuizTimer(); activePop=id; screen='reader'; render(); window.scrollTo(0,0); }
+function openPop(id){
+  if(session && session.role==='colaborador'){
+    const p=pop(id);
+    if(!meusPops().some(x=>x.id===id)){ alert('Este POP não pertence ao seu setor.'); return; }
+    if(p && popEtapa(p)===2 && !etapa2Unlocked()){ alert('Conclua a Etapa 1 para desbloquear a Etapa 2.'); return; }
+  }
+  clearQuizTimer(); activePop=id; screen='reader'; render(); window.scrollTo(0,0);
+}
 function backToList(){ clearQuizTimer(); screen='list'; activePop=null; render(); window.scrollTo(0,0); }
-function goCert(){ screen='cert'; render(); window.scrollTo(0,0); }
+function goCert(stage){ certStage = (stage===2?2:1); screen='cert'; render(); window.scrollTo(0,0); }
 
 /* ---------- quiz engine (sorteio + cronômetro) ---------- */
 function startQuiz(){
   const p=pop(activePop);
   if(POPCore.isLocked(activePop, aprovadosServidor)){ alert('Você já foi aprovado neste POP. Não é possível refazer.'); return; }
-  const drawn=POPCore.drawQuiz(p.pool, QUIZ_SIZE);
+  if(popEtapa(p)===2 && !etapa2Unlocked()){ alert('Conclua a Etapa 1 para desbloquear a Etapa 2.'); return; }
+  const drawn=POPCore.drawQuiz(p.pool, QUIZ_SIZE, popEtapa(p)===2 ? 3 : 2);
   quizState={list:drawn,cur:0,answers:Array(QUIZ_SIZE).fill(null),tLeft:QTIME,timerId:null};
   screen='quiz'; render(); window.scrollTo(0,0);
   startTimer();
@@ -634,7 +725,7 @@ function renderTopRight(){
   if(!session) return '';
   let nm,sub;
   if(session.role==='gestor'){ nm='Gestor'; sub='Educação Continuada'; }
-  else { nm=session.nome; sub=session.setor+' · mat. '+session.matricula; }
+  else { nm=session.nome; sub=setorLabel(session.setor)+' · mat. '+session.matricula; }
   return `<div class="who2"><div class="avatar">${initials(nm)}</div>
       <div class="nm"><b>${nm}</b><small>${sub}</small></div></div>
     <button class="logout" onclick="logout()">Sair</button>`;
@@ -674,15 +765,11 @@ function renderAuth(){
     <div class="field"><label>Matrícula</label><input id="c-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
     <div class="field"><label>Setor</label><select id="c-setor">
       <option value="">Selecione o setor…</option>
-      <option>EGY</option>
-      <option>TISIOLOGIA</option>
-      <option>DIP I</option>
-      <option>DIP II</option>
-      <option>PAVILHAO</option>
-      <option>UTI</option>
-      <option>CC</option>
-      <option>AMBULATORIO</option>
-      <option>CME</option>
+      <option value="assistencial">Assistencial</option>
+      <option value="uti">UTI</option>
+      <option value="cc">Centro Cirúrgico (CC)</option>
+      <option value="ambulatorio">Ambulatório / Hospital Dia</option>
+      <option value="cme">CME</option>
     </select></div>
     <button class="btn block" onclick="entrarColaborador()">Entrar</button>
     <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
@@ -710,26 +797,14 @@ async function carregarResultadosGestor(){
 }
 
 /* ---------- colaborador: lista ---------- */
-function renderColabList(){
-  const pr=userProgress();
-  const done=allDone();
-  const certBanner=done?`
-    <div class="cert-banner">
-      <div class="medal">🏅</div>
-      <div class="tx"><b>Parabéns, ${session.nome.split(' ')[0]}! Trilha concluída.</b>
-        <p>Você foi aprovado em todos os ${pr.total} POPs. Seu certificado está disponível.</p></div>
-      <button class="btn-gold" onclick="goCert()">${ICON_CERT}Ver certificado</button>
-    </div>`:'';
-  const hello = pr.done===0
-    ? `Comece sua trilha: leia o primeiro POP e faça a avaliação.`
-    : `${pr.done} de ${pr.total} POPs aprovados · ${pr.total-pr.done} pendente(s)`;
-  const cards=db.pops.map((p,idx)=>{
-    const s=statusOf(p.id);
-    const cls={pending:'pending',pass:'pass',fail:'fail'}[s.k];
-    const label=s.score!=null?`${s.label} · ${s.hits}/${QUIZ_SIZE}`:s.label;
-    const cta=s.k==='pass'?'Revisar leitura':(s.k==='fail'?'Reler e refazer':'Ler POP');
-    const seal=s.k==='pass'?`<span class="seal">🎖 Aprovado${s.date?' · '+s.date:''}</span>`:'';
-    return `<div class="popcard" style="animation-delay:${idx*60}ms">
+function popCardHTML(p, idx){
+  const s=statusOf(p.id);
+  const cls={pending:'pending',pass:'pass',fail:'fail',locked:'locked'}[s.k];
+  const isLocked=s.k==='locked';
+  const label=s.score!=null?`${s.label} · ${s.hits}/${QUIZ_SIZE}`:s.label;
+  const cta=isLocked?'🔒 Bloqueado':(s.k==='pass'?'Revisar leitura':(s.k==='fail'?'Reler e refazer':'Ler POP'));
+  const seal=s.k==='pass'?`<span class="seal">🎖 Aprovado${s.date?' · '+s.date:''}</span>`:'';
+  return `<div class="popcard${isLocked?' is-locked':''}" style="animation-delay:${idx*60}ms">
       <span class="code mono">${p.code}</span>
       <div class="meta">
         <h3>${p.title}</h3>
@@ -737,20 +812,59 @@ function renderColabList(){
         ${seal}
       </div>
       <span class="badge ${cls}"><span class="dot"></span>${label}</span>
-      <button class="btn" onclick="openPop('${p.id}')">${cta}</button>
+      <button class="btn" ${isLocked?'disabled':`onclick="openPop('${p.id}')"`}>${cta}</button>
     </div>`;
-  }).join('');
+}
+function etapaSectionHTML(e){
+  const ps=popsEtapa(session.setor, e);
+  if(!ps.length) return '';
+  const doneN=ps.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length;
+  const locked = e===2 && !etapa2Unlocked();
+  const hint = locked
+    ? `<span class="etapa-lock">🔒 Desbloqueia ao concluir a Etapa 1</span>`
+    : `<span class="etapa-prog">${doneN}/${ps.length} concluídos${e===2?' · só questões de alta dificuldade':''}</span>`;
+  return `<div class="etapa-head"><h3>${ETAPA_LABEL[e]}</h3>${hint}</div>
+    <div class="grid">${ps.map((p,i)=>popCardHTML(p,i)).join('')}</div>`;
+}
+function renderColabList(){
+  const mine=meusPops();
+  if(!mine.length){
+    return `<div class="pagehead fade-up"><h2>Meus procedimentos</h2>
+      <p>Setor <b>${setorLabel(session.setor)}</b>.</p></div>
+      <div class="empty"><div class="ic">🗂</div><b>Nenhuma avaliação para o seu setor ainda</b>
+        <p>Os POPs do setor <b>${setorLabel(session.setor)}</b> serão disponibilizados em breve.</p></div>`;
+  }
+  const pr=userProgress();
+  const e1ok=etapaDone(1), e2ok=etapaDone(2), hasE2=temEtapa2();
+  const banners = [
+    e1ok ? `<div class="cert-banner">
+      <div class="medal">🥇</div>
+      <div class="tx"><b>Etapa 1 concluída!</b>
+        <p>${hasE2?'Etapa 2 liberada. ':''}Seu certificado da Etapa 1 está disponível.</p></div>
+      <button class="btn-gold" onclick="goCert(1)">${ICON_CERT}Certificado · Etapa 1</button>
+    </div>`:'',
+    (hasE2 && e2ok) ? `<div class="cert-banner">
+      <div class="medal">🏆</div>
+      <div class="tx"><b>Parabéns, ${session.nome.split(' ')[0]}! Trilha concluída.</b>
+        <p>Você concluiu as duas etapas (${pr.total} POPs). Certificado final disponível.</p></div>
+      <button class="btn-gold" onclick="goCert(2)">${ICON_CERT}Certificado final</button>
+    </div>`:'',
+  ].join('');
+  const hello = pr.done===0
+    ? `Comece pela Etapa 1: leia o primeiro POP e faça a avaliação.`
+    : `${pr.done} de ${pr.total} POPs aprovados · ${pr.total-pr.done} pendente(s)`;
   return `
     <div class="pagehead fade-up">
       <h2>Meus procedimentos</h2>
-      <p>Leia cada POP e conclua a avaliação. Aprovação: <b>acerte ao menos ${PASS_MIN} de ${QUIZ_SIZE}</b>.</p>
+      <p>Setor <b>${setorLabel(session.setor)}</b> · trilha em 2 etapas. Aprovação: <b>acerte ao menos ${PASS_MIN} de ${QUIZ_SIZE}</b>.</p>
     </div>
-    ${certBanner}
+    ${banners}
     <div class="mybar fade-up">
       <div class="ring" style="--p:${pr.pct}"><i>${pr.pct}%</i></div>
       <div class="txt"><b>Olá, ${session.nome.split(' ')[0]}</b><p>${hello}</p></div>
     </div>
-    <div class="grid">${cards}</div>`;
+    ${etapaSectionHTML(1)}
+    ${etapaSectionHTML(2)}`;
 }
 
 /* ---------- leitor ---------- */
@@ -875,8 +989,11 @@ function renderQuiz(){
 function renderResult(){
   const p=pop(activePop), r=lastResult;
   const rc=r.passed?'var(--success)':'var(--danger)';
-  const certCTA=(r.passed&&allDone())?
-    `<button class="btn-gold" onclick="goCert()">${ICON_CERT}Ver meu certificado</button>`:'';
+  const e1ok=etapaDone(1), e2ok=etapaDone(2), hasE2=temEtapa2();
+  const finalDone = e1ok && (!hasE2 || e2ok);
+  let certCTA='';
+  if(r.passed && finalDone) certCTA=`<button class="btn-gold" onclick="goCert(${hasE2?2:1})">${ICON_CERT}${hasE2?'Certificado final':'Ver meu certificado'}</button>`;
+  else if(r.passed && e1ok) certCTA=`<button class="btn-gold" onclick="goCert(1)">${ICON_CERT}Certificado · Etapa 1</button>`;
   const check=r.passed?`
     <svg class="checkmark" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/>
       <path d="M15 27l8 8 15-17"/></svg>`:'';
@@ -904,39 +1021,65 @@ function renderResult(){
 }
 
 /* ---------- certificado ---------- */
-function renderCert(){
-  const rows=db.pops.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).map(p=>{
-    const s=statusOf(p.id);
-    return `<div class="cert-pop"><span class="ck">✓</span>
-      <b>${p.code} — ${p.title}</b><span>${s.hits!=null?s.hits+'/'+QUIZ_SIZE:''}${s.date?' · '+s.date:''}</span></div>`;
-  }).join('');
-  return `
-    <div class="readtop no-print"><div class="row">
-      <button class="back" onclick="backToList()">← Voltar</button></div></div>
-    <div class="cert">
-      <div class="cert-inner"><div class="cert-inner2">
+// Monta o "papel" do certificado. stage 1 = Etapa 1 (azul/clean);
+// stage 2 = Conclusão Final (dourado, com selo) — visual diferenciado.
+function certPaperHTML(stage, d){
+  const final = stage===2;
+  const titulo = final ? 'Certificado de Conclusão Final' : 'Certificado · Etapa 1 (Fundamentos)';
+  const eyebrow = final ? 'Hospital Nereu Ramos · Conclusão do Programa' : 'Hospital Nereu Ramos · Educação Continuada';
+  const corpoTxt = final
+    ? `pela <b>conclusão integral</b> da trilha de capacitação — <b>${d.total} Procedimentos Operacionais Padrão</b> (Etapas 1 e 2) do setor ${setorLabel(d.setor)} — no programa de educação permanente em enfermagem, tendo cumprido todos os requisitos com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`
+    : `pela leitura e aprovação nas avaliações dos <b>${d.total} POPs da Etapa 1 (Fundamentos)</b> do setor ${setorLabel(d.setor)}, no programa de educação permanente em enfermagem, com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`;
+  const rows=(d.pops||[]).map(p=>`<div class="cert-pop"><span class="ck">✓</span>
+      <b>${p.code} — ${p.title}</b><span>${p.hits!=null?p.hits+'/'+QUIZ_SIZE:''}${p.date?' · '+p.date:''}</span></div>`).join('');
+  return `<div class="cert-inner"><div class="cert-inner2">
+        ${final?'<div class="cert-seal" aria-hidden="true"><b>🏆</b><span>Conclusão<br>Final</span></div>':''}
         <span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-        <div class="cert-eyebrow">Hospital Nereu Ramos · Educação Continuada</div>
-        <h2>Certificado de Conclusão</h2>
+        <div class="cert-eyebrow">${eyebrow}</div>
+        <h2>${titulo}</h2>
         <p class="conf">Conferido a</p>
-        <div class="cert-name">${session.nome}</div>
-        <div class="cert-role">${session.setor} · Matrícula ${session.matricula}</div>
-        <p class="cert-body">pela leitura integral e aprovação nas avaliações dos
-          <b>${db.pops.length} Procedimentos Operacionais Padrão</b> do programa de
-          educação permanente em enfermagem, com aproveitamento mínimo de
-          ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.</p>
+        <div class="cert-name">${d.nome}</div>
+        <div class="cert-role">${setorLabel(d.setor)} · Matrícula ${d.matricula}</div>
+        <p class="cert-body">${corpoTxt}</p>
         <div class="cert-pops">${rows}</div>
         <div class="cert-foot">
           <div class="cert-date">Florianópolis, ${todayBR()}</div>
           <div class="cert-sign"><div class="ln"></div><b>Educação Continuada</b><small>Hospital Nereu Ramos</small></div>
         </div>
-      </div></div>
+      </div></div>`;
+}
+function renderCert(){
+  const final = certStage===2;
+  const setor = session.setor;
+  const escopo = (final ? meusPops() : popsEtapa(setor,1)).slice().sort(byCode);
+  const pops = escopo.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).map(p=>{
+    const s=statusOf(p.id); return {code:p.code, title:p.title, hits:s.hits, date:s.date};
+  });
+  const d = {nome:session.nome, setor, matricula:session.matricula, total:escopo.length, pops};
+  return `
+    <div class="readtop no-print"><div class="row">
+      <button class="back" onclick="backToList()">← Voltar</button></div></div>
+    <div class="cert${final?' final':''}">
+      ${certPaperHTML(certStage, d)}
       <div class="cert-actions no-print">
         <button class="btn" onclick="window.print()">Imprimir / salvar PDF</button>
         <button class="btn ghost" onclick="backToList()">Voltar</button>
       </div>
     </div>`;
 }
+// Pré-visualização do MODELO de certificado no painel do gestor (somente visual).
+function previewCertificado(stage){
+  const final = stage===2;
+  const amostra = db.pops.filter(p=>final?true:popEtapa(p)===1).slice().sort(byCode).slice(0, final?6:5)
+    .map((p,i)=>({code:p.code, title:p.title, hits:i%3===0?5:4, date:todayBR()}));
+  const total = final ? db.pops.length : popsEtapa('uti',1).length;
+  const d = {nome:'Nome do Colaborador', setor:'uti', matricula:'00000', total, pops:amostra};
+  const m = document.getElementById('cert-modal');
+  m.querySelector('.cm-title').textContent = final ? 'Modelo · Certificado de Conclusão Final' : 'Modelo · Certificado da Etapa 1';
+  m.querySelector('.cm-body').innerHTML = `<div class="cert${final?' final':''} cert-preview">${certPaperHTML(stage, d)}</div>`;
+  m.classList.add('open');
+}
+function closeCertModal(){ const m=document.getElementById('cert-modal'); if(m) m.classList.remove('open'); }
 
 
 /* ---------- revisão de prova (reuso: resultado do colaborador + drill-down do gestor) ---------- */
@@ -955,33 +1098,46 @@ function reviewHTML(qs,ans){
 
 /* ---------- gestor ---------- */
 function renderGestor(){
-  const colabs=colaboradoresGestor;
+  const colabs=[...colaboradoresGestor].sort(byNome);
+  const popsOrd=[...db.pops].sort(byCode);
   const res=resultadosGestor;
   const byKey={};
   res.forEach(r=>{ byKey[r.matricula+'|'+r.pop_id]=r; });
   const totalPops=db.pops.length;
   const aprovacoes=res.filter(r=>r.status==='aprovado').length;
-  let certificados=0;
+  let cert1=0, certFinal=0, totalCells=0;
   colabs.forEach(col=>{
     const aprov=new Set(res.filter(r=>r.matricula===col.matricula&&r.status==='aprovado').map(r=>r.pop_id));
-    if(totalPops>0 && db.pops.every(p=>aprov.has(p.id))) certificados++;
+    totalCells+=popsDoSetor(col.setor).length;
+    const e1=etapaDoneSet(col.setor,1,aprov);
+    const e2pops=popsEtapa(col.setor,2);
+    if(e1) cert1++;
+    if(e1 && (e2pops.length===0 || etapaDoneSet(col.setor,2,aprov))) certFinal++;
   });
-  const pendencias=Math.max(0, colabs.length*totalPops - aprovacoes);
+  const pendencias=Math.max(0, totalCells - aprovacoes);
 
   const rows=colabs.map(col=>{
+    const aprovCol=new Set(res.filter(r=>r.matricula===col.matricula&&r.status==='aprovado').map(r=>r.pop_id));
+    const mineSet=new Set(popsDoSetor(col.setor).map(p=>p.id));
+    const totalMine=mineSet.size;
     let done=0;
-    const cells=db.pops.map(p=>{
+    const cells=popsOrd.map(p=>{
+      if(!mineSet.has(p.id)) return `<td><span class="cell na">—</span></td>`;
       const r=byKey[col.matricula+'|'+p.id];
       let cls='pending', lbl='Pendente';
       if(r){ if(r.status==='aprovado'){ cls='pass'; lbl='Aprovado'; done++; } else { cls='fail'; lbl='Refazer'; } }
       const extra=r?` ${r.acertos}/${r.total}`:'';
       return `<td><span class="cell ${cls}"><span class="ic"></span>${lbl}${extra}</span></td>`;
     }).join('');
-    const pct=totalPops?Math.round(done/totalPops*100):0;
-    const medal=(totalPops>0&&done===totalPops)?' 🏅':'';
+    const pct=totalMine?Math.round(done/totalMine*100):0;
+    const e1=etapaDoneSet(col.setor,1,aprovCol);
+    const e2pops=popsEtapa(col.setor,2);
+    const finalOk=e1 && (e2pops.length===0 || etapaDoneSet(col.setor,2,aprovCol));
+    const medal=finalOk?' 🏆':(e1?' 🥇':'');
     return `<tr>
+      <td class="no-print selcol"><input type="checkbox" class="sel-colab" value="${col.matricula}" aria-label="Selecionar ${col.nome}"></td>
       <td><div class="person"><div class="avatar">${initials(col.nome)}</div>
-        <div><b>${col.nome}${medal}</b><small>${col.setor} · mat. ${col.matricula}</small></div></div></td>
+        <div><b>${col.nome}${medal}</b><small>${setorLabel(col.setor)} · mat. ${col.matricula}</small></div></div></td>
       ${cells}
       <td class="hidesm"><div class="pcompact"><div class="pbar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div></td>
     </tr>`;
@@ -990,13 +1146,14 @@ function renderGestor(){
   const vazio = colabs.length===0
     ? `<div class="empty"><div class="ic">🗂</div><b>Nenhum colaborador cadastrado</b><p>Os colaboradores aparecem aqui assim que se identificarem na tela inicial.</p></div>` : '';
 
-  const perpop=db.pops.map(p=>{
+  const perpop=popsOrd.map(p=>{
+    const eleg=colabs.filter(c=>popsDoSetor(c.setor).some(x=>x.id===p.id)).length;
     const aprov=res.filter(r=>r.pop_id===p.id&&r.status==='aprovado').length;
-    const pct=colabs.length?Math.round(aprov/colabs.length*100):0;
+    const pct=eleg?Math.round(aprov/eleg*100):0;
     return `<div class="perpop-row">
       <span class="code mono">${p.code}</span>
-      <div class="nm"><b>${p.title}</b><small>Versão ${p.version}</small></div>
-      <div class="pcompact"><div class="pbar" style="min-width:120px"><i style="width:${pct}%"></i></div><b>${aprov}/${colabs.length}</b></div>
+      <div class="nm"><b>${p.title}</b><small>Versão ${p.version} · ${(p.setores||[]).map(setorLabel).join(', ')}</small></div>
+      <div class="pcompact"><div class="pbar" style="min-width:120px"><i style="width:${pct}%"></i></div><b>${aprov}/${eleg}</b></div>
     </div>`;
   }).join('');
 
@@ -1006,18 +1163,22 @@ function renderGestor(){
         <h2>Painel do gestor</h2>
         <p>Acompanhamento de leitura e avaliação dos POPs por colaborador. Aprovação: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos em questões sorteadas.</p>
       </div>
-      <button class="btn-report no-print" onclick="generateReport()">${ICON_REPORT}Gerar relatório completo</button>
+      <div class="report-actions no-print">
+        <button class="btn-report" onclick="gerarRelatorioIndividual()">${ICON_REPORT}Relatório individual (selecionados)</button>
+        <button class="btn-report" onclick="generateReport()">${ICON_REPORT}Relatório completo (todos)</button>
+      </div>
     </div>
     <div class="kpis">
       <div class="kpi"><div class="v">${colabs.length}</div><div class="l">Colaboradores</div></div>
       <div class="kpi"><div class="v green">${aprovacoes}</div><div class="l">Aprovações</div></div>
-      <div class="kpi"><div class="v" style="color:var(--gold)">${certificados}</div><div class="l">Certificados</div></div>
+      <div class="kpi kpi-link" onclick="previewCertificado(1)" title="Ver modelo do certificado da Etapa 1"><div class="v" style="color:var(--gold)">${cert1}</div><div class="l">Cert. Etapa 1<span class="see">ver modelo ↗</span></div></div>
+      <div class="kpi kpi-link" onclick="previewCertificado(2)" title="Ver modelo do certificado final"><div class="v" style="color:var(--gold)">${certFinal}</div><div class="l">Cert. finais<span class="see">ver modelo ↗</span></div></div>
       <div class="kpi"><div class="v" style="color:var(--warn)">${pendencias}</div><div class="l">Pendências</div></div>
     </div>
     <div class="panel">
-      <div class="panel-head"><h3>Matriz de conclusão</h3><span>colaborador × POP</span></div>
+      <div class="panel-head"><h3>Matriz de conclusão</h3><span>marque p/ relatório individual · 🥇 Etapa 1 · 🏆 final</span></div>
       ${vazio || `<div style="overflow-x:auto"><table class="matrix">
-        <thead><tr><th>Colaborador</th>${db.pops.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th class="hidesm">Progresso</th></tr></thead>
+        <thead><tr><th class="no-print selcol"><input type="checkbox" onclick="toggleAllColabs(this)" aria-label="Selecionar todos"></th><th>Colaborador</th>${popsOrd.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th class="hidesm">Progresso</th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>`}
     </div>
@@ -1029,7 +1190,8 @@ function renderGestor(){
 
 /* ---------- relatório completo (gestor) ---------- */
 function generateReport(){
-  const colabs = colaboradoresGestor;
+  const colabs = [...colaboradoresGestor].sort(byNome);
+  const popsOrd = [...db.pops].sort(byCode);
   const res = resultadosGestor;
   const byKey = {};
   res.forEach(r=>{ byKey[r.matricula+'|'+r.pop_id]=r; });
@@ -1038,12 +1200,13 @@ function generateReport(){
 
   // métricas globais
   const totalPops = db.pops.length;
-  const totalCells = colabs.length*totalPops;
   const aprovacoes = res.filter(r=>r.status==='aprovado').length;
+  const totalCells = colabs.reduce((acc,col)=>acc+popsDoSetor(col.setor).length,0);
   const overall = totalCells?Math.round(aprovacoes/totalCells*100):0;
   const isCertified = col=>{
     const aprov=new Set(res.filter(r=>r.matricula===col.matricula&&r.status==='aprovado').map(r=>r.pop_id));
-    return totalPops>0 && db.pops.every(p=>aprov.has(p.id));
+    const mine=popsDoSetor(col.setor);
+    return mine.length>0 && mine.every(p=>aprov.has(p.id));
   };
   const certified = colabs.filter(isCertified).length;
   const pendings = Math.max(0, totalCells - aprovacoes);
@@ -1053,40 +1216,44 @@ function generateReport(){
 
   // tabela por colaborador
   const userRows = colabs.map(col=>{
+    const mineSet=new Set(popsDoSetor(col.setor).map(p=>p.id));
+    const totalMine=mineSet.size;
     let done=0;
-    const cells = db.pops.map(p=>{
+    const cells = popsOrd.map(p=>{
+      if(!mineSet.has(p.id)) return `<td class="st"><span style="color:#cdd7e0">—</span></td>`;
       const r = byKey[col.matricula+'|'+p.id];
       let k='pending';
       if(r){ k = r.status==='aprovado' ? 'pass' : 'fail'; if(k==='pass') done++; }
       const extra = r ? `<small>${r.acertos}/${r.total}</small>` : '';
       return `<td class="st"><span class="tag" style="color:${stColor[k]};border-color:${stColor[k]}33;background:${stColor[k]}14">${stLabel[k]}</span>${extra}</td>`;
     }).join('');
-    const pct = totalPops?Math.round(done/totalPops*100):0;
+    const pct = totalMine?Math.round(done/totalMine*100):0;
     const cert = isCertified(col)?'<span class="yes">✔ Sim</span>':'<span class="no">—</span>';
     return `<tr>
       <td class="nm"><b>${col.nome}</b><small>mat. ${col.matricula}</small></td>
-      <td class="em">${col.setor||'—'}</td>
+      <td class="em">${setorLabel(col.setor)}</td>
       ${cells}
-      <td class="pc"><b>${pct}%</b><small>${done}/${totalPops}</small></td>
+      <td class="pc"><b>${pct}%</b><small>${done}/${totalMine}</small></td>
       <td class="ct">${cert}</td>
     </tr>`;
   }).join('');
 
   // tabela por POP
-  const popRows = db.pops.map(p=>{
+  const popRows = popsOrd.map(p=>{
+    const eleg = colabs.filter(c=>popsDoSetor(c.setor).some(x=>x.id===p.id)).length;
     const done = res.filter(r=>r.pop_id===p.id&&r.status==='aprovado').length;
-    const pct = colabs.length?Math.round(done/colabs.length*100):0;
+    const pct = eleg?Math.round(done/eleg*100):0;
     return `<tr>
       <td class="mono">${p.code}</td>
       <td><b>${p.title}</b></td>
       <td class="cc">v${p.version}</td>
-      <td class="cc">${done}/${colabs.length}</td>
+      <td class="cc">${done}/${eleg}</td>
       <td class="cc"><b>${pct}%</b></td>
     </tr>`;
   }).join('');
 
   const certList = colabs.filter(isCertified)
-    .map(c=>`<li><b>${c.nome}</b>${c.setor?` · ${c.setor}`:''}${c.matricula?` · mat. ${c.matricula}`:''}</li>`).join('')
+    .map(c=>`<li><b>${c.nome}</b>${c.setor?` · ${setorLabel(c.setor)}`:''}${c.matricula?` · mat. ${c.matricula}`:''}</li>`).join('')
     || '<li class="muted">Nenhum colaborador concluiu todos os POPs até o momento.</li>';
 
   const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
@@ -1156,7 +1323,7 @@ function generateReport(){
 
     <h2 class="sec">Situação por colaborador</h2>
     <div class="scroll"><table>
-      <thead><tr><th>Colaborador</th><th>Setor</th>${db.pops.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th>Progresso</th><th>Certificado</th></tr></thead>
+      <thead><tr><th>Colaborador</th><th>Setor</th>${popsOrd.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th>Progresso</th><th>Certificado</th></tr></thead>
       <tbody>${userRows||`<tr><td colspan="${totalPops+4}" style="text-align:center;color:#90a3b3;padding:18px">Nenhum colaborador cadastrado.</td></tr>`}</tbody>
     </table></div>
 
@@ -1178,6 +1345,134 @@ function generateReport(){
   const w = window.open('', '_blank');
   if(!w){ alert('Permita pop-ups para gerar o relatório.'); return; }
   w.document.open(); w.document.write(html); w.document.close();
+}
+
+/* ---------- relatório individual (gestor) ---------- */
+function individualReportPage(col, stamp){
+  const res = resultadosGestor.filter(r=>r.matricula===col.matricula);
+  const byPid = {}; res.forEach(r=>{ byPid[r.pop_id]=r; });
+  const aprov = new Set(res.filter(r=>r.status==='aprovado').map(r=>r.pop_id));
+  const stColor = {pass:'#1a8f54',fail:'#d3202a',pending:'#90a3b3',locked:'#b9c4d0'};
+  const stLabel = {pass:'Aprovado',fail:'Refazer',pending:'Pendente',locked:'Bloqueado'};
+  const e1pops = popsEtapa(col.setor,1), e2pops = popsEtapa(col.setor,2);
+  const e1done = etapaDoneSet(col.setor,1,aprov), e2done = etapaDoneSet(col.setor,2,aprov);
+  const e2unlocked = e1done;
+  const finalOk = e1done && (e2pops.length===0 || e2done);
+  const e1ok = e1pops.filter(p=>aprov.has(p.id)).length;
+  const e2ok = e2pops.filter(p=>aprov.has(p.id)).length;
+  const totalPops = e1pops.length + e2pops.length, totalOk = e1ok + e2ok;
+  const pct1 = e1pops.length?Math.round(e1ok/e1pops.length*100):0;
+  const pct2 = e2pops.length?Math.round(e2ok/e2pops.length*100):0;
+  const statusGeral = finalOk?'Trilha concluída':(e1done?'Etapa 1 concluída':'Em andamento');
+  const popRows = (ps, etapaNum) => ps.length ? ps.map(p=>{
+    const r = byPid[p.id];
+    let k = 'pending';
+    if(r) k = r.status==='aprovado' ? 'pass' : 'fail';
+    else if(etapaNum===2 && !e2unlocked) k = 'locked';
+    const ac = r ? `${r.acertos}/${r.total}` : '—';
+    const tent = r ? (r.tentativas||1) : '—';
+    return `<tr><td class="mono">${p.code}</td><td><b>${p.title}</b><small>v${p.version}</small></td>
+      <td class="st"><span class="tag" style="color:${stColor[k]};border-color:${stColor[k]}33;background:${stColor[k]}14">${stLabel[k]}</span></td>
+      <td class="cc">${ac}</td><td class="cc">${tent}</td></tr>`;
+  }).join('') : `<tr><td colspan="5" style="text-align:center;color:#90a3b3;padding:14px">Nenhum POP nesta etapa para o setor.</td></tr>`;
+  return `<div class="page">
+    <div class="head">
+      <img src="${LOGO()}" alt="HNR">
+      <div><div class="eyebrow">Hospital Nereu Ramos · Educação Continuada</div>
+        <h1>Relatório Individual de Conclusão</h1></div>
+      <div class="meta"><div>Emitido em <b>${stamp}</b></div><div>Critério: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos</div></div>
+    </div>
+    <div class="person"><div class="av">${initials(col.nome)}</div>
+      <div><b>${col.nome}</b><small>${setorLabel(col.setor)} · Matrícula ${col.matricula} · ${statusGeral}</small></div></div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">${totalOk}/${totalPops}</div><div class="l">POPs aprovados</div></div>
+      <div class="kpi"><div class="v">${pct1}%</div><div class="l">Etapa 1 (${e1ok}/${e1pops.length})</div></div>
+      <div class="kpi"><div class="v">${pct2}%</div><div class="l">Etapa 2 (${e2ok}/${e2pops.length})</div></div>
+    </div>
+    <div class="certs">
+      <div class="certbox ${e1done?'on':''}">${e1done?'✔':'○'} Certificado · Etapa 1 (Fundamentos)</div>
+      <div class="certbox ${finalOk?'on':''}">${finalOk?'✔':'○'} Certificado Final</div>
+    </div>
+    <h2 class="sec">Etapa 1 · Fundamentos</h2>
+    <table><thead><tr><th>Código</th><th>Procedimento</th><th>Situação</th><th>Acertos</th><th>Tentativas</th></tr></thead>
+      <tbody>${popRows(e1pops,1)}</tbody></table>
+    <h2 class="sec">Etapa 2 · Avançado ${e2unlocked?'':'(bloqueada — conclua a Etapa 1)'}</h2>
+    <table><thead><tr><th>Código</th><th>Procedimento</th><th>Situação</th><th>Acertos</th><th>Tentativas</th></tr></thead>
+      <tbody>${popRows(e2pops,2)}</tbody></table>
+    <div class="foot">
+      <div class="disc">Documento gerado automaticamente pelo sistema de POPs do Hospital Nereu Ramos. Dados referentes à data/hora de emissão.</div>
+      <div class="sign"><div class="ln"></div><b>Educação Continuada</b><small>Hospital Nereu Ramos</small></div>
+    </div>
+  </div>`;
+}
+
+function abrirRelatorioIndividual(cols){
+  const now = new Date();
+  const stamp = now.toLocaleDateString('pt-BR') + ' às ' + now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  const titulo = cols.length===1 ? ('Relatório Individual · '+cols[0].nome) : ('Relatórios Individuais ('+cols.length+')');
+  const pages = cols.map(c=>individualReportPage(c, stamp)).join('');
+  const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+  <title>${titulo} · Hospital Nereu Ramos</title>
+  <style>
+    *{box-sizing:border-box}
+    body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1b2733;margin:0;padding:32px 36px;background:#fff;font-size:13px;line-height:1.5}
+    .page + .page{page-break-before:always;padding-top:24px}
+    .head{display:flex;align-items:center;gap:16px;border-bottom:3px solid #0a4da2;padding-bottom:18px}
+    .head img{width:54px;height:54px;object-fit:contain}
+    .head h1{font-size:19px;margin:0;color:#063a7a}
+    .head .eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#5a6b7b;margin-bottom:3px}
+    .head .meta{margin-left:auto;text-align:right;font-size:11px;color:#5a6b7b;line-height:1.6}
+    .person{display:flex;align-items:center;gap:14px;margin:18px 0 4px}
+    .person .av{width:46px;height:46px;border-radius:50%;background:#0a4da2;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+    .person b{font-size:16px;display:block}.person small{color:#5a6b7b}
+    h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#0a4da2;margin:24px 0 10px;border-bottom:1px solid #dde7f1;padding-bottom:6px}
+    .kpis{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .kpi{flex:1;min-width:120px;border:1px solid #dde7f1;border-radius:10px;padding:12px 14px;text-align:center;background:#f7fafd}
+    .kpi .v{font-size:22px;font-weight:800;color:#0a4da2}
+    .kpi .l{font-size:10.5px;color:#5a6b7b;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+    .certs{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+    .certbox{flex:1;min-width:200px;border:1px dashed #c3d2e2;border-radius:10px;padding:12px 14px;font-weight:700;color:#90a3b3;background:#fafcfe}
+    .certbox.on{border-style:solid;border-color:#1a8f54;color:#1a8f54;background:#1a8f5410}
+    table{width:100%;border-collapse:collapse;font-size:11.5px;margin-top:4px}
+    th{background:#0a4da2;color:#fff;text-align:left;padding:7px 8px;font-size:10px;text-transform:uppercase;letter-spacing:.03em;font-weight:700}
+    td{padding:7px 8px;border-bottom:1px solid #e7eef6;vertical-align:middle}
+    tr:nth-child(even) td{background:#f7fafd}
+    td b{display:block}td small{color:#5a6b7b;font-size:10px}
+    td.st{text-align:center;white-space:nowrap}td.cc{text-align:center}
+    .tag{display:inline-block;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;border:1px solid}
+    .mono{font-family:'Consolas',monospace;font-size:10.5px;color:#0a4da2;font-weight:700}
+    .foot{margin-top:40px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+    .sign{text-align:center;min-width:230px}.sign .ln{border-top:1px solid #1b2733;margin-bottom:6px}
+    .sign b{display:block;font-size:12px}.sign small{color:#5a6b7b;font-size:10.5px}
+    .disc{font-size:10px;color:#90a3b3;max-width:340px}
+    .toolbar{position:sticky;top:0;background:#0a4da2;color:#fff;padding:10px 14px;border-radius:8px;margin-bottom:20px;display:flex;gap:10px;align-items:center}
+    .toolbar b{flex:1}
+    .toolbar button{font:inherit;font-size:12.5px;font-weight:700;border:0;border-radius:7px;padding:8px 16px;cursor:pointer}
+    .toolbar .print{background:#fff;color:#0a4da2}.toolbar .close{background:rgba(255,255,255,.18);color:#fff}
+    @media print{.toolbar{display:none}body{padding:0}@page{margin:14mm}}
+  </style></head><body>
+    <div class="toolbar no-print">
+      <b>${cols.length===1?'Relatório individual pronto':(cols.length+' relatórios individuais prontos')} — use “Imprimir / Salvar PDF”.</b>
+      <button class="print" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+      <button class="close" onclick="window.close()">Fechar</button>
+    </div>
+    ${pages}
+  </body></html>`;
+  const w = window.open('', '_blank');
+  if(!w){ alert('Permita pop-ups para gerar o relatório.'); return; }
+  w.document.open(); w.document.write(html); w.document.close();
+}
+
+/* Relatório individual: gera o relatório completo de cada colaborador marcado
+   (isolado, 1 por página). Exige ao menos um selecionado. */
+function gerarRelatorioIndividual(){
+  const checked = [...document.querySelectorAll('.sel-colab:checked')].map(c=>c.value);
+  if(!checked.length){ alert('Marque ao menos um colaborador na lista para gerar o relatório individual.'); return; }
+  const cols = [...colaboradoresGestor].sort(byNome).filter(c=>checked.includes(c.matricula));
+  abrirRelatorioIndividual(cols);
+}
+function toggleAllColabs(cb){
+  document.querySelectorAll('.sel-colab').forEach(c=>{ c.checked = cb.checked; });
 }
 
 /* ---------- main render ---------- */
