@@ -185,6 +185,216 @@
     },
 
     {
+      id:'pop-53', code:'POP-ENF-53', version:'1.2', emission:'20/01/2022',
+      title:'Cuidados de enfermagem com a traqueostomia',
+      executantes:'Equipe de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a limpeza, a troca de curativo e da fixação da traqueostomia.',
+          'Manter a cânula de traqueostomia e as vias respiratórias desobstruídas.',
+          'Manter a integridade da mucosa do estoma e prevenir infecção.'
+        ],note:'<b>Definição:</b> a traqueostomia é a abertura cirúrgica da parede anterior da traqueia, tornando a via aérea pérvia. <b>Componentes da cânula:</b> <b>cânula externa</b> (não removível, fixada no pescoço por cadarço); <b>cânula interna</b> (de menor diâmetro, retirada com frequência para limpeza); <b>fio guia/obturador</b> (ponta romba, evita lesão da mucosa na introdução); <b>balonete (cuff)</b> (em cânulas de silicone/PVC, evita a aspiração de secreções da orofaringe para o trato respiratório inferior).'},
+        {n:2,h:'Materiais necessários',items:[
+          'EPI, bandeja, copo descartável, gaze estéril, pacote de higiene oral e pacote de curativo.',
+          'Água corrente, água oxigenada e solução fisiológica 0,9%.',
+          'Espuma/curativo absorvente para TQT, cadarço e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Limpeza da cânula interna',items:[
+          'As secreções acumuladas podem formar rolhas/tampões que dificultam a passagem do ar; por isso a limpeza deve ser frequente. Posicionar o paciente em decúbito dorsal com a cabeceira elevada a <b>30°</b>.',
+          'Abrir o pacote de higiene oral; destravar e remover a cânula interna, colocando-a no campo.',
+          'Se houver secreção aderida e de difícil remoção, deixar a cânula interna em um copo com <b>água oxigenada ou água morna</b>; depois limpar com gaze e auxílio da pinça até remover toda a sujidade e crostas.',
+          'Trocar as luvas, recolocar a cânula interna e travar.'
+        ]},
+        {n:4,h:'Troca do curativo e da fixação',items:[
+          'Manter o curativo/gaze de proteção sempre limpos e secos e trocar o fixador sempre que estiver com sujidade ou úmido. Posicionar em decúbito dorsal com a cabeceira a 30°.',
+          'Abrir o pacote de curativo, retirar o curativo e a fixação anterior. Se possível, pedir ajuda para segurar a cânula no lugar, evitando o deslocamento.',
+          'Limpar o estoma com gaze estéril e SF 0,9% até remover a sujidade visível; secar a pele periestoma e avaliar o estoma quanto a hiperemia, edema, dor, odor, mudança de coloração e presença/aumento de secreção.',
+          'Aplicar gaze seca ou espuma/curativo absorvente para TQT e fixar a cânula com o cadarço, deixando uma <b>folga de 1 a 2 cm</b> para evitar lesões. Registrar o procedimento.'
+        ]},
+        {n:5,h:'Observações',items:[
+          'Balonete: para evitar lesão da mucosa traqueal ou broncoaspiração, a pressão do cuff <b>não deve ultrapassar 20 a 30 cmH₂O</b>.',
+          'Para a aspiração de secreção, seguir o POP-ENF-61.',
+          'A <b>troca da cânula</b> e a <b>decanulação</b> são realizadas pela equipe médica, com auxílio do enfermeiro e/ou fisioterapeuta.',
+          'A humidificação em paciente traqueostomizado com cânula plástica é necessária para evitar complicações e é feita por macronebulização com névoa.'
+        ]},
+      ],
+      pool:[
+        {q:'Qual a função do balonete (cuff) na cânula de traqueostomia?',
+         o:['Facilitar a remoção da cânula interna','Evitar a aspiração de secreções da orofaringe para o trato respiratório inferior','Servir de fio guia na introdução','Aumentar o diâmetro da cânula externa'],a:1,d:2},
+        {q:'A pressão do balonete (cuff) não deve ultrapassar:',
+         o:['5 a 10 cmH₂O','20 a 30 cmH₂O','50 a 60 cmH₂O','100 cmH₂O'],a:1,d:3},
+        {q:'Ao fixar a cânula com o cadarço, deve-se deixar uma folga de:',
+         o:['Nenhuma folga, bem apertado','1 a 2 cm','5 a 6 cm','O suficiente para passar a mão inteira'],a:1,d:2},
+        {q:'Diante de secreção aderida e de difícil remoção na cânula interna, a conduta é:',
+         o:['Forçar a limpeza com a pinça imediatamente','Deixar a cânula interna em copo com água oxigenada ou água morna antes de limpar','Descartar a cânula interna','Recolocá-la sem limpar'],a:1,d:2},
+        {q:'Quem realiza a troca da cânula de traqueostomia e a decanulação?',
+         o:['O técnico de enfermagem sozinho','A equipe médica, com auxílio do enfermeiro e/ou fisioterapeuta','A zeladoria','O próprio paciente'],a:1,d:2},
+        {q:'Durante a limpeza e troca, o paciente deve ser posicionado em:',
+         o:['Decúbito ventral','Decúbito dorsal com a cabeceira elevada a 30°','Posição de Trendelenburg','Sentado com a cabeça fletida'],a:1,d:2},
+        {q:'Por que a cânula interna precisa de limpeza frequente?',
+         o:['Para trocar a cor da cânula','Porque as secreções podem formar rolhas/tampões que dificultam a passagem do ar','Para evitar a fixação com cadarço','Porque ela é descartável a cada hora'],a:1,d:2},
+        {q:'A humidificação em paciente com cânula plástica de traqueostomia é feita por:',
+         o:['Instilação de soro a cada hora','Macronebulização com névoa','Oxigênio seco em alto fluxo','Não é necessária'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-54', code:'POP-ENF-54', version:'1.1', emission:'02/02/2022',
+      title:'Aplicação de calor e frio',
+      executantes:'Enfermeiro e Técnico de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a aplicação de compressas de calor ou frio sobre a pele íntegra.'
+        ],note:'<b>Definição:</b> calor e frio são o aumento e a diminuição da temperatura dos tecidos com fins terapêuticos. O <b>calor</b> relaxa os músculos e facilita a circulação por vasodilatação, acalma a dor e reduz o edema. O <b>frio</b> age por vasoconstrição dos vasos, alivia a dor local, impede a formação de hematomas/abscessos e, em certos ferimentos abertos, controla a hemorragia.'},
+        {n:2,h:'Indicação e contraindicação',items:[
+          '<b>Calor — indicação:</b> alívio da dor e do edema, melhora da circulação por vasodilatação, aumento da temperatura corporal e relaxamento de músculos contraídos.',
+          '<b>Calor — contraindicação:</b> sangramentos, processos inflamatórios agudos internos, neuropatias, desnutrição, estase circulatória e debilidade acentuada.',
+          '<b>Frio — indicação:</b> aliviar dor, edema e processos inflamatórios, diminuir a congestão local e a hipertermia, controlar hemorragia e promover vasoconstrição.',
+          '<b>Frio — contraindicação:</b> neuropatias, desnutrição, estase circulatória e debilidade acentuada.'
+        ]},
+        {n:3,h:'Materiais necessários',items:[
+          'EPI, bolsa térmica, gelox e água quente ou fria.',
+          'Luvas de procedimento, toalha e biombo.',
+          'Solução desinfetante padronizada.'
+        ]},
+        {n:4,h:'Procedimento',items:[
+          'Conferir a prescrição, higienizar as mãos, organizar o material, paramentar EPI, identificar-se e conferir os dados na pulseira; garantir privacidade (biombo) e posicionar o paciente confortavelmente.',
+          '<b>Testar a temperatura</b> da bolsa térmica/gelox antes de aplicar no paciente e avaliar as condições da pele no local.',
+          'Proteger a pele com uma toalha e observar constantemente o local para evitar queimaduras e lesões. Manter a aplicação por <b>no máximo 20 minutos</b>.',
+          'Retirar após o tempo estipulado, secar a pele, avaliar a efetividade (repetir se necessário), higienizar a bolsa/gelox com a solução desinfetante e registrar.'
+        ]},
+        {n:5,h:'Observações',items:[
+          'Para reduzir a temperatura corporal, aplicar compressas frias preferencialmente nas regiões fronto-temporal, axilar e inguinal bilateral, trocando o local a cada 20 minutos.',
+          'A crioterapia é contraindicada em insuficiência cardíaca aguda ou crônica, alcoólatras e diabéticos.',
+          'O calor direto deve ser aplicado com cautela em pacientes com comprometimento da sensibilidade, diabéticos e inconscientes; cautela também com tecido cicatricial e estomas.',
+          'Retirar a bolsa em caso de vermelhidão excessiva, maceração, palidez ou se o paciente relatar desconforto.'
+        ]},
+      ],
+      pool:[
+        {q:'O tempo máximo de aplicação da bolsa térmica ou do gelox é:',
+         o:['5 minutos','20 minutos','45 minutos','1 hora'],a:1,d:2},
+        {q:'Antes de aplicar a compressa no paciente, é obrigatório:',
+         o:['Aplicar diretamente na pele sem proteção','Testar a temperatura e proteger a pele com uma toalha','Massagear o local','Resfriar ainda mais a bolsa'],a:1,d:2},
+        {q:'O frio (crioterapia) atua principalmente por:',
+         o:['Vasodilatação e relaxamento muscular','Vasoconstrição, aliviando a dor e controlando hemorragia','Aumento da temperatura dos tecidos','Aumento do edema local'],a:1,d:2},
+        {q:'Para reduzir a temperatura corporal, as compressas frias são aplicadas preferencialmente em:',
+         o:['Mãos e pés','Regiões fronto-temporal, axilar e inguinal bilateral','Apenas na testa','Região lombar'],a:1,d:3},
+        {q:'A aplicação de calor é indicada para:',
+         o:['Controlar sangramento ativo','Aliviar dor, reduzir edema e relaxar músculos contraídos por vasodilatação','Processos inflamatórios agudos internos','Estase circulatória'],a:1,d:2},
+        {q:'A bolsa deve ser retirada imediatamente se houver:',
+         o:['Leve sensação de alívio','Vermelhidão excessiva, maceração, palidez ou desconforto relatado','Aquecimento gradual da pele','Relaxamento muscular'],a:1,d:2},
+        {q:'A crioterapia é contraindicada em:',
+         o:['Pacientes hígidos','Insuficiência cardíaca aguda/crônica, alcoólatras e diabéticos','Edema pós-traumático','Hipertermia'],a:1,d:3},
+        {q:'O calor direto deve ser aplicado com cautela em:',
+         o:['Pacientes com sensibilidade preservada','Pacientes com comprometimento da sensibilidade, diabéticos e inconscientes','Pele íntegra e saudável','Qualquer paciente, sem restrição'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-55', code:'POP-ENF-55', version:'1.1', emission:'10/03/2021',
+      title:'Higiene corporal pré-operatória',
+      executantes:'Equipe de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Proporcionar a higiene e o preparo pré-operatório da pele.',
+          'Prevenir a ocorrência de Infecção de Sítio Cirúrgico.'
+        ],note:'<b>Definição:</b> o pré-operatório é o período que antecede o ato anestésico-cirúrgico, com intervenções que reduzem eventos adversos e dão mais segurança ao paciente. Há evidências de que a higiene corporal pré-operatória com <b>solução antisséptica</b> reduz o número de microrganismos na pele, auxiliando na redução do risco de infecção hospitalar.'},
+        {n:2,h:'Materiais necessários',items:[
+          'EPI, toalha de banho, clorexidina degermante 4% e clorexidina solução oral 0,12%.',
+          'Copo plástico, tricótomo (se necessário) e cadeira para banho (se necessário).',
+          'Camisola, gorro descartável, pro pé e checklist pré-operatório.'
+        ]},
+        {n:3,h:'Descrição das atividades',items:[
+          'Higienizar as mãos, organizar o material, paramentar EPI, identificar-se e conferir os dados na pulseira; <b>proteger os acessos venosos e curativos</b> antes de encaminhar ao banho.',
+          'Orientar a não molhar o cabelo e a remover brincos, colares, piercing e próteses dentárias antes do banho.',
+          'Entregar um copo com <b>clorexidina degermante 4%</b> e orientar o uso no banho; realizar a higiene oral com <b>clorexidina 0,12%</b> (POP-ENF-17).',
+          'O banho deve ser feito <b>aproximadamente 2 horas antes da cirurgia</b>. Orientar a não usar roupas íntimas, perfumes, cremes, óleos ou loções após o banho.',
+          'Auxiliar a vestir a camisola, colocar o gorro descartável e os pro pés; manter o paciente confortável no leito, checar no checklist pré-operatório e registrar.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Realizar a tricotomia <b>somente quando estritamente necessária</b> — quando os pelos interferirem na incisão ou na adesão de curativos —, utilizando dispositivo elétrico (tricotomizador) com lâmina descartável.',
+          'Atentar para a higiene oral dos pacientes, realizando-a com clorexidina aquosa 0,12%.'
+        ]},
+      ],
+      pool:[
+        {q:'A higiene corporal pré-operatória deve ser realizada com:',
+         o:['Sabonete comum neutro','Clorexidina degermante 4%','Apenas água','Álcool 70% na pele'],a:1,d:2},
+        {q:'O banho pré-operatório deve ocorrer:',
+         o:['Logo após a cirurgia','Aproximadamente 2 horas antes da cirurgia','No dia anterior, à noite','Somente se o paciente solicitar'],a:1,d:2},
+        {q:'Sobre a tricotomia no preparo pré-operatório, é correto:',
+         o:['Realizá-la sempre, em toda a região','Realizá-la somente quando estritamente necessária, com tricotomizador elétrico e lâmina descartável','Usar lâmina de barbear comum na véspera','Nunca realizá-la em hipótese alguma'],a:1,d:2},
+        {q:'Após o banho pré-operatório, o paciente deve ser orientado a:',
+         o:['Passar hidratante e perfume','Não usar roupas íntimas, perfumes, cremes, óleos ou loções','Vestir a própria roupa','Molhar o cabelo novamente'],a:1,d:2},
+        {q:'Antes de encaminhar o paciente ao banho, deve-se:',
+         o:['Retirar todos os curativos','Proteger os acessos venosos e curativos','Suspender a identificação da pulseira','Remover a clorexidina da unidade'],a:1,d:2},
+        {q:'A higiene oral no preparo pré-operatório é feita com:',
+         o:['Clorexidina solução oral 0,12%','Clorexidina degermante 4%','Água oxigenada','Bicarbonato de sódio'],a:0,d:2},
+        {q:'O objetivo principal da higiene corporal pré-operatória é:',
+         o:['Apenas o conforto do paciente','Reduzir microrganismos na pele e prevenir a Infecção de Sítio Cirúrgico','Substituir a antibioticoprofilaxia','Acelerar a alta hospitalar'],a:1,d:1},
+        {q:'Quais adornos devem ser removidos antes do banho pré-operatório?',
+         o:['Apenas o relógio','Brincos, colares, piercing e próteses dentárias','Somente próteses dentárias','Nenhum, podem permanecer'],a:1,d:1}
+      ]
+    },
+
+    {
+      id:'pop-56', code:'POP-ENF-56', version:'1.0', emission:'30/07/2021',
+      title:'Coberturas e produtos para curativos',
+      executantes:'Equipe de Enfermagem das Unidades de Internação e UTI',
+      origem:'Gerência de Enfermagem',
+      setores:['assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a técnica para a realização dos curativos com as coberturas e os produtos existentes no Hospital Nereu Ramos.'
+        ],note:'<b>Definição:</b> meio terapêutico de limpeza e aplicação de cobertura estéril na lesão, para promover a cicatrização e prevenir infecção. A cicatrização é afetada por fatores <b>sistêmicos</b> (idade, imobilidade, estado nutricional, doenças associadas, imunossupressores) e <b>locais</b> (localização anatômica, infecção e tecido desvitalizado). É necessária a avaliação diária da evolução da lesão para manter ou modificar as condutas.'},
+        {n:2,h:'Coberturas padronizadas (parte 1)',items:[
+          '<b>Hidrogel com alginato (ex.: Purilon):</b> mantém o meio úmido e promove desbridamento autolítico. Indicado para desbridar tecidos necrosados. Contraindicado em pele íntegra, ferida fechada e feridas muito exsudativas. Troca a cada 24h.',
+          '<b>Gaze não aderente com parafina (ex.: Jelonet):</b> protege a ferida, preserva o tecido de granulação e evita a aderência ao leito (troca sem dor). Contraindicada em lesões com secreção purulenta. Troca a cada 48h.',
+          '<b>Hidrofibra com CMC e prata (ex.: Aquacel Ag):</b> mantém ambiente úmido, com ação antibiofilme da prata iônica. Indicada para lesões cavitárias, crônicas, agudas e queimaduras de 1º/2º grau. Contraindicada em lesões superficiais e pouco exsudativas. Troca em até 7 dias (24h se infectada).'
+        ]},
+        {n:3,h:'Coberturas padronizadas (parte 2)',items:[
+          '<b>Alginato de cálcio (placa):</b> em contato com o exsudato forma gel não aderente, promove desbridamento autolítico e absorve o excesso. Indicado em lesões exsudativas, com sangramento, limpas ou infectadas. Contraindicado em lesões secas e pele íntegra. Troca a cada 48h (24h se infectada).',
+          '<b>Espuma de poliuretano com silicone (ex.: Biatain):</b> absorção superior mantendo a lesão úmida. Indicada em lesões exsudativas crônicas e agudas (úlceras, lesões por pressão, pós-operatórias). Contraindicada em lesões secas e pele íntegra. Troca em até 7 dias (24h se infectada).',
+          '<b>Colagenase:</b> agente desbridante enzimático que limpa o leito da ferida. Indicada em lesões de diversas etiologias e queimaduras. Contraindicada em lesões exsudativas e hipersensibilidade. Troca a cada 12h.',
+          '<b>Hidrocolóide extrafino:</b> promove cicatrização e proteção. Indicado para proteger pele íntegra ou com leves escoriações. Contraindicado em lesões abertas, exsudativas e contaminadas. Troca a cada 12h.',
+          '<b>Espuma de poliuretano para traqueostomia:</b> não aderente, absorvente e recortável. Indicada em lesões sem infecção com exsudato moderado a intenso e em traqueostomia. Troca em até 7 dias, se não saturada.'
+        ]},
+        {n:4,h:'Técnica e periodicidade',items:[
+          'A técnica de limpeza segue o padrão do curativo (POP-ENF-52): SF 0,9% morno, técnica asséptica, medir os bordos, limpar do centro mais limpo para o contaminado e não esfregar o leito da lesão.',
+          'Selecionar a cobertura primária conforme a avaliação do enfermeiro/prescrição; ocluir com película ou atadura. <b>Esparadrapo é contraindicado</b> e o micropore não deve ser usado em pele friável/escoriada.',
+          'Periodicidade da troca: conforme a cobertura escolhida e a orientação do fabricante, ou sempre que estiver molhado, úmido ou com sujidade aparente.'
+        ]},
+      ],
+      pool:[
+        {q:'Qual cobertura tem ação antibiofilme por conter prata iônica?',
+         o:['Hidrogel com alginato (Purilon)','Gaze com parafina (Jelonet)','Hidrofibra com CMC e prata (Aquacel Ag)','Hidrocolóide extrafino'],a:2,d:3},
+        {q:'A colagenase é indicada principalmente como:',
+         o:['Cobertura para pele íntegra','Agente desbridante enzimático do leito da ferida','Curativo compressivo','Cobertura para feridas muito exsudativas'],a:1,d:2},
+        {q:'Qual produto é contraindicado em pele íntegra e ferida operatória fechada?',
+         o:['Hidrocolóide extrafino','Hidrogel com alginato (Purilon)','Placa de proteção','Gaze seca'],a:1,d:2},
+        {q:'A gaze não aderente com parafina (Jelonet) tem como principal vantagem:',
+         o:['Desbridar tecido necrótico','Evitar a aderência ao leito, permitindo troca sem dor','Conter prata bactericida','Absorver grandes volumes de exsudato'],a:1,d:2},
+        {q:'O hidrocolóide extrafino é indicado para:',
+         o:['Lesões abertas e contaminadas','Proteger pele íntegra ou com leves escoriações','Feridas muito exsudativas','Desbridamento enzimático'],a:1,d:2},
+        {q:'A frequência de troca da colagenase é:',
+         o:['A cada 12 horas','A cada 7 dias','A cada 30 minutos','Somente quando saturar'],a:0,d:2},
+        {q:'O alginato de cálcio em placa é indicado para:',
+         o:['Lesões secas e pele íntegra','Lesões exsudativas, com sangramento, limpas ou infectadas','Apenas pele íntegra','Feridas operatórias fechadas'],a:1,d:2},
+        {q:'Sobre a fixação dos curativos, é correto afirmar:',
+         o:['O esparadrapo é o fixador preferencial','O esparadrapo é contraindicado e o micropore não deve ser usado em pele friável/escoriada','Micropore pode ser usado em qualquer pele','Não se deve ocluir a ferida'],a:1,d:2}
+      ]
+    },
+
+    {
       id:'pop-48', code:'POP-ENF-48', version:'1.2', emission:'01/10/2020',
       title:'Troca de bolsa coletora — ostomia',
       executantes:'Enfermeiro e Técnico de Enfermagem',
