@@ -298,6 +298,353 @@
         {q:'Sobre a Escala Visual Analógica (EVA), é correto afirmar:',
          o:['É uma régua numerada de 0 a 10','É uma régua de 10 cm sem graduações, entre "nenhuma dor" e "a pior dor possível"','Utiliza descritores verbais como leve e severa','É aplicável somente em pediatria'],a:1}
       ]
+    },
+
+    {
+      id:'pop-63', code:'POP-ENF-63', version:'1.3', emission:'16/10/2015',
+      title:'Aspiração de TOT e TQT em ventilação mecânica — sistema fechado',
+      executantes:'Equipe de enfermagem, fisioterapia e medicina',
+      origem:'UTI',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Remover secreções traqueais de pacientes mecanicamente ventilados que não devem ser desconectados do ventilador mecânico (VM).'
+        ],note:'<b>Indicação do sistema fechado:</b> quando o PEEP estiver acima de 10 cmH₂O e/ou a FiO₂ for maior ou igual a 60%, e em pacientes com precaução por aerossóis (tuberculose, varicela, sarampo, H1N1, COVID-19).'},
+        {n:2,h:'Materiais e equipamentos necessários',items:[
+          'EPI (equipamentos de proteção individual).',
+          'Dispositivo de oscilação oral de alta frequência (Shaker ou Flutter).',
+          'Água destilada e solução fisiológica.',
+          'Rede de vácuo funcionante, frasco de aspiração e intermediário de látex.',
+          'Oxímetro, estetoscópio e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Descrição das atividades',items:[
+          'Organizar os materiais, encaminhar-se ao leito e testar a rede de vácuo antes de iniciar o procedimento.',
+          'Higienizar as mãos (Protocolo Institucional de Higiene de Mãos) e paramentar os EPIs conforme a precaução/isolamento do paciente.',
+          'Identificar-se ao paciente e ao acompanhante, explicar o procedimento e conferir os dados (nome completo e data de nascimento) na pulseira, confirmando-os verbalmente.',
+          'Higienizar o estetoscópio com a solução desinfetante padronizada e realizar ausculta pulmonar antes do procedimento, para identificar ruídos adventícios.',
+          'Abrir e testar o funcionamento do sistema de aspiração.',
+          'Setar no ventilador mecânico a <b>FiO₂ a 100%</b> ou o modo aspiração (se disponível), para elevar o conteúdo arterial de O₂ antes do procedimento; desligar temporariamente o alarme do VM.',
+          'Conectar a ponta do sistema de aspiração fechado ao látex de aspiração e girar a trava de segurança para abrir o sistema de vácuo.',
+          'Introduzir a sonda no tubo orotraqueal, nasotraqueal ou na traqueostomia; ao perceber resistência (carina), recuá-la <b>1 a 2 cm</b> e então liberar o vácuo apertando o clampe, com movimentos lentos de vai e vem, retirando lentamente a sonda. <b>Não ultrapassar 10 segundos</b>, pelo risco de hipoxemia.',
+          'Adaptar a seringa de 20 ml (com água destilada ou solução fisiológica) no local recomendado e lavar a sonda injetando e sugando ao mesmo tempo, entre as aspirações e ao final do procedimento.',
+          'Repetir o procedimento quantas vezes forem necessárias; desconectar a seringa e mantê-la protegida em seu invólucro estéril.',
+          'Travar a válvula de segurança, desconectar o vácuo e colocar a tampa protetora do sistema de aspiração fechado.',
+          'Em seguida, realizar a aspiração naso e orofaríngea conforme o POP-ENF-60.',
+          'Desligar o sistema de vácuo; recolher o que deve ser guardado e desprezar o restante do material no lixo apropriado.',
+          'Higienizar as mãos e registrar o procedimento no prontuário eletrônico.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Monitorizar os sinais vitais e os sinais de desconforto respiratório antes, durante e após o procedimento.',
+          'Certificar-se de que a FiO₂ no VM retornou ao valor anterior.',
+          'Não se recomenda injetar soro fisiológico ou água destilada pelo tubo/traqueostomia, nem ambuzar o paciente, pelo possível deslocamento de bactérias do biofilme da via aérea artificial para o trato respiratório inferior. Se necessário, instilar 2 ml de solução seguida de aspiração, para facilitar a introdução da sonda, estimular a tosse e remover secreções espessas ("rolhas").',
+          'Realizar o procedimento após a fisioterapia respiratória e/ou sempre que houver sinais de acúmulo de secreções.'
+        ],alert:'<b>Não ultrapassar 10 segundos</b> de aspiração contínua, pelo risco de hipoxemia. Mantenha a monitorização da saturação durante todo o procedimento.'}
+      ],
+      pool:[
+        {q:'O sistema fechado de aspiração é indicado, entre outras situações, quando:',
+         o:['O PEEP estiver acima de 10 cmH₂O e/ou a FiO₂ for ≥ 60%, ou houver precaução por aerossóis','O paciente estiver em ar ambiente, sem ventilação mecânica','A secreção for escassa e fluida','Não houver risco de hipoxemia'],a:0},
+        {q:'O tempo máximo de aspiração contínua, pelo risco de hipoxemia, é de:',
+         o:['30 segundos','20 segundos','10 segundos','Não há limite, até remover toda a secreção'],a:2},
+        {q:'Ao introduzir a sonda e perceber resistência (carina), a conduta correta é:',
+         o:['Forçar a progressão da sonda até vencer a resistência','Recuar a sonda 1 a 2 cm e só então liberar o vácuo, retirando-a lentamente','Liberar o vácuo imediatamente na carina, sem recuar','Retirar a sonda e reiniciar com outra de maior calibre'],a:1},
+        {q:'Antes do procedimento, para elevar o conteúdo arterial de O₂, deve-se:',
+         o:['Reduzir a FiO₂ para 21%','Setar a FiO₂ a 100% (ou modo aspiração, se disponível)','Desligar o ventilador mecânico','Hiperinsuflar manualmente com o ambú'],a:1},
+        {q:'Sobre a instilação de soro fisiológico pelo tubo/traqueostomia, o POP orienta:',
+         o:['Instilar rotineiramente 10 ml antes de cada aspiração','Não é recomendada de rotina; se necessário, instilar apenas 2 ml seguida de aspiração','Substituir a aspiração pela instilação contínua','Ambuzar o paciente após cada instilação'],a:1},
+        {q:'A lavagem da sonda entre as aspirações e ao final é feita com:',
+         o:['Seringa de 20 ml com água destilada ou solução fisiológica, injetando e sugando ao mesmo tempo','Álcool 70% sob pressão','Gaze estéril embebida em clorexidina','Apenas ar comprimido'],a:0},
+        {q:'Imediatamente antes da aspiração, além de higienizar as mãos e paramentar, deve-se:',
+         o:['Realizar ausculta pulmonar para identificar ruídos adventícios','Aspirar primeiro a orofaringe','Desinflar o balonete (cuff) do tubo','Desconectar o paciente do ventilador'],a:0},
+        {q:'Após concluir a aspiração pelo sistema fechado, o profissional deve:',
+         o:['Encerrar o procedimento sem outras aspirações','Realizar a aspiração naso e orofaríngea conforme o POP-ENF-60','Reabrir imediatamente o sistema de vácuo','Manter a FiO₂ em 100% pelas próximas horas'],a:1}
+      ]
+    },
+
+    {
+      id:'pop-64', code:'POP-ENF-64', version:'1.1', emission:'29/04/2022',
+      title:'Transporte e acomodação do corpo no necrotério',
+      executantes:'Equipe de enfermagem',
+      origem:'Todas as unidades de internação do HNR',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar o procedimento de transporte e acomodação do corpo no necrotério.',
+          'Garantir a adequada conservação do corpo até que seja providenciada a sua entrega.'
+        ]},
+        {n:2,h:'Materiais necessários',items:[
+          'EPI (equipamentos de proteção individual).',
+          'Maca de transporte hidráulica e maca de transporte simples.',
+          'Mesa para acomodação do corpo no necrotério e câmara mortuária.',
+          'Folha de identificação do paciente e rampa para elevação da maca.'
+        ]},
+        {n:3,h:'Descrição das atividades',items:[
+          'Preparar o corpo conforme o POP-ENF-37 (Preparo e identificação do corpo pós-morte).',
+          'Colocar um lençol na maca de transporte e transferir o corpo do leito para a maca.',
+          'Definir o destino: <b>maca hidráulica</b> para a gaveta <b>inferior</b> da câmara mortuária; <b>maca simples</b> para a gaveta <b>superior</b>.',
+          'Transportar o corpo até o necrotério.'
+        ]},
+        {n:4,h:'Acomodação na mesa do necrotério',items:[
+          'Ao chegar ao necrotério, colocar a maca ao lado da mesa, elevá-la até o nível máximo e transferir o corpo.',
+          'Fixar a folha de identificação do paciente na mesa.',
+          'Recolher o lençol da maca de transporte e descartá-lo no hamper, na parte externa do necrotério.',
+          'Deixar o ambiente organizado; levar a maca ao local de origem e comunicar a zeladoria para a higienização.',
+          'Higienizar as mãos (Protocolo Institucional de Higiene de Mãos).'
+        ]},
+        {n:5,h:'Acomodação na gaveta superior da câmara mortuária',items:[
+          'Ao chegar ao necrotério, colocar a maca de transporte simples na rampa para elevação da maca.',
+          'Retirar a parte superior móvel da gaveta da câmara mortuária, colocá-la na mesa de transporte e deixá-la ao lado da maca.',
+          'Transferir o corpo do paciente.',
+          'Colocar a mesa de transporte ao nível da gaveta da câmara mortuária e empurrar.',
+          'Após acomodar o corpo, fixar a folha de identificação do paciente na parte externa da câmara mortuária.',
+          'Recolher o lençol e descartá-lo no hamper, na parte externa do necrotério; deixar o ambiente organizado.',
+          'Levar a maca ao local de origem, comunicar a zeladoria para a higienização e higienizar as mãos.'
+        ]},
+        {n:6,h:'Acomodação na gaveta inferior da câmara mortuária',items:[
+          'Ao chegar ao necrotério, colocar a maca de transporte hidráulica ao lado da gaveta inferior e baixá-la ao nível mínimo.',
+          'Destravar a gaveta e puxá-la totalmente para fora.',
+          'Colocar o corpo e empurrar a gaveta.',
+          'Após acomodar o corpo, fixar a folha de identificação do paciente na parte externa da câmara mortuária.',
+          'Recolher o lençol e descartá-lo no hamper, na parte externa do necrotério; deixar o ambiente organizado.',
+          'Levar a maca ao local de origem, comunicar a zeladoria para a higienização e higienizar as mãos.'
+        ],note:'<b>Atenção:</b> a parte móvel da gaveta pode ser puxada para fora da parte fixa, mas é necessário que um funcionário fique apoiando durante a transferência do corpo.'},
+        {n:7,h:'Observações',items:[
+          'Atentar para a temperatura interna do necrotério antes de transferir o corpo para a mesa — manter a sala refrigerada, com o ar-condicionado ligado, entre <b>15 °C e 18 °C</b>.',
+          'Atentar para a temperatura da câmara mortuária antes de colocar o corpo — mantê-la entre <b>2 °C e 6 °C</b>, conforme orientação do fabricante (Cozil).',
+          'Para a adequada acomodação do corpo, conforme o diagnóstico e o tempo de espera, seguir o quadro abaixo.'
+        ],table:{
+          cols:['Situação','Acomodação'],
+          rows:[
+            ['Óbito de outros municípios','Direto na câmara mortuária'],
+            ['Pessoa não identificada ou sem registro de familiar','Direto na câmara mortuária'],
+            ['Óbito por Covid-19, febre amarela e meningite','Direto na câmara mortuária'],
+            ['Outras patologias — espera de até 6 horas','Na mesa do necrotério'],
+            ['Outras patologias — espera maior que 6 horas','Direto na câmara mortuária'],
+            ['Óbitos ocorridos no período noturno','Direto na câmara mortuária']
+          ]
+        }}
+      ],
+      pool:[
+        {q:'Antes do transporte ao necrotério, o corpo deve ser preparado conforme qual POP?',
+         o:['POP-ENF-08 (Sinais vitais)','POP-ENF-37 (Preparo e identificação do corpo pós-morte)','POP-ENF-60 (Aspiração)','POP-ENF-50 (Hemocomponentes)'],a:1},
+        {q:'A temperatura da câmara mortuária, conforme orientação do fabricante, deve ser mantida entre:',
+         o:['2 °C e 6 °C','15 °C e 18 °C','0 °C e 2 °C','8 °C e 12 °C'],a:0},
+        {q:'A sala do necrotério, antes de transferir o corpo para a mesa, deve permanecer refrigerada entre:',
+         o:['2 °C e 6 °C','10 °C e 14 °C','15 °C e 18 °C','20 °C e 24 °C'],a:2},
+        {q:'A maca de transporte hidráulica é utilizada para acomodar o corpo na:',
+         o:['Mesa do necrotério','Gaveta superior da câmara mortuária','Gaveta inferior da câmara mortuária','Rampa de elevação'],a:2},
+        {q:'Em caso de óbito por Covid-19, febre amarela ou meningite, o corpo deve ser:',
+         o:['Mantido na mesa do necrotério por 6 horas','Acomodado direto na câmara mortuária','Liberado imediatamente à família','Acomodado na gaveta superior, sem identificação'],a:1},
+        {q:'No óbito por outras patologias com espera de até 6 horas, a acomodação é:',
+         o:['Direto na câmara mortuária','Na mesa do necrotério','No leito de origem','Na rampa de elevação'],a:1},
+        {q:'Ao acomodar o corpo na gaveta inferior, puxando a parte móvel da gaveta, é necessário:',
+         o:['Que um funcionário fique apoiando a parte móvel durante a transferência','Remover totalmente a parte móvel e apoiá-la no chão','Inclinar a maca para deslizar o corpo','Realizar o procedimento sozinho, para reduzir o contato'],a:0},
+        {q:'Após acomodar o corpo na câmara mortuária, a conduta correta inclui:',
+         o:['Levar o lençol de volta ao leito do paciente','Fixar a folha de identificação na parte externa da câmara, comunicar a zeladoria e higienizar as mãos','Deixar a gaveta destravada para facilitar a entrega','Desligar a câmara mortuária para economia de energia'],a:1}
+      ]
+    },
+
+    {
+      id:'pop-65', code:'POP-ENF-65', version:'1.4', emission:'22/09/2015',
+      title:'Conferência do carro de emergência',
+      executantes:'Enfermeiro, técnico de enfermagem e farmacêutico',
+      origem:'Todas as unidades de atendimento do HNR',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar o abastecimento dos materiais e medicamentos nos carros de emergência, visando ao pronto atendimento adequado aos pacientes em situação de emergência.',
+          'Padronizar a conferência e a organização dos carros de emergência.',
+          'Assegurar que todos os itens necessários estejam no carrinho, prontos para uso quando necessário.'
+        ]},
+        {n:2,h:'Materiais/equipamentos necessários',items:[
+          'Caneta, prancheta e compressa.',
+          'Solução desinfetante padronizada.',
+          'Formulário de conferência diária (anexo 2).',
+          'Formulário de conferência semanal do cardioversor (anexo 3).',
+          'Formulário de conferência mensal e de abertura do carro de emergência (anexo 4).',
+          'Kits de emergência UTI (anexo 5).'
+        ]},
+        {n:3,h:'Organização do carro de emergência',sub:'Base superior do carro de emergência:',items:[
+          'Caixa contendo laringoscópio e lanterna.',
+          'Ressuscitador manual (ambú).',
+          'Cardioversor e/ou desfibrilador.',
+          'Prancheta com os formulários de conferência.',
+          'Tábua rígida (pode estar na lateral ou atrás do carro).'
+        ],note:'<b>Organização das gavetas:</b> <b>1ª gaveta</b> — maleta lacrada com fármacos de primeira linha para emergência; <b>2ª gaveta</b> — materiais para controle de vias aéreas; <b>3ª gaveta</b> — materiais para punção de acessos venosos e preparo de medicações; <b>4ª gaveta</b> — soluções endovenosas, ambú reserva e outros materiais.'},
+        {n:4,h:'1ª gaveta — Maleta de medicações',table:{
+          cols:['Medicamento','Quantidade'],
+          rows:[
+            ['Água destilada 10 ml','05 amp'],['Hidrocortisona 100 mg','05 Fr'],
+            ['Suxametônio 100 mg','01 Fr'],['Hidralazina 20 mg/ml 1 ml','02 amp'],
+            ['Glicose 50% 10 ml','10 amp'],['Atropina 0,25 mg/ml 1 ml','10 amp'],
+            ['Cloridrato de Epinefrina 1 mg/ml 1 ml','20 amp'],['Gluconato de cálcio 10% 10 ml','02 amp'],
+            ['Propofol 10 mg/ml 20 ml','01 Fr'],['Amiodarona 50 mg/ml 3 ml','06 amp'],
+            ['Furosemida 10 mg/ml 2 ml','05 amp'],['Diazepam 10 mg 2 ml','01 amp'],
+            ['Fenitoína 50 mg/ml 5 ml','05 amp'],['Midazolam 15 mg/ml 3 ml','05 amp'],
+            ['Morfina 10 mg/ml 1 ml','02 amp'],['Fentanil 0,05 mg/ml 10 ml','2 Fr'],
+            ['Noradrenalina 2 mg/ml 4 ml','04 amp'],['Cloridrato de Lidocaína 100 mg/ml','01 spray'],
+            ['Cloridrato de Lidocaína 2% geleia','01 tubo'],['Clorexidina alcoólica 0,5% 30 ml','01 Fr'],
+            ['Lidocaína 2% S/V 20 ml','01 Fr'],['Cetamina 50 mg/ml 2 ml','02 amp']
+          ]
+        }},
+        {n:5,h:'2ª gaveta — Via aérea',table:{
+          cols:['Material','Quantidade'],
+          rows:[
+            ['Tubos: 7 / 7,5 / 8 / 8,5 / 9','2 de cada'],['Guedel','1 unidade'],
+            ['Filtro de barreira','1 unidade'],['Máscara laríngea','1 unidade'],
+            ['Silicone de O₂','1 unidade'],['Látex de aspiração','1 unidade'],
+            ['Bougie','1 unidade'],['Fio guia','1 unidade'],
+            ['SNG nº 16 / nº 14','1 de cada'],['Sonda de aspiração nº 12 / nº 14','2 de cada'],
+            ['Nebulizador','1 unidade']
+          ]
+        }},
+        {n:6,h:'3ª gaveta — Acesso venoso',table:{
+          cols:['Material','Quantidade'],
+          rows:[
+            ['Seringas: 20 / 10 / 5 ml','5 de cada'],['Seringa de 1 ml','2 unidades'],
+            ['Agulhas: 40x12 / 13x4,5 / 40x8','5 de cada'],['Lâminas nº 11 / nº 12','1 de cada'],
+            ['Fio mono-nylon nº 3','2 unidades'],['Abocath nº 16 / nº 18 / nº 20 / nº 22','3 de cada'],
+            ['Micropore','1 unidade'],['Luva estéril nº 6,5 / nº 7 / nº 7,5 / nº 8','2 de cada'],
+            ['Equipo fotossensível','1 unidade'],['Equipo simples','3 unidades'],
+            ['Equipo de bomba','2 unidades'],['Polifix','2 unidades'],
+            ['Torneirinha','4 unidades'],['Tampinha protetora','4 unidades'],
+            ['Transofix','2 unidades'],['Água destilada 10 ml','5 unidades'],
+            ['Clorexidina alcoólica 0,5%','1 frasco'],['SF 0,9% 10 ml','5 unidades']
+          ]
+        }},
+        {n:7,h:'4ª gaveta — Soluções e outros',table:{
+          cols:['Material','Quantidade'],
+          rows:[
+            ['Ringer lactato','1 unidade'],['SF 0,9% 500 ml','4 unidades'],
+            ['Bicarbonato de Sódio','1 unidade'],['Manitol','1 unidade'],
+            ['SF 0,9% 250 ml','1 unidade'],['SG 5% 250 ml','1 unidade'],
+            ['SF 0,9% 100 ml','3 unidades'],['SG 5% 100 ml','3 unidades'],
+            ['Ressuscitador manual','1 unidade'],['Válvulas: O₂, ar comprimido e vácuo','1 de cada'],
+            ['Frasco de aspiração','1 unidade'],['Umidificador','1 unidade']
+          ]
+        }},
+        {n:8,h:'Conferência do carro de emergência',items:[
+          '<b>Conferência diária (anexo 2):</b> no início de cada turno de trabalho, o Enfermeiro confere laringoscópio, lanterna e torpedos de oxigênio.',
+          '<b>Conferência do desfibrilador/cardioversor (anexo 3):</b> na UTI, diariamente (3 vezes ao dia), no início de cada turno; nas unidades de internação, 1 vez ao dia, pela manhã, no início do turno.',
+          '<b>Conferência mensal (anexo 4):</b> realizada preferencialmente na primeira semana do mês, por um enfermeiro e um técnico de enfermagem, conferindo todos os itens e suas validades e atentando para a substituição quando necessário.',
+          'As soluções endovenosas da 4ª gaveta seguem o mesmo fluxo de conferência dos demais materiais, sendo de atribuição da enfermagem.',
+          'Em caso de abertura do lacre e/ou utilização de algum medicamento da maleta, o enfermeiro responsável encaminha a maleta usada à farmácia, junto à prescrição médica dos medicamentos utilizados, e recebe uma nova maleta lacrada e enumerada.',
+          '<b>Conferência mensal dos medicamentos (maleta):</b> realizada pelo farmacêutico, mensalmente, conferindo a integridade dos invólucros estéreis, a data de validade e os lotes (rastreabilidade do produto).'
+        ]},
+        {n:9,h:'Kit emergência UTI — manutenção de soluções',sub:'Kit de medicação/intubação para situações de emergência (pacientes de outras instituições, manutenção de infusão contínua e intubação) até a prescrição médica de internação. Seguem o mesmo fluxo de reposição e conferência da maleta padrão; em caso de uso, encaminhar a maleta à farmácia satélite junto à prescrição.',table:{
+          cols:['Código','Medicamento','Quant.'],
+          rows:[
+            ['116001','Fentanila 10 ml','4'],['108007','Midazolam 10 ml','3'],
+            ['698004','Dexmedetomidina','2'],['108014','Propofol 50 ml','2']
+          ]
+        }},
+        {n:10,h:'Kit emergência UTI — intubação',table:{
+          cols:['Código','Medicamento','Quant.'],
+          rows:[
+            ['108017','Fentanila 2 ml','2'],['108006','Midazolam 3 ml','1'],
+            ['110660','Suxametônio','1'],['108028','Cetamina','1'],
+            ['108037','Propofol 20 ml','1'],['94014','Lidocaína 2% S/V','1']
+          ]
+        }},
+        {n:11,h:'Observações',items:[
+          'Manter o carro de emergência ligado na tomada, para preservar a autonomia elétrica.',
+          'A cada utilização, proceder à conferência dos materiais e à higienização do carro com a solução desinfetante padronizada.',
+          'Encaminhar o ressuscitador manual e a lâmina do laringoscópio ao CME após o uso e solicitar a reposição.',
+          'Proceder à limpeza do cabo do laringoscópio mecanicamente com água e sabão, secar e friccionar com a solução desinfetante padronizada.',
+          'Após todos os itens conferidos e repostos, solicitar o lacre na farmácia e lacrar o carrinho de emergência.'
+        ],alert:'O carro de emergência deve permanecer <b>sempre lacrado, completo e ligado na tomada</b>. Após qualquer uso, conferir, repor, higienizar e solicitar novo lacre.'}
+      ],
+      pool:[
+        {q:'A conferência diária do carro de emergência é realizada pelo Enfermeiro, no início de cada turno, e inclui:',
+         o:['Todos os medicamentos da maleta, um a um','Laringoscópio, lanterna e torpedos de oxigênio','Apenas o lacre do carrinho','Somente as soluções da 4ª gaveta'],a:1},
+        {q:'Na UTI, a conferência do desfibrilador/cardioversor deve ser realizada:',
+         o:['Uma vez por semana','Diariamente, 3 vezes ao dia, no início de cada turno','Apenas na conferência mensal','Somente após cada uso'],a:1},
+        {q:'A conferência mensal dos medicamentos da maleta (integridade, validade e lotes) é de responsabilidade do:',
+         o:['Técnico de enfermagem','Enfermeiro','Farmacêutico','Médico plantonista'],a:2},
+        {q:'A 1ª gaveta do carro de emergência contém:',
+         o:['Materiais para controle de vias aéreas','A maleta lacrada com fármacos de primeira linha para emergência','Soluções endovenosas e ambú reserva','Materiais para punção de acessos venosos'],a:1},
+        {q:'Os materiais para controle de vias aéreas ficam armazenados na:',
+         o:['1ª gaveta','2ª gaveta','3ª gaveta','4ª gaveta'],a:1},
+        {q:'Após a abertura do lacre ou uso de medicamento da maleta, o enfermeiro deve:',
+         o:['Repor os medicamentos por conta própria e relacrar','Encaminhar a maleta usada à farmácia com a prescrição e receber uma nova maleta lacrada e enumerada','Aguardar a conferência mensal para repor','Descartar a maleta e abrir outra do estoque do setor'],a:1},
+        {q:'Quanto à energia, o carro de emergência deve permanecer:',
+         o:['Desligado para economizar bateria','Ligado na tomada, para manter a autonomia elétrica','Ligado apenas durante o atendimento','Conectado somente à bateria interna'],a:1},
+        {q:'Após o uso, o ressuscitador manual e a lâmina do laringoscópio devem ser:',
+         o:['Apenas borrifados com álcool e recolocados no carro','Encaminhados ao CME para reprocessamento, solicitando-se a reposição','Descartados como lixo infectante','Lavados e guardados sem reprocessamento'],a:1}
+      ]
+    },
+
+    {
+      id:'pop-66', code:'POP-ENF-66', version:'1.0', emission:'26/07/2023',
+      title:'Rotina de liberação de visitas na UTI',
+      executantes:'Técnicos de Enfermagem',
+      origem:'Gerência de Enfermagem',
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Descrever o procedimento de acolhimento e liberação de visitas, a instrução dos familiares sobre acompanhamento/visita estendida e a avaliação da permanência de visitas na Unidade de Terapia Intensiva (UTI).'
+        ]},
+        {n:2,h:'Liberação das visitas',sub:'Responsável: Técnico de Enfermagem (leitos 3 e 4) · Horário de início: 14h45min.',items:[
+          '<b>14h45</b> — Ligar a TV no vídeo de instrução, o ar-condicionado (se necessário) ou abrir as janelas.',
+          '<b>14h50</b> — Abrir a porta da sala de visitas e trancar a porta de acesso à UTI; checar se os pacientes estão organizados para receber a visita.',
+          '<b>15h00</b> — Orientar os visitantes presentes (itens a seguir).',
+          'Questionar se conseguiram assistir ao vídeo de instrução e se há dúvidas; em caso de dúvidas, esclarecer. Caso não tenham assistido, reforçar a relevância das informações.',
+          'Fluxo: apenas dois familiares por paciente, um familiar por vez, com único revezamento (para evitar infecções).',
+          'Evitar a entrada com pertences (bolsas, celulares e outros); se necessária a entrada, não dispô-los sobre o leito do paciente.',
+          'Não é permitido fotografar ou filmar dentro da UTI.',
+          'Higienizar as mãos com álcool em gel ao se aproximar e ao se afastar do leito.',
+          'Não ingerir nem trazer bebidas ou alimentos externos, exceto os autorizados pelo serviço de Nutrição ao paciente.',
+          'Permanecer exclusivamente no leito do seu familiar.',
+          'O boletim médico é passado durante ou ao final da visita; aguardar no leito.',
+          'Questionar se há familiar visitando pela primeira vez; em caso afirmativo, solicitar que aguarde a orientação do Enfermeiro.',
+          '<b>16h00</b> — Salvo exceções (visita estendida), comunicar aos visitantes o fim da visita.',
+          '<b>Para acessar o vídeo:</b> no controle remoto da TV (Philco), clicar no botão com figura de casinha; no ícone "Entrada", selecionar o ícone USB e iniciar qualquer vídeo.'
+        ],alert:'Comunicar o Enfermeiro sempre que algum familiar/visitante for de primeira visita (admissão do paciente). Qualquer problema ou dúvida deve ser resolvido em conjunto com o Enfermeiro.'},
+        {n:3,h:'Acolhimento de primeiras visitas',sub:'Responsável: Enfermeiro · ao ser comunicado pelo Técnico de Enfermagem.',items:[
+          'Coletar informações relevantes com os familiares.',
+          'Entregar pertences e protocolar.',
+          'Solicitar (se possível) itens de higiene pessoal para o paciente e entregar (se possível) a lista de material.',
+          'Apresentar normas e rotinas (horários, fluxo de visita, entre outras).'
+        ]},
+        {n:4,h:'Orientação de acompanhante / visita estendida',sub:'Responsável: Enfermeiro.',items:[
+          'Comunicar a equipe multiprofissional: Serviço Social, Psicologia, Medicina e Fisioterapia.',
+          'Comunicar o serviço de Nutrição quando houver paciente em isolamento com necessidade de dispensação de dieta para o familiar no leito de UTI.',
+          'Comunicar a SCIH em caso de pacientes em isolamentos/precauções específicas.',
+          'Liberar o Sistema de Prontuário Eletrônico (call center — recepções).',
+          'Identificar o familiar/visitante de referência para permanecer em acompanhamento, considerando o consentimento do representante legal.',
+          'Orientar o acompanhante sobre as rotinas institucionais e da unidade e estabelecer horário para troca (se necessário), registrando no Prontuário Eletrônico.',
+          'O número de visitantes pode ser ampliado conforme a situação clínica do paciente e a autorização da equipe da UTI; registrar no prontuário o motivo da liberação e comunicar a portaria (consultar o POP-SCIH-09).'
+        ],note:'<b>Quem requer visita estendida/acompanhamento integral:</b> pacientes menores de 18 anos ou com alguma condição especial, a ser avaliada pela equipe.'},
+        {n:5,h:'Observações',items:[
+          'É proibida a entrada de menores de 12 anos; casos excepcionais devem ser avaliados e discutidos com o SCIH e a equipe de Psicologia.',
+          'Os visitantes não podem trazer flores, alimentos e/ou bebidas.',
+          'Visitantes e acompanhantes não utilizam EPI (avental e luva) nos casos de pacientes com bactérias multirresistentes; exceções (Monkeypox, Covid-19, entre outros) devem ser discutidas com o SCIH. Reforçar sempre a higienização das mãos.',
+          'Nos casos de isolamento respiratório, fornecer máscara cirúrgica simples (caso não tenha sido entregue na entrada do hospital, conforme a norma institucional vigente).'
+        ]},
+        {n:6,h:'Anexo 1 — Instruções ao visitante',items:[
+          '<b>É permitido:</b> dois visitantes por período (tarde e noite); entrada individual, com único revezamento entre os dois.',
+          '<b>É vedado:</b> filmar ou fotografar dentro da UTI; deslocar-se do leito da sua visita para outros; mexer nos aparelhos da UTI.',
+          'Quando possível, trazer produtos de higiene pessoal para o paciente.',
+          'Em caso de primeira visita, aguardar as orientações do Enfermeiro.',
+          'O boletim médico é fornecido durante a visita — aguardar no leito.',
+          'Para a redução de infecções, evitar a entrada com bolsas/celulares e outros pertences; não sentar nem dispor pertences sobre o leito.',
+          'Atenção: pertences de valor/uso pessoal (celular, carregador e outros) podem ser perdidos — verificar com a equipe assistencial a permanência desses itens.',
+          'Certificar-se com a equipe se há pertences do paciente a serem recolhidos.'
+        ]}
+      ],
+      pool:[
+        {q:'O horário de início da liberação das visitas na UTI, sob responsabilidade do Técnico de Enfermagem, é:',
+         o:['13h30min','14h45min','16h00min','12h00min'],a:1},
+        {q:'Sobre o fluxo de visitantes por paciente, o POP estabelece:',
+         o:['Até quatro familiares juntos no leito','Dois familiares por paciente, um por vez, com único revezamento','Visitas livres, sem limite de pessoas','Apenas um familiar por dia, sem revezamento'],a:1},
+        {q:'A entrada na UTI é proibida para menores de:',
+         o:['18 anos','16 anos','12 anos','6 anos'],a:2},
+        {q:'Ao identificar um familiar que está visitando pela primeira vez, o Técnico de Enfermagem deve:',
+         o:['Liberar a entrada normalmente','Solicitar que aguarde e comunicar o Enfermeiro para o acolhimento','Encaminhá-lo diretamente ao médico','Negar a visita naquele dia'],a:1},
+        {q:'Requerem visita estendida/acompanhamento integral os pacientes:',
+         o:['Todos os internados na UTI','Menores de 18 anos ou com condição especial avaliada pela equipe','Apenas os que solicitarem por escrito','Somente pacientes em isolamento'],a:1},
+        {q:'Sobre o boletim médico, é correto orientar o visitante a:',
+         o:['Procurar o médico na sala de visitas antes de entrar','Aguardar no leito, pois é passado durante ou ao final da visita','Ligar para a recepção após a visita','Solicitá-lo por escrito na portaria'],a:1},
+        {q:'Dentro da UTI, durante a visita, é vedado:',
+         o:['Higienizar as mãos com álcool em gel','Permanecer ao lado do leito do familiar','Filmar ou fotografar e mexer nos aparelhos da UTI','Conversar com o paciente'],a:2},
+        {q:'Quanto ao uso de EPI por visitantes de pacientes com bactérias multirresistentes, o POP orienta:',
+         o:['Uso obrigatório de avental e luva por todos os visitantes','Visitantes não utilizam avental e luva; reforça-se a higienização das mãos (exceções discutidas com o SCIH)','Uso de macacão e óculos de proteção','Proibição total de visitas'],a:1}
+      ]
     }
   ];
   return POPS;
