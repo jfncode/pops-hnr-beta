@@ -22,11 +22,13 @@
   const CODE = { '21': 'POP-ENF-21', '47': 'POP-ENF-47', '43': 'POP-ENF-43', '08': 'POP-ENF-08',
                  '63': 'POP-ENF-63', '64': 'POP-ENF-64', '65': 'POP-ENF-65', '66': 'POP-ENF-66',
                  '60': 'POP-ENF-60', '61': 'POP-ENF-61', '62': 'POP-ENF-62',
-                 '44': 'POP-ENF-44', '45': 'POP-ENF-45', '46': 'POP-ENF-46' };
+                 '44': 'POP-ENF-44', '45': 'POP-ENF-45', '46': 'POP-ENF-46',
+                 '48': 'POP-ENF-48', '49': 'POP-ENF-49', '51': 'POP-ENF-51', '52': 'POP-ENF-52' };
   const ID   = { '21': 'pop-21', '47': 'pop-47', '43': 'pop-43', '08': 'pop-08',
                  '63': 'pop-63', '64': 'pop-64', '65': 'pop-65', '66': 'pop-66',
                  '60': 'pop-60', '61': 'pop-61', '62': 'pop-62',
-                 '44': 'pop-44', '45': 'pop-45', '46': 'pop-46' };
+                 '44': 'pop-44', '45': 'pop-45', '46': 'pop-46',
+                 '48': 'pop-48', '49': 'pop-49', '51': 'pop-51', '52': 'pop-52' };
 
   // [matricula, popKey, acertos]  (aprovado se acertos >= 3 de 5)
   // Etapa 1: 08,21,43,60,64,65 · Etapa 2: 47,61,62,63,66.

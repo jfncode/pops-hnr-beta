@@ -185,6 +185,219 @@
     },
 
     {
+      id:'pop-48', code:'POP-ENF-48', version:'1.2', emission:'01/10/2020',
+      title:'Troca de bolsa coletora — ostomia',
+      executantes:'Enfermeiro e Técnico de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Promover a higienização do estoma e da bolsa coletora.',
+          'Prevenir a ocorrência de lesões periestoma.',
+          'Orientar o paciente e o familiar sobre a manipulação e os cuidados com o estoma; promover conforto e segurança.'
+        ],note:'<b>Definição:</b> estoma (ostomia) é a exteriorização cirúrgica de uma víscera na parede abdominal — intestino delgado (<b>ileostomia</b>) ou grosso (<b>colostomia</b>), entre outras (gastrostomia, nefrostomia, ureterostomia, cistostomia). As bolsas podem ser de <b>1 peça</b> (placa e bolsa integradas) ou de <b>2 peças</b> (a placa-base permanece na pele por vários dias — cerca de 4 — e troca-se apenas a bolsa).'},
+        {n:2,h:'Materiais necessários',items:[
+          'EPI, bandeja, solução fisiológica 0,9%, gaze e saco plástico transparente.',
+          'Bolsa coletora, lençol e lençol impermeável, tesoura.',
+          'Protetores cutâneos (se necessário e disponível), bacia ou comadre, pacote de curativo, biombo e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Esvaziamento e troca',items:[
+          'Verificar a prescrição, avaliar as condições da bolsa e do estoma, organizar o material, higienizar as mãos, paramentar EPI, identificar-se e conferir os dados na pulseira; garantir privacidade (biombo) e proteger a cama com lençol móvel e impermeável.',
+          'Colocar a comadre ao lado, abrir a bolsa e desprezar os fluidos observando as características. Se a bolsa estiver <b>íntegra e bem adaptada</b>, higienizar a parte interna com SF 0,9% e fechar o clampe.',
+          'Para trocar: umedecer o adesivo da bolsa/placa com gaze e SF 0,9% aquecido e removê-la sem movimentos bruscos, descartando no saco plástico. Limpar o estoma com gaze e SF, observando cor (<b>vermelho vivo</b>), brilho, umidade, tamanho e forma, e avaliar a pele periestoma.',
+          '<b>Não usar</b> álcool, benzina ou removedor. Medir o estoma com a escala, traçar o molde no verso da bolsa com margem de segurança de <b>1 mm</b>, recortar e secar bem a pele; aplicar protetor cutâneo se houver irritação.',
+          'Retirar o papel protetor e adaptar a nova bolsa <b>de baixo para cima</b>, ajustando a abertura ao estoma e pressionando contra a parede abdominal, sem pregas ou bolhas de ar; colocar o clamp. Recolher o material, higienizar, checar a prescrição e registrar.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Estoma irregular: preparar molde sob medida com caneta. Paciente acamado: adaptar a bolsa na horizontal; deambulando: na vertical.',
+          'Esvaziar o sistema coletor ao atingir <b>1/3 da capacidade</b> e avaliar diariamente a integridade da bolsa, evitando vazamentos que irritem a pele.',
+          'Bolsas abertas (drenáveis) podem ser lavadas com água ou SF e mantidas enquanto houver boa aderência; bolsas fechadas são de uso único.',
+          'Remover o sistema se o paciente reclamar de queimação/coceira ou se houver drenagem purulenta ao redor do estoma. Na pele periestoma, usar apenas SF ou água e sabão.'
+        ]},
+      ],
+      pool:[
+        {q:'Qual a diferença básica entre bolsa de 1 peça e de 2 peças?',
+         o:['A de 1 peça tem placa e bolsa separadas; a de 2 peças é integrada','A de 1 peça é integrada (placa + bolsa); a de 2 peças tem placa-base que permanece por vários dias e troca-se só a bolsa','A de 2 peças é descartável e a de 1 peça é reutilizável','Não há diferença prática'],a:1,d:2},
+        {q:'Um estoma saudável deve apresentar coloração:',
+         o:['Pálida e acinzentada','Vermelho vivo, brilhante e úmido','Arroxeada e ressecada','Esbranquiçada'],a:1,d:2},
+        {q:'Ao recortar a placa/bolsa de acordo com a medida do estoma, deve-se deixar:',
+         o:['Margem de segurança de cerca de 1 mm','Folga de pelo menos 1 cm','Abertura exatamente do diâmetro do estoma, sem folga','O dobro do diâmetro do estoma'],a:0,d:3},
+        {q:'Para limpar o estoma e a pele periestoma é CORRETO usar:',
+         o:['Álcool 70%','Benzina ou removedor','Apenas solução fisiológica ou água e sabão','Clorexidina alcoólica'],a:2,d:2},
+        {q:'A nova bolsa deve ser adaptada à pele:',
+         o:['De cima para baixo, deixando pregas para conforto','De baixo para cima, sem pregas ou bolhas de ar, pressionando contra a parede abdominal','Em qualquer sentido, desde que cole','Somente após aplicar álcool no adesivo'],a:1,d:2},
+        {q:'O sistema coletor deve ser esvaziado quando atingir:',
+         o:['A capacidade total','1/3 da capacidade','3/4 da capacidade','Somente no fim do plantão'],a:1,d:2},
+        {q:'Antes de remover a bolsa aderida, a conduta que reduz o trauma da pele é:',
+         o:['Puxar rapidamente em um único movimento','Umedecer o adesivo com gaze e SF 0,9% aquecido e remover sem movimentos bruscos','Aplicar calor seco sobre o adesivo','Cortar a placa rente à pele'],a:1,d:2},
+        {q:'Diante de drenagem purulenta ao redor do estoma ou queixa de queimação sob a bolsa, deve-se:',
+         o:['Reforçar a fixação com mais adesivo','Remover o sistema e avaliar a pele','Ignorar, pois é esperado','Apenas trocar o clamp'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-49', code:'POP-ENF-49', version:'1.1', emission:'24/07/2020',
+      title:'Retirada de pontos',
+      executantes:'Enfermeiro e Técnico de Enfermagem',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti','cc','ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a retirada de pontos cirúrgicos.',
+          'Remover as suturas da pele sem lesionar o tecido recém-formado.',
+          'Garantir a cicatrização adequada das lesões cirúrgicas.'
+        ],note:'<b>Definição:</b> a remoção de pontos retira as suturas que aproximam os bordos da ferida, promovendo a cicatrização e minimizando infecções, deiscências e cicatrizes hipertróficas. Deve ser feita com <b>técnica asséptica</b> e em <b>tempo adequado</b> ao tipo de tecido e à localização da sutura.'},
+        {n:2,h:'Materiais necessários',items:[
+          'EPI, bandeja, pacote de retirada de pontos ou pacote de curativo.',
+          'Lâmina de bisturi (se necessário), gaze estéril e solução fisiológica 0,9%.',
+          'Fita microporosa e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Descrição da técnica',items:[
+          'Conferir a prescrição, higienizar a bandeja e organizar o material; higienizar as mãos, paramentar EPI, identificar-se e conferir os dados na pulseira.',
+          'Posicionar o paciente, expor a sutura e avaliar sinais flogísticos, deiscência ou outros — <b>comunicando o enfermeiro</b>. Abrir o pacote de forma asséptica e, se houver sujidade, higienizar a sutura com SF 0,9%.',
+          'Deixar uma gaze próxima para depositar os pontos. <b>Tracionar o ponto pelo nó</b> e cortá-lo com tesoura ou lâmina <b>de um dos lados, junto à pele</b> (mão dominante segura o instrumento; a não dominante, a pinça).',
+          'Após a remoção, fazer nova limpeza com SF 0,9% e avaliar a necessidade de manter a incisão aberta ou realizar curativo oclusivo com gaze e fita microporosa.',
+          'Deixar o paciente confortável, recolher o material, desprezar os resíduos, higienizar a bandeja e as mãos, checar a prescrição e registrar no prontuário eletrônico.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'A decisão sobre a retirada de pontos é do cirurgião; em algumas especialidades os pontos são retirados pelo próprio cirurgião.',
+          'Avaliar a ferida de forma individualizada: tipo de procedimento, extensão e localização, ausência de inflamação, secreção e infecção.',
+          'Diante de sinais de infecção, hemorragia, deiscência ou evisceração, <b>comunicar o médico antes de retirar os pontos</b>.',
+          'Se durante o procedimento ocorrer deiscência ou sangramento ativo: <b>parar a remoção</b>, fazer curativo compressivo e comunicar imediatamente o médico.'
+        ]},
+      ],
+      pool:[
+        {q:'Ao retirar um ponto, a técnica correta é:',
+         o:['Cortar o fio no meio, longe da pele, e puxar pelos dois lados','Tracionar o ponto pelo nó e cortá-lo de um dos lados, junto à pele','Puxar o nó sem cortar o fio','Cortar todos os pontos antes de tracionar qualquer um'],a:1,d:2},
+        {q:'Se durante a retirada ocorrer deiscência ou sangramento ativo, deve-se:',
+         o:['Continuar até remover todos os pontos','Parar a remoção, fazer curativo compressivo e comunicar o médico','Aplicar mais pontos','Lavar com álcool e prosseguir'],a:1,d:3},
+        {q:'A decisão e a responsabilidade sobre a retirada dos pontos cabem:',
+         o:['Ao técnico de enfermagem','Ao cirurgião responsável pela terapêutica','À recepção da unidade','Ao próprio paciente'],a:1,d:1},
+        {q:'Antes de iniciar a retirada, ao avaliar a ferida com sinais de infecção, a conduta correta é:',
+         o:['Retirar os pontos rapidamente para evitar piora','Comunicar o médico antes de retirar os pontos','Aplicar antibiótico tópico por conta própria','Cobrir e ignorar os sinais'],a:1,d:2},
+        {q:'A retirada de pontos deve ser realizada com:',
+         o:['Técnica limpa, sem necessidade de assepsia','Técnica asséptica e em tempo adequado ao tecido','Apenas luvas de procedimento e sem pacote estéril','Somente sob anestesia geral'],a:1,d:1},
+        {q:'Após a remoção dos pontos, a conduta imediata é:',
+         o:['Não tocar mais na ferida','Realizar nova limpeza com SF 0,9% e avaliar manter aberta ou ocluir','Aplicar esparadrapo diretamente sobre a incisão','Suturar novamente por precaução'],a:1,d:2},
+        {q:'Qual a finalidade principal da remoção das suturas em tempo adequado?',
+         o:['Acelerar a alta hospitalar a qualquer custo','Promover a cicatrização e minimizar infecções, deiscências e cicatrizes hipertróficas','Reduzir o uso de gazes','Evitar o registro no prontuário'],a:1,d:2},
+        {q:'Durante o corte, qual mão segura o instrumento (tesoura/lâmina)?',
+         o:['A mão não dominante','A mão dominante','Ambas as mãos simultaneamente','Indiferente'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-51', code:'POP-ENF-51', version:'1.0', emission:'23/08/2022',
+      title:'Controle de balanço hídrico na UTI',
+      executantes:'Técnico de Enfermagem e Enfermeiro',
+      origem:'Setor Unidade de Terapia Intensiva',
+      setores:['uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar o registro da quantidade de líquidos <b>administrados</b> (alimentação, soluções parenterais, medicamentos, sangue e derivados) e <b>eliminados</b> (urina, drenagens, diarreia, vômitos, sangramentos e sudorese) pelo paciente em um período de 24 horas.'
+        ]},
+        {n:2,h:'Indicação',items:[
+          'Pacientes críticos; em nutrição enteral ou parenteral; em pós-operatório.',
+          'Portadores de enfermidade cardíaca, edema, drenos e ascite.',
+          'Com restrição hídrica ou hiper-hidratação, débito urinário diminuído, distúrbios hidroeletrolíticos e instabilidade hemodinâmica.'
+        ]},
+        {n:3,h:'Materiais necessários',items:[
+          'Luvas de procedimento e máscara cirúrgica.',
+          'Formulário padrão de controle hídrico, frasco graduado para medição de volume, caneta e calculadora.',
+          'Fraldas e balança para pesagem.'
+        ]},
+        {n:4,h:'Registro (regras gerais)',items:[
+          'Identificar a folha de BH com o nome do paciente, o leito e a assinatura do responsável pelo controle do turno.',
+          'Iniciar um novo controle a partir das <b>07:30h</b> e finalizar o controle do dia anterior às <b>06:30h</b>. O que for infundido/ingerido após 06:30h entra no balanço do dia corrente.',
+          'Anotar a infusão/ingestão por via oral, enteral e parenteral <b>acima de 10 mL</b>, sempre após o término. Anotar as drenagens (vesical, enteral, drenos, punções, hemodiálise) também acima de 10 mL.',
+          'O <b>cálculo parcial e total é feito pelo enfermeiro às 7h</b>. O balanço é <b>positivo (+)</b> quando os ganhos superam as perdas e <b>negativo (−)</b> no caso contrário.'
+        ]},
+        {n:5,h:'Diurese, drenos e fezes',items:[
+          'Diurese por sonda vesical/cistostomia: anotar de <b>2/2h</b> (das 8h de um dia às 6h do outro). Desprezar o volume da sonda no fim de cada turno (12h, 18h e 6h) ou se ultrapassar 2/3 da bolsa coletora.',
+          'Diurese em fralda sem controle: anotar por frequência e quantidade — P (pequena), M (média) e G (grande). Em controle (papagaio, comadre, pesagem): anotar o volume em mL.',
+          'Dreno de tórax: anotar às 6h após a troca do selo d’água (POP-ENF-47), por solicitação da equipe cirúrgica ou se o conteúdo ultrapassar 2/3 do frasco. Hemodiálise e punções: anotar logo após a ocorrência.',
+          'Fezes: anotar por frequência, quantidade (P/M/G) e característica (pastosa, sólida ou líquida).'
+        ]},
+        {n:6,h:'Pesagem de fralda',items:[
+          'Indicada pelo corpo clínico na prescrição, quando o paciente não usa dispositivo urinário ou apresenta fezes líquidas a contabilizar.',
+          'Antes, pesar a <b>fralda seca dentro do saco plástico</b> e anotar o valor (tara).',
+          'Acondicionar a fralda usada no saco plástico e pesar na balança específica do expurgo; <b>subtrair a tara</b> do valor obtido para chegar à diurese contabilizada.',
+          'Descartar o saco com a fralda em lixo infectante. Usar um frasco coletor (jarra) por paciente e higienizar diariamente; manter o expurgo em ordem.'
+        ]},
+      ],
+      pool:[
+        {q:'O ciclo de 24 h do balanço hídrico na UTI inicia e finaliza, respectivamente, às:',
+         o:['00:00h e 24:00h','07:30h e 06:30h','06:00h e 06:00h','12:00h e 12:00h'],a:1,d:2},
+        {q:'A partir de qual volume a infusão/ingestão e as drenagens devem ser anotadas?',
+         o:['Qualquer volume, mesmo gotas','Acima de 10 mL','Acima de 50 mL','Somente acima de 100 mL'],a:1,d:2},
+        {q:'O balanço hídrico é considerado POSITIVO quando:',
+         o:['As perdas são maiores que os ganhos','Os ganhos são maiores que as perdas','Ganhos e perdas se igualam','O paciente está em restrição hídrica'],a:1,d:1},
+        {q:'A diurese controlada por sonda vesical deve ser anotada:',
+         o:['Apenas uma vez por turno','De 2 em 2 horas','Somente quando a bolsa enche','A cada 6 horas'],a:1,d:2},
+        {q:'Quem realiza o cálculo parcial e total do balanço hídrico e em que horário?',
+         o:['O técnico, a cada hora','O enfermeiro, às 7h','A zeladoria, às 6h','O médico, no fim do plantão'],a:1,d:2},
+        {q:'Na pesagem de fralda, para obter a diurese contabilizada deve-se:',
+         o:['Somar a tara ao peso da fralda cheia','Subtrair a tara (fralda seca + saco) do peso da fralda cheia','Pesar apenas a fralda cheia, sem descontar nada','Estimar pela quantidade P/M/G'],a:1,d:3},
+        {q:'O volume da sonda vesical deve ser desprezado no fim de cada turno (12h, 18h e 6h) ou quando:',
+         o:['Ultrapassar 2/3 da capacidade da bolsa coletora','Atingir 1/4 da bolsa','A cada hora, independentemente do volume','Apenas no fim das 24h'],a:0,d:2},
+        {q:'A diurese em fralda sem controle volumétrico é registrada por:',
+         o:['Volume exato em mL','Frequência e quantidade aproximada (P, M, G)','Peso corporal do paciente','Cor da urina apenas'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-52', code:'POP-ENF-52', version:'1.1', emission:'30/07/2021',
+      title:'Curativo',
+      executantes:'Equipe de Enfermagem das Unidades de Internação e UTI',
+      origem:'Pavilhão, UTI, DIP1, DIP2, Tisiologia e Egy',
+      setores:['assistencial','uti'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Preservar o tecido de granulação, acelerar o processo de cicatrização e minimizar o risco de trauma e/ou infecção.'
+        ],note:'<b>Definição:</b> meio terapêutico de limpeza e proteção da ferida (limpa, promove a cicatrização, trata e previne infecção, absorve secreções e mantém a umidade). <b>Tipos:</b> <b>semi-oclusivo</b> (absorvente, para feridas cirúrgicas, drenos e exsudativas), <b>oclusivo</b> (barreira mecânica, não permite ar/fluidos), <b>compressivo</b> (reduz o fluxo sanguíneo) e <b>aberto</b>. <b>Primário</b> = em contato direto com a lesão; <b>secundário</b> = sobre o primário.'},
+        {n:2,h:'Materiais necessários',items:[
+          'Bandeja, kit curativo, gazes estéreis e chumaço.',
+          'Solução fisiológica 0,9%, clorexidina degermante, seringa de 20 ml e agulha 30x10 ou 40x12.',
+          'Micropore, tesoura, saco plástico, ataduras, régua de papel e a cobertura primária selecionada (conforme avaliação do enfermeiro ou prescrição de enfermagem).'
+        ]},
+        {n:3,h:'Descrição da técnica',items:[
+          'A limpeza é feita com SF 0,9% <b>aquecido a ~36 °C</b> (solução fria atrasa a cicatrização), com seringa de 20 ml e agulha 40x12/30x8 ou por irrigação; a irrigação em jato é usada apenas em tecido de granulação.',
+          'Preparar o material, verificar/realizar analgesia pré-curativo, orientar o paciente pelo nome, garantir privacidade e, havendo mais de uma lesão, <b>iniciar pela menos contaminada</b>. Posicionar o saco plástico em plano inferior ao material limpo.',
+          'Abrir o pacote com técnica asséptica tocando apenas a face externa do campo; dispor as pinças e gazes; <b>não falar ao manipular a ferida e o material estéril</b>. Remover o curativo com a pinça anatômica com dente, umedecendo com SF as gazes aderidas antes de removê-las.',
+          'Medir os bordos da ferida (altura, largura e profundidade em cm) com a régua. Limpar do <b>centro mais limpo para o contaminado</b>, lavando em jato; usar torundas apenas na pele circundante e <b>não esfregar o leito da lesão</b>; não secar (apenas o excesso de SF).',
+          'Realizar o curativo primário e secundário conforme prescrição e ocluir com película ou atadura. <b>Esparadrapo é contraindicado</b>; o micropore é contraindicado em pele friável ou com escoriações.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Avaliação diária da lesão: calor, hiperemia, presença de secreção e deiscência.',
+          'Sangramento: fazer compressão local e avisar o médico.',
+          'Trocar o curativo conforme a cobertura escolhida e a orientação do fabricante, ou sempre que estiver molhado, úmido ou com sujidade aparente.'
+        ]},
+      ],
+      pool:[
+        {q:'A solução fisiológica usada na limpeza da ferida deve estar:',
+         o:['Gelada, para reduzir a dor','Aquecida a aproximadamente 36 °C, pois a solução fria atrasa a cicatrização','Em temperatura ambiente sempre','Fervente, para esterilizar a ferida'],a:1,d:2},
+        {q:'Quando o paciente tem mais de uma lesão, a ordem correta de realização é:',
+         o:['Começar pela ferida mais contaminada','Começar pela ferida menos contaminada','Tanto faz a ordem','Fazer todas ao mesmo tempo'],a:1,d:2},
+        {q:'Ao limpar o leito da lesão, é correto:',
+         o:['Esfregar vigorosamente o leito com gaze','Não esfregar o leito; limpar do centro mais limpo para o contaminado','Usar torundas dentro do leito da ferida','Secar totalmente o leito ao final'],a:1,d:3},
+        {q:'Sobre a fixação do curativo, é correto afirmar:',
+         o:['O esparadrapo é o fixador de escolha','O esparadrapo é contraindicado e o micropore não deve ser usado em pele friável/escoriada','Micropore pode ser usado em qualquer pele','Não se deve ocluir com atadura'],a:1,d:2},
+        {q:'Antes de remover as gazes aderidas à ferida, deve-se:',
+         o:['Puxá-las secas rapidamente','Umedecê-las com SF 0,9% para minimizar dor e trauma','Cortá-las com tesoura rente à pele','Aplicar clorexidina alcoólica sobre elas'],a:1,d:2},
+        {q:'Um curativo do tipo OCLUSIVO caracteriza-se por:',
+         o:['Ser absorvente e usado em feridas exsudativas','Atuar como barreira mecânica, não permitindo a entrada de ar ou fluidos','Reduzir o fluxo sanguíneo por compressão','Deixar a ferida exposta'],a:1,d:2},
+        {q:'Diante de sangramento durante o curativo, a conduta é:',
+         o:['Aumentar a irrigação em jato','Fazer compressão local e avisar o médico','Aplicar mais gazes e liberar o paciente','Suturar a ferida'],a:1,d:2},
+        {q:'A irrigação em jato (com seringa e agulha) é indicada especificamente para:',
+         o:['Qualquer tipo de ferida','Tecido de granulação','Pele íntegra adjacente','Feridas com tecido necrótico aderido'],a:1,d:3}
+      ]
+    },
+
+    {
       id:'pop-21', code:'POP-ENF-21', version:'1.5', emission:'15/05/2015',
       title:'Preparo e administração de medicações por via endovenosa',
       executantes:'Técnico de Enfermagem e Enfermeiro',
