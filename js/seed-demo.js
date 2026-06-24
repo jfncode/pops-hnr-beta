@@ -81,5 +81,25 @@
     };
   });
 
+  // Critério vigente: Etapa 1 conclui com >= 15 POPs aprovados da área (2 seções de 15 no futuro).
+  // Aprova POPs de forma programática para demonstrar a conclusão da Etapa 1 e os certificados.
+  const byCodeNum = function (a, b) { return (a.code || '').localeCompare(b.code || '', 'pt-BR', { numeric: true }); };
+  function aprovarN(mat, setor, etapa, n) {
+    (window.POPS || [])
+      .filter(function (p) { return Array.isArray(p.setores) && p.setores.includes(setor) && ((p.etapa || 1) === etapa); })
+      .sort(byCodeNum).slice(0, n)
+      .forEach(function (p, i) {
+        var ac = 3 + (i % 3); // 3..5 acertos
+        resultados[mat + '|' + p.id] = {
+          matricula: mat, pop_id: p.id, pop_codigo: p.code,
+          status: 'aprovado', score: ac, acertos: ac, total: 5, tentativas: 1, detalhe: null,
+        };
+      });
+  }
+  aprovarN('4471', 'uti', 1, 15);                       // Ana: Etapa 1 concluída (UTI) → certificado Etapa 1
+  aprovarN('3892', 'cc', 1, 15); aprovarN('3892', 'cc', 2, 99); // Carlos: trilha completa (CC) → certificado final
+  aprovarN('6033', 'ambulatorio', 1, 15);               // Beatriz: Etapa 1 concluída (Ambulatório)
+  // 5120 Juliana, 2765 Marcos e 4408 Roberto ficam em andamento (só as provas manuais acima) → demonstram "faltam X para concluir"
+
   localStorage.setItem(KEY, JSON.stringify({ colaboradores: colaboradores, resultados: resultados }));
 })();

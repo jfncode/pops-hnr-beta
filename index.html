@@ -172,7 +172,11 @@
     margin:22px 0 10px;flex-wrap:wrap}
   .etapa-head h2,.etapa-head h3{font-size:15px;font-weight:700}
   .etapa-prog{font-size:12.5px;color:var(--muted)}
+  .etapa-prog.ok{color:var(--success);font-weight:700}
   .etapa-lock{font-size:12.5px;color:var(--faint);font-weight:600}
+  .etapa-sub{margin:2px 0 10px;color:var(--muted);font-size:13px}
+  .etapa-bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:0 0 14px}
+  .etapa-bar i{display:block;height:100%;background:var(--success);border-radius:99px;transition:width .4s ease}
   .popcard.is-locked{opacity:.62}
   .popcard.is-locked:hover{transform:none;border-color:var(--line)}
   .btn{border:0;border-radius:9px;font-weight:600;font-size:13.5px;padding:9px 16px;
@@ -540,6 +544,7 @@ function logoFail(img){ const c=img.closest('.logo-chip'); if(c) c.classList.add
 const QUIZ_SIZE = 5;     // questões sorteadas por tentativa
 const PASS_MIN  = 3;     // acertos mínimos para aprovação
 const QTIME     = 60;    // segundos por questão
+const ETAPA1_MIN = 15;   // POPs aprovados necessários para concluir a Etapa 1
 const ICON_CERT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.6 7 22l5-3 5 3-1.5-9.4"/></svg>`;
 const ICON_REPORT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg>`;
 
@@ -590,8 +595,13 @@ const byCode = (a,b) => (a.code||'').localeCompare(b.code||'', 'pt-BR', {numeric
 const ETAPA_LABEL = {1:'Etapa 1 · Fundamentos', 2:'Etapa 2 · Avançado'};
 const popEtapa = p => (p && p.etapa===2) ? 2 : 1;
 function popsEtapa(setor, e){ return popsDoSetor(setor).filter(p => popEtapa(p)===e).sort(byCode); }
-function etapaDoneSet(setor, e, aprovSet){ const ps=popsEtapa(setor,e); return ps.length>0 && ps.every(p=>aprovSet.has(p.id)); }
-function etapaDone(e){ const ps=popsEtapa(session && session.setor, e); return ps.length>0 && ps.every(p=>POPCore.isLocked(p.id, aprovadosServidor)); }
+// Meta de conclusão da etapa. Etapa 1 → ler e responder ao menos ETAPA1_MIN (15)
+// POPs da área (ou todos, se o setor tiver menos de 15). Etapa 2 → todos os POPs da etapa.
+function metaEtapa(setor, e){ const n=popsEtapa(setor,e).length; return e===1 ? Math.min(ETAPA1_MIN, n) : n; }
+function aprovadosEtapaSet(setor, e, aprovSet){ return popsEtapa(setor,e).filter(p=>aprovSet.has(p.id)).length; }
+function aprovadosEtapa(e){ return popsEtapa(session && session.setor, e).filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length; }
+function etapaDoneSet(setor, e, aprovSet){ const meta=metaEtapa(setor,e); return meta>0 && aprovadosEtapaSet(setor,e,aprovSet) >= meta; }
+function etapaDone(e){ const meta=metaEtapa(session && session.setor, e); return meta>0 && aprovadosEtapa(e) >= meta; }
 function etapa2Unlocked(){ return etapaDone(1); }
 function temEtapa2(){ return popsEtapa(session && session.setor, 2).length>0; }
 
@@ -819,11 +829,23 @@ function etapaSectionHTML(e){
   const ps=popsEtapa(session.setor, e);
   if(!ps.length) return '';
   const doneN=ps.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length;
+  const meta=metaEtapa(session.setor, e);
   const locked = e===2 && !etapa2Unlocked();
-  const hint = locked
-    ? `<span class="etapa-lock">🔒 Desbloqueia ao concluir a Etapa 1</span>`
-    : `<span class="etapa-prog">${doneN}/${ps.length} concluídos${e===2?' · só questões de alta dificuldade':''}</span>`;
-  return `<div class="etapa-head"><h3>${ETAPA_LABEL[e]}</h3>${hint}</div>
+  let hint, prog='';
+  if(locked){
+    hint = `<span class="etapa-lock">🔒 Desbloqueia ao concluir a Etapa 1</span>`;
+  } else if(e===1){
+    const falta=Math.max(meta-doneN, 0);
+    hint = etapaDone(1)
+      ? `<span class="etapa-prog ok">✓ Meta atingida · ${doneN} POPs (meta ${meta})</span>`
+      : `<span class="etapa-prog"><b>${Math.min(doneN,meta)}/${meta}</b> · faltam ${falta} para concluir</span>`;
+    const pct=meta?Math.round(Math.min(doneN,meta)/meta*100):0;
+    prog = `<p class="etapa-sub">Para concluir a <b>Etapa 1</b>, leia e responda a avaliação de <b>ao menos ${meta} POPs</b> da sua área. POPs extras contam como reforço.</p>
+      <div class="etapa-bar"><i style="width:${pct}%"></i></div>`;
+  } else {
+    hint = `<span class="etapa-prog">${doneN}/${ps.length} concluídos · só questões de alta dificuldade</span>`;
+  }
+  return `<div class="etapa-head"><h3>${ETAPA_LABEL[e]}</h3>${hint}</div>${prog}
     <div class="grid">${ps.map((p,i)=>popCardHTML(p,i)).join('')}</div>`;
 }
 function renderColabList(){
@@ -836,6 +858,7 @@ function renderColabList(){
   }
   const pr=userProgress();
   const e1ok=etapaDone(1), e2ok=etapaDone(2), hasE2=temEtapa2();
+  const e1now=aprovadosEtapa(1), e1meta=metaEtapa(session.setor,1);
   const banners = [
     e1ok ? `<div class="cert-banner">
       <div class="medal">🥇</div>
@@ -850,17 +873,21 @@ function renderColabList(){
       <button class="btn-gold" onclick="goCert(2)">${ICON_CERT}Certificado final</button>
     </div>`:'',
   ].join('');
-  const hello = pr.done===0
-    ? `Comece pela Etapa 1: leia o primeiro POP e faça a avaliação.`
-    : `${pr.done} de ${pr.total} POPs aprovados · ${pr.total-pr.done} pendente(s)`;
+  const falta1=Math.max(e1meta-e1now, 0);
+  const hello = e1ok
+    ? (hasE2 ? `Etapa 1 concluída! Avance para a Etapa 2.` : `Etapa 1 concluída! ${pr.done} de ${pr.total} POPs aprovados.`)
+    : (e1now===0
+        ? `Para concluir a Etapa 1, leia e responda ao menos ${e1meta} POPs. Comece pelo primeiro.`
+        : `Etapa 1: ${Math.min(e1now,e1meta)} de ${e1meta} POPs concluídos · faltam ${falta1}.`);
+  const ringPct = e1ok ? pr.pct : (e1meta?Math.round(Math.min(e1now,e1meta)/e1meta*100):0);
   return `
     <div class="pagehead fade-up">
       <h2>Meus procedimentos</h2>
-      <p>Setor <b>${setorLabel(session.setor)}</b> · trilha em 2 etapas. Aprovação: <b>acerte ao menos ${PASS_MIN} de ${QUIZ_SIZE}</b>.</p>
+      <p>Setor <b>${setorLabel(session.setor)}</b> · trilha em 2 etapas. Conclua a <b>Etapa 1 com ao menos ${e1meta} POPs</b> · aprovação: <b>acerte ${PASS_MIN} de ${QUIZ_SIZE}</b>.</p>
     </div>
     ${banners}
     <div class="mybar fade-up">
-      <div class="ring" style="--p:${pr.pct}"><i>${pr.pct}%</i></div>
+      <div class="ring" style="--p:${ringPct}"><i>${ringPct}%</i></div>
       <div class="txt"><b>Olá, ${session.nome.split(' ')[0]}</b><p>${hello}</p></div>
     </div>
     ${etapaSectionHTML(1)}
@@ -1029,7 +1056,7 @@ function certPaperHTML(stage, d){
   const eyebrow = final ? 'Hospital Nereu Ramos · Conclusão do Programa' : 'Hospital Nereu Ramos · Educação Continuada';
   const corpoTxt = final
     ? `pela <b>conclusão integral</b> da trilha de capacitação — <b>${d.total} Procedimentos Operacionais Padrão</b> (Etapas 1 e 2) do setor ${setorLabel(d.setor)} — no programa de educação permanente em enfermagem, tendo cumprido todos os requisitos com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`
-    : `pela leitura e aprovação nas avaliações dos <b>${d.total} POPs da Etapa 1 (Fundamentos)</b> do setor ${setorLabel(d.setor)}, no programa de educação permanente em enfermagem, com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`;
+    : `pela conclusão da <b>Etapa 1 (Fundamentos)</b> do setor ${setorLabel(d.setor)} — leitura e aprovação nas avaliações de <b>${d.total} POPs</b> (mínimo de ${ETAPA1_MIN} exigido) — no programa de educação permanente em enfermagem, com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`;
   const rows=(d.pops||[]).map(p=>`<div class="cert-pop"><span class="ck">✓</span>
       <b>${p.code} — ${p.title}</b><span>${p.hits!=null?p.hits+'/'+QUIZ_SIZE:''}${p.date?' · '+p.date:''}</span></div>`).join('');
   return `<div class="cert-inner"><div class="cert-inner2">
@@ -1052,10 +1079,11 @@ function renderCert(){
   const final = certStage===2;
   const setor = session.setor;
   const escopo = (final ? meusPops() : popsEtapa(setor,1)).slice().sort(byCode);
-  const pops = escopo.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).map(p=>{
+  const aprovados = escopo.filter(p=>POPCore.isLocked(p.id, aprovadosServidor));
+  const pops = aprovados.map(p=>{
     const s=statusOf(p.id); return {code:p.code, title:p.title, hits:s.hits, date:s.date};
   });
-  const d = {nome:session.nome, setor, matricula:session.matricula, total:escopo.length, pops};
+  const d = {nome:session.nome, setor, matricula:session.matricula, total:aprovados.length, pops};
   return `
     <div class="readtop no-print"><div class="row">
       <button class="back" onclick="backToList()">← Voltar</button></div></div>
@@ -1360,8 +1388,9 @@ function individualReportPage(col, stamp){
   const finalOk = e1done && (e2pops.length===0 || e2done);
   const e1ok = e1pops.filter(p=>aprov.has(p.id)).length;
   const e2ok = e2pops.filter(p=>aprov.has(p.id)).length;
+  const meta1 = metaEtapa(col.setor,1);
   const totalPops = e1pops.length + e2pops.length, totalOk = e1ok + e2ok;
-  const pct1 = e1pops.length?Math.round(e1ok/e1pops.length*100):0;
+  const pct1 = meta1?Math.round(Math.min(e1ok,meta1)/meta1*100):0;
   const pct2 = e2pops.length?Math.round(e2ok/e2pops.length*100):0;
   const statusGeral = finalOk?'Trilha concluída':(e1done?'Etapa 1 concluída':'Em andamento');
   const popRows = (ps, etapaNum) => ps.length ? ps.map(p=>{
@@ -1386,14 +1415,14 @@ function individualReportPage(col, stamp){
       <div><b>${col.nome}</b><small>${setorLabel(col.setor)} · Matrícula ${col.matricula} · ${statusGeral}</small></div></div>
     <div class="kpis">
       <div class="kpi"><div class="v">${totalOk}/${totalPops}</div><div class="l">POPs aprovados</div></div>
-      <div class="kpi"><div class="v">${pct1}%</div><div class="l">Etapa 1 (${e1ok}/${e1pops.length})</div></div>
+      <div class="kpi"><div class="v">${pct1}%</div><div class="l">Etapa 1 (${Math.min(e1ok,meta1)}/${meta1} · meta ${meta1})</div></div>
       <div class="kpi"><div class="v">${pct2}%</div><div class="l">Etapa 2 (${e2ok}/${e2pops.length})</div></div>
     </div>
     <div class="certs">
       <div class="certbox ${e1done?'on':''}">${e1done?'✔':'○'} Certificado · Etapa 1 (Fundamentos)</div>
       <div class="certbox ${finalOk?'on':''}">${finalOk?'✔':'○'} Certificado Final</div>
     </div>
-    <h2 class="sec">Etapa 1 · Fundamentos</h2>
+    <h2 class="sec">Etapa 1 · Fundamentos <small style="font-weight:600;color:#90a3b3">— conclusão: ao menos ${meta1} POPs da área</small></h2>
     <table><thead><tr><th>Código</th><th>Procedimento</th><th>Situação</th><th>Acertos</th><th>Tentativas</th></tr></thead>
       <tbody>${popRows(e1pops,1)}</tbody></table>
     <h2 class="sec">Etapa 2 · Avançado ${e2unlocked?'':'(bloqueada — conclua a Etapa 1)'}</h2>
