@@ -659,13 +659,45 @@ function toggleTheme(){
 
 /* ---------- nav ---------- */
 function goAuth(v){ authView=v; render(); }
-async function entrarColaborador(){
+async function entrarColaborador(){   // modo DEMO (nome+matrícula+setor)
   const nome=fval('#c-nome'), matricula=fval('#c-matricula'), setor=fval('#c-setor');
   if(!nome||!matricula||!setor){ authErr('Preencha nome completo, matrícula e setor.'); return; }
   session={role:'colaborador', matricula, nome, setor};
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
   screen='list'; render(); window.scrollTo(0,0);
+}
+function aplicarPerfil(p){
+  session={role:'colaborador', matricula:(p&&p.matricula)||'—', nome:(p&&p.nome)||'', setor:(p&&p.setor)||''};
+}
+async function loginColaborador(){   // PRODUÇÃO (e-mail+senha)
+  const email=fval('#cl-email'), senha=fval('#cl-pass');
+  if(!email||!senha){ authErr('Informe e-mail e senha.'); return; }
+  const r=await POPApi.signIn(email, senha);
+  if(!r.ok){ authErr(r.erro || 'E-mail ou senha inválidos.'); return; }
+  aplicarPerfil(r.profile);
+  salvarSessao(); carregarProgressoLocal();
+  await carregarAprovados();
+  screen='list'; render(); window.scrollTo(0,0);
+}
+async function criarConta(){
+  const nome=fval('#cs-nome'), setor=fval('#cs-setor'), matricula=fval('#cs-matricula'),
+        email=fval('#cs-email'), senha=fval('#cs-pass');
+  if(!nome||!setor||!email||!senha){ authErr('Preencha nome, setor, e-mail e senha.'); return; }
+  if(senha.length<6){ authErr('A senha precisa de ao menos 6 caracteres.'); return; }
+  const r=await POPApi.signUp({nome, setor, matricula, email, senha});
+  if(!r.ok){ authErr(r.erro || 'Não foi possível criar a conta.'); return; }
+  if(!r.hasSession){ authView='colab'; render(); authErr('Conta criada! Confirme seu e-mail e depois entre.'); return; }
+  aplicarPerfil(r.profile);
+  salvarSessao(); carregarProgressoLocal();
+  await carregarAprovados();
+  screen='list'; render(); window.scrollTo(0,0);
+}
+async function recuperarSenha(){
+  const email=fval('#cf-email');
+  if(!email){ authErr('Informe seu e-mail.'); return; }
+  try{ await POPApi.resetPassword(email); }catch{}
+  authErr('Se o e-mail estiver cadastrado, enviamos um link de redefinição.');
 }
 async function carregarAprovados(){
   if(!session || session.role!=='colaborador'){ aprovadosServidor=[]; return; }
@@ -836,20 +868,63 @@ function renderAuth(){
       <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
     </div></div>`;
   }
-  return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
-    <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-      <h2>Identificação</h2><p>Acesso do colaborador</p></div>
-    <div class="auth-err" id="auth-err"></div>
-    <div class="field"><label>Nome completo</label><input id="c-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
-    <div class="field"><label>Matrícula</label><input id="c-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
-    <div class="field"><label>Setor</label><select id="c-setor">
-      <option value="">Selecione o setor…</option>
+  const SETOR_OPTS = `<option value="">Selecione o setor…</option>
       <option value="assistencial">Assistencial</option>
       <option value="uti">UTI</option>
       <option value="cc">Centro Cirúrgico (CC)</option>
       <option value="ambulatorio">Ambulatório / Hospital Dia</option>
-      <option value="cme">CME</option>
-    </select></div>
+      <option value="cme">CME</option>`;
+
+  // ----- COLABORADOR · PRODUÇÃO (e-mail + senha) -----
+  if(!window.POPS_LOCAL_MODE){
+    if(authView==='colab-signup'){
+      return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
+        <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+          <h2>Criar conta</h2><p>Colaborador · HNR</p></div>
+        <div class="auth-err" id="auth-err"></div>
+        <div class="field"><label>Nome completo</label><input id="cs-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
+        <div class="field"><label>Setor</label><select id="cs-setor">${SETOR_OPTS}</select></div>
+        <div class="field"><label>Matrícula</label><input id="cs-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
+        <div class="field"><label>E-mail</label><input id="cs-email" type="email" placeholder="voce@exemplo.com" autocomplete="email"></div>
+        <div class="field"><label>Senha</label><input id="cs-pass" type="password" placeholder="mínimo 6 caracteres" autocomplete="new-password" onkeydown="if(event.key==='Enter')criarConta()"></div>
+        <button class="btn block" onclick="criarConta()">Criar conta</button>
+        <button class="auth-back" onclick="goAuth('colab')">← Já tenho conta</button>
+      </div></div>`;
+    }
+    if(authView==='colab-forgot'){
+      return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
+        <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+          <h2>Recuperar senha</h2><p>Enviaremos um link para seu e-mail</p></div>
+        <div class="auth-err" id="auth-err"></div>
+        <div class="field"><label>E-mail</label><input id="cf-email" type="email" placeholder="voce@exemplo.com" autocomplete="email" onkeydown="if(event.key==='Enter')recuperarSenha()"></div>
+        <button class="btn block" onclick="recuperarSenha()">Enviar link</button>
+        <button class="auth-back" onclick="goAuth('colab')">← Voltar</button>
+      </div></div>`;
+    }
+    // login
+    return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
+      <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+        <h2>Entrar</h2><p>Acesso do colaborador</p></div>
+      <div class="auth-err" id="auth-err"></div>
+      <div class="field"><label>E-mail</label><input id="cl-email" type="email" placeholder="voce@exemplo.com" autocomplete="email"></div>
+      <div class="field"><label>Senha</label><input id="cl-pass" type="password" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')loginColaborador()"></div>
+      <button class="btn block" onclick="loginColaborador()">Entrar</button>
+      <div style="display:flex;justify-content:space-between;gap:10px;margin-top:12px">
+        <button class="auth-back" style="margin:0" onclick="goAuth('colab-forgot')">Esqueci a senha</button>
+        <button class="auth-back" style="margin:0;font-weight:700;color:var(--primary)" onclick="goAuth('colab-signup')">Criar conta →</button>
+      </div>
+      <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
+    </div></div>`;
+  }
+
+  // ----- COLABORADOR · DEMO (nome + matrícula + setor) -----
+  return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
+    <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+      <h2>Identificação</h2><p>Acesso do colaborador (demo)</p></div>
+    <div class="auth-err" id="auth-err"></div>
+    <div class="field"><label>Nome completo</label><input id="c-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
+    <div class="field"><label>Matrícula</label><input id="c-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
+    <div class="field"><label>Setor</label><select id="c-setor">${SETOR_OPTS}</select></div>
     <button class="btn block" onclick="entrarColaborador()">Entrar</button>
     <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
   </div></div>`;
@@ -1711,6 +1786,15 @@ function render(){
 document.getElementById('logo-src').src=LOGO_URI;
 
 (async function init(){
+  if(!window.POPS_LOCAL_MODE && POPApi.currentProfile){
+    // produção: a verdade é a sessão do Supabase (auto-retoma de onde parou)
+    let perfil=null; try{ perfil=await POPApi.currentProfile(); }catch{}
+    if(perfil && perfil.is_gestor){ session={role:'gestor'}; salvarSessao(); await carregarResultadosGestor(); }
+    else if(perfil){ aplicarPerfil(perfil); salvarSessao(); carregarProgressoLocal(); await carregarAprovados(); }
+    else { session=null; salvarSessao(); }
+    render(); return;
+  }
+  // demo (?demo=1) ou sem Supabase: comportamento via localStorage
   if(session && session.role==='colaborador'){ carregarProgressoLocal(); await carregarAprovados(); }
   else if(session && session.role==='gestor'){ await carregarResultadosGestor(); }
   render();
