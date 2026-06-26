@@ -178,6 +178,8 @@
   .popsearch .clr{position:absolute;right:8px;border:0;background:transparent;color:var(--muted);
     font-size:18px;cursor:pointer;padding:6px 9px;border-radius:8px;line-height:1}
   .popsearch .clr:hover{background:var(--surface-2)}
+  .popsearch.locked input{cursor:not-allowed;background:var(--surface-2);color:var(--faint)}
+  .popsearch.locked .sb svg{color:var(--faint)}
   .popsearch .hint{margin-top:7px;font-size:12.5px;color:var(--faint)}
   .res-head{font-size:13px;color:var(--muted);font-weight:600;margin:4px 0 10px}
   .res-head b{color:var(--ink)}
@@ -718,7 +720,10 @@ function highlight(text, q){
   if(i<0) return text;
   return text.slice(0,i)+'<span class="hi">'+text.slice(i,i+q.trim().length)+'</span>'+text.slice(i+q.trim().length);
 }
-function consultarPop(id){ clearQuizTimer(); activePop=id; consulta=true; screen='reader'; render(); window.scrollTo(0,0); }
+function consultarPop(id){
+  if(!buscadorLiberado()){ alert('A consulta livre de POPs é liberada após concluir os 2 certificados.'); return; }
+  clearQuizTimer(); activePop=id; consulta=true; screen='reader'; render(); window.scrollTo(0,0);
+}
 
 /* ---------- quiz engine (sorteio + cronômetro) ---------- */
 function startQuiz(){
@@ -918,6 +923,18 @@ function searchBoxHTML(){
     <div class="hint">📖 Consulta livre de qualquer um dos ${db.pops.length} POPs. A avaliação continua em “Meus procedimentos”.</div>
   </div>`;
 }
+// Buscador só é liberado para quem concluiu as 2 etapas (os 2 certificados).
+function buscadorLiberado(){ return etapaDone(1) && etapaDone(2); }
+function searchLockedHTML(){
+  return `<div class="popsearch locked">
+    <div class="sb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <input type="text" disabled placeholder="Buscador de POPs — bloqueado">
+    </div>
+    <div class="hint">🔒 A <b>consulta livre de POPs</b> é liberada quando você conclui as <b>duas etapas</b> e obtém os <b>2 certificados</b>. Continue sua trilha em “Meus procedimentos”.</div>
+  </div>`;
+}
+function buscadorBlocoHTML(){ return buscadorLiberado() ? searchBoxHTML() : searchLockedHTML(); }
 function resultCardHTML(r){
   const p=r.p;
   const pills=(p.setores||[]).map(s=>`<span class="pill">${setorLabel(s)}</span>`).join('');
@@ -972,7 +989,7 @@ function renderColabList(){
   if(!mine.length){
     return `<div class="pagehead fade-up"><h2>Meus procedimentos</h2>
       <p>Setor <b>${setorLabel(session.setor)}</b>.</p></div>
-      ${searchBoxHTML()}
+      ${buscadorBlocoHTML()}
       <div id="list-default"><div class="empty"><div class="ic">🗂</div><b>Nenhuma avaliação para o seu setor ainda</b>
         <p>Os POPs do setor <b>${setorLabel(session.setor)}</b> serão disponibilizados em breve. Use a busca acima para consultar qualquer POP.</p></div></div>
       <div id="search-results" style="display:none"></div>`;
@@ -1006,7 +1023,7 @@ function renderColabList(){
       <h2>Meus procedimentos</h2>
       <p>Setor <b>${setorLabel(session.setor)}</b> · trilha em 2 etapas. Conclua a <b>Etapa 1 com ao menos ${e1meta} POPs</b> · aprovação: <b>acerte ${PASS_MIN} de ${QUIZ_SIZE}</b>.</p>
     </div>
-    ${searchBoxHTML()}
+    ${buscadorBlocoHTML()}
     <div id="list-default">
       ${banners}
       <div class="mybar fade-up">
