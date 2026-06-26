@@ -108,7 +108,7 @@
    concluídos, para demonstrar o BUSCADOR DE POPs já liberado.
    Roda sempre (idempotente): garante o usuário mesmo que o banco local já tenha
    dados de outros testes; só faz merge, nunca apaga nada.
-   Login: Nome "Jefferson Tavares" · Matrícula "1000" · Setor "UTI". */
+   Login: Nome "Jefferson Tavares" · Matrícula "1000" · Setor "Assistencial". */
 (function ensureTestUser() {
   if (typeof window === 'undefined' || !window.POPS_LOCAL_MODE) return;
   const KEY = 'pops_db_local';
@@ -117,7 +117,7 @@
   db.colaboradores = db.colaboradores || {};
   db.resultados = db.resultados || {};
 
-  const MAT = '1000', SETOR = 'uti';
+  const MAT = '1000', SETOR = 'assistencial';
   db.colaboradores[MAT] = { nome: 'Jefferson Tavares', setor: SETOR };
 
   const byCodeNum = function (a, b) { return (a.code || '').localeCompare(b.code || '', 'pt-BR', { numeric: true }); };
