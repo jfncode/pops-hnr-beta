@@ -568,6 +568,7 @@ const QTIME     = 60;    // segundos por questão
 const ETAPA1_MIN = 15;   // POPs aprovados necessários para concluir a Etapa 1
 const ICON_CERT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.6 7 22l5-3 5 3-1.5-9.4"/></svg>`;
 const ICON_REPORT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg>`;
+const ICON_SEARCH = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>`;
 
 const db = { pops: window.POPS };
 
@@ -682,7 +683,7 @@ function openPop(id){
   }
   clearQuizTimer(); activePop=id; consulta=false; screen='reader'; render(); window.scrollTo(0,0);
 }
-function backToList(){ clearQuizTimer(); consulta=false; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
+function backToList(){ clearQuizTimer(); consulta=false; screen=(session&&session.role==='gestor')?'busca':'list'; activePop=null; render(); window.scrollTo(0,0); }
 function goCert(stage){ certStage = (stage===2?2:1); screen='cert'; render(); window.scrollTo(0,0); }
 
 /* ---------- buscador de POPs (consulta) ---------- */
@@ -920,11 +921,25 @@ function searchBoxHTML(){
       <input id="pop-search" type="text" autocomplete="off" placeholder="Buscar POP por nome, código ou assunto…" value="${v}">
       <button class="clr" title="Limpar busca" onclick="clearSearch()" style="display:${popQuery?'block':'none'}">×</button>
     </div>
-    <div class="hint">📖 Consulta livre de qualquer um dos ${db.pops.length} POPs. A avaliação continua em “Meus procedimentos”.</div>
+    <div class="hint">📖 ${session && session.role==='gestor' ? `Consulta de qualquer um dos ${db.pops.length} POPs cadastrados.` : `Consulta livre de qualquer um dos ${db.pops.length} POPs. A avaliação continua em “Meus procedimentos”.`}</div>
   </div>`;
 }
-// Buscador só é liberado para quem concluiu as 2 etapas (os 2 certificados).
-function buscadorLiberado(){ return etapaDone(1) && etapaDone(2); }
+// Buscador: o gestor tem acesso direto; o colaborador só após os 2 certificados.
+function buscadorLiberado(){ return !!session && (session.role==='gestor' || (etapaDone(1) && etapaDone(2))); }
+function goBusca(){ popQuery=''; consulta=false; screen='busca'; render(); window.scrollTo(0,0); }
+function goGestorHome(){ consulta=false; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
+function renderBuscaGestor(){
+  return `
+    <div class="readtop no-print"><div class="row">
+      <button class="back" onclick="goGestorHome()">← Voltar ao painel</button>
+      <span class="label">🔎 Buscador de POPs</span>
+    </div></div>
+    <div class="pagehead fade-up"><h2>Consulta de POPs</h2>
+      <p>Busque e leia qualquer um dos ${db.pops.length} POPs cadastrados.</p></div>
+    ${searchBoxHTML()}
+    <div id="list-default"><div class="empty"><div class="ic">🔎</div><b>Digite para buscar</b><p>Por nome, código (ex.: POP-ENF-50) ou assunto.</p></div></div>
+    <div id="search-results" style="display:none"></div>`;
+}
 function searchLockedHTML(){
   return `<div class="popsearch locked">
     <div class="sb">
@@ -938,7 +953,7 @@ function buscadorBlocoHTML(){ return buscadorLiberado() ? searchBoxHTML() : sear
 function resultCardHTML(r){
   const p=r.p;
   const pills=(p.setores||[]).map(s=>`<span class="pill">${setorLabel(s)}</span>`).join('');
-  const mineTag = r.mine ? '<span class="pill mine">✓ seu setor</span>' : '';
+  const mineTag = (session.role==='colaborador' && r.mine) ? '<span class="pill mine">✓ seu setor</span>' : '';
   return `<div class="popcard">
     <span class="code mono">${highlight(p.code,popQuery)}</span>
     <div class="meta">
@@ -1083,12 +1098,14 @@ function renderReader(){
     ${consulta ? `
     <div class="quizgate no-print" id="gate">
       <div class="lock">📖 Consulta — leitura livre deste POP</div>
-      ${meusPops().some(x=>x.id===activePop)
+      ${session.role==='colaborador' && meusPops().some(x=>x.id===activePop)
         ? `<h3>Este POP é do seu setor</h3>
            <p style="color:var(--muted);font-size:14px;margin-bottom:12px">Você pode fazer a avaliação para certificação.</p>
            <button class="btn block" onclick="openPop('${activePop}')">Ir para avaliação →</button>`
-        : `<h3>POP de outro setor</h3>
-           <p style="color:var(--muted);font-size:14px">A avaliação para certificação fica disponível apenas para os POPs do seu setor.</p>`}
+        : session.role==='colaborador'
+          ? `<h3>POP de outro setor</h3>
+           <p style="color:var(--muted);font-size:14px">A avaliação para certificação fica disponível apenas para os POPs do seu setor.</p>`
+          : ``}
       <button class="btn block" style="margin-top:10px" onclick="backToList()">← Voltar à busca</button>
     </div>` : POPCore.isLocked(activePop, aprovadosServidor) ? `
     <div class="quizgate no-print" id="gate">
@@ -1350,6 +1367,7 @@ function renderGestor(){
       <div class="report-actions no-print">
         <button class="btn-report" onclick="gerarRelatorioIndividual()">${ICON_REPORT}Relatório individual (selecionados)</button>
         <button class="btn-report" onclick="generateReport()">${ICON_REPORT}Relatório completo (todos)</button>
+        <button class="btn-report btn-search" onclick="goBusca()">${ICON_SEARCH}Buscar POPs</button>
       </div>
     </div>
     <div class="kpis">
@@ -1666,7 +1684,11 @@ function render(){
   if(!session){if(right)right.innerHTML='';$('#app').innerHTML=renderAuth();return;}
   if(right)right.innerHTML=renderTopRight();
   let html='';
-  if(session.role==='gestor'){html=renderGestor();}
+  if(session.role==='gestor'){
+    if(screen==='busca')html=renderBuscaGestor();
+    else if(screen==='reader')html=renderReader();
+    else html=renderGestor();
+  }
   else{
     if(screen==='list')html=renderColabList();
     else if(screen==='reader')html=renderReader();
@@ -1675,7 +1697,7 @@ function render(){
     else if(screen==='cert')html=renderCert();
   }
   $('#app').innerHTML=html;
-  if(session.role==='colaborador'&&screen==='list')wireSearch();
+  if(screen==='busca'||(session.role==='colaborador'&&screen==='list'))wireSearch();
   if(session.role==='colaborador'&&screen==='reader'&&!consulta)wireReadGate();
   if(session.role==='colaborador'&&screen==='quiz')updateTimerUI();
 }
