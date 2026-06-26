@@ -103,3 +103,38 @@
 
   localStorage.setItem(KEY, JSON.stringify({ colaboradores: colaboradores, resultados: resultados }));
 })();
+
+/* Colaborador de TESTE fixo (Jefferson) — login pronto, com os 2 certificados
+   concluídos, para demonstrar o BUSCADOR DE POPs já liberado.
+   Roda sempre (idempotente): garante o usuário mesmo que o banco local já tenha
+   dados de outros testes; só faz merge, nunca apaga nada.
+   Login: Nome "Jefferson Tavares" · Matrícula "1000" · Setor "UTI". */
+(function ensureTestUser() {
+  if (typeof window === 'undefined' || !window.POPS_LOCAL_MODE) return;
+  const KEY = 'pops_db_local';
+  let db;
+  try { db = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { db = {}; }
+  db.colaboradores = db.colaboradores || {};
+  db.resultados = db.resultados || {};
+
+  const MAT = '1000', SETOR = 'uti';
+  db.colaboradores[MAT] = { nome: 'Jefferson Tavares', setor: SETOR };
+
+  const byCodeNum = function (a, b) { return (a.code || '').localeCompare(b.code || '', 'pt-BR', { numeric: true }); };
+  function aprovarTodos(etapa) {
+    (window.POPS || [])
+      .filter(function (p) { return Array.isArray(p.setores) && p.setores.includes(SETOR) && ((p.etapa || 1) === etapa); })
+      .sort(byCodeNum)
+      .forEach(function (p, i) {
+        var ac = 3 + (i % 3); // 3..5 acertos
+        db.resultados[MAT + '|' + p.id] = {
+          matricula: MAT, pop_id: p.id, pop_codigo: p.code,
+          status: 'aprovado', score: ac, acertos: ac, total: 5, tentativas: 1, detalhe: null,
+        };
+      });
+  }
+  aprovarTodos(1); // conclui Etapa 1 (1º certificado)
+  aprovarTodos(2); // conclui Etapa 2 (2º certificado) → buscador liberado
+
+  localStorage.setItem(KEY, JSON.stringify(db));
+})();
