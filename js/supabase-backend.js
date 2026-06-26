@@ -36,11 +36,11 @@
     return { aprovados: Array.isArray(data) ? data : [] };
   };
 
-  // login do gestor via Supabase Auth (e-mail fixo em config + senha digitada)
-  POPApi.gestorLogin = async function (senha) {
-    const email = window.POPS_GESTOR_EMAIL;
-    if (!email) return { ok: false, erro: 'login do gestor ainda não configurado' };
-    const { error } = await sb.auth.signInWithPassword({ email, password: senha });
+  // login do gestor via Supabase Auth (e-mail digitado, ou o padrão do config)
+  POPApi.gestorLogin = async function (senha, email) {
+    const e = (email || window.POPS_GESTOR_EMAIL || '').trim();
+    if (!e) return { ok: false, erro: 'informe o e-mail do gestor' };
+    const { error } = await sb.auth.signInWithPassword({ email: e, password: senha });
     if (error) return { ok: false, erro: 'e-mail ou senha inválidos' };
     return { ok: true };
   };

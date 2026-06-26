@@ -824,10 +824,13 @@ function renderAuth(){
       </div></div></div>`;
   }
   if(authView==='gestor'){
+    const emailField = window.POPS_LOCAL_MODE ? '' :
+      `<div class="field"><label>E-mail</label><input id="g-email" type="email" placeholder="gestora@hnr.br" autocomplete="username" value="${(window.POPS_GESTOR_EMAIL||'').replace(/"/g,'&quot;')}" onkeydown="if(event.key==='Enter')doGestorLogin()"></div>`;
     return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
       <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
         <h2>Acesso do gestor</h2><p>Educação Continuada · HNR</p></div>
       <div class="auth-err" id="auth-err"></div>
+      ${emailField}
       <div class="field"><label>Senha</label><input id="g-pass" type="password" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doGestorLogin()"></div>
       <button class="btn block" onclick="doGestorLogin()">Entrar</button>
       <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
@@ -861,8 +864,9 @@ function fval(sel){const e=document.querySelector(sel);return e?e.value.trim():'
 
 async function doGestorLogin(){
   const pass=fval('#g-pass');
-  const r=await POPApi.gestorLogin(pass);
-  if(!r.ok){ authErr('Senha incorreta.'); return; }
+  const email=fval('#g-email') || window.POPS_GESTOR_EMAIL;
+  const r=await POPApi.gestorLogin(pass, email);
+  if(!r.ok){ authErr(r.erro || 'E-mail ou senha incorretos.'); return; }
   session={role:'gestor'}; salvarSessao();
   await carregarResultadosGestor();
   render(); window.scrollTo(0,0);
