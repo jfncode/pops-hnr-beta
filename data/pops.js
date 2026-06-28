@@ -4807,6 +4807,423 @@
         {q:'A fita teste Classe I é capaz de indicar:',
          o:['Falha grosseira do processo de esterilização','A carga microbiana exata','A validade do material','O nome do operador'],a:0,d:2}
       ]
+    },
+
+    {
+      id:'pop-cme-13', code:'POP-CME-13', version:'1.1', emission:'02/08/2019',
+      title:'Teste de esterilização com integrador (Classe V)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Monitorar o processo de esterilização em cada carga com integradores químicos (Classe V), em pacote teste desafio (PCD).'
+        ]},
+        {n:2,h:'Controle interno do pacote',items:[
+          'Colocar a fita Classe V no <b>centro de todos os pacotes críticos</b>; após o ciclo e o esfriamento, no momento do uso, verificar se a coloração escura atingiu a janela <b>"ACCEPT"</b>; anexar a fita ao prontuário.'
+        ]},
+        {n:3,h:'Controle da autoclave',items:[
+          'Realizar o teste com fita interna em todo ciclo, em pacote desafio (PCD); no <b>primeiro ciclo do dia</b>, usar o PCD com teste químico Classe V + teste biológico.',
+          'Após o processamento, verificar a janela "ACCEPT" e anexar o resultado no livro de controle do ciclo.'
+        ]}
+      ],
+      pool:[
+        {q:'O integrador químico Classe V é colocado:',
+         o:['No centro dos pacotes críticos','Na parte externa apenas','Fora da autoclave','No prontuário antes do ciclo'],a:0,d:2},
+        {q:'O resultado satisfatório do integrador Classe V é dado quando a coloração atinge a janela:',
+         o:['"ACCEPT"','"REJECT"','Vermelha','Branca'],a:0,d:3},
+        {q:'No primeiro ciclo do dia, o pacote desafio (PCD) deve conter:',
+         o:['Teste químico Classe V + teste biológico','Apenas fita externa','Nenhum teste','Só instrumentos'],a:0,d:3},
+        {q:'O integrador químico Classe V serve para:',
+         o:['Monitorar o processo de esterilização em cada carga','Medir a temperatura ambiente','Identificar o operador','Pesar o pacote'],a:0,d:2},
+        {q:'Após a leitura, a fita integradora do pacote deve ser:',
+         o:['Anexada ao prontuário/livro de controle','Descartada sem registro','Reutilizada','Lavada'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-14', code:'POP-CME-14', version:'1.1', emission:'28/03/2019',
+      title:'Teste biológico (controle de carga)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O indicador biológico (IB) contém microrganismos viáveis com resistência definida e é o <b>único que monitora diretamente a letalidade</b> do processo de esterilização.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Colocar o pacote teste desafio com a ampola no centro do cesto; após o ciclo, esmagar a ampola na incubadora e incubá-la junto com a <b>ampola controle</b> (não autoclavada).',
+          'A ampola controle (positiva) sai em ~2 min; a autoclavada (esperada negativa) em ~1 h. Comprovada a eficiência, liberar o material.'
+        ]},
+        {n:3,h:'Resultados e periodicidade',items:[
+          'Controle <b>+</b> / Autoclavada <b>−</b> = LIBERADO. Qualquer outro resultado (controle −, ou autoclavada +) = <b>repetir todo o processo</b>.',
+          'Realizar o teste biológico <b>diariamente na primeira carga</b> e após manutenção da autoclave; desprezar a ampola em lixo hospitalar.'
+        ]}
+      ],
+      pool:[
+        {q:'O indicador biológico é o único teste que monitora diretamente:',
+         o:['A letalidade do processo de esterilização','A temperatura da sala','A validade da fita','O peso do pacote'],a:0,d:3},
+        {q:'O resultado que LIBERA o material é:',
+         o:['Controle positivo e autoclavada negativa','Ambas positivas','Ambas negativas','Controle negativo'],a:0,d:3},
+        {q:'A ampola controle, que não passa pela autoclave, deve resultar:',
+         o:['Positiva','Negativa','Inválida','Igual à autoclavada'],a:0,d:3},
+        {q:'O teste biológico deve ser realizado:',
+         o:['Diariamente na primeira carga e após manutenção da autoclave','Uma vez por mês','Só quando há falha','Anualmente'],a:0,d:2},
+        {q:'Se a ampola autoclavada der positiva, deve-se:',
+         o:['Repetir todo o processo','Liberar o material','Ignorar','Apenas reesterilizar a ampola'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-cme-15', code:'POP-CME-15', version:'1.1', emission:'28/03/2019',
+      title:'Teste Bowie & Dick (Classe II)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O Bowie & Dick <b>não é um teste de esterilização</b>, mas de função mecânica, que avalia a remoção do ar, fugas de ar e penetração do vapor em autoclaves com bomba de vácuo.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Posicionar apenas o pacote com a folha teste na autoclave <b>vazia</b>, sobre o dreno, e realizar um ciclo específico de Bowie & Dick no <b>primeiro ciclo do dia</b>.',
+          'Após o esfriamento, verificar a folha: <b>coloração uniforme = teste negativo</b> (aprovado); coloração não uniforme = teste positivo → comunicar o enfermeiro.'
+        ]},
+        {n:3,h:'Registro',items:[
+          'Preencher o livro de controle com data e nome do funcionário e colar a folha teste + o impresso da autoclave.'
+        ]}
+      ],
+      pool:[
+        {q:'O teste Bowie & Dick avalia:',
+         o:['A remoção do ar e a penetração do vapor na autoclave','A letalidade do processo','A carga microbiana','A validade dos pacotes'],a:0,d:3},
+        {q:'O Bowie & Dick deve ser realizado com a autoclave:',
+         o:['Vazia, no primeiro ciclo do dia','Cheia de instrumentais','Na última carga','Com material crítico'],a:0,d:3},
+        {q:'No teste Bowie & Dick, a coloração uniforme da folha indica:',
+         o:['Teste negativo (aprovado)','Falha no equipamento','Material contaminado','Necessidade de repetir'],a:0,d:3},
+        {q:'O teste Bowie & Dick é um teste de:',
+         o:['Função mecânica do equipamento','Esterilização do material','Limpeza','Embalagem'],a:0,d:2},
+        {q:'Se a folha do Bowie & Dick não corar uniformemente (positivo), deve-se:',
+         o:['Comunicar o enfermeiro para providências','Liberar a autoclave','Repetir só o material','Ignorar'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-16', code:'POP-CME-16', version:'1.1', emission:'28/03/2019',
+      title:'Armazenamento do material na CME (área limpa)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Os produtos esterilizados devem ser armazenados em local limpo e seco, protegidos da luz solar direta e com manipulação mínima.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Acondicionar o material em prateleiras/gavetas após o resfriamento, inspecionar diariamente a integridade do pacote e a validade, e armazenar pela <b>data de vencimento</b> (mais antigos à frente).',
+          'Desinfetar armários, bancadas e estantes com álcool 70% mensalmente (dia 20) ou quando necessário; entrar na sala com touca, máscara e mãos higienizadas.'
+        ]},
+        {n:3,h:'Condições da sala',items:[
+          'Acesso restrito ao funcionário do setor; manter <b>temperatura entre 18 e 25 °C</b>, umidade relativa entre 30 e 60% e renovação de ar de pelo menos 15 trocas/hora.'
+        ]}
+      ],
+      pool:[
+        {q:'Os materiais esterilizados são organizados pela:',
+         o:['Data de vencimento (mais antigos à frente)','Cor da embalagem','Ordem de chegada aleatória','Tamanho'],a:0,d:2},
+        {q:'A temperatura ideal da sala de armazenamento é:',
+         o:['Entre 18 e 25 °C','Abaixo de 0 °C','Acima de 35 °C','Indiferente'],a:0,d:2},
+        {q:'A umidade relativa da sala de armazenamento deve ser mantida entre:',
+         o:['30% e 60%','80% e 100%','0% e 10%','60% e 90%'],a:0,d:3},
+        {q:'O acesso à sala de armazenamento (área limpa) é:',
+         o:['Restrito ao funcionário do setor','Livre','Permitido a visitantes','Apenas para médicos'],a:0,d:1},
+        {q:'A inspeção da integridade e validade dos pacotes armazenados é feita:',
+         o:['Diariamente','Mensalmente','Anualmente','Nunca'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-17', code:'POP-CME-17', version:'1.1', emission:'09/04/2019',
+      title:'Uso das escovas de limpeza',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'As escovas usadas na limpeza podem disseminar microrganismos no expurgo; sua limpeza e desinfecção são essenciais na prevenção de infecções.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Diariamente ao final do turno, inspecionar as escovas quanto a desgaste/desprendimento de partículas, descartando as inadequadas.',
+          'Colocar as escovas em condições de uso no cesto aramado, lavá-las na <b>lavadora ultrassônica</b>, conferir a limpeza, secar na secadora e guardar no recipiente próprio.'
+        ]}
+      ],
+      pool:[
+        {q:'As escovas de limpeza são processadas:',
+         o:['Diariamente ao final do turno, na lavadora ultrassônica','Uma vez por mês','Nunca','Só com pano seco'],a:0,d:2},
+        {q:'Escovas com desgaste ou desprendimento de partículas devem ser:',
+         o:['Descartadas e repostas','Usadas até quebrar','Apenas lavadas','Guardadas como reserva'],a:0,d:2},
+        {q:'As escovas em condições de uso são lavadas na:',
+         o:['Lavadora ultrassônica','Pia comum','Máquina de roupas','Autoclave'],a:0,d:2},
+        {q:'O risco de escovas mal higienizadas no expurgo é:',
+         o:['Disseminação de microrganismos','Desgaste do material','Perda de tempo','Nenhum'],a:0,d:2},
+        {q:'Após lavadas e secas, as escovas são:',
+         o:['Guardadas no recipiente próprio','Deixadas na pia','Descartadas','Reutilizadas molhadas'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-18', code:'POP-CME-18', version:'1.1', emission:'09/04/2019',
+      title:'Uso do revitalizador de instrumentais',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Solução revitalizadora de instrumentos e superfícies de aço inox, que remove manchas, oxidação, ferrugem e corrosão sem deixar resíduos após o enxágue.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Com o material já limpo, preparar a solução de água + revitalizador na lavadora ultrassônica, imergir e ajustar o ciclo para <b>50 °C / 30 min</b>.',
+          'Após o ciclo, escovar com cerdas duras, enxaguar, secar com pano branco/ar comprimido, inspecionar e encaminhar para empacotamento/esterilização.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'O material deve estar <b>limpo antes</b> deste procedimento; ao final, retornar a lavadora ao ciclo padrão (40 °C / 10 min). Produto perigoso: evitar ingestão, inalação e contato com olhos/pele.'
+        ]}
+      ],
+      pool:[
+        {q:'O revitalizador de instrumentais é usado para remover:',
+         o:['Manchas, oxidação, ferrugem e corrosão do aço inox','Sangue fresco','Etiquetas','Gordura de alimentos'],a:0,d:2},
+        {q:'O ciclo da lavadora ultrassônica para o revitalizador é:',
+         o:['50 °C por 30 minutos','40 °C por 10 minutos','100 °C por 1 hora','20 °C por 5 minutos'],a:0,d:3},
+        {q:'Antes de aplicar o revitalizador, o material deve estar:',
+         o:['Limpo','Sujo de sangue','Embalado','Esterilizado'],a:0,d:2},
+        {q:'Após o ciclo do revitalizador, realiza-se a escovação com:',
+         o:['Escova de cerdas duras','Esponja macia','Pano seco','As mãos'],a:0,d:2},
+        {q:'Ao final, a lavadora ultrassônica deve retornar ao ciclo padrão de:',
+         o:['40 °C / 10 min','50 °C / 30 min','60 °C / 1 h','Desligada'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-19', code:'POP-CME-19', version:'1.1', emission:'28/03/2019',
+      title:'Reprocessamento do reanimador manual',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O reanimador manual é um dispositivo portátil para ventilação com pressão positiva em pacientes que não respiram ou respiram inadequadamente.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desmontar o reanimador, lavar manualmente em solução de detergente enzimático, enxaguar e secar (balão e válvulas na secadora; máscara e reservatório com pano branco).',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b> (material termossensível).'
+        ]}
+      ],
+      pool:[
+        {q:'O reanimador manual é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a vapor 134 °C','Fervura','Apenas álcool'],a:0,d:3},
+        {q:'A razão de o reanimador não ir à autoclave a vapor é por ser:',
+         o:['Termossensível','Metálico','Crítico','Descartável'],a:0,d:3},
+        {q:'A primeira etapa do reprocessamento do reanimador é:',
+         o:['Desmontá-lo','Esterilizá-lo','Empacotá-lo','Armazená-lo'],a:0,d:1},
+        {q:'A lavagem do reanimador manual é feita com:',
+         o:['Solução de detergente enzimático','Hipoclorito puro','Apenas água','Revitalizador'],a:0,d:2},
+        {q:'O reanimador manual serve para:',
+         o:['Ventilação com pressão positiva','Aspiração de secreção','Medir pressão','Coletar sangue'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-20', code:'POP-CME-20', version:'1.1', emission:'28/03/2019',
+      title:'Reprocessamento do intermediário de silicone',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O intermediário de silicone é usado como extensor no fornecimento de O₂ suplementar ou nebulização.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Realizar pré-limpeza (atenção aos lúmens), lavar ultrassonicamente (conectando ao bico de fluxo), enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, empacotar com SMS, <b>esterilizar em autoclave a 134 °C</b>, selar/identificar com fita Classe I e armazenar.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'Quando novo, cortar ~1,5 m para as unidades de internação e ~3,75 m para o CC; pode ser reutilizado após o processo de limpeza.'
+        ]}
+      ],
+      pool:[
+        {q:'O intermediário de silicone é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Não é esterilizado'],a:0,d:3},
+        {q:'O intermediário de silicone é usado para:',
+         o:['Extensor de O₂ suplementar ou nebulização','Aspiração de secreção','Curativos','Coleta de sangue'],a:0,d:2},
+        {q:'A embalagem usada para o intermediário de silicone é:',
+         o:['SMS','Saco plástico','Papel kraft','Caixa metálica'],a:0,d:2},
+        {q:'Quando novo, o intermediário para unidades de internação é cortado em aproximadamente:',
+         o:['1,5 metros','10 metros','30 cm','5 metros'],a:0,d:3},
+        {q:'Diferente do látex, o intermediário de silicone:',
+         o:['Pode ser reutilizado após limpeza','É de uso único','Não pode ser lavado','É descartável sempre'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-21', code:'POP-CME-21', version:'1.1', emission:'28/02/2019',
+      title:'Reprocessamento do intermediário de látex',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O intermediário de látex é usado como extensor na <b>aspiração de secreção</b> dos pacientes.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Cortar o látex (~1,5 m), realizar desinfecção por <b>fricção com pano e álcool 70%</b>, inspecionar, empacotar em saco plástico e identificar com etiqueta (data e profissional).'
+        ]},
+        {n:3,h:'Observação',items:[
+          'É material de <b>uso único</b> para aspiração de paciente — desprezar após o uso.'
+        ]}
+      ],
+      pool:[
+        {q:'O intermediário de látex é usado para:',
+         o:['Extensor na aspiração de secreção','Fornecer O₂','Curativos','Punção venosa'],a:0,d:2},
+        {q:'A desinfecção do intermediário de látex é feita por:',
+         o:['Fricção com pano e álcool 70%','Autoclave','Óxido de etileno','Imersão em hipoclorito'],a:0,d:2},
+        {q:'O intermediário de látex é um material de:',
+         o:['Uso único (desprezar após o uso)','Uso permanente','Reuso ilimitado','Esterilização em autoclave'],a:0,d:3},
+        {q:'O intermediário de látex é cortado em aproximadamente:',
+         o:['1,5 metros','5 metros','30 cm','10 metros'],a:0,d:2},
+        {q:'A identificação do intermediário de látex inclui:',
+         o:['Data e profissional','Apenas a cor','O nome do paciente','Nada'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-22', code:'POP-CME-22', version:'1.1', emission:'30/06/2021',
+      title:'Reprocessamento do circuito do respirador',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Circuito universal para ventiladores mecânicos, que conecta o aparelho ao paciente para a assistência respiratória. Há configurações específicas por equipamento (UTI, CC e respiradores de transporte).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular o material, realizar pré-limpeza (atenção aos lúmens) e fazer a <b>lavagem e desinfecção em termodesinfecção</b>.',
+          'Secar em secadora, inspecionar, empacotar em saco plástico, identificar com a data do reprocessamento e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A lavagem e desinfecção do circuito do respirador é feita por:',
+         o:['Termodesinfecção','Fricção com álcool','Autoclave a vapor','Imersão em formol'],a:0,d:3},
+        {q:'O circuito do respirador serve para:',
+         o:['Conectar o ventilador mecânico ao paciente','Aspirar secreção','Aquecer o paciente','Coletar exames'],a:0,d:2},
+        {q:'Antes da lavagem, o circuito do respirador deve ser:',
+         o:['Desarticulado','Esterilizado','Empacotado','Cortado'],a:0,d:2},
+        {q:'A identificação do circuito após o reprocessamento inclui:',
+         o:['A data do reprocessamento','O nome do médico','A cor do paciente','O peso'],a:0,d:1},
+        {q:'A secagem do circuito do respirador é feita:',
+         o:['Em secadora','Ao sol','Com papel toalha','Naturalmente por dias'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-23', code:'POP-CME-23', version:'1.1', emission:'28/03/2019',
+      title:'Reprocessamento de nebulização, umidificador e máscaras de nebulização',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Reprocessar os materiais usados na assistência ventilatória: máscara de nebulização, macronebulização, umidificador, intermediários e traqueinha.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, realizar pré-limpeza (atenção aos lúmens), lavar ultrassonicamente (traqueias com escova interna e esponja externa), enxaguar e secar com pano branco e ar comprimido.',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b> (material termossensível).'
+        ]}
+      ],
+      pool:[
+        {q:'Os materiais de nebulização/umidificação são esterilizados por:',
+         o:['Óxido de etileno','Autoclave a vapor','Fricção com álcool','Fervura'],a:0,d:3},
+        {q:'As traqueias são lavadas com:',
+         o:['Escova interna e esponja externa','Apenas imersão','Pano seco','Ar comprimido apenas'],a:0,d:2},
+        {q:'Estes materiais são usados na:',
+         o:['Assistência ventilatória','Cirurgia','Coleta de sangue','Higiene oral'],a:0,d:2},
+        {q:'A secagem da parte interna dos materiais de nebulização é feita com:',
+         o:['Ar comprimido','Toalha de papel','Calor da secadora','Naturalmente'],a:0,d:2},
+        {q:'Antes de lavar, os materiais de nebulização devem ser:',
+         o:['Desarticulados','Esterilizados','Empacotados','Pintados'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-24', code:'POP-CME-24', version:'1.1', emission:'02/04/2019',
+      title:'Reprocessamento das máscaras total face, oronasal e nasal',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Reprocessar as máscaras de apoio ventilatório (total face, oronasal e nasal) e da polissonografia, com seus fixadores e válvulas.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, realizar pré-limpeza, lavar em solução com detergente multienzimático, enxaguar e secar com pano branco e ar comprimido.',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observações',items:[
+          '<b>Não usar água quente, secadora nem álcool</b> nestes materiais.'
+        ]}
+      ],
+      pool:[
+        {q:'As máscaras de apoio ventilatório são esterilizadas por:',
+         o:['Óxido de etileno','Autoclave a vapor','Fervura','Imersão em hipoclorito'],a:0,d:3},
+        {q:'No reprocessamento das máscaras, NÃO se deve:',
+         o:['Usar água quente, secadora nem álcool','Desarticular o material','Inspecionar','Empacotar'],a:0,d:3},
+        {q:'A lavagem das máscaras é feita com:',
+         o:['Detergente multienzimático','Hipoclorito','Revitalizador','Sabão em pó'],a:0,d:2},
+        {q:'A máscara nasal é usada também no exame de:',
+         o:['Polissonografia','Espirometria','Eletrocardiograma','Endoscopia'],a:0,d:2},
+        {q:'A secagem das máscaras é feita com:',
+         o:['Pano branco e ar comprimido','Secadora quente','Ao sol','Álcool'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-25', code:'POP-CME-25', version:'1.1', emission:'04/04/2019',
+      title:'Reprocessamento da caneta monopolar com eletrodo tipo faca',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A caneta monopolar é um instrumento cirúrgico para eletrocirurgia (corte, coagulação, fulguração e dissecção), acessório dos eletrobisturis com tomada de 3 pinos.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desmontar, realizar pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar com pano branco e ar comprimido.',
+          'Montar protegendo o eletrodo com pedaço de silicone, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'O <b>eletrodo avulso</b> também deve ser encaminhado para esterilização em óxido de etileno.'
+        ]}
+      ],
+      pool:[
+        {q:'A caneta monopolar é usada em:',
+         o:['Eletrocirurgia (corte/coagulação)','Aspiração','Nebulização','Sondagem'],a:0,d:2},
+        {q:'A caneta monopolar é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a vapor 134 °C','Fricção com álcool','Fervura'],a:0,d:3},
+        {q:'Ao montar a caneta após a limpeza, o eletrodo deve ser:',
+         o:['Protegido com pedaço de silicone','Deixado exposto','Descartado','Dobrado'],a:0,d:2},
+        {q:'A caneta monopolar é acessória de geradores (eletrobisturis) com tomada de:',
+         o:['3 pinos','2 pinos','1 pino','Sem tomada'],a:0,d:2},
+        {q:'O eletrodo avulso da caneta monopolar deve ser:',
+         o:['Esterilizado em óxido de etileno','Descartado','Apenas lavado','Reutilizado sem processar'],a:0,d:2}
+      ]
     }
   ];
   return POPS;
