@@ -6425,6 +6425,396 @@
         {q:'A embalagem da caixa de torácica é SMS de:',
          o:['1,50×1,50 m','50×50 cm','10×10 cm','75×75 cm'],a:0,d:1}
       ]
+    },
+
+    {
+      id:'pop-cme-65', code:'POP-CME-65', version:'1.1', emission:'09/04/2019',
+      title:'Montagem da caixa de simpatectomia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Montar a caixa para simpatectomia (<b>49 peças</b>) — remoção cirúrgica do nervo simpático para tratamento da hiperidrose (sudorese excessiva) nas mãos e axilas.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: cabo cor lilás.'
+        ]}
+      ],
+      pool:[
+        {q:'A simpatectomia é indicada para o tratamento da:',
+         o:['Hiperidrose (sudorese excessiva)','Pneumonia','Hipertensão','Fratura'],a:0,d:3},
+        {q:'A caixa de simpatectomia é composta por:',
+         o:['49 peças','5 peças','200 peças','10 peças'],a:0,d:2},
+        {q:'A caixa de simpatectomia é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa de simpatectomia é por:',
+         o:['Cabo cor lilás','Cabo cor verde','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'A simpatectomia consiste na remoção do:',
+         o:['Nervo simpático','Apêndice','Pulmão','Rim'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-66', code:'POP-CME-66', version:'1.1', emission:'31/10/2019',
+      title:'Montagem da caixa vascular grande',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa para cirurgia vascular grande (<b>51 peças</b>): porta-agulhas, tesouras Dietrich, pinças vasculares (Reynald, DeBakey, Satinsky, Semb, Potts, Lambert Kay), clamps angulados e de Diethrich/Glover.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1,50×1,50 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: cabo cor vermelho.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa vascular grande é composta por:',
+         o:['51 peças','5 peças','200 peças','15 peças'],a:0,d:2},
+        {q:'A caixa vascular grande é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa vascular grande é por:',
+         o:['Cabo cor vermelho','Cabo cor verde','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'A embalagem da caixa vascular grande é SMS de:',
+         o:['1,50×1,50 m','50×50 cm','10×10 cm','75×75 cm'],a:0,d:2},
+        {q:'No interior da caixa vascular grande coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-67', code:'POP-CME-67', version:'1.1', emission:'23/06/2021',
+      title:'Montagem da caixa de mediastinoscopia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Montar a caixa para mediastinoscopia (<b>44 peças</b>) — avaliação dos linfonodos mediastinais em portadores de câncer de pulmão candidatos a cirurgia. Inclui ópticas, lâminas de mediastino, cabo óptico e válvula aspirador/irrigador.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Desarticular e abrir, limpar ultrassonicamente, <b>lubrificar</b>, colocar fita teste Classe V no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b>. Identificação: fita laranja + lilás.'
+        ]}
+      ],
+      pool:[
+        {q:'A mediastinoscopia é usada principalmente para avaliar:',
+         o:['Linfonodos mediastinais (câncer de pulmão)','A bexiga','As articulações','A pele'],a:0,d:3},
+        {q:'A caixa de mediastinoscopia é composta por:',
+         o:['44 peças','4 peças','100 peças','10 peças'],a:0,d:2},
+        {q:'A caixa de mediastinoscopia é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa de mediastinoscopia é:',
+         o:['Fita laranja + lilás','Cabo verde','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'A mediastinoscopia pode também identificar:',
+         o:['Sarcoidose e tuberculose','Catarata','Apendicite','Fratura'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-68', code:'POP-CME-68', version:'1.1', emission:'23/06/2021',
+      title:'Montagem da caixa de afastadores',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa de afastadores (<b>11 peças</b>): Langenbeck, Volkmann (vários), Mayo-Adams, Weitlaner e Jansen.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em TNT de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa de afastadores é composta por:',
+         o:['11 peças','50 peças','100 peças','3 peças'],a:0,d:2},
+        {q:'A caixa de afastadores é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'É um tipo de afastador presente na caixa:',
+         o:['Langenbeck','Kelly','Adson','Cheron'],a:0,d:2},
+        {q:'No interior da caixa de afastadores coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2},
+        {q:'A embalagem da caixa de afastadores é de:',
+         o:['TNT 1,20×1,20 m','Saco plástico','Papel jornal','Caixa de papelão'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-69', code:'POP-CME-69', version:'1.1', emission:'26/07/2019',
+      title:'Montagem da caixa de material pesado',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa de material pesado (<b>25 peças</b>) para cirurgias que necessitam de instrumentos pesados: faca de esterno, martelo cirúrgico, alicates, cisalha, ruginas, goivas, curetas, formão e osteótomos.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa de material pesado é composta por:',
+         o:['25 peças','5 peças','100 peças','71 peças'],a:0,d:2},
+        {q:'A caixa de material pesado contém, entre outros:',
+         o:['Martelo cirúrgico, goivas e osteótomos','Apenas gazes','Sondas','Máscaras de O₂'],a:0,d:2},
+        {q:'A caixa de material pesado é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'No interior da caixa de material pesado coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2},
+        {q:'A caixa de material pesado é usada em cirurgias que necessitam de:',
+         o:['Instrumentos pesados (ósseos)','Apenas suturas','Pequenos curativos','Aspiração'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-70', code:'POP-CME-70', version:'1.1', emission:'27/05/2019',
+      title:'Montagem da caixa de material longo',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa de material longo (<b>21 peças</b>): pinças anatômicas e DeBakey grandes, porta-agulhas, tesouras grandes, pinças Russa, Duval, Allis, Mixter e clamp vascular.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1,50×1,50 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa de material longo é composta por:',
+         o:['21 peças','2 peças','100 peças','71 peças'],a:0,d:2},
+        {q:'A caixa de material longo é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'No interior da caixa de material longo coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2},
+        {q:'A embalagem da caixa de material longo é SMS de:',
+         o:['1,50×1,50 m','50×50 cm','10×10 cm','75×75 cm'],a:0,d:1},
+        {q:'A caixa de material longo contém instrumentais de tamanho:',
+         o:['Grande/longo','Apenas pequeno','Mínimo','Descartável'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-71', code:'POP-CME-71', version:'1.1', emission:'23/06/2021',
+      title:'Montagem da caixa vascular média',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa para cirurgia vascular média (<b>36 peças</b>): porta-agulhas, tesouras Dietrich, pinças vasculares (DeBakey, Cooley, Satinsky, Semb) e diversos clamps angulados, Glover e bulldog.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita branca.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa vascular média é composta por:',
+         o:['36 peças','3 peças','100 peças','51 peças'],a:0,d:2},
+        {q:'A caixa vascular média é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa vascular média é:',
+         o:['Fita branca','Cabo vermelho','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'No interior da caixa vascular média coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2},
+        {q:'A embalagem da caixa vascular média é SMS de:',
+         o:['1,20×1,20 m','50×50 cm','3×3 m','10×10 cm'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-72', code:'POP-CME-72', version:'1.1', emission:'28/06/2019',
+      title:'Reprocessamento da garrafa térmica',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A garrafa térmica é um material usado em videocirurgia.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular/abrir a garrafa, pré-limpeza, lavar manualmente em detergente enzimático, enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Esterilizar com a <b>tampa aberta</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A garrafa térmica é usada em:',
+         o:['Videocirurgia','Nebulização','Aspiração','Punção lombar'],a:0,d:2},
+        {q:'A garrafa térmica é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Ao esterilizar a garrafa térmica, ela deve estar com a tampa:',
+         o:['Aberta','Fechada','Lacrada','Removida e descartada'],a:0,d:3},
+        {q:'A lavagem da garrafa térmica é feita:',
+         o:['Manualmente em detergente enzimático','Na autoclave','Por imersão em formol','A seco'],a:0,d:2},
+        {q:'Antes da lavagem, a garrafa térmica deve ser:',
+         o:['Desarticulada/aberta','Esterilizada','Empacotada','Pintada'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-73', code:'POP-CME-73', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do cabo óptico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O cabo óptico conduz a luz de uma fonte até o laparoscópio introduzido no corpo do paciente, por meio de feixes de fibras ópticas.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Lavar ultrassonicamente, enxaguar, secar com pano branco, inspecionar, empacotar em SMS (<b>pacote duplo</b>) e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Cuidado especial com o material de vídeo: <b>não dobrar e não bater</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O cabo óptico tem a função de:',
+         o:['Conduzir a luz da fonte até o laparoscópio','Aspirar secreção','Cortar tecido','Medir pressão'],a:0,d:2},
+        {q:'O cabo óptico é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O cabo óptico é empacotado em:',
+         o:['SMS (pacote duplo)','Saco de lixo','Papel jornal','Sem embalagem'],a:0,d:2},
+        {q:'Com o cabo óptico (material de vídeo), deve-se:',
+         o:['Não dobrar e não bater','Enrolar firme','Bater para encaixar','Dobrar ao meio'],a:0,d:2},
+        {q:'O cabo óptico conduz a luz por meio de:',
+         o:['Feixes de fibras ópticas','Cabos elétricos','Água','Ar comprimido'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-74', code:'POP-CME-74', version:'1.1', emission:'16/04/2019',
+      title:'Confecção do kit da plástica',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar o kit da plástica (preenchimento facial): campo fenestrado fechado, pedaço de algodão e 10 folhas de gaze.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Confeccionar com o campo e a gaze, inspecionar, empacotar em SMS de 75×75 cm, selar com fita zebrada Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O kit da plástica é usado para:',
+         o:['Preenchimento facial (cirurgia plástica)','Drenagem torácica','Punção lombar','Sondagem'],a:0,d:2},
+        {q:'O kit da plástica é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O kit da plástica contém:',
+         o:['Campo fenestrado, algodão e 10 folhas de gaze','Instrumentais pesados','Sondas','Máscaras'],a:0,d:2},
+        {q:'A embalagem do kit da plástica é SMS de:',
+         o:['75×75 cm','1,50×1,50 m','3×3 m','10×10 cm'],a:0,d:2},
+        {q:'O kit da plástica é selado com:',
+         o:['Fita zebrada Classe I','Cola','Grampos','Barbante'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-75', code:'POP-CME-75', version:'1.1', emission:'09/04/2019',
+      title:'Montagem da caixa de trocater',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O trocater é um instrumento para penetrar na cavidade abdominal/torácica <b>sem cortar os músculos</b>. Há caixas de 5 mm e de 10 mm (com bainhas e trocateres de pontas cônica e piramidal).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 75×75 cm, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O trocater serve para:',
+         o:['Penetrar na cavidade abdominal/torácica sem cortar músculos','Aspirar secreção','Suturar','Medir pressão'],a:0,d:3},
+        {q:'As caixas de trocater são organizadas por diâmetro de:',
+         o:['5 mm e 10 mm','1 mm e 2 mm','50 mm','Único tamanho'],a:0,d:2},
+        {q:'A caixa de trocater é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'As pontas dos trocateres podem ser:',
+         o:['Cônica e piramidal','Quadrada e oval','Reta apenas','Sem ponta'],a:0,d:2},
+        {q:'A embalagem da caixa de trocater é SMS de:',
+         o:['75×75 cm','1,50×1,50 m','3×3 m','10×10 cm'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-76', code:'POP-CME-76', version:'1.1', emission:'09/04/2019',
+      title:'Limpeza do sistema de Bain',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O sistema de Bain é usado na administração de <b>anestesia inalatória</b> por respiração controlada manual.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar com pano e ar comprimido.',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O sistema de Bain é usado na administração de:',
+         o:['Anestesia inalatória','Soro','Antibiótico','Nutrição parenteral'],a:0,d:2},
+        {q:'O sistema de Bain é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Antes da lavagem, o sistema de Bain deve ser:',
+         o:['Desarticulado','Esterilizado','Empacotado','Pintado'],a:0,d:1},
+        {q:'A administração de anestesia no sistema de Bain é por:',
+         o:['Respiração controlada manual','Via oral','Via intramuscular','Via retal'],a:0,d:2},
+        {q:'A secagem do sistema de Bain é feita com:',
+         o:['Pano branco e ar comprimido','Secadora quente','Ao sol','Naturalmente por dias'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-77', code:'POP-CME-77', version:'1.1', emission:'09/04/2019',
+      title:'Cuidados com materiais de pacientes com infecção por príons',
+      executantes:'Colaboradores da CME e das unidades de internação',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar o cuidado com materiais usados em pacientes com infecção por <b>príons</b> — agentes infecciosos proteicos sem ácido nucleico, responsáveis por encefalopatias espongiformes, sem cura e sempre fatais.'
+        ]},
+        {n:2,h:'Na unidade e na CME',items:[
+          'Na unidade: o material fica no quarto, em caixa plástica umedecida com solução enzimática (trocada a cada 24 h pela CME) e é recolhido 1×/dia pela manhã.',
+          'Na CME: paramentar-se com EPIs, lavar manualmente na própria caixa do paciente, empacotar em TNT com fita teste interna Classe V e esterilizar em <b>ciclo especial: 134 °C por 18 minutos</b>.'
+        ]},
+        {n:3,h:'Destino dos materiais',items:[
+          '<b>Reprocessar na CME:</b> apenas instrumentais NÃO expostos a tecidos de alta infectividade.',
+          '<b>Incinerar</b> (descartar em saco vermelho): descartáveis, termossensíveis e tudo exposto a tecidos de alta infectividade (cerebral, líquor, retina e nervo óptico).'
+        ]}
+      ],
+      pool:[
+        {q:'Os príons são agentes infecciosos compostos por:',
+         o:['Proteínas com forma aberrante (sem ácido nucleico)','Vírus','Bactérias','Fungos'],a:0,d:3},
+        {q:'O ciclo especial de esterilização para material de paciente com príons é:',
+         o:['134 °C por 18 minutos','134 °C por 4 minutos','121 °C por 30 minutos','Não é esterilizado'],a:0,d:3},
+        {q:'Materiais expostos a tecidos de alta infectividade (cerebral, líquor, retina) devem ser:',
+         o:['Incinerados (descartados em saco vermelho)','Reprocessados na CME','Reutilizados sem processar','Lavados com água'],a:0,d:3},
+        {q:'Na unidade, o material do paciente com príons fica:',
+         o:['Em caixa plástica umedecida com solução enzimática','No lixo comum','Sobre a bancada','Junto aos demais'],a:0,d:2},
+        {q:'As doenças priônicas são:',
+         o:['Sem cura e sempre fatais','Facilmente curáveis','Transmitidas por mosquito','Benignas'],a:0,d:3}
+      ]
     }
   ];
   return POPS;
