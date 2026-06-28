@@ -7998,6 +7998,316 @@
         {q:'O controle do kit de isolamento é feito:',
          o:['No caderno de protocolo, pelo número de cada caixa','Por foto','Verbalmente','Não há controle'],a:0,d:1}
       ]
+    },
+
+    {
+      id:'pop-cme-117', code:'POP-CME-117', version:'1.1', emission:'06/05/2020',
+      title:'Limpeza da traqueia do respirador de transporte',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A traqueia (OXYMAG) é o material usado no respirador de transporte.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar com pano e ar comprimido.',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A traqueia do respirador de transporte é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A traqueia é usada no:',
+         o:['Respirador de transporte','Aspirador','Monitor cardíaco','Bisturi elétrico'],a:0,d:2},
+        {q:'Antes da lavagem, a traqueia deve ser:',
+         o:['Desarticulada','Esterilizada','Empacotada','Pintada'],a:0,d:1},
+        {q:'A secagem da traqueia é feita com:',
+         o:['Pano branco e ar comprimido','Secadora quente','Ao sol','Naturalmente por dias'],a:0,d:1},
+        {q:'O modelo de traqueia do respirador de transporte é:',
+         o:['OXYMAG','Servo-s','Maquet','Drager'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-118', code:'POP-CME-118', version:'1.1', emission:'29/09/2015',
+      title:'Montagem da caixa do broncoscópio rígido',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O broncoscópio rígido (<b>42 peças</b>) aplica-se à retirada de corpos estranhos e ao posicionamento de stents, pelo grande canal de trabalho que comporta diversos instrumentais (pinças, tesouras, aspiradores).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Desarticular e abrir, limpar ultrassonicamente, <b>lubrificar</b>, colocar fita teste Classe V no interior, empacotar em SMS de 1,20×1,20 m e <b>esterilizar em autoclave a 134 °C</b>. Identificação: cabo cor roxo.'
+        ]}
+      ],
+      pool:[
+        {q:'O broncoscópio rígido aplica-se, entre outros, à:',
+         o:['Retirada de corpos estranhos e posicionamento de stents','Punção lombar','Sutura','Curativo'],a:0,d:3},
+        {q:'A caixa do broncoscópio rígido é composta por:',
+         o:['42 peças','4 peças','100 peças','12 peças'],a:0,d:2},
+        {q:'A caixa do broncoscópio rígido é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa do broncoscópio rígido é por:',
+         o:['Cabo cor roxo','Cabo verde','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'No interior do pacote do broncoscópio rígido coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-119', code:'POP-CME-119', version:'1.1', emission:'08/04/2021',
+      title:'Secagem por secadora',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A secadora é utilizada para a secagem de acessórios de ventilação e instrumentais cirúrgicos em geral.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Dispor os pacotes na <b>vertical</b> (sem encostar nas paredes), fechar a porta, ligar e iniciar o ciclo; ao final, retirar o material e encaminhar à sala limpa.',
+          'Ciclo: <b>temperatura 50 °C / tempo 60 min / resfriamento 10 min</b>.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'Limpar a câmara interna e a grade diariamente; <b>não colocar materiais termossensíveis</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O ciclo da secadora opera à temperatura de:',
+         o:['50 °C','134 °C','100 °C','20 °C'],a:0,d:2},
+        {q:'O tempo do ciclo de secagem na secadora é de:',
+         o:['60 minutos','5 minutos','10 minutos','2 horas'],a:0,d:2},
+        {q:'Os pacotes na secadora devem ser dispostos:',
+         o:['Na vertical, sem encostar nas paredes','Empilhados','Colados nas paredes','No chão'],a:0,d:2},
+        {q:'Na secadora, NÃO se deve colocar:',
+         o:['Materiais termossensíveis','Instrumentais cirúrgicos','Acessórios de ventilação','Cestos aramados'],a:0,d:2},
+        {q:'A secadora é usada para secar:',
+         o:['Acessórios de ventilação e instrumentais','Roupas da equipe','Alimentos','Documentos'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-120', code:'POP-CME-120', version:'1.1', emission:'22/06/2020',
+      title:'Reprocessamento do endoscópio na lavadora automatizada',
+      executantes:'Enfermagem da Sala de Exames Complementares, CC e CME',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Descrever o método <b>automatizado</b> de lavagem, desinfecção e armazenamento do endoscópio na lavadora de endoscópios (desinfetante: ácido peracético).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'No local: aspirar detergente enzimático pelo canal, limpar e proteger a parte elétrica, encaminhar na caixa suja (vermelha). Na CME: <b>testar vazamento</b>, posicionar o endoscópio na cuba, remover válvulas e conectar as mangueiras dos injetores; fechar e iniciar o ciclo.',
+          'Ao final, secar com ar comprimido, instilar <b>álcool 70% nos canais</b> (evita biofilme), aplicar óleo de silicone e armazenar sem válvulas, pendurado, com a ponta distal livre.'
+        ]},
+        {n:3,h:'Controle do desinfetante',items:[
+          '<b>Teste do desinfetante diário</b>: inserir a fita reativa na solução por 3 s, aguardar 5 s e comparar com o gabarito; colar no livro de registro.',
+          '<b>Autodesinfecção e troca do desinfetante mensalmente</b>: preencher a cuba com 10 litros de ácido peracético. Realizar a desinfecção de alto nível na 1ª hora do dia se o aparelho ficou > 30 dias no armário.'
+        ]}
+      ],
+      pool:[
+        {q:'O desinfetante usado na lavadora de endoscópios é o:',
+         o:['Ácido peracético','Hipoclorito','Álcool 70%','Formol'],a:0,d:3},
+        {q:'O teste do desinfetante (fita reativa) na lavadora é feito:',
+         o:['Diariamente, ao utilizar o equipamento','Mensalmente','Anualmente','Nunca'],a:0,d:3},
+        {q:'Na fita do teste de desinfetante, insere-se na solução por:',
+         o:['3 segundos','30 minutos','1 hora','10 segundos'],a:0,d:2},
+        {q:'A troca do desinfetante (autodesinfecção) na lavadora é:',
+         o:['Mensal (10 litros de ácido peracético)','Diária','A cada ciclo','Anual'],a:0,d:3},
+        {q:'Ao final do reprocessamento, instila-se nos canais do endoscópio:',
+         o:['Álcool 70% (evita biofilme)','Formol','Soro fisiológico','Glicose'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-cme-121', code:'POP-CME-121', version:'1.1', emission:'09/10/2020',
+      title:'Montagem da caixa do kit torácica (vídeo)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa do kit torácica (apoio à cirurgia torácica por vídeo): pinças de apreensão DeBakey, de linfonodo e Foerster, e pinça de dissecção DeBakey.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em TNT de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita laranja + verde.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa do kit torácica dá apoio à cirurgia:',
+         o:['Torácica por vídeo','Ortopédica','Oftalmológica','Plástica'],a:0,d:2},
+        {q:'A caixa do kit torácica é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa do kit torácica é:',
+         o:['Fita laranja + verde','Cabo vermelho','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'A caixa do kit torácica contém, entre outras, a pinça:',
+         o:['De apreensão DeBakey','Kelly','Adson','Mosquito'],a:0,d:2},
+        {q:'A caixa do kit torácica é empacotada em:',
+         o:['TNT 1,20×1,20 m','Saco de lixo','Papel jornal','Caixa de papelão'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-122', code:'POP-CME-122', version:'1.1', emission:'21/10/2020',
+      title:'Confecção do kit de PAM (pressão arterial média)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O kit de PAM permite a aferição da pressão arterial média por um cateter introduzido em artéria, conectado a um transdutor de pressão e ao monitor. Composto por campo fenestrado, cuba, porta-agulha, tesoura, pinças e Cheron.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1×1 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita marrom + branco.'
+        ]}
+      ],
+      pool:[
+        {q:'O kit de PAM serve para aferir a:',
+         o:['Pressão arterial média (invasiva)','Saturação de oxigênio','Glicemia','Temperatura'],a:0,d:3},
+        {q:'A PAM consiste na introdução de um cateter em uma:',
+         o:['Artéria','Veia periférica','Bexiga','Traqueia'],a:0,d:3},
+        {q:'O kit de PAM é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação do kit de PAM é:',
+         o:['Fita marrom + branco','Verde','Vermelha','Lilás'],a:0,d:2},
+        {q:'O cateter da PAM é conectado a um:',
+         o:['Transdutor de pressão e ao monitor','Frasco de soro','Aspirador','Ventilador'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-123', code:'POP-CME-123', version:'1.1', emission:'30/03/2021',
+      title:'Reprocessamento do bougie',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O bougie é um introdutor que, inserido na traqueia, ajuda a orientar a introdução da cânula traqueal.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente, enxaguar e secar com ar comprimido; realizar <b>desinfecção por fricção com pano e álcool 70%</b>.',
+          'Inspecionar, empacotar em saco plástico (etiqueta branca com data e profissional) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'O bougie é um introdutor que ajuda a orientar:',
+         o:['A introdução da cânula traqueal','A sondagem vesical','A punção lombar','A drenagem torácica'],a:0,d:2},
+        {q:'A desinfecção do bougie é feita por:',
+         o:['Fricção com pano e álcool 70%','Autoclave','Óxido de etileno','Imersão em formol'],a:0,d:2},
+        {q:'O bougie é inserido na:',
+         o:['Traqueia','Bexiga','Veia','Pleura'],a:0,d:2},
+        {q:'A identificação do bougie inclui:',
+         o:['Data e profissional','Apenas a cor','O nome do médico','Nada'],a:0,d:1},
+        {q:'A secagem do bougie é feita com:',
+         o:['Pistola de ar comprimido','Secadora quente','Pano úmido','Ao sol'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-124', code:'POP-CME-124', version:'1.1', emission:'15/09/2014',
+      title:'Reprocessamento da lâmina do videolaringoscópio',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A lâmina do videolaringoscópio é usada em conjunto com o cabo para exames da laringe (e intubação).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Lavar ultrassonicamente, enxaguar, secar e realizar <b>desinfecção por fricção com gaze + álcool 70%</b>.',
+          'Inspecionar <b>testando com o cabo</b>, empacotar em saco plástico (data e nome) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção da lâmina do videolaringoscópio é feita por:',
+         o:['Fricção com gaze + álcool 70%','Autoclave','Óxido de etileno','Imersão em formol'],a:0,d:2},
+        {q:'Na inspeção da lâmina do videolaringoscópio, deve-se:',
+         o:['Testá-la com o cabo','Pesá-la','Pintá-la','Dobrá-la'],a:0,d:2},
+        {q:'A lâmina do videolaringoscópio é usada para:',
+         o:['Exames da laringe / intubação','Aspiração','Curativos','Coleta de sangue'],a:0,d:2},
+        {q:'A lâmina do videolaringoscópio funciona em conjunto com:',
+         o:['O cabo','A máscara','A traqueia','O balão'],a:0,d:1},
+        {q:'A lâmina do videolaringoscópio é empacotada em:',
+         o:['Saco plástico (data e nome)','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-125', code:'POP-CME-125', version:'1.1', emission:'02/08/2021',
+      title:'Reprocessamento do laringoscópio de suspensão',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O laringoscópio de suspensão é usado na abordagem diagnóstica e cirúrgica da laringe. Composto por lâminas, ponteiras ópticas, suporte e cabo óptico.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular e abrir, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar, secar e <b>lubrificar as superfícies de atrito</b>.',
+          'Colocar fita teste Classe V no interior, empacotar em SMS de 1,20×1,20 m e <b>esterilizar em autoclave a 134 °C</b>. Identificação: fita laranja + azul.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Cuidado especial com o material de vídeo: <b>não dobrar e não bater</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O laringoscópio de suspensão é usado na abordagem da:',
+         o:['Laringe','Bexiga','Pleura','Articulação'],a:0,d:2},
+        {q:'O laringoscópio de suspensão é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Com o material de vídeo do laringoscópio de suspensão, deve-se:',
+         o:['Não dobrar e não bater','Enrolar firme','Bater para encaixar','Dobrar ao meio'],a:0,d:2},
+        {q:'A identificação do laringoscópio de suspensão é:',
+         o:['Fita laranja + azul','Cabo verde','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se no laringoscópio de suspensão:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Cola','Talco'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-138', code:'POP-CME-138', version:'1.1', emission:'04/05/2026',
+      title:'Pré-limpeza de produtos encaminhados para empresa processadora (ESTERIMAX)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização e Unidades',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Garantir a correta pré-limpeza dos materiais a serem encaminhados para a empresa processadora ESTERIMAX, conforme a RDC 15.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Paramentar-se com EPIs, remover corpos estranhos (fios de sutura, agulhas, lâminas), limpar conforme o POP de cada material (manual/ultrassônica/termo), atentando aos lúmens, e secar.',
+          'Registrar no sistema de rastreabilidade <b>RASTRO</b> (área limpa / esterilização externa) e no sistema de envio <b>LIBBEN</b>, imprimindo a ordem de esterilização.'
+        ]},
+        {n:3,h:'Finalização',items:[
+          'Acondicionar na caixa da ESTERIMAX com a ordem de esterilização e aguardar a coleta. <b>Testar o material</b> — se não estiver em bom funcionamento, não encaminhar.'
+        ]}
+      ],
+      pool:[
+        {q:'Os materiais pré-limpos neste POP são encaminhados para:',
+         o:['A empresa processadora ESTERIMAX','O lixo comum','A farmácia','O almoxarifado'],a:0,d:2},
+        {q:'O registro do envio é feito nos sistemas:',
+         o:['RASTRO e LIBBEN','Apenas em papel','Por e-mail','Não há registro'],a:0,d:2},
+        {q:'Antes de encaminhar, deve-se remover do material:',
+         o:['Corpos estranhos (fios, agulhas, lâminas)','A etiqueta','A embalagem','Nada'],a:0,d:2},
+        {q:'Se o material não estiver em bom funcionamento, ele:',
+         o:['Não deve ser encaminhado para reprocessamento','Deve ser enviado mesmo assim','Deve ser descartado no lixo comum','Deve ser usado'],a:0,d:2},
+        {q:'A pré-limpeza para a ESTERIMAX segue a:',
+         o:['RDC 15','Lei do SUS','Portaria de férias','Nenhuma norma'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
