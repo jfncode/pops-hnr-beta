@@ -7582,6 +7582,422 @@
         {q:'O guia de intubação é empacotado em:',
          o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
       ]
+    },
+
+    {
+      id:'pop-cme-104', code:'POP-CME-104', version:'1.1', emission:'16/04/2019',
+      title:'Confecção do tampão torácico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O tampão torácico é utilizado nos procedimentos de pleurostomia.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Confeccionar com gaze em rolo, algodão e fio cirúrgico um rolinho de aproximadamente <b>35 cm</b> de comprimento; empacotar em SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O tampão torácico é utilizado em:',
+         o:['Procedimentos de pleurostomia','Punção lombar','Sondagem','Nebulização'],a:0,d:2},
+        {q:'O comprimento aproximado do tampão torácico é de:',
+         o:['35 cm','5 cm','1 m','10 cm'],a:0,d:2},
+        {q:'O tampão torácico é confeccionado com:',
+         o:['Gaze em rolo, algodão e fio cirúrgico','Plástico','Metal','Madeira'],a:0,d:2},
+        {q:'O tampão torácico é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O tampão torácico é selado com:',
+         o:['Fita zebrada Classe I','Cola','Grampos','Barbante'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-105', code:'POP-CME-105', version:'1.1', emission:'06/05/2019',
+      title:'Ciclos da autoclave',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar os parâmetros de cada ciclo da autoclave a vapor, conforme a qualificação.'
+        ]},
+        {n:2,h:'Parâmetros dos ciclos',items:[
+          '<b>Instrumentais</b> e <b>Tecido</b>: 134 °C por 5 min (tecido com secagem maior). <b>Sensível</b>: 121 °C por 21 min. <b>Prions</b>: 134 °C por 18 min.',
+          '<b>Flash</b>: 134 °C por 5 min. <b>Bowie & Dick</b>: 134 °C por 3,5 min. <b>Leak Test</b>: 100 °C (teste de vácuo, sem material).'
+        ]}
+      ],
+      pool:[
+        {q:'O ciclo de instrumentais na autoclave opera a:',
+         o:['134 °C por 5 minutos','100 °C por 1 hora','60 °C por 10 minutos','121 °C por 21 minutos'],a:0,d:2},
+        {q:'O ciclo para materiais SENSÍVEIS opera a:',
+         o:['121 °C por 21 minutos','134 °C por 5 minutos','134 °C por 18 minutos','100 °C'],a:0,d:3},
+        {q:'O ciclo para material de PRIONS opera a:',
+         o:['134 °C por 18 minutos','134 °C por 5 minutos','121 °C por 21 minutos','134 °C por 3,5 minutos'],a:0,d:3},
+        {q:'O ciclo Bowie & Dick opera a:',
+         o:['134 °C por 3,5 minutos','121 °C por 21 minutos','100 °C','60 °C'],a:0,d:3},
+        {q:'A finalidade da padronização dos ciclos é:',
+         o:['Garantir os parâmetros corretos conforme a qualificação','Acelerar o trabalho','Economizar energia','Reduzir a limpeza'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-106', code:'POP-CME-106', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento do xaxim (campo com bolsos)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O xaxim é o campo com bolsos usado pela instrumentadora para suporte de instrumentais durante o ato cirúrgico.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Verificar a integridade e limpeza do campo, empacotar em SMS de 50×50 cm, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O xaxim é um campo com bolsos usado para:',
+         o:['Suporte de instrumentais pela instrumentadora','Cobrir o paciente','Aspirar secreção','Curativo'],a:0,d:2},
+        {q:'O xaxim é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Antes de empacotar o xaxim, deve-se verificar:',
+         o:['A integridade e a limpeza do campo','A cor','O peso','O fabricante'],a:0,d:2},
+        {q:'A embalagem do xaxim é SMS de:',
+         o:['50×50 cm','1,50×1,50 m','3×3 m','10×10 cm'],a:0,d:1},
+        {q:'O xaxim é utilizado durante o:',
+         o:['Ato cirúrgico','Banho do paciente','Transporte','Exame de imagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-107', code:'POP-CME-107', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento da válvula exalatória do CPAP',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A válvula exalatória do CPAP é um conector reto (15×15 mm, em acrílico) para a exalação de CO₂ e o enriquecimento de oxigênio.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Lavar ultrassonicamente, enxaguar, secar em secadora e inspecionar.',
+          'Empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A válvula exalatória do CPAP serve para:',
+         o:['Exalação de CO₂ e enriquecimento de oxigênio','Aspirar secreção','Medir pressão','Coletar sangue'],a:0,d:2},
+        {q:'A válvula exalatória do CPAP é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A válvula exalatória do CPAP é feita de:',
+         o:['Acrílico','Aço inox','Borracha','Vidro'],a:0,d:1},
+        {q:'A secagem da válvula exalatória é feita:',
+         o:['Em secadora','Ao sol','Com papel toalha','Naturalmente por dias'],a:0,d:1},
+        {q:'A válvula exalatória do CPAP é um conector de:',
+         o:['15×15 mm','5×5 mm','30×30 mm','1×1 cm'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-108', code:'POP-CME-108', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento da pinça para tamponamento',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Pinça anatômica grande (30 cm) usada no auxílio do processo de tamponamento do paciente.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar, secar com pano branco e inspecionar.',
+          'Empacotar em SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A pinça para tamponamento é usada no:',
+         o:['Tamponamento do paciente','Curativo','Aspiração','Nebulização'],a:0,d:2},
+        {q:'A pinça para tamponamento é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A pinça para tamponamento é do tipo:',
+         o:['Anatômica grande (30 cm)','Mosquito','Adson','Cheron'],a:0,d:2},
+        {q:'A lavagem da pinça para tamponamento é feita:',
+         o:['Ultrassonicamente','Por imersão em formol','A seco','Na autoclave'],a:0,d:1},
+        {q:'A pinça para tamponamento é empacotada em:',
+         o:['SMS','Saco de lixo','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-109', code:'POP-CME-109', version:'1.1', emission:'16/04/2019',
+      title:'Confecção da compressa cirúrgica',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A compressa cirúrgica é utilizada nos procedimentos cirúrgicos (tamanhos pequena e grande).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Inspecionar, empacotar <b>5 unidades</b> em SMS de 75×75 cm, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Material de <b>uso único</b> — não reprocessar.'
+        ]}
+      ],
+      pool:[
+        {q:'A compressa cirúrgica é material de:',
+         o:['Uso único (não reprocessar)','Reuso permanente','Reuso ilimitado','Descarte sem esterilizar'],a:0,d:3},
+        {q:'A compressa cirúrgica é empacotada em quantidade de:',
+         o:['5 unidades','1 unidade','20 unidades','100 unidades'],a:0,d:2},
+        {q:'A compressa cirúrgica é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A compressa cirúrgica está disponível nos tamanhos:',
+         o:['Pequena e grande','Único','Mini e micro','Extra grande apenas'],a:0,d:1},
+        {q:'A embalagem da compressa cirúrgica é SMS de:',
+         o:['75×75 cm','1,50×1,50 m','3×3 m','10×10 cm'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-110', code:'POP-CME-110', version:'1.1', emission:'02/05/2019',
+      title:'Leak Test (teste de vazamento de ar)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O Leak Test demonstra que o vazamento de ar na câmara do esterilizador, durante o vácuo, não excede o nível que inibiria a penetração de vapor nem recontaminaria a carga.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Realizar <b>mensalmente, todo dia 01</b>, no primeiro ciclo do dia, com a autoclave <b>vazia</b>; programar o ciclo Leak Test e verificar a aprovação na fita de controle.',
+          'Comunicar o enfermeiro se reprovado e anexar o impresso no livro de controle.'
+        ]},
+        {n:3,h:'Parâmetros',items:[
+          'A taxa de aumento de pressão não deve ser superior a <b>0,13 kPa/min (1,3 mbar/min)</b>; teste com pressão da câmara interna de 70 mbar por 10 minutos.'
+        ]}
+      ],
+      pool:[
+        {q:'O Leak Test avalia:',
+         o:['O vazamento de ar na câmara do esterilizador durante o vácuo','A letalidade do processo','A carga microbiana','A validade dos pacotes'],a:0,d:3},
+        {q:'O Leak Test é realizado:',
+         o:['Mensalmente, todo dia 01, com a autoclave vazia','Diariamente','A cada ciclo','Anualmente'],a:0,d:3},
+        {q:'A taxa de aumento de pressão no Leak Test não deve ser superior a:',
+         o:['0,13 kPa/min (1,3 mbar/min)','1 kPa/min','10 kPa/min','Não há limite'],a:0,d:3},
+        {q:'O Leak Test é realizado com a autoclave:',
+         o:['Vazia','Cheia de instrumentais','Com material crítico','Na última carga'],a:0,d:2},
+        {q:'Se o Leak Test for reprovado, deve-se:',
+         o:['Comunicar o enfermeiro para providências','Liberar a autoclave','Repetir só o material','Ignorar'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-111', code:'POP-CME-111', version:'1.1', emission:'06/05/2019',
+      title:'Pré-limpeza',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Orientar a pré-limpeza dos produtos para saúde, realizada na unidade logo após o uso.'
+        ]},
+        {n:2,h:'Instrumentais',items:[
+          'Desarticular, limpar o excesso de sujidade com gaze e água destilada e irrigar os canais com seringa de 20 ml.',
+          'Se o transporte demorar mais de <b>30 minutos</b>, borrifar <b>umectante</b>; armazenar em recipiente próprio para recolhimento pela CME.'
+        ]},
+        {n:3,h:'Demais produtos e transporte',items:[
+          'Desarticular e enxaguar em água corrente para retirar a sujidade visível.',
+          'Transportar sempre em <b>recipiente rígido e fechado</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A pré-limpeza dos produtos é realizada:',
+         o:['Na unidade, logo após o uso','Apenas na CME','No fim do mês','Não é realizada'],a:0,d:2},
+        {q:'Se o transporte do instrumental demorar mais de 30 minutos, deve-se:',
+         o:['Borrifar umectante','Esterilizar','Descartar','Deixar secar'],a:0,d:3},
+        {q:'O transporte dos materiais para a CME é feito em:',
+         o:['Recipiente rígido e fechado','Saco plástico aberto','Bandeja descoberta','Qualquer recipiente'],a:0,d:2},
+        {q:'Na pré-limpeza dos instrumentais, os canais são irrigados com:',
+         o:['Seringa de 20 ml','Mangueira','Balde','Esponja'],a:0,d:2},
+        {q:'Antes da pré-limpeza, o material deve ser:',
+         o:['Desarticulado','Esterilizado','Empacotado','Pintado'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-112', code:'POP-CME-112', version:'1.1', emission:'15/05/2014',
+      title:'Limpeza automatizada (lavadora termodesinfectadora)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Orientar a limpeza automatizada dos materiais na lavadora termodesinfectadora, removendo sujidades por ação mecânica.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Ligar a lavadora, conferir o detergente enzimático no diluidor e realizar a <b>pré-limpeza</b>; imergir o material e conectar os canulados aos jatos.',
+          'Acionar e aguardar o ciclo; ao final, enxaguar, secar, inspecionar com lupa e encaminhar para desinfecção ou preparo.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Aguardar o equipamento realizar o primeiro ciclo do dia sem material para aquecer a água; desprezar a solução no fim do plantão.'
+        ]}
+      ],
+      pool:[
+        {q:'A lavadora termodesinfectadora realiza a:',
+         o:['Limpeza automatizada dos materiais','Esterilização final','Apenas a secagem','O empacotamento'],a:0,d:2},
+        {q:'Antes de colocar o material na lavadora, realiza-se a:',
+         o:['Pré-limpeza','Esterilização','Secagem final','Embalagem'],a:0,d:2},
+        {q:'O primeiro ciclo do dia deve ser feito:',
+         o:['Sem material, para aquecer a água','Com o dobro de material','Com água fria','Sem detergente'],a:0,d:2},
+        {q:'Após o ciclo, antes do preparo, faz-se a inspeção visual com:',
+         o:['Lupa','Microscópio','A olho nu apenas','Raio-X'],a:0,d:2},
+        {q:'A solução de detergente deve ser desprezada:',
+         o:['Diariamente no fim do plantão','Uma vez por mês','Nunca','A cada hora'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-113', code:'POP-CME-113', version:'1.1', emission:'03/01/2020',
+      title:'Limpeza do transdutor de ecografia transtorácica',
+      executantes:'Enfermagem da Sala de Exames Complementares, CC e CME',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Descrever a lavagem, desinfecção e armazenamento do transdutor de ecografia transtorácica.'
+        ]},
+        {n:2,h:'Limpeza',items:[
+          'Após o exame, remover todo o gel; desligar o transdutor da energia, remover contaminantes com compressa em detergente enzimático e proteger a parte elétrica com saco plástico.',
+          'Imergir (pela extremidade distal) em detergente enzimático por 10 min, limpar com esponja macia, enxaguar e secar.'
+        ]},
+        {n:3,h:'Desinfecção e cuidados',items:[
+          '<b>Desinfecção por imersão em ácido peracético 2% por 10 minutos</b> (pela extremidade distal), enxaguar e secar; armazenar pendurado, com a ponta distal livre, em ambiente ventilado.',
+          'Não fazer dobras no tubo, não expor o conector à umidade e <b>não usar escovas</b> (danificam a lente); a limpeza ultrassônica não é aprovada para esses transdutores.'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção do transdutor de ecografia é feita em:',
+         o:['Ácido peracético 2% por 10 minutos','Hipoclorito','Álcool 70%','Autoclave'],a:0,d:3},
+        {q:'Após o exame, antes de tudo, deve-se:',
+         o:['Remover todo o gel do transdutor','Esterilizá-lo','Dobrá-lo','Congelá-lo'],a:0,d:2},
+        {q:'No transdutor de ecografia, NÃO se deve:',
+         o:['Usar escovas (danificam a lente) nem ultrassônica','Removê-lo do gel','Inspecioná-lo','Secá-lo'],a:0,d:3},
+        {q:'A parte elétrica do transdutor deve ser:',
+         o:['Protegida da umidade/líquidos','Imersa na solução','Lavada com água','Esterilizada'],a:0,d:3},
+        {q:'O transdutor é armazenado:',
+         o:['Pendurado, com a ponta distal livre, em ambiente ventilado','No estojo de transporte','Enrolado','Dentro de água'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-114', code:'POP-CME-114', version:'1.1', emission:'15/09/2014',
+      title:'Limpeza do endoscópio',
+      executantes:'Enfermagem da Sala de Exames Complementares, CC e CME',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Descrever a lavagem, desinfecção e armazenamento do endoscópio.'
+        ]},
+        {n:2,h:'Limpeza e teste de vazamento',items:[
+          'Aspirar detergente enzimático pelo canal de biópsia/sucção, limpar o tubo de inserção e desligar da energia/bomba; realizar o <b>teste de vazamento</b> antes da imersão (detecta danos e reduz infiltração).',
+          'Imergir (pela extremidade distal) em detergente enzimático por 10 min, limpar externamente com esponja macia e internamente (válvulas e canais) com escova; enxaguar os canais com seringa de 20 ml (mín. 5×).'
+        ]},
+        {n:3,h:'Desinfecção e finalização',items:[
+          '<b>Desinfecção por imersão em ácido peracético 2% por 30 minutos</b>, injetando em todos os canais; enxaguar e secar com ar comprimido em baixa pressão.',
+          'Ao final, instilar <b>álcool 70% nos canais</b> (evita biofilme), aplicar óleo de silicone nas válvulas e armazenar sem válvulas, pendurado, com a ponta distal livre.'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção do endoscópio é feita em:',
+         o:['Ácido peracético 2% por 30 minutos','Hipoclorito 0,5%','Álcool 70% por imersão','Autoclave'],a:0,d:3},
+        {q:'O teste de vazamento do endoscópio é feito:',
+         o:['Antes da imersão, para detectar danos e evitar infiltração','Após a esterilização','Durante o exame','Não é feito'],a:0,d:3},
+        {q:'Ao final dos procedimentos, instila-se nos canais do endoscópio:',
+         o:['Álcool 70% (evita biofilme)','Formol','Soro fisiológico','Glicose'],a:0,d:3},
+        {q:'Os canais do endoscópio são enxaguados com seringa de 20 ml no mínimo:',
+         o:['5 vezes','1 vez','20 vezes','Não são enxaguados'],a:0,d:2},
+        {q:'O endoscópio é armazenado:',
+         o:['Sem válvulas, pendurado, com a ponta distal livre','Enrolado na caixa','Imerso em solução','Com as válvulas montadas'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-115', code:'POP-CME-115', version:'1.1', emission:'15/09/2014',
+      title:'Limpeza do broncoscópio',
+      executantes:'Enfermagem da Sala de Exames Complementares, CC e CME',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Descrever a lavagem, desinfecção e armazenamento do broncoscópio.'
+        ]},
+        {n:2,h:'Limpeza e teste de vazamento',items:[
+          'Aspirar detergente enzimático pelo canal de biópsia/sucção, limpar o tubo de inserção e desligar da energia/bomba; realizar o <b>teste de vazamento</b> (inflar até 20 kPa e observar por 30 s).',
+          'Imergir (pela extremidade distal) em detergente enzimático por 10 min, limpar externa e internamente (válvulas e canais com escova) e enxaguar os canais com seringa de 20 ml (mín. 5×).'
+        ]},
+        {n:3,h:'Desinfecção e finalização',items:[
+          '<b>Desinfecção por imersão em ácido peracético 2% por 10 minutos</b>, injetando em todos os canais; enxaguar com água estéril e secar com ar comprimido em baixa pressão.',
+          'Ao final, instilar <b>álcool 70% nos canais</b> (evita biofilme), aplicar óleo de silicone nas válvulas e armazenar sem válvulas, pendurado, com a ponta distal livre.'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção do broncoscópio é feita em:',
+         o:['Ácido peracético 2% por 10 minutos','Hipoclorito 0,5%','Álcool 70% por imersão','Autoclave'],a:0,d:3},
+        {q:'O teste de vazamento do broncoscópio é feito inflando até:',
+         o:['20 kPa e observando por 30 segundos','100 kPa por 1 hora','5 kPa por 5 minutos','Não há teste'],a:0,d:3},
+        {q:'Após a desinfecção, o broncoscópio é enxaguado com:',
+         o:['Água estéril','Água da torneira','Soro glicosado','Álcool puro'],a:0,d:3},
+        {q:'Ao final, instila-se nos canais do broncoscópio:',
+         o:['Álcool 70% (evita biofilme)','Formol','Soro fisiológico','Glicose'],a:0,d:3},
+        {q:'O broncoscópio é armazenado:',
+         o:['Sem válvulas, pendurado, com a ponta distal livre','Enrolado na caixa','Imerso em solução','Com as válvulas montadas'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-116', code:'POP-CME-116', version:'1.1', emission:'31/03/2020',
+      title:'Limpeza do kit de isolamento de contato',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O kit de isolamento de contato (caixa com tampa, esfigmomanômetro, estetoscópio, termômetro e garrote) é usado para pacientes em isolamento de contato.'
+        ]},
+        {n:2,h:'Limpeza por componente',items:[
+          'Caixa, termômetro e manguito: lavagem manual em detergente enzimático. Manômetro, estetoscópio e garrote: lavagem ultrassônica. <b>Lanterna: desinfecção por fricção com álcool 70%</b>.',
+          'Cada item é seco conforme sua natureza (secadora, ar comprimido ou pano branco) e inspecionado.'
+        ]},
+        {n:3,h:'Finalização',items:[
+          'Empacotar <b>cada item individualmente</b> em saco plástico, colocar data e nome no pacote do esfigmomanômetro, e colocar tudo na caixa plástica.',
+          'Fazer o controle no caderno de protocolo pelo número de cada caixa.'
+        ]}
+      ],
+      pool:[
+        {q:'O kit de isolamento de contato é composto por:',
+         o:['Caixa, esfigmomanômetro, estetoscópio, termômetro e garrote','Apenas termômetro','Material cirúrgico','Medicamentos'],a:0,d:2},
+        {q:'A lanterna do kit de isolamento é desinfetada por:',
+         o:['Fricção com álcool 70%','Imersão em hipoclorito','Autoclave','Óxido de etileno'],a:0,d:2},
+        {q:'Os itens do kit de isolamento são empacotados:',
+         o:['Cada um individualmente em saco plástico','Todos juntos','Sem embalagem','Na autoclave'],a:0,d:2},
+        {q:'O kit de isolamento de contato é destinado a pacientes em:',
+         o:['Isolamento de contato','Pós-operatório','Ambulatório','Pronto-socorro'],a:0,d:1},
+        {q:'O controle do kit de isolamento é feito:',
+         o:['No caderno de protocolo, pelo número de cada caixa','Por foto','Verbalmente','Não há controle'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
