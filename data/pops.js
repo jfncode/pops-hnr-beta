@@ -4065,6 +4065,348 @@
         {q:'A paramentação cirúrgica promove segurança:',
          o:['Ao paciente e à equipe cirúrgica','Apenas ao paciente','Apenas ao cirurgião','Somente à instituição'],a:0,d:1}
       ]
+    },
+
+    {
+      id:'pop-hd-01', code:'POP-HD-01', version:'1.2', emission:'22/08/2024',
+      title:'Recepção de pacientes no Hospital Dia',
+      executantes:'Profissionais de enfermagem',
+      origem:'Hospital Dia',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Oferecer assistência intermediária entre a internação e o atendimento ambulatorial para procedimentos clínicos, cirúrgicos, diagnósticos e terapêuticos, com permanência máxima de <b>12 horas</b>.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Encaminhar o paciente ao leito, colocar a pulseira conferindo nome e data de nascimento, verificar o termo de responsabilidade, realizar anamnese e registrar sinais vitais.',
+          'Solicitar avaliação médica e prescrição; administrar a medicação (EV pelo POP-ENF-21, SC pelo POP-ENF-24, port-a-cath pelo POP-ENF-34) e observar reações.'
+        ]},
+        {n:3,h:'Alta',items:[
+          'Registrar a evolução de enfermagem e <b>liberar o paciente somente após reavaliação médica</b>.',
+          'Atentar para parâmetros elevados de pressão arterial e glicemia capilar antes de procedimentos invasivos.'
+        ]}
+      ],
+      pool:[
+        {q:'O período máximo de permanência do paciente no Hospital Dia é de:',
+         o:['12 horas','24 horas','48 horas','1 semana'],a:0,d:1},
+        {q:'A liberação do paciente do Hospital Dia ocorre:',
+         o:['Somente após reavaliação médica','A pedido do paciente','Após 1 hora','Pelo técnico de enfermagem'],a:0,d:2},
+        {q:'Antes de procedimentos invasivos, deve-se atentar especialmente para:',
+         o:['Parâmetros elevados de pressão arterial e glicemia capilar','A cor da roupa','O horário do almoço','O peso do acompanhante'],a:0,d:2},
+        {q:'Para administração de medicação EV no HD, segue-se o:',
+         o:['POP-ENF-21 (punção venosa periférica)','POP-ENF-24 (subcutânea)','Nenhum protocolo','POP de higiene oral'],a:0,d:2},
+        {q:'Ao receber o paciente, a pulseira de identificação é conferida com:',
+         o:['Nome completo e data de nascimento','Apenas o sobrenome','O número do leito','A senha'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-hd-02', code:'POP-HD-02', version:'1.2', emission:'22/08/2024',
+      title:'Admissão de pacientes no Hospital Dia',
+      executantes:'Servidores do registro, enfermagem e médico',
+      origem:'Hospital Dia',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Padronizar a admissão no Hospital Dia, quando há necessidade de assistência multiprofissional por um período de internação de <b>12 horas</b>.'
+        ]},
+        {n:2,h:'Admissão',items:[
+          'Conferir se a unidade está higienizada e arrumada, colocar a pulseira/etiqueta conferindo nome e data de nascimento e preencher o termo de responsabilidade do HD.',
+          'Solicitar avaliação médica, aprazar a prescrição, acompanhar o paciente à sala de medicação/procedimento e administrar conforme prescrição.'
+        ]},
+        {n:3,h:'Avaliação de enfermagem',items:[
+          'Realizar anamnese (histórico de saúde/enfermagem) e aplicar a <b>escala de Morse</b> para risco de queda.',
+          'Executar as ações de prevenção dos protocolos de Segurança do Paciente (NUSEP/HNR), notificar incidentes e registrar as atividades.'
+        ]}
+      ],
+      pool:[
+        {q:'O instrumento utilizado na admissão para avaliar o risco de queda é a:',
+         o:['Escala de Morse','Escala de Glasgow','Escala de Aldrete','Escala de Braden'],a:0,d:2},
+        {q:'O período de internação previsto no regime de Hospital Dia é de:',
+         o:['12 horas','3 dias','1 mês','2 horas'],a:0,d:1},
+        {q:'Na admissão, o documento específico a ser preenchido é o:',
+         o:['Termo de responsabilidade do HD','Atestado de óbito','Receituário azul','Termo de alta'],a:0,d:2},
+        {q:'Os incidentes relacionados à assistência à saúde devem ser:',
+         o:['Notificados','Ignorados','Resolvidos verbalmente','Anotados só no fim do mês'],a:0,d:2},
+        {q:'Antes de receber o paciente, a unidade deve estar:',
+         o:['Higienizada e arrumada','Com o leito anterior por limpar','Trancada','Sem materiais'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-hd-03', code:'POP-HD-03', version:'1.1', emission:'28/08/2024',
+      title:'Fluxo de atendimento da polissonografia',
+      executantes:'Enfermagem do HD, internação, assistente social, nutrição e médicos',
+      origem:'SISREG',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar o atendimento aos pacientes externos (de outras cidades de SC), internados via Hospital Dia para realização de <b>polissonografia</b> no HNR.'
+        ]},
+        {n:2,h:'Fluxo de internação',items:[
+          'O paciente chega à recepção com o agendamento, faz as refeições nas dependências do hospital e realiza a internação no HD a partir das 13h; a admissão deve ocorrer <b>antes das 20h</b>.',
+          'Verificar sinais vitais, fazer a nota de admissão no PEP, comunicar a enfermeira e a nutrição (dieta branda).'
+        ]},
+        {n:3,h:'Exame e alta',items:[
+          'O exame termina por volta das 5:45h; o médico avalia e prescreve a alta. Toda intercorrência é registrada no PEP e o médico de plantão é acionado.',
+          'Orientar que o <b>resultado fica disponível em 45 dias</b>, a ser buscado no HD no período diurno (8h às 18h).'
+        ]}
+      ],
+      pool:[
+        {q:'A internação do paciente da polissonografia deve ocorrer:',
+         o:['Antes das 20h','Após a meia-noite','A qualquer hora','Só pela manhã'],a:0,d:2},
+        {q:'O resultado da polissonografia fica disponível em:',
+         o:['45 dias','24 horas','1 semana','6 meses'],a:0,d:2},
+        {q:'A dieta liberada pela nutrição para esses pacientes é:',
+         o:['Branda','Apenas líquidos','Zero (jejum total)','Hipersódica'],a:0,d:1},
+        {q:'Toda intercorrência durante o exame deve ser:',
+         o:['Registrada no prontuário eletrônico e o médico de plantão acionado','Ignorada','Anotada em papel','Resolvida pelo próprio paciente'],a:0,d:2},
+        {q:'Os pacientes da polissonografia são agendados via:',
+         o:['SISREG','Telefone pessoal','Balcão sem registro','E-mail'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-hd-04', code:'POP-HD-04', version:'1.5', emission:'21/02/2022',
+      title:'Biópsia hepática por punção percutânea',
+      executantes:'Médico, enfermeiro, técnico/auxiliar de enfermagem e transporte',
+      origem:'Setor Hospital Dia (HD)',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Prestar assistência durante a biópsia percutânea hepática, com retirada de fragmentos do fígado por uma pistola automática; o local da punção é marcado previamente por ultrassonografia.',
+          'Exige <b>jejum de 6 horas</b> e suspensão de anticoagulantes/antiagregantes por até 7 dias antes, conforme avaliação médica.'
+        ]},
+        {n:2,h:'Antes e durante',items:[
+          'Confirmar identidade e a assinatura do termo de consentimento, puncionar acesso venoso periférico calibroso e prescrever controle da dor.',
+          'A equipe de enfermagem assessora o médico (cirurgião/gastroenterologista) que realiza a biópsia.'
+        ]},
+        {n:3,h:'Após o procedimento',items:[
+          'Manter o paciente monitorado por <b>4 horas</b>: curativo compressivo, decúbito lateral direito por 30 min, repouso absoluto por 2 h; controle de PA e FC (15/15 min na 1ª h, 30/30 min na 2ª h, 1/1 h na 3ª-4ª h).',
+          'A <b>principal complicação é o sangramento</b>; identificar a amostra, conservá-la em formol e encaminhá-la ao IAP. Alta prevista para as 13h, formalizada pelo médico responsável.'
+        ]}
+      ],
+      pool:[
+        {q:'O jejum exigido antes da biópsia hepática percutânea é de:',
+         o:['6 horas','12 horas','2 horas','Não há jejum'],a:0,d:2},
+        {q:'A principal complicação da biópsia hepática é:',
+         o:['Sangramento','Febre','Tosse','Cefaleia'],a:0,d:3},
+        {q:'Após a biópsia, o paciente é mantido em decúbito lateral direito por:',
+         o:['30 minutos','5 minutos','3 horas','Não há essa orientação'],a:0,d:3},
+        {q:'O tempo mínimo de monitorização da enfermagem após a biópsia é de:',
+         o:['4 horas','30 minutos','24 horas','1 hora'],a:0,d:2},
+        {q:'Anticoagulantes e antiagregantes plaquetários, em geral, devem ser suspensos antes da biópsia por até:',
+         o:['7 dias','1 dia','1 hora','1 mês'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-hd-05', code:'POP-HD-05', version:'1.2', emission:'21/02/2022',
+      title:'Punção lombar para coleta de líquor',
+      executantes:'Médico, enfermeiro, técnico/auxiliar de enfermagem e transporte',
+      origem:'Hospital Dia (HD)',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Prestar assistência durante a punção lombar para coleta de líquor (LCR) no canal central da medula espinhal, com anestesia local, para diagnóstico de doenças do Sistema Nervoso Central.'
+        ]},
+        {n:2,h:'Durante o procedimento',items:[
+          'Conferir a assinatura do termo de consentimento e verificar sinais vitais; posicionar o paciente em <b>decúbito lateral, em posição fetal</b> (queixo sobre o tórax, joelhos flexionados), imóvel.',
+          'A enfermagem assessora o médico na punção; coletar o líquor suficiente nos frascos estéreis e realizar curativo compressivo no local.'
+        ]},
+        {n:3,h:'Após e complicações',items:[
+          'Manter o paciente em <b>repouso (deitado) por 2 horas</b> sob monitorização; a alta é a critério médico.',
+          'A <b>principal complicação é a cefaleia pós-punção</b>; identificar e protocolar as amostras (laboratório local e LACEN) e entregar as orientações pós-punção.'
+        ]}
+      ],
+      pool:[
+        {q:'Durante a punção lombar, o paciente é posicionado em:',
+         o:['Decúbito lateral, em posição fetal','Decúbito ventral','Posição sentada com pernas estendidas','Decúbito dorsal'],a:0,d:2},
+        {q:'A principal complicação da punção lombar é:',
+         o:['Cefaleia pós-punção','Sangramento maciço','Infecção urinária','Hipoglicemia'],a:0,d:3},
+        {q:'Após a punção lombar, o paciente deve permanecer em repouso (deitado) por:',
+         o:['2 horas','10 minutos','24 horas','Não há repouso'],a:0,d:2},
+        {q:'O líquido coletado na punção lombar é o:',
+         o:['Líquor (LCR)','Sangue arterial','Urina','Bile'],a:0,d:1},
+        {q:'É essencial que o paciente, durante a punção, permaneça:',
+         o:['Imóvel','Andando','Conversando e se mexendo','Em pé'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-hd-06', code:'POP-HD-06', version:'1.2', emission:'22/08/2024',
+      title:'Cirurgia dermatológica no Hospital Dia',
+      executantes:'Profissionais médicos e de enfermagem',
+      origem:'Hospital Dia',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Oferecer assistência para procedimentos cirúrgicos em Dermatologia, para pacientes com suspeita de <b>Leishmaniose cutâneo-mucosa</b>, com permanência máxima de 12 horas.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Confirmar o procedimento após consulta médica, solicitar a internação no HD, colocar a pulseira e orientar a troca de roupa (camisola, touca) e retirada de adornos.',
+          'Encaminhar o paciente ao <b>centro cirúrgico</b> (caminhando ou em cadeira de rodas), buscá-lo após a liberação e avaliar o curativo realizado.'
+        ]},
+        {n:3,h:'Encaminhamento e alta',items:[
+          'Identificar a amostra (nome, data de nascimento e data do procedimento) e encaminhá-la ao <b>IAP</b>, protocolando o exame.',
+          'Encaminhar o agendamento de retorno no ambulatório de Leishmaniose pelo NIR e solicitar a alta ao registro.'
+        ]}
+      ],
+      pool:[
+        {q:'A cirurgia dermatológica no HD destina-se principalmente a pacientes com suspeita de:',
+         o:['Leishmaniose cutâneo-mucosa','Pneumonia','Apendicite','Catarata'],a:0,d:2},
+        {q:'Para realizar o procedimento, o paciente é encaminhado ao:',
+         o:['Centro cirúrgico','Laboratório','Raio-X','Refeitório'],a:0,d:1},
+        {q:'A amostra coletada é encaminhada ao:',
+         o:['IAP (Instituto de Anatomia Patológica)','Banco de sangue','Almoxarifado','Setor de nutrição'],a:0,d:2},
+        {q:'Antes de encaminhar ao CC, o paciente deve:',
+         o:['Trocar de roupa (camisola, touca) e retirar adornos','Permanecer com roupa de rua','Tomar café da manhã reforçado','Receber alta'],a:0,d:1},
+        {q:'O agendamento de retorno no ambulatório de Leishmaniose é feito pelo:',
+         o:['NIR','Próprio paciente','Acompanhante','Serviço de transporte'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-hd-07', code:'POP-HD-07', version:'1.0', emission:'14/09/2022',
+      title:'Administração de ganciclovir',
+      executantes:'Técnicos de enfermagem, enfermeiros e farmacêuticos',
+      origem:'Farmácia, unidades de internação, UTI e Hospital Dia',
+      setores:['ambulatorio','assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Padronizar a administração endovenosa segura da solução de ganciclovir no tratamento de pacientes imunodeprimidos.'
+        ]},
+        {n:2,h:'Cuidados de infusão',items:[
+          'A solução já vem pronta da farmácia; <b>não misturar com outro medicamento</b> na mesma infusão e só infundir em temperatura ambiente, com aspecto homogêneo, sem grânulos ou precipitados.',
+          'Via endovenosa, infundir em período <b>mínimo de 1 hora</b> (a infusão rápida aumenta a toxicidade).'
+        ]},
+        {n:3,h:'Execução e reações',items:[
+          'Confirmar identidade, puncionar acesso venoso calibroso, identificar a bolsa, fazer a antissepsia e registrar dose e horários de início/término.',
+          'Em caso de reação adversa, <b>diminuir a velocidade ou interromper</b> a infusão e comunicar o médico.'
+        ]}
+      ],
+      pool:[
+        {q:'O ganciclovir deve ser infundido por via endovenosa em um período mínimo de:',
+         o:['1 hora','5 minutos','15 minutos','12 horas'],a:0,d:2},
+        {q:'Na mesma infusão, a solução de ganciclovir:',
+         o:['Não deve ser misturada com outro medicamento','Pode ser misturada com qualquer soro','Deve ser misturada com glicose','Deve receber outro antibiótico'],a:0,d:2},
+        {q:'A infusão rápida do ganciclovir pode aumentar:',
+         o:['A toxicidade do medicamento','A eficácia','A velocidade de cura','O conforto'],a:0,d:3},
+        {q:'Diante de uma reação adversa durante a infusão, deve-se:',
+         o:['Diminuir a velocidade ou interromper e comunicar o médico','Acelerar a infusão','Ignorar','Aumentar a dose'],a:0,d:2},
+        {q:'O ganciclovir destina-se principalmente ao tratamento de pacientes:',
+         o:['Imunodeprimidos','Hipertensos','Diabéticos','Gestantes saudáveis'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-hd-08', code:'POP-HD-08', version:'1.2', emission:'14/10/2022',
+      title:'Administração de omalizumabe',
+      executantes:'Técnicos de enfermagem, enfermeiros e farmacêuticos',
+      origem:'Farmácia, unidades de internação, UTI e Hospital Dia',
+      setores:['ambulatorio','assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Aplicação segura do omalizumabe (anticorpo monoclonal anti-IgE) em pacientes com asma alérgica persistente moderada a grave não controlada por corticosteroides inalatórios.'
+        ]},
+        {n:2,h:'Via e cuidados',items:[
+          'Administração <b>exclusivamente subcutânea</b> (seguir o POP-ENF-24) — não administrar por via intravenosa ou intramuscular. Doses superiores a 150 mg são divididas em dois ou mais locais.',
+          'Aplicar na região do deltoide ou na coxa, <b>não massagear o local</b>, com supervisão médica e ambiente preparado para eventual anafilaxia.'
+        ]},
+        {n:3,h:'Execução e armazenamento',items:[
+          'Aplicar os <b>13 certos</b> da terapia medicamentosa, verificar sinais vitais e observar reações; se houver crise de asma ou urticária, comunicar a enfermeira.',
+          'É termolábil: transportar em temperatura controlada (< 30 °C) e armazenar em refrigerador (<b>2 a 8 °C</b>).'
+        ]}
+      ],
+      pool:[
+        {q:'A via de administração do omalizumabe é:',
+         o:['Subcutânea exclusivamente','Intravenosa','Intramuscular','Oral'],a:0,d:2},
+        {q:'Doses de omalizumabe superiores a 150 mg devem ser:',
+         o:['Divididas em dois ou mais locais de aplicação','Aplicadas em um único ponto','Administradas por via oral','Diluídas em soro EV'],a:0,d:3},
+        {q:'Após a aplicação subcutânea do omalizumabe, o local:',
+         o:['Não deve ser massageado','Deve ser massageado vigorosamente','Deve ser aquecido','Deve ser comprimido por 1 hora'],a:0,d:2},
+        {q:'O omalizumabe deve ser armazenado em refrigerador a:',
+         o:['2 a 8 °C','-20 °C','Temperatura ambiente','Acima de 30 °C'],a:0,d:2},
+        {q:'O omalizumabe é indicado para:',
+         o:['Asma alérgica persistente não controlada por corticoide inalatório','Crise aguda de asma','Hipertensão','Diabetes'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-hd-09', code:'POP-HD-09', version:'1.1', emission:'13/09/2019',
+      title:'Infusão de imunoglobulina humana',
+      executantes:'Equipe de enfermagem, médicos, farmácia e almoxarifado',
+      origem:'Farmácia, unidades de internação, UTI e Hospital Dia',
+      setores:['ambulatorio','assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Padronizar a infusão endovenosa da imunoglobulina humana, agente imunizante passivo (concentrado de IgG), usada em imunodeficiência primária, púrpura trombocitopênica idiopática e doença de Kawasaki.'
+        ]},
+        {n:2,h:'Preparo e infusão',items:[
+          'Reconstituir o frasco-ampola em temperatura ambiente, agitando suavemente até dissolução completa (solução incolor e transparente); usar técnica asséptica e administrar em até 2 a 3 horas.',
+          'Via endovenosa, infundir <b>lentamente</b>, a uma velocidade de <b>0,01 ml/kg de peso/min</b>; não misturar com outro medicamento.'
+        ]},
+        {n:3,h:'Cuidados',items:[
+          'Em pacientes predispostos à falência renal aguda (insuficiência renal, diabetes, idade > 65 anos), usar a menor concentração e velocidade praticáveis; <b>descartar a solução que sobrar</b>.',
+          'Após a administração, aguardar no mínimo <b>6 semanas (preferencialmente 3 meses)</b> antes de aplicar vacinas de vírus atenuado (sarampo, caxumba, rubéola e varicela).'
+        ]}
+      ],
+      pool:[
+        {q:'A imunoglobulina humana é administrada por via:',
+         o:['Endovenosa, lentamente','Subcutânea rápida','Intramuscular','Oral'],a:0,d:2},
+        {q:'Após administrar imunoglobulina humana, deve-se aguardar antes de aplicar vacinas de vírus atenuado:',
+         o:['No mínimo 6 semanas (preferencialmente 3 meses)','24 horas','Nenhum tempo','1 ano obrigatório'],a:0,d:3},
+        {q:'A solução de imunoglobulina que sobrar da preparação deve ser:',
+         o:['Sempre descartada','Guardada para a próxima dose','Compartilhada','Recongelada'],a:0,d:2},
+        {q:'A imunoglobulina humana é um agente imunizante:',
+         o:['Passivo (concentrado de IgG)','Ativo (vacina)','Antibiótico','Anestésico'],a:0,d:3},
+        {q:'O frasco-ampola deve ser reconstituído quando atingir:',
+         o:['A temperatura ambiente','Temperatura de congelamento','40 °C','A temperatura corporal'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-hd-10', code:'POP-HD-10', version:'1.0', emission:'26/09/2024',
+      title:'Administração de mepolizumabe (Nucala®)',
+      executantes:'Equipe de enfermagem, médicos, farmácia e almoxarifado',
+      origem:'Farmácia, unidades de internação, UTI e Hospital Dia',
+      setores:['ambulatorio','assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Padronizar a administração do mepolizumabe, anticorpo monoclonal anti-<b>interleucina 5 (IL-5)</b>, que reduz a produção e sobrevivência dos eosinófilos.',
+          'Indicado para síndrome hipereosinofílica e como tratamento de manutenção da asma eosinofílica grave.'
+        ]},
+        {n:2,h:'Via e armazenamento',items:[
+          'Via <b>subcutânea</b> (seguir o POP-ENF-24); armazenar entre 2 °C e 8 °C, não congelar, proteger da luz e manter no cartucho original.',
+          'A caneta/seringa preenchida pode ficar fora da geladeira (até 30 °C) por no máximo <b>7 dias</b> e deve ser administrada em até <b>8 horas</b> após a abertura da embalagem.'
+        ]},
+        {n:3,h:'Cuidados',items:[
+          'Contraindicado em hipersensibilidade conhecida à substância; podem ocorrer reações de hipersensibilidade (anafilaxia, urticária, angioedema, broncoespasmo, hipotensão), por vezes tardias.',
+          'Em caso de reação de hipersensibilidade, <b>descontinuar o medicamento</b> e solicitar nova avaliação médica.'
+        ]}
+      ],
+      pool:[
+        {q:'O mepolizumabe atua bloqueando a:',
+         o:['Interleucina 5 (IL-5)','Histamina diretamente','Insulina','Adrenalina'],a:0,d:3},
+        {q:'A via de administração do mepolizumabe é:',
+         o:['Subcutânea','Intravenosa rápida','Intramuscular profunda','Oral'],a:0,d:2},
+        {q:'O mepolizumabe deve ser armazenado:',
+         o:['Entre 2 °C e 8 °C, protegido da luz','No congelador','Em temperatura ambiente ao sol','Em água gelada'],a:0,d:2},
+        {q:'Após a abertura da embalagem, a caneta/seringa deve ser administrada em até:',
+         o:['8 horas','7 dias','1 hora','48 horas'],a:0,d:3},
+        {q:'Diante de uma reação de hipersensibilidade ao mepolizumabe, deve-se:',
+         o:['Descontinuar o medicamento e reavaliar com o médico','Aumentar a dose','Aplicar mais rápido','Ignorar e continuar'],a:0,d:2}
+      ]
     }
   ];
   return POPS;
