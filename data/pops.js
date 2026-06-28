@@ -3095,6 +3095,178 @@
         {q:'A fórmula recomendada para o tamanho ideal da sonda de aspiração é:',
          o:['nº da sonda = (nº do TOT/TQT - 2) x 2','nº da sonda = nº do TOT/TQT x 3','nº da sonda = nº do TOT/TQT - 4','O maior calibre disponível'],a:0,d:3}
       ]
+    },
+
+    {
+      id:'pop-34', code:'POP-ENF-34', version:'1.7', emission:'03/06/2026',
+      title:'Punção e manutenção de cateter totalmente implantável (Port-a-Cath)',
+      executantes:'Enfermeiro e médico',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definições',items:[
+          'Padronizar a punção e a manutenção do cateter venoso central totalmente implantado (CVCTI), garantindo um acesso permeável e seguro, além de orientar o manejo de intercorrências.',
+          'O CVCTI possibilita a infusão de soluções, quimioterápicos, hemoderivados e nutrição parenteral, além da coleta de sangue — oferecendo menor índice de infecção, menor risco de trombose e preservação do sistema venoso periférico.'
+        ]},
+        {n:2,h:'Materiais',items:[
+          'EPIs, bandeja, luva estéril, máscara cirúrgica e óculos de proteção; bandeja de cateterismo; clorexidina alcoólica 0,5% e degermante 4%; gaze estéril.',
+          'Seringas de 10 ml, agulha específica de punção do cateter (<b>Hubber ou Cytocan</b>), solução fisiológica 0,9%, película transparente e solução desinfetante padronizada.'
+        ]},
+        {n:3,h:'Técnica de punção',items:[
+          'Higienizar as mãos, conferir os <b>13 certos</b> da medicação, identificar o paciente pela pulseira e posicioná-lo em Fowler ou decúbito dorsal com cabeceira a 30°.',
+          'Fazer antissepsia da pele com clorexidina alcoólica 0,5% em movimentos circulares do centro para fora, repetindo e deixando secar; delimitar o reservatório com a mão não dominante.',
+          'Puncionar a região central do cateter em <b>ângulo de 90°</b>, aspirar observando refluxo de sangue, lavar com 10 ml de SF 0,9% em turbilhonamento e instalar a solução de manutenção; fixar com película estéril.'
+        ]},
+        {n:4,h:'Manutenção e troca da agulha',items:[
+          'Trocar a agulha a cada <b>7 dias</b>, ou a cada 24 horas em uso de hemocomponentes/nutrição parenteral; em caso de deslocamento, NÃO reposicionar — retirar e repuncionar.',
+          'Após infundir qualquer medicamento, lavar o acesso com 10 ml de SF 0,9% em turbilhonamento. Se o cateter não for usado, salinizá-lo para manter a permeabilidade.'
+        ]},
+        {n:5,h:'Intercorrências',items:[
+          '<b>Obstrução:</b> verificar clamps, circuitos e torções antes de tentar lavar suavemente com SF 0,9%; nunca usar seringa de 1 ml (insulina), pelo risco de romper o cateter.',
+          '<b>Extravasamento:</b> pausar a infusão, testar o refluxo, NÃO infundir nada, aspirar o residual com seringa de 10 ml, retirar a punção e comunicar o médico.'
+        ],alert:'<b>Cateteres valvulados</b> não apresentam retorno venoso à aspiração — nesses casos a permeabilidade é avaliada pelo fluxo adequado da solução e ausência de resistência à infusão.'}
+      ],
+      pool:[
+        {q:'O ângulo correto para puncionar a região central do reservatório do cateter implantável é:',
+         o:['45°','90°','30°','15°'],a:1,d:2},
+        {q:'Em uso rotineiro (sem hemocomponentes ou NPT), a agulha do Port-a-Cath deve ser trocada a cada:',
+         o:['24 horas','48 horas','7 dias','30 dias'],a:2,d:2},
+        {q:'Para lavar o cateter, é terminantemente proibido usar seringa de 1 ml (insulina) porque:',
+         o:['Não cabe no extensor','A alta pressão exercida pode romper o cateter','Não é estéril','Demora mais que as outras'],a:1,d:3},
+        {q:'Diante de deslocamento da agulha, a conduta do enfermeiro é:',
+         o:['Reposicionar a agulha no lugar','Retirar e realizar nova punção','Fixar com mais película','Infundir SF para reposicionar'],a:1,d:2},
+        {q:'Após a infusão de qualquer medicamento pelo cateter, deve-se:',
+         o:['Apenas clampear o extensor','Lavar o acesso com 10 ml de SF 0,9% em turbilhonamento','Trocar a agulha imediatamente','Aspirar 20 ml de sangue'],a:1,d:1},
+        {q:'Em um cateter valvulado, a permeabilidade é avaliada por:',
+         o:['Refluxo de sangue à aspiração','Fluxo adequado da solução e ausência de resistência à infusão','Coloração do sangue','Ruído à infusão'],a:1,d:3}
+      ]
+    },
+
+    {
+      id:'pop-57', code:'POP-ENF-57', version:'1.1', emission:'30/07/2021',
+      title:'Desbridamento de feridas',
+      executantes:'Enfermeiros das Unidades de Internação e UTI',
+      origem:'Pavilhão, UTI, DIP1, DIP2, Tisiologia e Egy',
+      setores:['assistencial','uti'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Desbridamento é a remoção do tecido morto, inviável/desvitalizado, infectado, hiperqueratose ou corpos estranhos da ferida e área perilesional, atingindo um processo de cicatrização ideal.',
+          'O tecido necrosado é uma barreira mecânica à cicatrização, favorece o crescimento bacteriano e mascara as reais dimensões da ferida. O desbridamento é de <b>competência do enfermeiro</b>.'
+        ]},
+        {n:2,h:'Quando NÃO desbridar a necrose',items:[
+          'Doente em fase terminal, escara estável em calcâneo, escara seca em membros isquêmicos, terapias anticoagulantes e distúrbios hemorrágicos.',
+          'Avaliar também condições clínicas, doença de base, perfusão sanguínea e condição mental/emocional antes de decidir.'
+        ]},
+        {n:3,h:'Métodos de desbridamento',items:[
+          '<b>Autolítico:</b> seletivo e atraumático (ex.: hidrogel), porém mais prolongado — indicado para lesões com tecido necrótico, contraindicado em úlceras isquêmicas e fúngicas.',
+          '<b>Instrumental</b> (enfermeiro habilitado): <i>slice</i> (dissecar em finas lâminas), <i>square</i> (quadradinhos de 2 mm a 0,5 cm) e <i>cover</i> (remoção em forma de tampa).',
+          '<b>Cirúrgico:</b> ressecção da necrose e parte do tecido viável; método rápido, porém com custo elevado, risco anestésico, sangramento e infecção.'
+        ]},
+        {n:4,h:'Execução do procedimento',items:[
+          'Preparar o material, garantir analgesia, orientar o paciente pelo nome, posicioná-lo e proporcionar privacidade, seguindo as normas da CCIH e técnica asséptica.',
+          'Se houver mais de uma lesão, <b>iniciar pelas menos contaminadas</b>; umedecer o curativo primário com SF antes de removê-lo para minimizar a dor e o trauma.',
+          'Medir os bordos da lesão (altura, largura e profundidade) com régua descartável, remover o tecido necrótico pela técnica escolhida e ocluir com os curativos primário e secundário.'
+        ]},
+        {n:5,h:'Observações',items:[
+          'Lavar a ferida com SF 0,9% morno em jato (seringa de 20 ml + agulha 40x12); usar torundas apenas na pele circundante.',
+          'Em feridas infectadas, limpar <b>primeiro a pele circundante e depois a ferida</b>.'
+        ],alert:'Interromper o procedimento antes do aparecimento de tecido viável, ou em caso de sangramento, dor, cansaço, tempo prolongado ou insegurança do profissional.'}
+      ],
+      pool:[
+        {q:'O desbridamento de feridas é uma competência:',
+         o:['Exclusiva do médico','Do enfermeiro','Do técnico de enfermagem','Do fisioterapeuta'],a:1,d:2},
+        {q:'Quando há mais de uma lesão a desbridar, deve-se iniciar pela:',
+         o:['Mais contaminada','Menos contaminada','Maior','Mais dolorosa'],a:1,d:2},
+        {q:'NÃO se deve desbridar a necrose em caso de:',
+         o:['Escara estável em calcâneo','Tecido com granulação','Ferida limpa e superficial','Lesão recém-suturada'],a:0,d:3},
+        {q:'A técnica instrumental em que se realizam pequenos quadradinhos no tecido necrótico é a:',
+         o:['Slice','Square','Cover','Autolítica'],a:1,d:3},
+        {q:'O curativo primário deve ser umedecido com SF antes de removê-lo porque:',
+         o:['Facilita a contaminação','A umidade minimiza a dor e o trauma do tecido','Acelera a necrose','Dispensa a analgesia'],a:1,d:1},
+        {q:'O procedimento deve ser interrompido quando:',
+         o:['Surgir tecido viável ou houver sangramento/dor','A ferida ainda tiver necrose','O paciente estiver calmo','Faltarem 5 minutos'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-58', code:'POP-ENF-58', version:'1.0', emission:'13/05/2026',
+      title:'Transporte de paciente para o centro cirúrgico',
+      executantes:'Equipe de enfermagem e medicina',
+      origem:'Todas as unidades de internação do HNR',
+      setores:['assistencial','uti','cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar o transporte do paciente até o centro cirúrgico, garantindo estabilidade clínica, segurança e assistência de enfermagem durante todo o trajeto.',
+          'É um procedimento crítico que exige comunicação eficaz entre as equipes, checklist de segurança e preparo do paciente para prevenir eventos adversos.'
+        ]},
+        {n:2,h:'Classificação do transporte',items:[
+          '<b>PCM</b> (cuidados mínimos) e <b>PCI</b> (cuidados intermediários): paciente estável — transporte feito pelos técnicos de enfermagem.',
+          '<b>PCAD</b> (alta dependência): crônico/paliativo estável, com total dependência — transporte pelos técnicos de enfermagem.',
+          '<b>PCSI</b> (semi-intensivos) e <b>PCIt</b> (intensivos): passível de instabilidade ou grave com risco iminente de morte — transporte pelos técnicos <b>junto com enfermeiro e médico</b>.'
+        ]},
+        {n:3,h:'Materiais',items:[
+          'EPIs, prontuário físico e eletrônico, checklist do procedimento, saco plástico transparente e solução desinfetante padronizada.',
+          'Maca de transporte ou cadeira de rodas e torpedo de oxigênio, conforme a necessidade.'
+        ]},
+        {n:4,h:'Execução',items:[
+          'O paciente recebe a visita pré-operatória do enfermeiro do centro cirúrgico (ou da própria unidade, na ausência dele), que deixa no prontuário um <b>checklist</b> de preparo.',
+          'No dia, o CC contata a unidade; o enfermeiro avalia o paciente, confere e valida todos os itens do checklist, que deve ser <b>preenchido e assinado</b> antes do encaminhamento.',
+          'Manter rigorosamente as precauções específicas durante o trajeto e garantir a comunicação efetiva com a equipe de destino para continuidade da assistência.'
+        ]}
+      ],
+      pool:[
+        {q:'O transporte de paciente classificado como PCIt (cuidados intensivos) é realizado:',
+         o:['Só pelo técnico de enfermagem','Pelos técnicos junto com enfermeiro e médico','Só pelo médico','Por qualquer funcionário disponível'],a:1,d:2},
+        {q:'O documento que orienta o preparo do paciente, deixado no prontuário pelo enfermeiro do CC, é o:',
+         o:['Termo de alta','Checklist de preparo','Boletim médico','Receituário'],a:1,d:1},
+        {q:'Antes do encaminhamento ao CC, o checklist deve ser:',
+         o:['Apenas lido','Preenchido e assinado pelo enfermeiro da unidade','Arquivado em branco','Enviado por e-mail'],a:1,d:2},
+        {q:'Durante o trajeto até o centro cirúrgico, as precauções específicas devem ser:',
+         o:['Suspensas para agilizar','Rigorosamente mantidas','Decididas pelo maqueiro','Aplicadas só na chegada'],a:1,d:2},
+        {q:'A visita pré-operatória é realizada preferencialmente pelo:',
+         o:['Enfermeiro do centro cirúrgico','Nutricionista','Recepcionista','Farmacêutico'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-59', code:'POP-ENF-59', version:'1.0', emission:'20/03/2020',
+      title:'Kit de sinais vitais para isolamento',
+      executantes:'Equipe de enfermagem e equipe médica',
+      origem:'Todas as unidades do hospital no isolamento de pacientes',
+      setores:['assistencial','uti'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definições',items:[
+          'Proteger os pacientes do risco de transmissão de agentes infecciosos por equipamentos de uso íntimo e diário, mantendo em cada leito de isolamento um kit individual.',
+          'As precauções de isolamento se aplicam a pacientes suspeitos ou infectados por microrganismos transmitidos por <b>contato</b>, <b>gotículas</b> (>5 micras) ou <b>aerossóis</b> (≤5 micras).'
+        ]},
+        {n:2,h:'Composição do kit',items:[
+          'Kit/caixa contendo <b>estetoscópio, esfigmomanômetro, termômetro e garrote</b>, de uso exclusivo do paciente em isolamento.'
+        ]},
+        {n:3,h:'Execução e periodicidade',items:[
+          'Os artigos do kit são de uso exclusivo do paciente durante todo o período de isolamento.',
+          'Para reutilização em outro paciente, devem seguir os protocolos de desinfecção/esterilização estabelecidos pelo hospital.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'O material fica no setor de <b>CME</b> e é destinado à unidade mediante solicitação do enfermeiro responsável.',
+          'Deve ser devolvido assim que o paciente receber alta ou sair do isolamento.'
+        ]}
+      ],
+      pool:[
+        {q:'O kit de sinais vitais para isolamento é composto por:',
+         o:['Estetoscópio, esfigmomanômetro, termômetro e garrote','Apenas termômetro','Material cirúrgico estéril','Medicamentos de emergência'],a:0,d:1},
+        {q:'Durante o isolamento, os equipamentos do kit são de uso:',
+         o:['Compartilhado entre leitos','Exclusivo do paciente isolado','Único e descartável','Apenas da equipe médica'],a:1,d:1},
+        {q:'A transmissão por partículas ≤5 micras que permanecem no ar por longos períodos é a por:',
+         o:['Contato','Gotículas','Aerossóis','Vetores'],a:2,d:3},
+        {q:'Após a alta ou saída do isolamento, o kit deve ser:',
+         o:['Descartado no lixo comum','Devolvido ao CME','Mantido no leito','Levado pelo paciente'],a:1,d:1},
+        {q:'Para ser reutilizado em outro paciente, o material do kit deve:',
+         o:['Ser apenas limpo com álcool pelo acompanhante','Seguir os protocolos de desinfecção/esterilização do hospital','Ser usado imediatamente','Ficar 30 dias guardado'],a:1,d:2}
+      ]
     }
   ];
   return POPS;
