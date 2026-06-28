@@ -3723,6 +3723,348 @@
         {q:'Após o uso, a centrífuga deve ser:',
          o:['Higienizada com desinfetante de superfície padronizado','Deixada como está','Lavada com água corrente','Coberta sem limpeza'],a:0,d:1}
       ]
+    },
+
+    {
+      id:'pop-cc-01', code:'POP-ENF-CC-01', version:'1.2', emission:'24/08/2021',
+      title:'Preparo do paciente no pré-operatório',
+      executantes:'Enfermeiro e técnico de enfermagem',
+      origem:'Centro Cirúrgico',
+      setores:['cc','assistencial'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar os cuidados de enfermagem prestados pelas unidades de internação a todos os pacientes que serão submetidos a cirurgia.'
+        ]},
+        {n:2,h:'Preparo na véspera/dia da cirurgia',items:[
+          'Confirmar o agendamento (nome, horário e procedimento), identificar o paciente pela pulseira e orientar sobre a cirurgia, a anestesia e o <b>jejum</b>.',
+          'Confirmar reserva de sangue se indicada, dar banho com <b>clorexidina degermante</b> até 2 h antes, fazer higiene oral com clorexidina aquosa e verificar sinais vitais.',
+          'Orientar a esvaziar a bexiga, retirar próteses/adornos/roupas íntimas, vestir a camisola e conferir a pulseira de identificação.'
+        ]},
+        {n:3,h:'Conferência e encaminhamento',items:[
+          'Checar se o prontuário está completo (exames de imagem, pedidos, <b>termos de consentimento assinados</b>) e preencher o Check List Pré-Operatório.',
+          'Transportar o paciente caminhando (independentes), em cadeira de rodas (dependência parcial) ou maca (dependente).'
+        ]}
+      ],
+      pool:[
+        {q:'O banho pré-operatório deve ser feito com clorexidina degermante até:',
+         o:['2 horas antes da cirurgia','No momento da cirurgia','1 semana antes','Não é necessário'],a:0,d:2},
+        {q:'Antes de encaminhar o paciente ao Centro Cirúrgico, deve-se orientá-lo a retirar:',
+         o:['Próteses, adornos e roupas íntimas','Apenas os sapatos','Somente os óculos','Nada'],a:0,d:1},
+        {q:'O documento que garante que o paciente está pronto para a cirurgia é o:',
+         o:['Check List Pré-Operatório','Boletim de alta','Receituário','Atestado'],a:0,d:2},
+        {q:'Faz parte da conferência do prontuário no pré-operatório:',
+         o:['O termo de consentimento assinado e exames de imagem','Apenas o nome do paciente','A conta hospitalar','A escala da equipe'],a:0,d:2},
+        {q:'Um paciente dependente deve ser transportado ao Centro Cirúrgico:',
+         o:['Em maca','Caminhando','De bicicleta','Sozinho'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cc-02', code:'POP-ENF-CC-02', version:'1.2', emission:'27/08/2021',
+      title:'Montagem da sala cirúrgica',
+      executantes:'Circulante e instrumentador cirúrgico',
+      origem:'Centro Cirúrgico',
+      setores:['cc'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a organização e o preparo da sala cirúrgica antes da chegada do paciente, garantindo materiais, medicamentos e equipamentos adequados e a técnica asséptica.'
+        ]},
+        {n:2,h:'Verificações iniciais',items:[
+          'Higienizar as mãos, repor o material do lavabo, conferir o mapa de cirurgia (nome, horário, equipe) e as condições de limpeza da sala.',
+          'Testar a <b>rede de gases</b> (oxigênio, ar comprimido, vácuo), a mesa cirúrgica e os equipamentos (eletrocautério, foco, monitor, aspirador).'
+        ]},
+        {n:3,h:'Abastecimento',items:[
+          'Montar o carro de anestesia (trocar traqueias a cada cirurgia) e disponibilizar cânulas, laringoscópio e material de acesso venoso.',
+          'Retirar do CME os artigos processados, <b>checar a integridade das embalagens e a validade do processamento</b> e deixar os formulários de contagem na sala.'
+        ]}
+      ],
+      pool:[
+        {q:'A rede de gases a ser testada na montagem da sala inclui:',
+         o:['Oxigênio, ar comprimido e vácuo','Apenas oxigênio','Gás de cozinha','Nitrogênio líquido'],a:0,d:2},
+        {q:'As traqueias do carro de anestesia devem ser trocadas preferencialmente:',
+         o:['A cada cirurgia realizada','Uma vez por mês','Nunca','A cada semana'],a:0,d:3},
+        {q:'Ao retirar artigos processados do CME, é obrigatório checar:',
+         o:['A integridade das embalagens e a validade do processamento','Apenas a cor','O peso','A marca'],a:0,d:2},
+        {q:'A montagem da sala cirúrgica deve ser feita:',
+         o:['Antes da chegada do paciente','Durante a cirurgia','Após a cirurgia','Com o paciente na mesa'],a:0,d:1},
+        {q:'Qual equipamento deve ter o funcionamento testado na montagem?',
+         o:['Eletrocautério, foco de luz e monitor','Apenas as cadeiras','O telefone','O computador da recepção'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cc-03', code:'POP-ENF-CC-03', version:'1.2', emission:'27/08/2021',
+      title:'Admissão do paciente no centro cirúrgico',
+      executantes:'Enfermeiro e técnico de enfermagem',
+      origem:'Centro Cirúrgico',
+      setores:['cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Prestar assistência humanizada na admissão, reduzir os riscos inerentes ao ato anestésico-cirúrgico e garantir a identificação correta do paciente.'
+        ]},
+        {n:2,h:'Recepção e conferência',items:[
+          'Receber o paciente na área de transferência, confirmar nome e data de nascimento pela pulseira e conferir com o mapa de cirurgia e o prontuário.',
+          'Solicitar que o paciente confirme o procedimento, o <b>sítio cirúrgico e a lateralidade</b>; colocar gorro cobrindo o couro cabeludo e propés.'
+        ]},
+        {n:3,h:'Validação pré-operatória',items:[
+          'Confirmar jejum, retirada de próteses/adornos/roupa íntima, alergias e banho com antisséptico.',
+          'Conferir se o prontuário está completo e a assinatura do <b>Termo de Consentimento Livre e Esclarecido (TCLE)</b> cirúrgico e anestésico antes de encaminhar à sala.'
+        ]}
+      ],
+      pool:[
+        {q:'Na admissão ao centro cirúrgico, o paciente deve confirmar:',
+         o:['O procedimento, o sítio cirúrgico e a lateralidade','Apenas o nome','O valor da cirurgia','O nome do cirurgião'],a:0,d:2},
+        {q:'Antes de encaminhar o paciente à sala, é indispensável conferir a assinatura do:',
+         o:['Termo de Consentimento Livre e Esclarecido (TCLE)','Cartão SUS','Atestado médico','Comprovante de residência'],a:0,d:2},
+        {q:'Na admissão, coloca-se no paciente:',
+         o:['Gorro cobrindo o couro cabeludo e propés','Apenas máscara','Avental estéril','Luvas estéreis'],a:0,d:1},
+        {q:'A identificação do paciente é confirmada por:',
+         o:['Nome e data de nascimento na pulseira, conferindo com mapa e prontuário','Aparência física','Número da sala','Senha da recepção'],a:0,d:1},
+        {q:'Se o paciente estiver sem a pulseira de identificação, deve-se:',
+         o:['Solicitar ao registro uma nova pulseira','Seguir sem identificação','Cancelar a cirurgia','Usar o nome de memória'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cc-04', code:'POP-ENF-CC-04', version:'1.2', emission:'23/04/2020',
+      title:'Admissão do paciente na sala de cirurgia',
+      executantes:'Enfermeiro, técnico de enfermagem, anestesista e médico',
+      origem:'Sala de Cirurgia',
+      setores:['cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Acolher o paciente na sala de cirurgia de forma humanizada, reduzir sua ansiedade, obter informações relevantes ao ato cirúrgico e preservar sua intimidade.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Higienizar as mãos, apresentar-se, confirmar nome e data de nascimento pela pulseira e conferir com o prontuário.',
+          'Confirmar os procedimentos pré-operatórios (jejum, tricotomia, retirada de próteses/adornos, alergias) e o procedimento/<b>lateralidade</b>.'
+        ]},
+        {n:3,h:'Posicionamento e registro',items:[
+          'Posicionar o paciente em <b>decúbito dorsal</b> na mesa cirúrgica, de modo confortável e seguro, cobrindo-o conforme a necessidade.',
+          'Registrar no prontuário eletrônico a entrada do paciente na sala de cirurgia.'
+        ]}
+      ],
+      pool:[
+        {q:'O paciente é inicialmente posicionado na mesa cirúrgica em:',
+         o:['Decúbito dorsal','Decúbito ventral','Posição sentada','Posição de Trendelenburg sempre'],a:0,d:1},
+        {q:'A confirmação do procedimento e da lateralidade na sala de cirurgia:',
+         o:['Repete a checagem feita na admissão ao centro cirúrgico','É dispensável','Cabe só ao cirurgião','É feita após a incisão'],a:0,d:2},
+        {q:'Antes de iniciar, confirma-se com o paciente, entre outros:',
+         o:['Jejum, tricotomia, retirada de próteses e alergias','Apenas a idade','O plano de saúde','O endereço'],a:0,d:1},
+        {q:'A entrada do paciente na sala de cirurgia deve ser:',
+         o:['Registrada no prontuário eletrônico','Apenas verbalizada','Anotada em papel avulso','Não registrada'],a:0,d:2},
+        {q:'O acolhimento na sala de cirurgia tem como objetivo, entre outros:',
+         o:['Reduzir a ansiedade e preservar a intimidade do paciente','Acelerar a anestesia','Dispensar o anestesista','Evitar conversa com o paciente'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cc-05', code:'POP-ENF-CC-05', version:'1.2', emission:'24/04/2020',
+      title:'Assistência de enfermagem no intraoperatório',
+      executantes:'Técnico de enfermagem e enfermeiro',
+      origem:'Centro Cirúrgico',
+      setores:['cc'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O período intraoperatório vai da transferência do paciente para a mesa cirúrgica até a reversão da anestesia na SRPA.',
+          'Prestar assistência segura e eficaz e auxiliar a equipe cirúrgica, instrumentadora e anestesista durante todo o ato.'
+        ]},
+        {n:2,h:'Preparo e monitorização',items:[
+          'Acomodar o paciente em decúbito dorsal e posição anatômica, apoiando os MMSS em braçadeiras com faixa de segurança; instalar oxímetro, monitor cardíaco e PNI.',
+          'Aplicar o <b>check-list de cirurgia segura</b> (etapa <i>check in</i> antes da indução), auxiliar na indução/intubação e manter o paciente aquecido para evitar hipotermia.'
+        ]},
+        {n:3,h:'Durante e após a cirurgia',items:[
+          'Aplicar a placa do <b>bisturi elétrico</b> em área de grande massa muscular, longe de proeminências ósseas; realizar a etapa <i>timeout</i> antes da incisão.',
+          'Ao final, executar a etapa <i>check out</i>, auxiliar nos curativos e drenos, transferir o paciente para a maca cuidando de sondas/infusões e encaminhá-lo à SRPA ou UTI.'
+        ]}
+      ],
+      pool:[
+        {q:'O check-list de cirurgia segura possui as etapas:',
+         o:['Check in, timeout e check out','Apenas check in','Entrada e saída','Pré e pós'],a:0,d:3},
+        {q:'A etapa "timeout" do check-list de cirurgia segura é realizada:',
+         o:['Antes da incisão cirúrgica','Após a alta','Na recepção','Depois da cirurgia'],a:0,d:3},
+        {q:'A placa do bisturi elétrico deve ser colocada:',
+         o:['Em área de grande massa muscular, longe de proeminências ósseas','Sobre uma articulação','No couro cabeludo','Em qualquer lugar'],a:0,d:3},
+        {q:'Para evitar a hipotermia no trans e pós-operatório, deve-se:',
+         o:['Manter o paciente aquecido (manta térmica/cobertor)','Resfriar a sala ao máximo','Não cobrir o paciente','Usar gelo'],a:0,d:2},
+        {q:'Ao transferir o paciente da mesa para a maca, deve-se cuidar para:',
+         o:['Não tracionar infusões, curativos, sondas e drenos','Fazer o mais rápido possível','Remover todos os drenos','Soltar as grades'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cc-06', code:'POP-ENF-CC-06', version:'1.2', emission:'14/04/2020',
+      title:'Desmontagem da sala cirúrgica',
+      executantes:'Equipe de enfermagem e instrumentador cirúrgico',
+      origem:'Sala Cirúrgica',
+      setores:['cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Retirar materiais e equipamentos após o término do procedimento e a saída do paciente, deixando a sala em condições de limpeza concorrente para o próximo paciente.'
+        ]},
+        {n:2,h:'Recolhimento e contagem',items:[
+          'Higienizar as mãos, calçar luvas e recolher materiais não utilizados; <b>antes de descartar perfurocortantes, confirmar a contagem com a instrumentadora</b> e registrar.',
+          'Recolher os instrumentais (retirar excesso de sujidade, manter as pinças abertas, conferir o número de peças) e colar o indicador químico na folha de comprovantes.'
+        ]},
+        {n:3,h:'Encaminhamento e limpeza',items:[
+          'Desmontar equipamentos retirando o excesso de sujidade antes de encaminhá-los ao CME; desprezar descartáveis e os resíduos do vidro de aspiração no expurgo.',
+          'Higienizar equipamentos e mobiliários com <b>optigerm</b> e solicitar ao Serviço de Zeladoria a limpeza da sala.'
+        ]}
+      ],
+      pool:[
+        {q:'Antes de descartar os materiais perfurocortantes, deve-se:',
+         o:['Confirmar a contagem com a instrumentadora e registrar','Descartá-los imediatamente','Lavá-los','Guardá-los na caixa'],a:0,d:3},
+        {q:'Os instrumentais cirúrgicos devem ser acondicionados nas caixas:',
+         o:['Com as pinças abertas (exceto fixadoras de campo)','Totalmente fechados','Misturados ao lixo','Sem conferência'],a:0,d:2},
+        {q:'Antes de encaminhar os equipamentos ao CME, deve-se:',
+         o:['Retirar o excesso de sujidade','Esterilizá-los na sala','Pintá-los','Descartá-los'],a:0,d:2},
+        {q:'A higienização dos equipamentos e mobiliários é feita com:',
+         o:['Solução de optigerm','Água sanitária pura','Apenas água','Álcool em gel'],a:0,d:1},
+        {q:'A desmontagem da sala tem como finalidade:',
+         o:['Deixar a sala pronta para a limpeza concorrente e o próximo paciente','Guardar o paciente','Acelerar a anestesia','Encerrar o expediente'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cc-07', code:'POP-ENF-CC-07', version:'1.2', emission:'27/04/2020',
+      title:'Assistência na sala de recuperação pós-anestésica (SRPA)',
+      executantes:'Técnico de enfermagem, enfermeiro e anestesiologista',
+      origem:'Sala de Recuperação Pós-Anestésica',
+      setores:['cc'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A SRPA recebe o paciente no pós-operatório imediato até que recupere a consciência, os movimentos e tenha sinais vitais estáveis.',
+          'A evolução é avaliada pelo <b>Índice de Aldrete & Kroulik</b> (atividade muscular, respiração, circulação, consciência e cor da pele), com escore de 0 a 10.'
+        ]},
+        {n:2,h:'Monitorização',items:[
+          'Conferir a identificação, acomodar o paciente sem comprimir drenos/sondas, manter as <b>grades elevadas</b> e monitorar FC, PA, saturação, temperatura, consciência e dor.',
+          'Manter vias aéreas permeáveis (O₂ para manter oximetria > 92% se indicado) e avaliar a <b>dor como 5º sinal vital</b>.'
+        ]},
+        {n:3,h:'Registro e alta',items:[
+          'Registrar os sinais vitais a cada 15 min na 1ª hora, a cada 30 min na 2ª hora e a cada 1 h a partir da 3ª; atentar a sinais de choque/hemorragia (débito urinário < 30 ml/h).',
+          'Aplicar o Índice de Aldrete: escore de <b>8 a 10</b> indica alta da SRPA, que é atribuição <b>exclusiva do anestesiologista</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O índice utilizado para avaliar o paciente na SRPA é o:',
+         o:['Aldrete & Kroulik','Glasgow','Apgar','Braden'],a:0,d:3},
+        {q:'O escore de Aldrete indicado para alta da SRPA é de:',
+         o:['8 a 10','0 a 2','3 a 5','Qualquer valor'],a:0,d:3},
+        {q:'A indicação de alta da SRPA é atribuição exclusiva do:',
+         o:['Médico anestesiologista','Técnico de enfermagem','Recepcionista','Instrumentador'],a:0,d:2},
+        {q:'Na primeira hora na SRPA, os sinais vitais são registrados a cada:',
+         o:['15 minutos','2 horas','5 minutos','1 hora'],a:0,d:3},
+        {q:'É um sinal precoce de choque/hemorragia a ser observado na SRPA:',
+         o:['Débito urinário menor que 30 ml/h','Pressão arterial elevada','Pele quente e corada','Sonolência leve'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-cc-08', code:'POP-ENF-CC-08', version:'1.2', emission:'13/04/2020',
+      title:'Encaminhamento de amostras biológicas e peças anatômicas do centro cirúrgico',
+      executantes:'Circulante e enfermeiro',
+      origem:'Centro Cirúrgico',
+      setores:['cc'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Garantir a adequada conservação e o correto encaminhamento de amostras biológicas e peças anatômicas (excisões, ressecções, amputações) aos laboratórios.'
+        ]},
+        {n:2,h:'Identificação e acondicionamento',items:[
+          'Preencher a etiqueta com nome completo, prontuário, material e laboratório de destino; receber a peça do cirurgião e identificá-la <b>imediatamente</b>.',
+          'Lacrar o recipiente e colar a etiqueta <b>no corpo do frasco, nunca na tampa</b>, acondicionando em segunda embalagem plástica.'
+        ]},
+        {n:3,h:'Meio de conservação e protocolo',items:[
+          'Adicionar <b>formol</b> nas amostras para análise histológica (Anatomia Patológica) ou <b>soro fisiológico</b> nas do Laboratório Central — exceto lavados e líquidos.',
+          'Conferir a requisição (identificação, natureza, diagnóstico, assinatura), registrar no protocolo do CC e obter assinatura no recebimento.'
+        ]}
+      ],
+      pool:[
+        {q:'A etiqueta de identificação da amostra deve ser colada:',
+         o:['No corpo do frasco, nunca na tampa','Na tampa do frasco','Na luva','No prontuário'],a:0,d:2},
+        {q:'Para análise histológica (Anatomia Patológica), a peça é conservada em:',
+         o:['Formol','Soro fisiológico','Água','Álcool 70%'],a:0,d:3},
+        {q:'A peça cirúrgica recebida do cirurgião deve ser identificada:',
+         o:['Imediatamente após o recebimento','No fim do dia','Apenas no laboratório','Quando houver tempo'],a:0,d:2},
+        {q:'Algumas amostras encaminhadas ao Laboratório Central são conservadas em:',
+         o:['Soro fisiológico','Formol 1:10','Vinagre','Gelo seco'],a:0,d:3},
+        {q:'O encaminhamento da amostra deve incluir a conferência da:',
+         o:['Requisição de exame preenchida, datada e assinada','Conta hospitalar','Escala de plantão','Agenda cirúrgica'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cc-09', code:'POP-ENF-CC-09', version:'1.1', emission:'09/10/2017',
+      title:'Limpeza e controle de temperatura da geladeira do centro cirúrgico',
+      executantes:'Equipe de enfermagem',
+      origem:'Postos de Enfermagem',
+      setores:['cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Promover a higienização da geladeira e o controle da temperatura, assegurando a conservação correta de medicamentos e imunobiológicos.'
+        ]},
+        {n:2,h:'Limpeza',items:[
+          'Transferir os medicamentos para outra geladeira/caixa térmica (mantendo +2 a +8 °C), desligar e descongelar sem usar objetos pontiagudos, e <b>não mexer no termostato</b>.',
+          'Limpar com pano umedecido em água e detergente neutro (sem jogar água no interior); a limpeza é <b>mensal</b> ou quando houver sujidade/gelo > 0,5 cm.'
+        ]},
+        {n:3,h:'Controle de temperatura',items:[
+          'Manter a geladeira entre <b>+2 °C e +8 °C</b> (ideal +5 °C), exclusiva para medicamentos/imunobiológicos, sem armazenar nada na porta.',
+          'Ler e registrar a temperatura (máxima, mínima e atual) <b>3 vezes ao dia</b> (7h, 13h e 19h); em alteração, comunicar o responsável e a manutenção.'
+        ]}
+      ],
+      pool:[
+        {q:'A temperatura ideal de conservação na geladeira de medicamentos é:',
+         o:['Entre +2 °C e +8 °C','Abaixo de 0 °C','Acima de +15 °C','Temperatura ambiente'],a:0,d:2},
+        {q:'A leitura e o registro da temperatura da geladeira devem ser feitos:',
+         o:['3 vezes ao dia (início, meio e fim do plantão)','Uma vez por semana','Apenas quando houver problema','De hora em hora'],a:0,d:2},
+        {q:'Durante a limpeza da geladeira, o termostato:',
+         o:['Não deve ser manipulado','Deve ser zerado','Deve ser desligado da parede','Deve ser trocado'],a:0,d:2},
+        {q:'A geladeira de medicamentos deve ser de uso:',
+         o:['Exclusivo de medicamentos/imunobiológicos','Compartilhado com alimentos','Para bebidas da equipe','Livre'],a:0,d:1},
+        {q:'A limpeza da geladeira deve ser realizada:',
+         o:['Mensalmente ou quando houver sujidade/gelo > 0,5 cm','Diariamente','Anualmente','Nunca'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cc-10', code:'POP-ENF-CC-10', version:'1.1', emission:'29/09/2021',
+      title:'Paramentação cirúrgica',
+      executantes:'Médico cirurgião e instrumentador cirúrgico',
+      origem:'Centro Cirúrgico',
+      setores:['cc'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Promover barreira contra a invasão de microrganismos no sítio cirúrgico do paciente e proteger os profissionais contra fluidos corpóreos.'
+        ]},
+        {n:2,h:'Materiais',items:[
+          'Roupa privativa do centro cirúrgico, gorro/touca, máscara, óculos de proteção, propé/sapato fechado, avental estéril descartável, luva estéril e compressa estéril.'
+        ]},
+        {n:3,h:'Sequência',items:[
+          'Entrar na sala já com a roupa privativa, propé, gorro e máscara; colocar a <b>máscara e os óculos de proteção antes</b> de realizar a degermação das mãos.',
+          'Após a degermação, paramentar-se com o avental estéril e as luvas estéreis mantendo a técnica asséptica.'
+        ]}
+      ],
+      pool:[
+        {q:'A paramentação cirúrgica tem como objetivo principal:',
+         o:['Formar barreira contra microrganismos e proteger contra fluidos','Aquecer o profissional','Identificar a equipe','Acelerar a cirurgia'],a:0,d:1},
+        {q:'A máscara e os óculos de proteção devem ser colocados:',
+         o:['Antes da degermação das mãos','Depois de calçar as luvas estéreis','Após a cirurgia','Apenas se houver sangue'],a:0,d:2},
+        {q:'Para entrar na sala de cirurgia, o profissional deve estar com:',
+         o:['Roupa privativa, propé, gorro e máscara','Roupa comum','Apenas o jaleco','Roupa de rua'],a:0,d:1},
+        {q:'O avental e as luvas estéreis são colocados:',
+         o:['Após a degermação das mãos','Antes de entrar na sala','Sobre a roupa de rua','Sem degermação'],a:0,d:2},
+        {q:'A paramentação cirúrgica promove segurança:',
+         o:['Ao paciente e à equipe cirúrgica','Apenas ao paciente','Apenas ao cirurgião','Somente à instituição'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
