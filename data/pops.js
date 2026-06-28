@@ -5224,6 +5224,417 @@
         {q:'O eletrodo avulso da caneta monopolar deve ser:',
          o:['Esterilizado em óxido de etileno','Descartado','Apenas lavado','Reutilizado sem processar'],a:0,d:2}
       ]
+    },
+
+    {
+      id:'pop-cme-26', code:'POP-CME-26', version:'1.1', emission:'04/04/2019',
+      title:'Reprocessamento dos instrumentais',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Reprocessar os instrumentais cirúrgicos — ferramentas usadas para realizar ações específicas durante uma cirurgia.'
+        ]},
+        {n:2,h:'Execução',items:[
+          '<b>Desarticular e abrir as pinças</b>, realizar pré-limpeza (atenção aos lúmens), lavar ultrassonicamente (canulados nos bicos de jato), enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, <b>lubrificar as superfícies de atrito</b>, separar conforme o pacote, empacotar com SMS, selar com fita Classe I e esterilizar em <b>autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Evitar que a água seque nos instrumentais, pois pode causar manchas.'
+        ]}
+      ],
+      pool:[
+        {q:'Os instrumentais cirúrgicos são esterilizados por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Antes da limpeza, as pinças devem ser:',
+         o:['Desarticuladas e abertas','Mantidas fechadas','Amarradas','Descartadas'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se nos instrumentais:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Cola','Óleo de cozinha'],a:0,d:2},
+        {q:'Deixar a água secar nos instrumentais pode causar:',
+         o:['Manchas','Esterilidade','Lubrificação','Brilho'],a:0,d:2},
+        {q:'A embalagem usada para os instrumentais é:',
+         o:['SMS','Papel jornal','Saco de lixo','Caixa de papelão'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-27', code:'POP-CME-27', version:'1.1', emission:'27/03/2020',
+      title:'Limpeza do cassete expiratório',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O cassete expiratório é uma unidade completa (medidor de fluxo, aquecimento, válvula expiratória) e <b>não deve ser desmontada</b>.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Abrir a tampa com alicate específico, lavar ultrassonicamente, enxaguar e fazer <b>desinfecção por imersão em ácido peracético</b>; enxaguar novamente.',
+          'Secar externamente com pano branco, abanar/inclinar o cassete 5-7 vezes, colocar em secadora por 1 h (máx. 70 °C) e deixar <b>12 horas na posição vertical</b> em temperatura ambiente.'
+        ]},
+        {n:3,h:'Observações',items:[
+          '<b>Não usar ar comprimido</b> na secagem; fluxo máximo de água 10 L/min e pressão máxima 1,5 bar. Encaminhar à CME sempre após a saída do paciente, com controle de protocolo.'
+        ]}
+      ],
+      pool:[
+        {q:'O cassete expiratório:',
+         o:['Não deve ser desmontado','Deve ser totalmente desmontado','É descartável','Vai à autoclave 134 °C'],a:0,d:3},
+        {q:'A desinfecção do cassete expiratório é feita por imersão em:',
+         o:['Ácido peracético','Hipoclorito','Álcool 70%','Formol'],a:0,d:3},
+        {q:'Na secagem do cassete expiratório, NÃO se deve usar:',
+         o:['Ar comprimido','Pano branco','Secadora a 70 °C','Posição vertical'],a:0,d:3},
+        {q:'Após a secagem em secadora, o cassete deve ficar em posição vertical por:',
+         o:['12 horas','5 minutos','1 hora','3 dias'],a:0,d:3},
+        {q:'O cassete expiratório deve ser encaminhado à CME:',
+         o:['Sempre após a saída do paciente','Uma vez por mês','Só quando quebra','Nunca'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-28', code:'POP-CME-28', version:'1.1', emission:'09/04/2019',
+      title:'Controle de explantes',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Explante é a retirada cirúrgica de um implante (dispositivo que substitui ou atua com uma estrutura biológica ausente).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Receber os explantes em recipiente com tampa estanque identificado com os dados do paciente; desmontar, limpar por ultrassônica e <b>esterilizar em autoclave a 134 °C</b>.',
+          'Guardar os explantes processados e identificados no arsenal por <b>90 dias</b> e, após esse prazo, descartar em lixo apropriado.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'A identificação manual deve conter "EXPLANTE", o produto (parafuso, placa, fio…), nome do paciente, prontuário e data. Podem ser entregues ao paciente mediante solicitação formal, processados e desembalados.'
+        ]}
+      ],
+      pool:[
+        {q:'Explante é:',
+         o:['A retirada cirúrgica de um implante','Um tipo de curativo','Uma vacina','Um medicamento'],a:0,d:2},
+        {q:'Os explantes processados são guardados no arsenal por:',
+         o:['90 dias','24 horas','1 ano','Indefinidamente'],a:0,d:3},
+        {q:'Os explantes são esterilizados por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da embalagem do explante deve conter, entre outros:',
+         o:['"EXPLANTE", produto, nome do paciente, prontuário e data','Apenas a cor','O nome do cirurgião','Nada'],a:0,d:2},
+        {q:'Após 90 dias, os explantes não reclamados devem ser:',
+         o:['Descartados em lixo apropriado','Reutilizados','Vendidos a ferro-velho','Mantidos para sempre'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-29', code:'POP-CME-29', version:'1.1', emission:'04/04/2019',
+      title:'Reprocessamento das pinças de endoscopia e broncoscopia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Pinças usadas para biópsia nos procedimentos de endoscopia (EDA) e broncoscopia (BRONCO).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza (atenção aos lúmens), lavagem ultrassônica, enxágue, secagem com pano e ar comprimido, inspeção e <b>lubrificação das superfícies de atrito</b>.',
+          'Empacotar em caixa protegida e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Atenção à identificação por fita: <b>EDA = vermelho; BRONCO = marrom</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'As pinças de endoscopia/broncoscopia são esterilizadas por:',
+         o:['Óxido de etileno','Autoclave a vapor','Fricção com álcool','Imersão em hipoclorito'],a:0,d:3},
+        {q:'A fita de identificação para EDA (endoscopia) é:',
+         o:['Vermelha','Marrom','Azul','Verde'],a:0,d:3},
+        {q:'A fita de identificação para BRONCO (broncoscopia) é:',
+         o:['Marrom','Vermelha','Amarela','Branca'],a:0,d:3},
+        {q:'Estas pinças são usadas para:',
+         o:['Biópsia em EDA e broncoscopia','Curativos','Sutura','Aspiração'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se nas pinças:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Esmalte','Cola'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-30', code:'POP-CME-30', version:'1.1', emission:'04/04/2019',
+      title:'Reprocessamento da cânula de traqueostomia (metal)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A cânula de traqueostomia de metal facilita a chegada de ar aos pulmões quando há obstrução no trajeto natural. Composta de cânula externa, interna e mandril guia.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavagem ultrassônica, enxágue, secagem com pano e ar comprimido e inspeção.',
+          'Empacotar com SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Observar a <b>numeração das partes</b> para a remontagem correta.'
+        ]}
+      ],
+      pool:[
+        {q:'A cânula de traqueostomia de metal é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A cânula de traqueostomia de metal é composta de:',
+         o:['Cânula externa, interna e mandril guia','Apenas uma peça','Máscara e traqueia','Balão e válvula'],a:0,d:2},
+        {q:'Ao reprocessar a cânula, deve-se observar:',
+         o:['A numeração das partes','A cor','O peso','A marca'],a:0,d:2},
+        {q:'A finalidade da cânula de traqueostomia é:',
+         o:['Facilitar a chegada de ar aos pulmões','Aspirar secreção','Medir pressão','Coletar exames'],a:0,d:1},
+        {q:'A embalagem usada para a cânula de traqueostomia é:',
+         o:['SMS','Saco plástico apenas','Papel jornal','Caixa de papelão'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-31', code:'POP-CME-31', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento da cânula de Guedel',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A cânula de Guedel é usada no manejo das vias aéreas, evitando que a base da língua de pacientes com depressão do sensório obstrua a orofaringe.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavagem ultrassônica, enxágue e secagem; realizar <b>desinfecção em hipoclorito de sódio 0,5% por 30 minutos</b>; enxaguar e secar.',
+          'Inspecionar, empacotar em saco plástico (com data e nome) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção da cânula de Guedel é feita por imersão em:',
+         o:['Hipoclorito de sódio 0,5% por 30 minutos','Ácido peracético','Álcool 70%','Formol'],a:0,d:3},
+        {q:'A cânula de Guedel serve para:',
+         o:['Evitar que a língua obstrua a orofaringe','Aspirar secreção','Fornecer O₂','Medir o fluxo'],a:0,d:2},
+        {q:'A cânula de Guedel é usada em pacientes com:',
+         o:['Depressão do sensório','Pele íntegra','Febre','Hipertensão'],a:0,d:2},
+        {q:'O tempo de desinfecção da cânula de Guedel em hipoclorito é de:',
+         o:['30 minutos','5 minutos','2 horas','1 minuto'],a:0,d:2},
+        {q:'A cânula de Guedel atua no manejo das:',
+         o:['Vias aéreas','Vias urinárias','Feridas','Veias'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-32', code:'POP-CME-32', version:'1.1', emission:'20/12/2019',
+      title:'Reprocessamento do Respiron, Shaker, Threshold e Kit EPAP',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Reprocessar exercitadores respiratórios: <b>Respiron</b> (inspirômetro de incentivo), <b>Power Breathe/Threshold</b> (treino muscular inspiratório), <b>Shaker</b> (mobiliza secreção por vibração), <b>Kit EPAP</b> (pressão positiva expiratória) e Peak Flow.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desmontar, pré-limpeza, lavar ultrassonicamente — exceto a <b>máscara do Kit EPAP, que é lavada manualmente</b> em detergente enzimático.',
+          'Secar na secadora — exceto o Respiron e a máscara do Kit EPAP, que são secados com ar comprimido; montar, inspecionar, empacotar e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O Respiron é um:',
+         o:['Inspirômetro de incentivo (exercitador respiratório)','Aspirador','Ventilador mecânico','Medidor de pressão arterial'],a:0,d:2},
+        {q:'A máscara do Kit EPAP deve ser lavada:',
+         o:['Manualmente em detergente enzimático','Na ultrassônica','Na autoclave','Não é lavada'],a:0,d:3},
+        {q:'Estes exercitadores respiratórios são esterilizados por:',
+         o:['Óxido de etileno','Autoclave a vapor','Fricção com álcool','Fervura'],a:0,d:3},
+        {q:'O Shaker tem a função de:',
+         o:['Mobilizar secreção por vibração','Medir o pico de fluxo','Fornecer O₂','Aspirar'],a:0,d:2},
+        {q:'O Respiron e a máscara do Kit EPAP são secados com:',
+         o:['Ar comprimido','Secadora quente','Ao sol','Pano úmido'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-33', code:'POP-CME-33', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do kit sistema de Venturi',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O sistema de Venturi controla a fração inspirada de O₂ (FiO₂) por encaixes plásticos coloridos: azul 24%, amarelo 28%, branco 31%, verde 35%, rosa 40% e laranja 50%.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desmontar o kit, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar na secadora e ar comprimido.',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O sistema de Venturi serve para:',
+         o:['Controlar a fração inspirada de O₂ (FiO₂)','Aspirar secreção','Medir a pressão arterial','Esterilizar'],a:0,d:2},
+        {q:'No sistema de Venturi, as concentrações de FiO₂ são identificadas por:',
+         o:['Encaixes plásticos coloridos','Números no copo','Cheiro','Peso'],a:0,d:3},
+        {q:'O kit Venturi é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a vapor','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O diluidor azul do Venturi corresponde a uma FiO₂ de:',
+         o:['24%','50%','100%','35%'],a:0,d:3},
+        {q:'Antes da lavagem, o kit Venturi deve ser:',
+         o:['Desmontado','Esterilizado','Empacotado','Pintado'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-34', code:'POP-CME-34', version:'1.1', emission:'08/04/2019',
+      title:'Reprocessamento do frasco de vidro de aspiração',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O frasco de vidro de aspiração de 500 ml, usado com a válvula de aspiração, armazena líquidos, secreções e sangue aspirados durante procedimentos.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Lavar manualmente em solução de detergente enzimático, enxaguar, secar com pano limpo e inspecionar.',
+          'Empacotar em SMS e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O frasco de vidro de aspiração é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A capacidade do frasco de vidro de aspiração é de:',
+         o:['500 ml','100 ml','2 litros','50 ml'],a:0,d:2},
+        {q:'A lavagem do frasco de aspiração é feita com:',
+         o:['Detergente enzimático','Hipoclorito puro','Apenas água','Revitalizador'],a:0,d:2},
+        {q:'O frasco de aspiração serve para:',
+         o:['Armazenar líquidos, secreções e sangue aspirados','Fornecer O₂','Medir a pressão','Aplicar medicação'],a:0,d:1},
+        {q:'A embalagem usada para o frasco de vidro de aspiração é:',
+         o:['SMS','Papel jornal','Saco de lixo','Nenhuma'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-35', code:'POP-CME-35', version:'1.1', emission:'08/04/2019',
+      title:'Reprocessamento da lâmina do laringoscópio',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A lâmina do laringoscópio é usada em conjunto com o cabo para exames da laringe (e intubação).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Lavar ultrassonicamente, enxaguar e secar com pano limpo; realizar <b>desinfecção por fricção com gaze + álcool 70%</b>.',
+          'Inspecionar <b>testando com o cabo</b>, empacotar em saco plástico (com data e nome) e armazenar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'O <b>cabo</b> do laringoscópio é desinfetado com gaze + álcool 70%, por fricção repetida 3 vezes, na unidade de internação.'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção da lâmina do laringoscópio é feita por:',
+         o:['Fricção com gaze + álcool 70%','Autoclave','Óxido de etileno','Imersão em formol'],a:0,d:3},
+        {q:'Na inspeção da lâmina do laringoscópio, deve-se:',
+         o:['Testá-la com o cabo','Pesá-la','Pintá-la','Dobrá-la'],a:0,d:2},
+        {q:'A lâmina do laringoscópio é usada para:',
+         o:['Exames da laringe / intubação','Aspiração','Curativos','Coleta de sangue'],a:0,d:2},
+        {q:'O cabo do laringoscópio é desinfetado:',
+         o:['Com gaze + álcool 70%, por fricção 3 vezes','Na autoclave','Por imersão 30 min','Não é desinfetado'],a:0,d:2},
+        {q:'A lâmina do laringoscópio funciona em conjunto com:',
+         o:['O cabo','A máscara','A traqueia','O balão'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-36', code:'POP-CME-36', version:'1.1', emission:'08/04/2019',
+      title:'Reprocessamento da válvula de aspiração (O₂/ar comprimido/vácuo)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A válvula de aspiração auxilia na aspiração de secreções, conectada ao frasco de aspiração. Identificação por cor: <b>cinza = vácuo, verde = oxigênio, amarelo = ar comprimido</b>.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular e deixar as válvulas abertas, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente (nos bicos injetores), enxaguar com pistola de água nos canais.',
+          'Secar com ar comprimido nos canais e na secadora, montar, inspecionar, empacotar em saco plástico (com data e nome) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A cor que identifica a válvula de vácuo é:',
+         o:['Cinza','Verde','Amarela','Azul'],a:0,d:3},
+        {q:'A válvula verde corresponde a:',
+         o:['Oxigênio','Vácuo','Ar comprimido','Óxido nitroso'],a:0,d:3},
+        {q:'Durante a limpeza, as válvulas devem ser:',
+         o:['Desarticuladas e deixadas abertas','Mantidas fechadas','Lacradas','Pintadas'],a:0,d:2},
+        {q:'A válvula de aspiração é conectada ao:',
+         o:['Frasco de aspiração','Ventilador','Monitor cardíaco','Soro'],a:0,d:2},
+        {q:'A válvula amarela corresponde a:',
+         o:['Ar comprimido','Oxigênio','Vácuo','Água'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-cme-37', code:'POP-CME-37', version:'1.1', emission:'08/04/2019',
+      title:'Reprocessamento do fluxômetro (O₂/ar comprimido)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O fluxômetro mede e controla o fluxo de oxigênio e ar comprimido (faixa de 0 a 15 L/min). Identificação: <b>verde = oxigênio, amarelo = ar comprimido</b>.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Deixar as válvulas abertas, desarticular o tubo, pré-limpeza, lavar ultrassonicamente (no jato pulsátil), enxaguar e secar com ar comprimido e secadora.',
+          'Montar, inspecionar, empacotar em saco plástico (com data e nome) e armazenar.'
+        ]},
+        {n:3,h:'Observações',items:[
+          '<b>Não usar álcool</b> nem produtos similares (danificam as peças plásticas); o produto não suporta temperaturas acima de 60 °C — <b>não autoclavar</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O fluxômetro mede e controla o fluxo de O₂/ar comprimido na faixa de:',
+         o:['0 a 15 L/min','0 a 100 L/min','0 a 5 L/min','Acima de 50 L/min'],a:0,d:3},
+        {q:'O fluxômetro NÃO pode ser:',
+         o:['Autoclavado (não suporta >60 °C)','Lavado','Inspecionado','Identificado'],a:0,d:3},
+        {q:'No fluxômetro, NÃO se deve usar:',
+         o:['Álcool e produtos similares','Detergente enzimático','Água','Ar comprimido'],a:0,d:2},
+        {q:'A cor verde no fluxômetro identifica:',
+         o:['Oxigênio','Ar comprimido','Vácuo','Água'],a:0,d:2},
+        {q:'A lavagem ultrassônica do fluxômetro é feita conectando-o:',
+         o:['No jato pulsátil','Na autoclave','No frasco de soro','Em nada'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-38', code:'POP-CME-38', version:'1.1', emission:'05/04/2019',
+      title:'Reprocessamento do conector para aerossolterapia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Conector usado para acoplar o aerossol em pacientes entubados (há modelos para CC e para UTI).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, lavar ultrassonicamente, enxaguar, secar em secadora, montar e inspecionar.',
+          'Empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O conector para aerossolterapia é usado para:',
+         o:['Conectar o aerossol em pacientes entubados','Aspirar secreção','Medir pressão','Coletar sangue'],a:0,d:2},
+        {q:'O conector para aerossolterapia é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A secagem do conector para aerossolterapia é feita:',
+         o:['Em secadora','Ao sol','Com papel toalha','Naturalmente por dias'],a:0,d:1},
+        {q:'Antes da lavagem, o conector deve ser:',
+         o:['Desarticulado','Esterilizado','Empacotado','Pintado'],a:0,d:1},
+        {q:'Há modelos de conector para aerossolterapia para:',
+         o:['CC e UTI','Apenas pediatria','Apenas ambulatório','Domicílio'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
