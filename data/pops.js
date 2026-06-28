@@ -7189,6 +7189,399 @@
         {q:'O talco usado é composto de:',
          o:['Silicato de magnésio 100% pó','Açúcar','Amido','Gesso'],a:0,d:2}
       ]
+    },
+
+    {
+      id:'pop-cme-91', code:'POP-CME-91', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento da aspiração contínua',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Material que mantém a pressão negativa no sistema coletor de drenagem pleural ou mediastinal, usado no pós-operatório de cirurgia torácica ou cardíaca.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar (parte interna com ar comprimido).',
+          'Montar, inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A aspiração contínua mantém a pressão negativa no sistema de drenagem:',
+         o:['Pleural ou mediastinal','Vesical','Gástrica','Venosa'],a:0,d:2},
+        {q:'A aspiração contínua é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A aspiração contínua é usada no pós-operatório de cirurgia:',
+         o:['Torácica ou cardíaca','Ortopédica','Oftalmológica','Plástica'],a:0,d:2},
+        {q:'Antes da lavagem, o material deve ser:',
+         o:['Desarticulado','Esterilizado','Empacotado','Pintado'],a:0,d:1},
+        {q:'A secagem da parte interna é feita com:',
+         o:['Ar comprimido','Secadora quente','Pano úmido','Ao sol'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-92', code:'POP-CME-92', version:'1.1', emission:'21/08/2018',
+      title:'Montagem da bandeja de herniorrafia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Montar a bandeja para herniorrafia — cirurgia que corrige o defeito na musculatura/aponeurose que permite o aparecimento da hérnia. Composta por bandeja, afastadores, cabo de bisturi, porta-agulha, tesouras e pinças variadas.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em TNT de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita vermelho/preto listrado.'
+        ]}
+      ],
+      pool:[
+        {q:'A herniorrafia corrige:',
+         o:['O defeito na musculatura/aponeurose que permite a hérnia','Uma fratura','Uma catarata','Uma queimadura'],a:0,d:3},
+        {q:'A bandeja de herniorrafia é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da bandeja de herniorrafia é:',
+         o:['Fita vermelho/preto listrado','Verde','Amarela','Cinza'],a:0,d:2},
+        {q:'A bandeja de herniorrafia é empacotada em:',
+         o:['TNT 1,20×1,20 m','Saco de lixo','Papel jornal','Caixa de papelão'],a:0,d:1},
+        {q:'A hérnia surge por um defeito na:',
+         o:['Musculatura/aponeurose','Pele','Veia','Articulação'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-93', code:'POP-CME-93', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento do aspirador-irrigador de laparoscopia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O aspirador-irrigador é usado em cirurgia para irrigar (jogar soro) e aspirar (retirar secreção). Composto por válvula trompete, cânulas fenestradas de 5 e 10 mm.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente (cânula no jato intermitente), enxaguar e secar; colocar fita teste Classe V no interior, empacotar em SMS (duplo) e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O aspirador-irrigador de laparoscopia serve para:',
+         o:['Irrigar (jogar soro) e aspirar (retirar secreção)','Cortar tecido','Medir pressão','Iluminar'],a:0,d:2},
+        {q:'O aspirador-irrigador de laparoscopia é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'As cânulas fenestradas do aspirador-irrigador são de:',
+         o:['5 e 10 mm','1 e 2 mm','50 mm','Tamanho único'],a:0,d:2},
+        {q:'O aspirador-irrigador é empacotado em:',
+         o:['SMS (duplo)','Saco de lixo','Papel jornal','Sem embalagem'],a:0,d:1},
+        {q:'No interior do pacote do aspirador-irrigador coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-94', code:'POP-CME-94', version:'1.1', emission:'12/04/2019',
+      title:'Confecção da torunda',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A torunda é utilizada nos procedimentos cirúrgicos.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Confeccionar com gaze, algodão e fio cirúrgico uma bolinha de aproximadamente <b>1,5 cm de diâmetro</b>; empacotar <b>4 unidades</b> em SMS (duplo), esterilizar em autoclave a 134 °C, selar com fita Classe I e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A torunda é uma bolinha confeccionada com:',
+         o:['Gaze, algodão e fio cirúrgico','Apenas plástico','Metal','Madeira'],a:0,d:2},
+        {q:'O diâmetro aproximado da torunda é de:',
+         o:['1,5 cm','10 cm','0,1 cm','5 cm'],a:0,d:2},
+        {q:'A torunda é empacotada em quantidade de:',
+         o:['4 unidades','1 unidade','100 unidades','10 unidades'],a:0,d:2},
+        {q:'A torunda é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A torunda é utilizada em:',
+         o:['Procedimentos cirúrgicos','Nebulização','Punção lombar','Coleta de sangue'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-95', code:'POP-CME-95', version:'1.1', emission:'15/04/2019',
+      title:'Reprocessamento da ponteira do borrifador',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A ponteira do borrifador é utilizada no anestésico spray.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente, enxaguar e secar; <b>desinfecção em hipoclorito de sódio 0,5% por 30 minutos</b>, enxaguar e secar.',
+          'Inspecionar, empacotar em saco plástico (data e profissional) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A ponteira do borrifador é utilizada no:',
+         o:['Anestésico spray','Soro','Antibiótico EV','Curativo'],a:0,d:2},
+        {q:'A desinfecção da ponteira do borrifador é feita em:',
+         o:['Hipoclorito de sódio 0,5% por 30 minutos','Ácido peracético','Álcool 70%','Formol'],a:0,d:3},
+        {q:'A identificação da ponteira do borrifador inclui:',
+         o:['Data e profissional','Apenas a cor','O nome do paciente','Nada'],a:0,d:1},
+        {q:'O tempo de desinfecção da ponteira em hipoclorito é de:',
+         o:['30 minutos','5 minutos','2 horas','1 minuto'],a:0,d:2},
+        {q:'A secagem inicial da ponteira é feita com:',
+         o:['Ar comprimido','Secadora quente','Pano úmido','Ao sol'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-96', code:'POP-CME-96', version:'1.1', emission:'15/04/2019',
+      title:'Reprocessamento da oliva do otoscópio',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A oliva/espéculo é usada no otoscópio, equipamento para observar o interior da orelha.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente, enxaguar e secar; <b>desinfecção em hipoclorito de sódio 0,5% por 30 minutos</b>, enxaguar e secar.',
+          'Inspecionar, empacotar em saco plástico (data e profissional) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A oliva é usada no:',
+         o:['Otoscópio (observar o interior da orelha)','Laringoscópio','Endoscópio','Microscópio'],a:0,d:2},
+        {q:'A desinfecção da oliva do otoscópio é feita em:',
+         o:['Hipoclorito de sódio 0,5% por 30 minutos','Ácido peracético','Álcool 70%','Formol'],a:0,d:3},
+        {q:'O otoscópio é usado para observar:',
+         o:['O interior da orelha','A garganta','O olho','O abdome'],a:0,d:2},
+        {q:'A identificação da oliva inclui:',
+         o:['Data e profissional','Apenas a cor','O nome do médico','Nada'],a:0,d:1},
+        {q:'O tempo de desinfecção da oliva em hipoclorito é de:',
+         o:['30 minutos','5 minutos','2 horas','1 minuto'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-97', code:'POP-CME-97', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento do punch dermatológico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O punch é um instrumental cirúrgico usado na coleta de material para <b>biópsia de pele</b>.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar, secar e inspecionar.',
+          'Empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O punch dermatológico é usado para:',
+         o:['Biópsia de pele','Aspiração','Sutura','Nebulização'],a:0,d:2},
+        {q:'O punch é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O punch é um instrumental usado na coleta de:',
+         o:['Material para biópsia','Sangue venoso','Urina','Líquor'],a:0,d:2},
+        {q:'Deixar a água secar no punch pode causar:',
+         o:['Manchas','Esterilidade','Brilho','Lubrificação'],a:0,d:2},
+        {q:'O punch é empacotado em:',
+         o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-98', code:'POP-CME-98', version:'1.1', emission:'15/04/2019',
+      title:'Reprocessamento do equipamento de esternotomia com bateria',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Equipamento (serra óssea) usado para a abertura do esterno (esternotomia).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza e lavagem manual com enzimático e esponja macia, <b>evitando molhar os contatos da bateria</b> (a serra é escovada manualmente); enxaguar e secar.',
+          'Colocar fita teste Classe V, empacotar com SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'A <b>bateria</b> é limpa por fricção com álcool 70% e identificada (data e profissional); serras extras são limpas e esterilizadas em óxido de etileno.'
+        ]}
+      ],
+      pool:[
+        {q:'O equipamento de esternotomia é usado para:',
+         o:['A abertura do esterno','Aspiração','Sutura','Nebulização'],a:0,d:2},
+        {q:'Durante a lavagem, deve-se evitar molhar:',
+         o:['Os contatos da bateria','A serra','O cabo','A embalagem'],a:0,d:3},
+        {q:'A serra do equipamento de esternotomia é esterilizada por:',
+         o:['Autoclave a 134 °C','Fervura','Imersão em formol','Não é esterilizada'],a:0,d:2},
+        {q:'A bateria é limpa por:',
+         o:['Fricção com álcool 70%','Imersão na ultrassônica','Autoclave','Água corrente'],a:0,d:3},
+        {q:'As serras extras são esterilizadas em:',
+         o:['Óxido de etileno','Autoclave a vapor','Hipoclorito','Não são esterilizadas'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-99', code:'POP-CME-99', version:'1.1', emission:'15/09/2014',
+      title:'Reprocessamento de cubas, bandejas e caixas cirúrgicas',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Cubas (redondas e rim), bandejas e caixas usadas como auxiliares nos procedimentos de enfermagem e cirúrgicos.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar manualmente com solução enzimática e esponja macia, enxaguar e secar com pano limpo.',
+          'Inspecionar, empacotar com SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Evitar que a água seque, pois pode causar manchas.'
+        ]}
+      ],
+      pool:[
+        {q:'As cubas, bandejas e caixas são esterilizadas por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A lavagem das cubas e bandejas é feita:',
+         o:['Manualmente com solução enzimática e esponja macia','Na autoclave','Por imersão em formol','A seco'],a:0,d:2},
+        {q:'Deixar a água secar nas cubas pode causar:',
+         o:['Manchas','Esterilidade','Brilho','Lubrificação'],a:0,d:2},
+        {q:'As cubas e bandejas são usadas como:',
+         o:['Auxiliares nos procedimentos de enfermagem e cirúrgicos','Material de corte','Aspiração','Sutura'],a:0,d:1},
+        {q:'A embalagem das cubas e bandejas é:',
+         o:['SMS','Saco de lixo','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-100', code:'POP-CME-100', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento da manopla do foco cirúrgico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A manopla é um protetor estéril usado para a focalização do foco cirúrgico.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente, enxaguar, secar com pano e ar comprimido e inspecionar.',
+          'Empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A manopla do foco cirúrgico é:',
+         o:['Um protetor estéril para focalização do foco','Uma serra','Uma pinça','Uma sonda'],a:0,d:2},
+        {q:'A manopla do foco cirúrgico é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A manopla é usada para:',
+         o:['Focalizar o foco cirúrgico','Aspirar secreção','Cortar tecido','Medir pressão'],a:0,d:2},
+        {q:'A lavagem da manopla é feita:',
+         o:['Ultrassonicamente','Por imersão em formol','A seco','Na autoclave'],a:0,d:1},
+        {q:'A manopla é empacotada em:',
+         o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-101', code:'POP-CME-101', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento do balão de anestesia de 5 litros',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O balão de reinalação (pulmão-teste) é um acessório usado para testar equipamentos de ventilação, aparelhos e circuitos de anestesia.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar manualmente em detergente enzimático, enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O balão de anestesia (reinalação) é usado para:',
+         o:['Testar equipamentos e circuitos de anestesia/ventilação','Aspirar secreção','Coletar sangue','Medir glicemia'],a:0,d:2},
+        {q:'O balão de anestesia é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A lavagem do balão de anestesia é feita:',
+         o:['Manualmente em detergente enzimático','Na autoclave','Por imersão em hipoclorito','A seco'],a:0,d:2},
+        {q:'O balão também é conhecido como:',
+         o:['Pulmão-teste','Manguito','Cânula','Sonda'],a:0,d:2},
+        {q:'O balão de anestesia é empacotado em:',
+         o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-102', code:'POP-CME-102', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento da linha para capnografia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A linha de capnografia é um tubo liso para amostra de gases, com conectores luer lock nas extremidades.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente (no bico de jato intermitente), enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'A linha de capnografia serve para:',
+         o:['Amostra de gases','Infusão de soro','Aspiração de secreção','Coleta de sangue'],a:0,d:2},
+        {q:'A linha de capnografia é esterilizada por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Os conectores das extremidades da linha de capnografia são do tipo:',
+         o:['Luer lock','Rosca métrica','Encaixe rápido','Sem conector'],a:0,d:2},
+        {q:'A lavagem da linha de capnografia é feita:',
+         o:['Ultrassonicamente, no jato intermitente','Por imersão em formol','A seco','Na autoclave'],a:0,d:2},
+        {q:'A linha de capnografia é empacotada em:',
+         o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-103', code:'POP-CME-103', version:'1.1', emission:'16/04/2019',
+      title:'Reprocessamento do guia de intubação',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O guia de intubação é utilizado para facilitar a intubação orotraqueal.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente, enxaguar e secar com pano branco e inspecionar.',
+          'Empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O guia de intubação serve para:',
+         o:['Facilitar a intubação orotraqueal','Aspirar secreção','Medir pressão','Coletar sangue'],a:0,d:2},
+        {q:'O guia de intubação é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A lavagem do guia de intubação é feita:',
+         o:['Ultrassonicamente','Por imersão em formol','A seco','Na autoclave'],a:0,d:1},
+        {q:'O guia de intubação auxilia na via:',
+         o:['Orotraqueal','Urinária','Venosa','Digestiva'],a:0,d:2},
+        {q:'O guia de intubação é empacotado em:',
+         o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
