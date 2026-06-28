@@ -1662,7 +1662,7 @@ function individualReportPage(col, stamp){
   const aprov = new Set(res.filter(r=>r.status==='aprovado').map(r=>r.pop_id));
   const stColor = {pass:'#1a8f54',fail:'#d3202a',pending:'#90a3b3',locked:'#b9c4d0'};
   const stLabel = {pass:'Aprovado',fail:'Refazer',pending:'Pendente',locked:'Bloqueado'};
-  const e1pops = popsEtapa(col.setor,1), e2pops = popsEtapa(col.setor,2);
+  const e1pops = secaoIds(col,1).map(pop).filter(Boolean), e2pops = secaoIds(col,2).map(pop).filter(Boolean);
   const e1done = etapaDoneSet(col,1,aprov), e2done = etapaDoneSet(col,2,aprov);
   const e2unlocked = e1done;
   const finalOk = e1done && (e2pops.length===0 || e2done);
