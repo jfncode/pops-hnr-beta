@@ -4407,6 +4407,406 @@
         {q:'Diante de uma reação de hipersensibilidade ao mepolizumabe, deve-se:',
          o:['Descontinuar o medicamento e reavaliar com o médico','Aumentar a dose','Aplicar mais rápido','Ignorar e continuar'],a:0,d:2}
       ]
+    },
+
+    {
+      id:'pop-cme-01', code:'POP-CME-01', version:'1.1', emission:'29/01/2021',
+      title:'Dinâmica e fluxo na CME',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização e Unidades',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Orientar os colaboradores quanto à dinâmica e ao fluxo na CME — os passos que o material percorre para o seu reprocessamento.'
+        ]},
+        {n:2,h:'Fluxo do material',items:[
+          'A unidade despreza o material desconectado e enxaguado em recipiente rígido e fechado; o funcionário da CME o recolhe diariamente (9h, 14h e 17h) e a entrada se dá pela <b>área suja</b>.',
+          'Sequência: pré-limpeza (se sujidade visível) → limpeza (manual/ultrassônica/termodesinfectadora) → secagem → desinfecção → empacotamento → <b>esterilização</b> (autoclave/óxido de etileno) → armazenamento.'
+        ]},
+        {n:3,h:'Transporte e observações',items:[
+          'O material limpo é sempre transportado em <b>recipiente rígido fechado exclusivo</b>; a entrega ocorre das 8h às 9h e das 17h às 18h.',
+          'O excesso de sujidade deve ser limpo com água destilada logo após o uso, ou aplicar umectante se exceder 30 minutos.'
+        ]}
+      ],
+      pool:[
+        {q:'A entrada do material no CME se dá pela:',
+         o:['Área suja','Área limpa','Sala de esterilização','Recepção'],a:0,d:2},
+        {q:'A sequência correta do reprocessamento começa com a limpeza e termina com:',
+         o:['Esterilização e armazenamento','Apenas a secagem','O empacotamento','A desinfecção'],a:0,d:2},
+        {q:'O material limpo deve ser transportado em:',
+         o:['Recipiente rígido fechado exclusivo','Saco plástico aberto','Bandeja descoberta','Qualquer recipiente'],a:0,d:1},
+        {q:'Se o excesso de sujidade exceder 30 minutos no instrumental, deve-se:',
+         o:['Aplicar umectante','Esterilizar direto','Descartar o material','Deixar secar'],a:0,d:2},
+        {q:'O recolhimento do material pela CME ocorre:',
+         o:['Diariamente em horários definidos (9h, 14h e 17h)','Uma vez por semana','Só quando solicitado','A cada hora'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-02', code:'POP-CME-02', version:'1.1', emission:'29/01/2021',
+      title:'Classificação dos artigos na CME (Spaulding)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'O sistema de classificação de <b>Spaulding</b> orienta os métodos de reprocessamento de equipamentos, dispositivos e materiais médico-hospitalares.'
+        ]},
+        {n:2,h:'Categorias',items:[
+          '<b>Crítico:</b> penetra pele/mucosas, tecidos ou sistema vascular → <b>esterilização obrigatória</b> (autoclave/óxido de etileno). Ex.: instrumental cirúrgico, implantes, pinças de endoscópio.',
+          '<b>Semicrítico:</b> contato com pele não íntegra ou mucosas íntegras → <b>desinfecção de alto nível</b> (ácido peracético). Ex.: circuitos respiratórios, endoscópios, espéculo vaginal.',
+          '<b>Não-crítico:</b> contato com pele íntegra → limpeza/desinfecção de baixo nível (hipoclorito ou álcool 70%). Ex.: termômetro axilar, manguito, comadre.'
+        ]}
+      ],
+      pool:[
+        {q:'Um instrumental cirúrgico, que penetra tecidos, é classificado como:',
+         o:['Crítico','Semicrítico','Não-crítico','Inerte'],a:0,d:2},
+        {q:'Artigos críticos exigem:',
+         o:['Esterilização obrigatória','Apenas limpeza','Desinfecção de baixo nível','Nenhum processamento'],a:0,d:2},
+        {q:'Um circuito respiratório (contato com mucosa íntegra) é classificado como:',
+         o:['Semicrítico','Crítico','Não-crítico','Estéril'],a:0,d:3},
+        {q:'Um termômetro axilar (contato com pele íntegra) é um artigo:',
+         o:['Não-crítico','Crítico','Semicrítico','Cirúrgico'],a:0,d:2},
+        {q:'O sistema que orienta a classificação dos artigos é o de:',
+         o:['Spaulding','Aldrete','Morse','Glasgow'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-03', code:'POP-CME-03', version:'1.1', emission:'21/01/2021',
+      title:'Precauções e EPIs no CME',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Orientar o uso de EPIs para garantir a segurança do profissional exposto a substâncias químicas, gases tóxicos, riscos de perfuração/corte e calor, prevenindo acidentes e doenças ocupacionais.'
+        ]},
+        {n:2,h:'Cuidados pessoais',items:[
+          'Higienizar as mãos, utilizar uniforme privativo e sapato fechado e <b>não usar adornos</b>.'
+        ]},
+        {n:3,h:'EPIs por atividade',items:[
+          '<b>Coleta/expurgo/lavagem:</b> avental impermeável de manga longa, touca, luva grossa de borracha de cano longo, óculos, máscara N-95 e face shield.',
+          '<b>Desinfecção química:</b> luva de borracha nitrílica e máscara para vapor químico. <b>Esterilização (autoclave):</b> luva para alta temperatura. <b>Preparo/armazenamento:</b> máscara cirúrgica.'
+        ]}
+      ],
+      pool:[
+        {q:'Para a lavagem de materiais no expurgo, utiliza-se entre os EPIs:',
+         o:['Luva grossa de cano longo, óculos, máscara N-95 e face shield','Apenas luva de procedimento','Somente touca','Nenhum EPI'],a:0,d:2},
+        {q:'Na desinfecção por meio químico, a máscara indicada é:',
+         o:['Máscara para vapor químico','Máscara cirúrgica comum','Sem máscara','Máscara de tecido'],a:0,d:3},
+        {q:'Na esterilização em autoclave, deve-se usar:',
+         o:['Luva para alta temperatura','Luva de látex fina','Mãos nuas','Luva de borracha de cano longo'],a:0,d:2},
+        {q:'Quanto aos cuidados pessoais no CME:',
+         o:['Não utilizar adornos e usar uniforme privativo','Pode usar anéis','Sapato aberto é permitido','Dispensa higiene das mãos'],a:0,d:1},
+        {q:'A finalidade dos EPIs no CME é, entre outras:',
+         o:['Prevenir acidentes e doenças ocupacionais','Apenas identificar o setor','Aquecer o profissional','Acelerar o processo'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-04', code:'POP-CME-04', version:'1.1', emission:'28/03/2019',
+      title:'Limpeza manual dos materiais',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Remover sujidades orgânicas e inorgânicas e reduzir a carga microbiana com água, detergentes e ação mecânica, tornando o produto seguro para manuseio e preparado para a desinfecção ou esterilização.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Preparar a solução de água + <b>detergente enzimático</b> (diluição do fabricante), imergir totalmente o material e aguardar o tempo recomendado.',
+          'Realizar a lavagem por fricção com escova/esponja macia; em lúmens > 5 mm, usar <b>pistola de água sob pressão</b>. Enxaguar para remover sujidade e resíduos de detergente.'
+        ]},
+        {n:3,h:'Finalização',items:[
+          'Secar bem o material (pano branco/secadora/ar comprimido), realizar <b>inspeção visual com lupa</b> e encaminhar para desinfecção ou preparo.',
+          'Desprezar a solução diariamente no fim do plantão; usar detergente hospitalar para materiais engordurados.'
+        ]}
+      ],
+      pool:[
+        {q:'O produto utilizado na imersão para a limpeza manual dos materiais é o:',
+         o:['Detergente enzimático','Hipoclorito de sódio','Álcool 70%','Formol'],a:0,d:2},
+        {q:'Em lúmens maiores que 5 mm, a limpeza é auxiliada por:',
+         o:['Pistola de água sob pressão','Cotonete','Imersão prolongada apenas','Ar quente'],a:0,d:3},
+        {q:'Após a limpeza e secagem, realiza-se a inspeção visual com:',
+         o:['Lupa','Microscópio','A olho nu apenas','Raio-X'],a:0,d:2},
+        {q:'A solução enzimática de limpeza deve ser desprezada:',
+         o:['Diariamente no fim do plantão (ou se necessário)','Uma vez por mês','Nunca','A cada hora'],a:0,d:2},
+        {q:'A limpeza tem como finalidade preparar o material para:',
+         o:['A desinfecção ou esterilização','O descarte','O uso imediato sem processar','A pintura'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-05', code:'POP-CME-05', version:'1.1', emission:'02/08/2019',
+      title:'Limpeza automatizada (lavadora ultrassônica)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Orientar a limpeza automatizada dos materiais na lavadora ultrassônica, removendo sujidades por ação mecânica em superfícies internas e externas.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Ligar a lavadora, conferir o detergente enzimático no diluidor e aguardá-la encher com água e detergente; realizar a <b>pré-limpeza</b> dos materiais.',
+          'Imergir totalmente o material, conectar os canulados aos jatos, acionar e aguardar o ciclo de <b>10 minutos a 40 °C</b> (pré-programável).'
+        ]},
+        {n:3,h:'Finalização e observações',items:[
+          'Enxaguar, secar bem, realizar inspeção visual com lupa e encaminhar para desinfecção ou preparo.',
+          'Aguardar o equipamento realizar o <b>primeiro ciclo do dia sem material</b> para aquecer a água; desprezar a solução no fim do plantão.'
+        ]}
+      ],
+      pool:[
+        {q:'O ciclo padrão da lavadora ultrassônica é de:',
+         o:['10 minutos a 40 °C','1 hora a 100 °C','5 minutos a 20 °C','30 minutos a 60 °C'],a:0,d:3},
+        {q:'Antes de colocar o material na lavadora ultrassônica, realiza-se a:',
+         o:['Pré-limpeza','Esterilização','Secagem final','Embalagem'],a:0,d:2},
+        {q:'O primeiro ciclo do dia na ultrassônica deve ser feito:',
+         o:['Sem material, para aquecer a água','Com o dobro de material','Com água fria proposital','Sem detergente'],a:0,d:3},
+        {q:'Os instrumentos canulados, na lavadora ultrassônica, devem ser:',
+         o:['Conectados aos conectores de jato','Mantidos fora da água','Empilhados secos','Embrulhados'],a:0,d:2},
+        {q:'Após o ciclo da ultrassônica, antes do preparo, faz-se:',
+         o:['Enxágue, secagem e inspeção visual com lupa','Esterilização imediata','Descarte','Nova imersão por 1 hora'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-06', code:'POP-CME-06', version:'1.1', emission:'02/08/2019',
+      title:'Uso do detergente multienzimático (Neozime5®)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar o uso do Neozime5®, detergente multienzimático com 5 enzimas (amilase, protease, lipase, carbohidrase e peptidase) para limpeza manual e automatizada de materiais e instrumentais.'
+        ]},
+        {n:2,h:'Parâmetros de uso',items:[
+          'Inspecionar visualmente e verificar a validade do frasco; usar a solução pronta no diluidor da lavadora ultrassônica e enxaguar após o uso.',
+          'Parâmetros ideais: <b>diluição 0,2% (2 ml/litro), temperatura 40 °C e tempo 10 minutos</b>; trocar a solução a cada 12 horas ou quando saturada.'
+        ]},
+        {n:3,h:'Segurança',items:[
+          'Não misturar com outros produtos (PVPI, clorexidina, glutaraldeído, hipoclorito, ácido peracético); não ingerir, evitar inalação e contato com olhos/pele.'
+        ]}
+      ],
+      pool:[
+        {q:'A diluição ideal de uso do Neozime5® é:',
+         o:['0,2% (2 ml por litro de água)','10%','50%','Puro, sem diluir'],a:0,d:3},
+        {q:'A solução de detergente enzimático deve ser trocada:',
+         o:['A cada 12 horas ou quando saturada','A cada 5 minutos','Uma vez por mês','Nunca'],a:0,d:2},
+        {q:'O Neozime5® é um detergente:',
+         o:['Multienzimático (5 enzimas)','Apenas perfumado','À base de cloro','Abrasivo'],a:0,d:2},
+        {q:'O Neozime5® NÃO deve ser misturado com:',
+         o:['Outros produtos como hipoclorito e glutaraldeído','Água','Nada (pode misturar tudo)','O próprio enxágue'],a:0,d:2},
+        {q:'A temperatura ideal de uso do detergente enzimático é de:',
+         o:['40 °C','0 °C','100 °C','Ambiente fria'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-07', code:'POP-CME-07', version:'1.1', emission:'28/03/2019',
+      title:'Desinfecção por meio químico (hipoclorito)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar a desinfecção química com hipoclorito de sódio — solução aquosa com teor de cloro ativo entre 2,0 e 2,5%.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Preparar a solução a <b>0,5%</b> (1 L de hipoclorito 1% + 1 L de água) em recipiente plástico opaco com tampa; trocar a cada 12 horas ou quando saturada.',
+          'Imergir os materiais (já limpos, secos e inspecionados) completamente e aguardar o tempo de desinfecção de <b>30 minutos (alto nível)</b>; enxaguar, secar e encaminhar para preparo.'
+        ]},
+        {n:3,h:'Segurança',items:[
+          'Não usar em objetos metálicos; manter ventilação adequada (15 trocas de ar/hora); usar luvas.',
+          '<b>NÃO MISTURAR com ácidos ou produtos à base de amônia</b> — a mistura produz gases tóxicos. Não substituir por água sanitária.'
+        ]}
+      ],
+      pool:[
+        {q:'A solução de hipoclorito usada na desinfecção é preparada a:',
+         o:['0,5%','10%','50%','Puro'],a:0,d:3},
+        {q:'O tempo de desinfecção de alto nível com hipoclorito é de:',
+         o:['30 minutos','1 minuto','5 minutos','2 horas'],a:0,d:3},
+        {q:'O hipoclorito NÃO deve ser usado em:',
+         o:['Objetos metálicos','Plásticos','Vidros','Borrachas'],a:0,d:2},
+        {q:'Misturar hipoclorito com ácidos ou amônia:',
+         o:['Produz gases tóxicos','Aumenta a eficácia','É recomendado','Não tem efeito'],a:0,d:3},
+        {q:'Antes da imersão no hipoclorito, os artigos devem estar:',
+         o:['Criteriosamente limpos e secos','Sujos','Ainda molhados de sangue','Embalados'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-08', code:'POP-CME-08', version:'1.0', emission:'15/09/2014',
+      title:'Desinfecção por meio químico (ácido peracético)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar a desinfecção química com ácido peracético, mistura em equilíbrio de peróxido de hidrogênio, ácido acético e água.',
+          'É um produto <b>tóxico e corrosivo</b>, líquido incolor levemente amarelado com odor de vinagre, que mantém suas propriedades na presença de matéria orgânica.'
+        ]},
+        {n:2,h:'Materiais e execução',items:[
+          'Materiais: ácido peracético, exaustor, recipiente plástico opaco com tampa, <b>fita teste</b>, água potável e EPIs.',
+          'Indicado para <b>desinfecção de alto nível</b> de artigos semicríticos; imergir os materiais já limpos e secos, controlando a concentração da solução pela fita teste, enxaguar e encaminhar para preparo.'
+        ]},
+        {n:3,h:'Segurança',items:[
+          'Usar EPIs e manter o ambiente ventilado com exaustor pelo caráter tóxico/corrosivo; não misturar com outros produtos.'
+        ]}
+      ],
+      pool:[
+        {q:'O ácido peracético é uma mistura em equilíbrio de:',
+         o:['Peróxido de hidrogênio, ácido acético e água','Cloro e soda','Álcool e iodo','Formol e glutaraldeído'],a:0,d:3},
+        {q:'O ácido peracético é indicado para a desinfecção de:',
+         o:['Alto nível (artigos semicríticos)','Baixo nível apenas','Pisos','Roupas'],a:0,d:3},
+        {q:'A concentração da solução de ácido peracético é controlada por meio de:',
+         o:['Fita teste','Termômetro','Balança','Cronômetro apenas'],a:0,d:2},
+        {q:'Uma característica importante do ácido peracético é que ele:',
+         o:['Mantém suas propriedades na presença de matéria orgânica','Perde efeito com qualquer sujidade','Não é corrosivo','É inofensivo'],a:0,d:3},
+        {q:'Pelo seu caráter tóxico e corrosivo, ao manipular o ácido peracético deve-se:',
+         o:['Usar EPIs e manter o ambiente ventilado com exaustor','Trabalhar sem proteção','Misturar com hipoclorito','Aquecer o produto'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-09', code:'POP-CME-09', version:'1.1', emission:'02/08/2019',
+      title:'Uso do detergente neutro hospitalar (Deter Rio®)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar o uso do Deter Rio®, detergente neutro pronto para uso composto de tensoativos aniônicos biodegradáveis, para limpeza de superfícies e instrumentação em geral.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Inspecionar e verificar a validade do frasco, colocar a solução pronta em recipiente próprio, aplicar diretamente sobre o material ou na esponja/escova e <b>enxaguar após o uso</b>.'
+        ]},
+        {n:3,h:'Segurança',items:[
+          'Não ingerir, evitar inalação e contato com olhos e contato prolongado com a pele.'
+        ]}
+      ],
+      pool:[
+        {q:'O Deter Rio® é um detergente:',
+         o:['Neutro, pronto para uso','À base de cloro','Multienzimático','Abrasivo ácido'],a:0,d:2},
+        {q:'Após aplicar o Deter Rio® sobre o material, deve-se:',
+         o:['Enxaguar','Esterilizar direto','Deixar secar com o produto','Reaplicar 3 vezes'],a:0,d:1},
+        {q:'Antes de usar o frasco de Deter Rio®, é necessário:',
+         o:['Inspecionar e verificar a validade','Aquecê-lo','Diluí-lo a 50%','Congelá-lo'],a:0,d:2},
+        {q:'O Deter Rio® pode ser aplicado em:',
+         o:['Mobília, pisos, paredes e instrumentação em geral','Apenas em pele','Somente em vidro','Nada (é só para descarte)'],a:0,d:1},
+        {q:'Quanto à segurança no uso do Deter Rio®:',
+         o:['Não ingerir e evitar contato com olhos','Pode ser ingerido','Não requer cuidado','Deve ser inalado'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-10', code:'POP-CME-10', version:'1.1', emission:'02/08/2019',
+      title:'Empacotamento de artigos no CME (SMS)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Embalar os artigos a serem esterilizados em embalagens que garantam a manutenção da esterilidade do conteúdo e a transferência sob técnica asséptica.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Higienizar as mãos e a bancada, inspecionar o artigo (limpeza, integridade, funcionalidade) e selecionar a embalagem adequada ao processo, tamanho e peso.',
+          'Fechar com a <b>técnica de empacotamento universal</b> e fita zebrada (indicador químico externo), anotando tipo de material, lote, data de esterilização/vencimento e nome do funcionário.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'Colocar <b>indicador químico interno</b> dentro de todo pacote de material crítico e usar campo absorvente nas caixas para absorver umidade.',
+          'É <b>proibido</b> usar papel kraft, papel toalha, jornal, lâminas de alumínio ou embalagens de tecido com remendos/perfurações.'
+        ]}
+      ],
+      pool:[
+        {q:'A técnica utilizada para fechar a embalagem dos artigos é a:',
+         o:['Empacotamento universal','Dobra simples ao acaso','Enrolar em jornal','Selagem a quente apenas'],a:0,d:2},
+        {q:'Dentro de todo pacote de material CRÍTICO deve-se colocar:',
+         o:['Indicador químico interno','Apenas a fita externa','Nada','Um campo molhado'],a:0,d:3},
+        {q:'É PROIBIDO no empacotamento o uso de:',
+         o:['Papel kraft, jornal e lâminas de alumínio','Embalagem grau cirúrgico','SMS','Fita zebrada'],a:0,d:3},
+        {q:'Na fita zebrada do pacote, deve-se anotar:',
+         o:['Tipo de material, lote, datas e nome do funcionário','Apenas a cor','O nome do paciente','Nada'],a:0,d:2},
+        {q:'Antes de embalar, o artigo deve ser inspecionado quanto a:',
+         o:['Limpeza, integridade e funcionalidade','Apenas o peso','A marca','A cor'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-11', code:'POP-CME-11', version:'1.1', emission:'02/08/2019',
+      title:'Esterilização por autoclave a vapor',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Esterilização é o processo que elimina os microrganismos a ponto de a probabilidade de sobrevivência ser menor que <b>1:1.000.000</b>.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Dispor os pacotes na <b>vertical</b> (facilita a circulação do vapor e a secagem), sem encostar nas paredes da câmara; fechar a porta e selecionar o ciclo pré-programado (instrumentais, tecido, prions, flash ou Bowie & Dick).',
+          'Identificar o operador e o lote, iniciar o ciclo e, ao término, aguardar a pressão interna zerar antes de abrir a porta.'
+        ]},
+        {n:3,h:'Finalização e observações',items:[
+          'Deixar o material 30 min na autoclave e mais 30 min na sala de resfriamento; registrar os parâmetros físicos, inspecionar e armazenar. <b>Não colocar o material sobre superfície fria.</b>',
+          'Não esterilizar em autoclave a vapor materiais <b>termossensíveis</b> (reanimador manual, máscaras, traqueia). Realizar os testes de Bowie & Dick, biológico e químico.'
+        ]}
+      ],
+      pool:[
+        {q:'Um artigo é considerado estéril quando a probabilidade de sobrevivência de microrganismos é menor que:',
+         o:['1:1.000.000','1:100','1:10','1:1.000'],a:0,d:3},
+        {q:'Os pacotes na autoclave devem ser dispostos:',
+         o:['Na vertical, sem encostar nas paredes','Empilhados horizontalmente','Colados nas paredes','Soltos no chão'],a:0,d:2},
+        {q:'Ao término do ciclo, antes de abrir a porta da autoclave, deve-se:',
+         o:['Aguardar a pressão interna zerar','Abrir imediatamente','Jogar água fria','Desligar a energia'],a:0,d:2},
+        {q:'Materiais termossensíveis (reanimador, máscaras, traqueia):',
+         o:['Não devem ir à autoclave a vapor','Vão em ciclo flash','Vão junto com instrumentais','Podem ser autoclavados normalmente'],a:0,d:3},
+        {q:'Após a autoclavagem, o material NÃO deve ser:',
+         o:['Colocado sobre superfície fria','Inspecionado','Resfriado na sala própria','Armazenado'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-12', code:'POP-CME-12', version:'1.1', emission:'02/08/2019',
+      title:'Teste de esterilização com fita química/externa (Classe I)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'A fita teste Classe I diferencia visualmente os pacotes que já passaram pelo processo de esterilização, evitando o uso de pacotes não processados e indicando falha grosseira do processo.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Verificar a validade e colocar a fita química/externa (zebrada), com no mínimo <b>8 cm ou 3 listras completas</b>, em todos os pacotes; realizar o ciclo de esterilização.',
+          'Após o esfriamento, observar a <b>mudança de cor</b> que demonstra a exposição ao processo; acondicionar em armário.'
+        ]},
+        {n:3,h:'Não conformidade',items:[
+          'Se a fita teste <b>não corar uniformemente</b>, comunicar o enfermeiro e <b>reesterilizar</b> o material.'
+        ]}
+      ],
+      pool:[
+        {q:'A fita teste Classe I (química/externa) indica que o pacote:',
+         o:['Foi exposto ao processo de esterilização','Está estéril com certeza absoluta','É de material crítico','Está vencido'],a:0,d:2},
+        {q:'A fita zebrada deve ter no mínimo:',
+         o:['8 cm ou 3 listras completas','1 cm','20 cm','Meia listra'],a:0,d:3},
+        {q:'A confirmação de que o pacote passou pelo processo é dada pela:',
+         o:['Mudança de cor da fita','Temperatura do pacote','Peso','Etiqueta'],a:0,d:2},
+        {q:'Se a fita teste não corar uniformemente, o material deve ser:',
+         o:['Reesterilizado','Usado mesmo assim','Descartado','Apenas relimpo'],a:0,d:3},
+        {q:'A fita teste Classe I é capaz de indicar:',
+         o:['Falha grosseira do processo de esterilização','A carga microbiana exata','A validade do material','O nome do operador'],a:0,d:2}
+      ]
     }
   ];
   return POPS;
