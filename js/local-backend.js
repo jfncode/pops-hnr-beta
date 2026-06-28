@@ -62,9 +62,27 @@
     }
     const db = load();
     const colaboradores = Object.entries(db.colaboradores)
-      .map(([matricula, v]) => ({ matricula, nome: v.nome, setor: v.setor }));
+      .map(([matricula, v]) => ({ matricula, nome: v.nome, setor: v.setor, sorteio: v.sorteio || null }));
     const resultados = Object.values(db.resultados);
     return { colaboradores, resultados };
+  };
+
+  function matSessao() {
+    try { return (JSON.parse(localStorage.getItem('pops_sessao') || 'null') || {}).matricula || null; }
+    catch { return null; }
+  }
+  POPApi.salvarSorteio = async function (sorteio) {
+    const mat = matSessao(); if (!mat) return { ok: false };
+    const db = load();
+    db.colaboradores[mat] = db.colaboradores[mat] || {};
+    db.colaboradores[mat].sorteio = sorteio;
+    save(db);
+    return { ok: true };
+  };
+  POPApi.getSorteio = async function () {
+    const mat = matSessao(); if (!mat) return null;
+    const db = load();
+    return (db.colaboradores[mat] && db.colaboradores[mat].sorteio) || null;
   };
 
   POPApi.flushPendentes = async function () { /* nada a sincronizar no modo local */ };

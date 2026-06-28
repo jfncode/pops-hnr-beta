@@ -19,8 +19,8 @@
   async function fetchPerfil() {
     const { data: s } = await sb.auth.getSession();
     if (!s || !s.session) return null;
-    const { data, error } = await sb.from('colaboradores').select('id,nome,setor,matricula,email,is_gestor').eq('id', s.session.user.id).maybeSingle();
-    if (error || !data) return { id: s.session.user.id, nome: '', setor: '', matricula: '', email: s.session.user.email, is_gestor: false };
+    const { data, error } = await sb.from('colaboradores').select('id,nome,setor,matricula,email,is_gestor,sorteio').eq('id', s.session.user.id).maybeSingle();
+    if (error || !data) return { id: s.session.user.id, nome: '', setor: '', matricula: '', email: s.session.user.email, is_gestor: false, sorteio: null };
     return data;
   }
 
@@ -59,6 +59,17 @@
 
   POPApi.currentProfile = fetchPerfil;   // usado no auto-resume e no check de gestor
 
+  POPApi.salvarSorteio = async function (sorteio) {
+    const { data: s } = await sb.auth.getSession();
+    if (!s || !s.session) return { ok: false };
+    const { error } = await sb.from('colaboradores').update({ sorteio }).eq('id', s.session.user.id);
+    return { ok: !error };
+  };
+  POPApi.getSorteio = async function () {
+    const p = await fetchPerfil();
+    return (p && p.sorteio) || null;
+  };
+
   // ---- POPApi clássico ----
   // o perfil é criado por trigger no signup; aqui é no-op (mantém compatibilidade)
   POPApi.cadastrar = async function () { return { ok: true }; };
@@ -89,13 +100,13 @@
     const { data: s } = await sb.auth.getSession();
     if (!s || !s.session) return { erro: 'não autorizado', colaboradores: [], resultados: [] };
     const [colab, res] = await Promise.all([
-      sb.from('colaboradores').select('id,nome,setor,matricula,is_gestor'),
+      sb.from('colaboradores').select('id,nome,setor,matricula,is_gestor,sorteio'),
       sb.from('resultados').select('user_id,pop_id,pop_codigo,status,score,acertos,total,tentativas,detalhe'),
     ]);
     if (colab.error || res.error) throw new Error((colab.error && colab.error.message) || (res.error && res.error.message));
     const byId = {}; (colab.data || []).forEach((c) => { byId[c.id] = c; });
     const colaboradores = (colab.data || []).filter((c) => !c.is_gestor)
-      .map((c) => ({ matricula: c.matricula || c.id, nome: c.nome, setor: c.setor }));
+      .map((c) => ({ matricula: c.matricula || c.id, nome: c.nome, setor: c.setor, sorteio: c.sorteio || null }));
     const resultados = (res.data || []).map((r) => ({
       matricula: (byId[r.user_id] && byId[r.user_id].matricula) || r.user_id,
       pop_id: r.pop_id, pop_codigo: r.pop_codigo, status: r.status,
