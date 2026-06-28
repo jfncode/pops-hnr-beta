@@ -5635,6 +5635,414 @@
         {q:'Há modelos de conector para aerossolterapia para:',
          o:['CC e UTI','Apenas pediatria','Apenas ambulatório','Domicílio'],a:0,d:1}
       ]
+    },
+
+    {
+      id:'pop-cme-39', code:'POP-CME-39', version:'1.1', emission:'23/06/2021',
+      title:'Reprocessamento do pleuroscópio',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Material para pleuroscopia (visualização da pleura por incisão no tórax). Composto por lâminas pleuroscópicas, ponteiras ópticas, cabo óptico, cânulas e cabos.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar, secar, <b>lubrificar as superfícies de atrito</b> e inspecionar.',
+          'Colocar <b>fita teste Classe V no interior</b>, empacotar com SMS de 1,20×1,20 m e esterilizar em <b>autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Cuidado especial com o material de vídeo: <b>não dobrar e não bater</b>. Identificação: fita laranja + azul.'
+        ]}
+      ],
+      pool:[
+        {q:'O pleuroscópio é usado para visualizar a:',
+         o:['Pleura','Bexiga','Laringe','Articulação'],a:0,d:2},
+        {q:'O pleuroscópio é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Com o material de vídeo do pleuroscópio, deve-se ter o cuidado de:',
+         o:['Não dobrar e não bater','Enrolar firmemente','Bater para encaixar','Dobrar ao meio'],a:0,d:3},
+        {q:'No interior do pacote do pleuroscópio coloca-se:',
+         o:['Fita teste Classe V','Apenas gaze','Água','Nada'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se no pleuroscópio:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Cola','Álcool em excesso'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-40', code:'POP-CME-40', version:'1.1', emission:'21/01/2021',
+      title:'Limpeza de bancadas, armários, gavetas e caixas plásticas',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'A limpeza e desinfecção reduzem a infecção cruzada veiculada pelo ambiente, rompendo a cadeia epidemiológica das infecções.'
+        ]},
+        {n:2,h:'Execução e periodicidade',items:[
+          'Retirar os produtos e limpar/desinfetar com compressa umedecida em desinfetante de superfície (superfícies impermeáveis).',
+          'Periodicidade: <b>diariamente</b> (fim do plantão) bancadas e caixas plásticas; <b>mensalmente</b> (dia 15) armários e gavetas.'
+        ]}
+      ],
+      pool:[
+        {q:'A limpeza das bancadas é feita:',
+         o:['Diariamente (fim do plantão)','Mensalmente','Anualmente','Nunca'],a:0,d:2},
+        {q:'A limpeza dos armários e gavetas é feita:',
+         o:['Mensalmente (dia 15)','Diariamente','A cada hora','Semanalmente'],a:0,d:2},
+        {q:'A finalidade da limpeza do ambiente é:',
+         o:['Reduzir a infecção cruzada veiculada pelo ambiente','Decorar a sala','Economizar produtos','Aquecer o setor'],a:0,d:1},
+        {q:'A desinfecção das superfícies é feita com compressa umedecida em:',
+         o:['Desinfetante de superfície','Água pura','Óleo','Detergente enzimático'],a:0,d:2},
+        {q:'Antes de limpar, deve-se:',
+         o:['Retirar os produtos dos armários/gavetas/caixas','Esterilizar tudo','Pintar','Trancar'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-41', code:'POP-CME-41', version:'1.1', emission:'09/04/2019',
+      title:'Limpeza da câmara interna e externa da autoclave',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Manter a autoclave limpa e em condições adequadas de funcionamento, livre de substâncias que interfiram no processo.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Realizar a limpeza <b>todo domingo pela manhã</b>, antes de ligar o equipamento, friccionando a câmara interna e a parte externa com compressa cirúrgica embebida na solução própria.',
+          'Solução: <b>200 ml de vaselina + 800 ml de álcool</b>. Aguardar 1 hora antes do uso.'
+        ]}
+      ],
+      pool:[
+        {q:'A limpeza da autoclave é realizada:',
+         o:['Todo domingo pela manhã, antes de ligar','Diariamente','A cada ciclo','Anualmente'],a:0,d:2},
+        {q:'A solução para limpeza da autoclave é composta de:',
+         o:['200 ml de vaselina + 800 ml de álcool','Água e sabão','Hipoclorito puro','Ácido peracético'],a:0,d:3},
+        {q:'Após a limpeza da autoclave, deve-se aguardar antes de usá-la:',
+         o:['1 hora','5 minutos','1 dia','Nenhum tempo'],a:0,d:2},
+        {q:'A limpeza da autoclave deve ser feita:',
+         o:['Antes de ligar o equipamento','Com o equipamento ligado','Durante um ciclo','Após esterilizar'],a:0,d:2},
+        {q:'A finalidade da limpeza da autoclave é:',
+         o:['Garantir condições adequadas de funcionamento','Resfriá-la','Decorá-la','Testá-la biologicamente'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-42', code:'POP-CME-42', version:'1.1', emission:'09/04/2019',
+      title:'Validação da esterilização em autoclave a vapor',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Validação é o procedimento documentado que legitima o processo de esterilização, garantindo que ele ocorra sempre da mesma forma e com a mesma qualidade.'
+        ]},
+        {n:2,h:'Controles do equipamento e exposição',items:[
+          '<b>Bowie & Dick</b> (função mecânica) no 1º ciclo do dia; <b>teste físico</b> registrado a cada ciclo (data, lote, temperatura, tempo de esterilização e secagem); teste mecânico mensal (empresa).',
+          '<b>Químico externo</b> (Classe I, fita zebrada ≥ 8 cm) em todos os pacotes — se não corar uniformemente, reesterilizar.'
+        ]},
+        {n:3,h:'Controle de pacote e carga',items:[
+          '<b>Químico interno</b> (integrador Classe V) em cada carga e nos pacotes críticos.',
+          '<b>Teste biológico</b> diário em cada esterilizador e em toda carga com implantáveis; a carga só é liberada após leitura negativa do IB.'
+        ]}
+      ],
+      pool:[
+        {q:'Validação da esterilização é o procedimento que:',
+         o:['Documenta e legitima o processo, garantindo qualidade constante','Esteriliza o material','Limpa a autoclave','Embala os pacotes'],a:0,d:3},
+        {q:'O teste físico registra a cada ciclo, entre outros:',
+         o:['Data, lote, temperatura e tempos','Apenas a cor','O nome do paciente','O peso do pacote'],a:0,d:2},
+        {q:'A carga com produtos implantáveis só é liberada após:',
+         o:['Leitura negativa do indicador biológico','Apenas a fita externa corar','O resfriamento','A inspeção visual'],a:0,d:3},
+        {q:'O teste de função mecânica realizado no primeiro ciclo do dia é o:',
+         o:['Bowie & Dick','Biológico','Físico','Químico interno'],a:0,d:2},
+        {q:'O integrador químico interno usado no controle de pacote é o:',
+         o:['Classe V','Classe I','Classe 0','Fita zebrada'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-cme-43', code:'POP-CME-43', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do LAP e campo de mesa',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Os campos delimitam a área cirúrgica (LAP) e cobrem a mesa da instrumentadora (campo de mesa).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Verificar a integridade e limpeza do campo, dobrar conforme a técnica própria do Centro Cirúrgico.',
+          'Empacotar em SMS (LAP 1,50×1,50 m; campo de mesa 1,20×1,20 m), selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O campo LAP serve para:',
+         o:['Delimitar a área cirúrgica','Aspirar secreção','Cobrir o paciente na recepção','Embalar instrumentais'],a:0,d:2},
+        {q:'Os campos (LAP e mesa) são esterilizados por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Antes de dobrar, deve-se verificar do campo:',
+         o:['A integridade e a limpeza','A cor','O fabricante','O peso'],a:0,d:2},
+        {q:'O campo de mesa cobre:',
+         o:['A mesa da instrumentadora','O paciente','O chão','A autoclave'],a:0,d:1},
+        {q:'A dobra dos campos segue:',
+         o:['A técnica própria do Centro Cirúrgico','Qualquer forma','A dobra de toalha','Sem técnica'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-44', code:'POP-CME-44', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do manguito',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O manguito inflável é colocado em torno do braço do paciente para verificar a pressão arterial (há modelos para unidades, UTI e CC).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza (atenção aos lúmens), <b>lavar manualmente</b> em solução de detergente enzimático, enxaguar e secar na secadora.',
+          'Inspecionar, empacotar em saco plástico (com data, nome e unidade) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'O manguito é usado para:',
+         o:['Verificar a pressão arterial','Aspirar secreção','Fornecer O₂','Coletar sangue'],a:0,d:1},
+        {q:'A lavagem do manguito é feita:',
+         o:['Manualmente em detergente enzimático','Na autoclave','Por imersão em hipoclorito','A seco'],a:0,d:2},
+        {q:'A secagem do manguito é feita:',
+         o:['Na secadora','Ao sol','Com papel toalha','Naturalmente por dias'],a:0,d:1},
+        {q:'A identificação do manguito inclui:',
+         o:['Data, nome e unidade','Apenas a cor','O nome do médico','Nada'],a:0,d:2},
+        {q:'O manguito é colocado em torno do:',
+         o:['Braço do paciente','Pescoço','Tornozelo','Tórax'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-45', code:'POP-CME-45', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do manômetro',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O manômetro mede a pressão de fluidos; é utilizado nas unidades durante a <b>punção lombar</b> (pressão de abertura do líquor).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar com ar comprimido e secadora.',
+          'Inspecionar, empacotar em saco plástico (com data e nome) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'O manômetro é usado nas unidades durante a:',
+         o:['Punção lombar','Cirurgia cardíaca','Endoscopia','Nebulização'],a:0,d:2},
+        {q:'O manômetro mede:',
+         o:['A pressão de fluidos','A temperatura','O peso','O fluxo de O₂'],a:0,d:2},
+        {q:'A lavagem do manômetro é feita:',
+         o:['Ultrassonicamente','Por imersão em formol','A seco','Na autoclave'],a:0,d:2},
+        {q:'A secagem do manômetro é feita com:',
+         o:['Ar comprimido e secadora','Ao sol','Pano úmido','Calor de forno'],a:0,d:1},
+        {q:'Na punção lombar, o manômetro mede a:',
+         o:['Pressão de abertura do líquor','Temperatura do paciente','Saturação','Glicemia'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-46', code:'POP-CME-46', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do pulverizador cirúrgico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O pulverizador cirúrgico é usado para a aplicação controlada de talco cirúrgico.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente (lúmens no jato pulsátil), enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, <b>lubrificar as superfícies de atrito</b>, empacotar em caixa protegida e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O pulverizador cirúrgico serve para aplicar:',
+         o:['Talco cirúrgico de forma controlada','Soro','Anestésico','Antibiótico'],a:0,d:2},
+        {q:'O pulverizador cirúrgico é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se no pulverizador:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Cola','Talco'],a:0,d:2},
+        {q:'A lavagem ultrassônica do pulverizador conecta os lúmens:',
+         o:['No jato pulsátil','Na autoclave','No frasco de soro','Em nada'],a:0,d:2},
+        {q:'O pulverizador cirúrgico é empacotado em:',
+         o:['Caixa protegida','Papel jornal','Saco de lixo','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-47', code:'POP-CME-47', version:'1.1', emission:'09/04/2019',
+      title:'Reprocessamento do laparoscópio',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O laparoscópio é um instrumento endoscópico com sistema óptico, introduzido no abdome para fins diagnósticos ou cirúrgicos.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar ultrassonicamente, enxaguar, secar e <b>limpar as lentes das extremidades com gaze + álcool 70%</b>.',
+          'Colocar fita teste Classe V no interior, empacotar com SMS, identificar diâmetro/grau da lente e esterilizar em <b>autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observações',items:[
+          'Identificar o <b>diâmetro (5 ou 10 mm) e o ângulo da óptica (0 ou 30°)</b>; cuidado especial com o material de vídeo — não dobrar e não bater.'
+        ]}
+      ],
+      pool:[
+        {q:'O laparoscópio é introduzido no:',
+         o:['Abdome','Tórax','Crânio','Joelho'],a:0,d:2},
+        {q:'O laparoscópio é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool apenas','Fervura'],a:0,d:2},
+        {q:'As lentes das extremidades do laparoscópio são limpas com:',
+         o:['Gaze + álcool 70%','Escova de aço','Ar comprimido forte','Hipoclorito'],a:0,d:3},
+        {q:'Na identificação do laparoscópio, registra-se:',
+         o:['Diâmetro (5 ou 10 mm) e ângulo da óptica (0 ou 30°)','Apenas a cor','O peso','O fabricante apenas'],a:0,d:3},
+        {q:'Com o material de vídeo do laparoscópio, deve-se:',
+         o:['Não dobrar e não bater','Enrolar firme','Bater para encaixar','Dobrar ao meio'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-48', code:'POP-CME-48', version:'1.1', emission:'09/04/2019',
+      title:'Confecção do pacote de retirada de pontos',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar o pacote para retirada de pontos: 20 compressas de gaze, pinça Adson serrilhada, tesoura Íris-P, pinça Kelly curva-16 e cabo de bisturi nº 3.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Empacotar em SMS de 50×50 cm, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Identificação: fita marrom + azul escuro.'
+        ]}
+      ],
+      pool:[
+        {q:'O pacote de retirada de pontos contém, entre outros:',
+         o:['Pinça Adson, tesoura Íris e cabo de bisturi','Sonda vesical','Máscara de O₂','Frasco de soro'],a:0,d:2},
+        {q:'O pacote de retirada de pontos é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A embalagem do pacote de retirada de pontos é SMS de:',
+         o:['50×50 cm','1,20×1,20 m','10×10 cm','2×2 m'],a:0,d:2},
+        {q:'A fita de identificação do pacote de retirada de pontos é:',
+         o:['Marrom + azul escuro','Verde','Vermelha','Branca'],a:0,d:3},
+        {q:'O número de compressas de gaze no pacote é:',
+         o:['20','2','100','5'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-49', code:'POP-CME-49', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da bandeja de pequena cirurgia + dissecção venosa',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar a bandeja de pequena cirurgia + dissecção venosa: bandeja, campos, cabos de bisturi nº 3 e 4, porta-agulhas, tesouras (Mayo e Metzenbaum), afastadores (Farabeuf e Weitlaner) e pinças variadas (Adson, Allis, Kelly, Mosquito, Backhaus, Cheron).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior da bandeja, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Identificação: fita laranja listrado.'
+        ]}
+      ],
+      pool:[
+        {q:'A bandeja de pequena cirurgia + dissecção venosa é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'No interior da bandeja, antes de empacotar, coloca-se:',
+         o:['Fita teste','Água','Talco','Nada'],a:0,d:2},
+        {q:'A embalagem desta bandeja é SMS de:',
+         o:['1,20×1,20 m','50×50 cm','10×10 cm','3×3 m'],a:0,d:2},
+        {q:'A bandeja contém, entre os instrumentais, cabos de bisturi:',
+         o:['Nº 3 e nº 4','Apenas nº 1','Nº 10 e 20','Nenhum'],a:0,d:2},
+        {q:'A fita de identificação desta bandeja é:',
+         o:['Laranja listrado','Verde','Vermelha','Preta'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-50', code:'POP-CME-50', version:'1.1', emission:'09/04/2019',
+      title:'Confecção do pacote de pequena cirurgia "delicada"',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar a bandeja de pequena cirurgia delicada: bandeja rasa, campo fenestrado, 20 gazes, cuba-rim, cabo de bisturi nº 3, porta-agulha, tesouras (Íris e Metzenbaum), afastadores Farabeuf e pinças (Adson delicada, Mosquito, Backhaus, Cheron).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1×1 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Identificação: fita laranja listrado.'
+        ]}
+      ],
+      pool:[
+        {q:'O pacote de pequena cirurgia delicada é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A embalagem do pacote de pequena cirurgia delicada é SMS de:',
+         o:['1×1 m','50×50 cm','2×2 m','10×10 cm'],a:0,d:2},
+        {q:'Antes de empacotar a bandeja, coloca-se no interior:',
+         o:['Fita teste','Talco','Água','Nada'],a:0,d:2},
+        {q:'A pinça Adson presente neste pacote é do tipo:',
+         o:['Serrilhada delicada','Dente de rato grande','Cheron','Allis'],a:0,d:2},
+        {q:'A fita de identificação deste pacote é:',
+         o:['Laranja listrado','Marrom','Azul','Branca'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-51', code:'POP-CME-51', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da cuba da Dermatologia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar a cuba da Dermatologia para procedimentos dermatológicos: cuba-rim e redonda, campos, cabo de bisturi nº 3, porta-agulha, tesouras (Íris e Metzenbaum delicada) e pinças (Adson, Mosquito, Backhaus, Cheron).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Identificação: fita laranja.'
+        ]}
+      ],
+      pool:[
+        {q:'A cuba da Dermato é usada em procedimentos de:',
+         o:['Dermatologia','Cardiologia','Oftalmologia','Ortopedia'],a:0,d:2},
+        {q:'A cuba da Dermato é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A embalagem da cuba da Dermato é SMS de:',
+         o:['1,20×1,20 m','50×50 cm','10×10 cm','3×3 m'],a:0,d:2},
+        {q:'Antes de empacotar, coloca-se no interior da bandeja:',
+         o:['Fita teste','Talco','Água','Nada'],a:0,d:2},
+        {q:'A fita de identificação da cuba da Dermato é:',
+         o:['Laranja','Verde','Vermelha','Preta'],a:0,d:2}
+      ]
     }
   ];
   return POPS;
