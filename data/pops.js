@@ -6043,6 +6043,388 @@
         {q:'A fita de identificação da cuba da Dermato é:',
          o:['Laranja','Verde','Vermelha','Preta'],a:0,d:2}
       ]
+    },
+
+    {
+      id:'pop-cme-52', code:'POP-CME-52', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da bandeja de punção lombar',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Confeccionar a bandeja para punção lombar — coleta de líquor na medula espinhal para diagnóstico de infecções meníngeas e outras condições neurológicas. Composta por bandeja, campo fenestrado, cuba redonda e pinça Cheron.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Empacotar em TNT de 1×1 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita amarela.'
+        ]}
+      ],
+      pool:[
+        {q:'A bandeja de punção lombar destina-se à coleta de:',
+         o:['Líquor','Sangue arterial','Urina','Bile'],a:0,d:2},
+        {q:'A bandeja de punção lombar é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da bandeja de punção lombar é:',
+         o:['Amarela','Vermelha','Verde','Preta'],a:0,d:2},
+        {q:'A punção lombar é usada principalmente no diagnóstico de:',
+         o:['Infecções meníngeas','Fraturas','Catarata','Pneumonia'],a:0,d:2},
+        {q:'A pinça presente na bandeja para a assepsia é a:',
+         o:['Cheron','Kelly','Allis','Backhaus'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-53', code:'POP-CME-53', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da bandeja de acesso venoso profundo',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Confeccionar a bandeja para acesso venoso profundo — cateteres cuja ponta fica numa veia central de grosso calibre, para infusão e monitoração de pressão. Composta por bandeja, campos, cubas, porta-agulha, tesoura Mayo e pinças.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita vermelha.'
+        ]}
+      ],
+      pool:[
+        {q:'A bandeja de acesso venoso profundo é usada para cateteres em:',
+         o:['Veia central de grosso calibre','Artéria periférica','Bexiga','Pleura'],a:0,d:2},
+        {q:'A bandeja de acesso venoso profundo é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da bandeja de acesso venoso profundo é:',
+         o:['Vermelha','Amarela','Verde','Cinza'],a:0,d:2},
+        {q:'O acesso venoso profundo permite, entre outros:',
+         o:['Infusão de soro/medicamentos e monitoração de pressão','Coleta de urina','Drenagem de tórax','Sutura'],a:0,d:2},
+        {q:'A embalagem da bandeja de acesso venoso profundo é SMS de:',
+         o:['1,20×1,20 m','50×50 cm','3×3 m','10×10 cm'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-54', code:'POP-CME-54', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da bandeja de drenagem torácica',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Confeccionar a bandeja para drenagem torácica, cujo objetivo é manter ou restabelecer a <b>pressão negativa do espaço pleural</b>. Composta por bandeja, campo, cuba, cabos de bisturi, porta-agulha, tesouras e pinças.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita azul listrado.'
+        ]}
+      ],
+      pool:[
+        {q:'A drenagem torácica tem como objetivo:',
+         o:['Manter/restabelecer a pressão negativa do espaço pleural','Drenar a bexiga','Coletar líquor','Suturar a pele'],a:0,d:3},
+        {q:'A bandeja de drenagem torácica é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da bandeja de drenagem torácica é:',
+         o:['Azul listrado','Verde','Amarela','Marrom'],a:0,d:2},
+        {q:'Antes de empacotar a bandeja, coloca-se no interior:',
+         o:['Fita teste','Talco','Água','Nada'],a:0,d:2},
+        {q:'A drenagem torácica atua sobre o espaço:',
+         o:['Pleural','Peritoneal','Subaracnóideo','Vascular'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-55', code:'POP-CME-55', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da bandeja de punção pleural (toracocentese)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Confeccionar a bandeja para punção pleural (toracocentese) — procedimento diagnóstico/terapêutico nas afecções com depósito de líquido ou ar no espaço pleural. Inclui a <b>agulha de Cope</b> (kit 5 partes).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1×1 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita verde.'
+        ]}
+      ],
+      pool:[
+        {q:'A toracocentese (punção pleural) atua sobre o:',
+         o:['Espaço pleural','Espaço peritoneal','Canal medular','Sistema venoso'],a:0,d:2},
+        {q:'A agulha específica presente na bandeja de punção pleural é a:',
+         o:['Agulha de Cope','Agulha de Hubber','Agulha 40x12','Agulha de Veress'],a:0,d:3},
+        {q:'A bandeja de punção pleural é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da bandeja de punção pleural é:',
+         o:['Verde','Vermelha','Amarela','Cinza'],a:0,d:2},
+        {q:'A punção pleural tem finalidade:',
+         o:['Diagnóstica e terapêutica','Apenas estética','De transporte','De higiene'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-56', code:'POP-CME-56', version:'1.1', emission:'18/06/2021',
+      title:'Confecção da bandeja de traqueostomia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Confeccionar a bandeja para traqueostomia — abertura de orifício na traqueia e colocação de cânula para passagem de ar. Composta por bandeja, campos, cubas, cabo de bisturi, porta-agulha, tesouras, afastadores e pinças variadas.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1,20×1,20 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita lilás.'
+        ]}
+      ],
+      pool:[
+        {q:'A traqueostomia consiste em:',
+         o:['Abrir orifício na traqueia e colocar cânula para passagem de ar','Drenar o tórax','Puncionar a bexiga','Suturar a pele'],a:0,d:2},
+        {q:'A bandeja de traqueostomia é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da bandeja de traqueostomia é:',
+         o:['Lilás','Verde','Amarela','Vermelha'],a:0,d:2},
+        {q:'A traqueostomia permite a passagem de:',
+         o:['Ar','Urina','Líquor','Sangue'],a:0,d:1},
+        {q:'Antes de empacotar a bandeja de traqueostomia, coloca-se:',
+         o:['Fita teste no interior','Talco','Água','Nada'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-57', code:'POP-CME-57', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da bandeja de diálise peritoneal',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar a bandeja para diálise peritoneal. Composta por bandeja, campo fenestrado, cabos de bisturi, porta-agulhas, tesoura Metzenbaum, pinça Kelly, perfurador completo e pinça Cheron.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 100×100 cm, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita marrom.'
+        ]}
+      ],
+      pool:[
+        {q:'A bandeja de diálise peritoneal é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da bandeja de diálise peritoneal é:',
+         o:['Marrom','Verde','Amarela','Vermelha'],a:0,d:2},
+        {q:'A diálise peritoneal está relacionada à função:',
+         o:['Renal','Cardíaca','Respiratória','Hepática'],a:0,d:2},
+        {q:'Antes de empacotar a bandeja de diálise, coloca-se no interior:',
+         o:['Fita teste','Talco','Água','Nada'],a:0,d:2},
+        {q:'A embalagem da bandeja de diálise peritoneal é SMS de:',
+         o:['100×100 cm','50×50 cm','3×3 m','10×10 cm'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-58', code:'POP-CME-58', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da cuba de sondagem vesical',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar a cuba para sondagem vesical. Composta por cuba-rim, campo fenestrado e pinça Crile curva (assepsia).'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Empacotar em SMS de 75×75 cm, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita cinza.'
+        ]}
+      ],
+      pool:[
+        {q:'A cuba de sondagem vesical destina-se à:',
+         o:['Sondagem vesical','Drenagem torácica','Punção lombar','Sutura'],a:0,d:2},
+        {q:'A cuba de sondagem vesical é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da cuba de sondagem vesical é:',
+         o:['Cinza','Verde','Amarela','Lilás'],a:0,d:2},
+        {q:'A embalagem da cuba de sondagem vesical é SMS de:',
+         o:['75×75 cm','1,50×1,50 m','10×10 cm','3×3 m'],a:0,d:2},
+        {q:'A pinça usada para a assepsia na cuba de sondagem vesical é a:',
+         o:['Crile curva','Cheron','Allis','Backhaus'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-59', code:'POP-CME-59', version:'1.1', emission:'22/06/2021',
+      title:'Confecção da cuba de cistostomia suprapúbica (vesicostomia)',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Confeccionar a cuba para cistostomia suprapúbica — conexão cirúrgica entre a bexiga e a pele para drenar urina em obstrução do fluxo urinário. Inclui o <b>trocater para cistostomia</b>.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1×1 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita marrom + lilás.'
+        ]}
+      ],
+      pool:[
+        {q:'A cistostomia suprapúbica cria uma conexão entre:',
+         o:['A bexiga e a pele suprapúbica','O tórax e a pleura','O abdome e o peritônio','A traqueia e a pele'],a:0,d:3},
+        {q:'O instrumento específico da cuba de cistostomia é o:',
+         o:['Trocater para cistostomia','Agulha de Cope','Perfurador','Afastador Balfour'],a:0,d:3},
+        {q:'A cuba de cistostomia é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação da cuba de cistostomia é:',
+         o:['Marrom + lilás','Verde','Amarela','Cinza'],a:0,d:2},
+        {q:'A cistostomia é usada para drenar urina em casos de:',
+         o:['Obstrução do fluxo urinário normal','Infecção respiratória','Fratura','Hemorragia digestiva'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-60', code:'POP-CME-60', version:'1.1', emission:'22/06/2021',
+      title:'Confecção do pacote de sutura',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar o pacote para sutura. Composto por campo fenestrado, porta-agulha Mayo-Hegar, pinça Adson dente de rato, tesoura Metzenbaum, pinça Kelly e pinça Cheron.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar fita teste no interior, empacotar em SMS de 1×1 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita marrom + verde.'
+        ]}
+      ],
+      pool:[
+        {q:'O pacote de sutura é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação do pacote de sutura é:',
+         o:['Marrom + verde','Verde','Vermelha','Cinza'],a:0,d:2},
+        {q:'O instrumento usado para segurar a agulha na sutura é o:',
+         o:['Porta-agulha Mayo-Hegar','Afastador','Trocater','Cuba-rim'],a:0,d:2},
+        {q:'Antes de empacotar o pacote de sutura, coloca-se no interior:',
+         o:['Fita teste','Talco','Água','Nada'],a:0,d:2},
+        {q:'A embalagem do pacote de sutura é SMS de:',
+         o:['1×1 m','50×50 cm','3×3 m','10×10 cm'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-61', code:'POP-CME-61', version:'1.1', emission:'09/04/2019',
+      title:'Montagem da caixa de laparotomia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa cirúrgica de laparotomia (<b>71 peças</b>): cabos de bisturi, pinças variadas (anatômicas, DeBakey, clamps intestinais, Allis, Duval, Babcock, Collin, Kocher, Mixter, Kelly, Mosquito, Backhaus), porta-agulhas, tesouras e clamps Mayo.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar <b>fita teste Classe V</b> no interior, empacotar em SMS de 1,50×1,50 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: cabo cor verde.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa de laparotomia é composta por:',
+         o:['71 peças','5 peças','200 peças','10 peças'],a:0,d:2},
+        {q:'A caixa de laparotomia é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'No interior da caixa de laparotomia coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2},
+        {q:'A identificação da caixa de laparotomia é por:',
+         o:['Cabo cor verde','Fita amarela','Etiqueta vermelha','Selo preto'],a:0,d:2},
+        {q:'A embalagem da caixa de laparotomia é SMS de:',
+         o:['1,50×1,50 m','50×50 cm','10×10 cm','75×75 cm'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-62', code:'POP-CME-62', version:'1.1', emission:'15/07/2019',
+      title:'Reprocessamento da bota da fisioterapia',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'A bota da fisioterapia é usada para a prevenção de deformação postural do paciente acamado.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, <b>lavar manualmente</b> em solução de detergente enzimático, enxaguar e secar na secadora.',
+          'Inspecionar, empacotar em saco plástico (com data e nome) e armazenar.'
+        ]}
+      ],
+      pool:[
+        {q:'A bota da fisioterapia serve para:',
+         o:['Prevenir a deformação postural do paciente acamado','Aspirar secreção','Medir pressão','Drenar o tórax'],a:0,d:2},
+        {q:'A lavagem da bota da fisioterapia é feita:',
+         o:['Manualmente em detergente enzimático','Na autoclave','Por imersão em hipoclorito','A seco'],a:0,d:2},
+        {q:'A secagem da bota da fisioterapia é feita:',
+         o:['Na secadora','Ao sol','Com papel toalha','Naturalmente por dias'],a:0,d:1},
+        {q:'A bota da fisioterapia é destinada ao paciente:',
+         o:['Acamado','Em pé','Ambulatorial','Cirúrgico'],a:0,d:1},
+        {q:'A identificação da bota da fisioterapia inclui:',
+         o:['Data e nome do funcionário','Apenas a cor','O nome do médico','Nada'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-63', code:'POP-CME-63', version:'1.1', emission:'15/07/2019',
+      title:'Reprocessamento dos afastadores cirúrgicos',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O afastador é um equipamento cirúrgico <b>não cortante</b> que mantém a exposição do campo cirúrgico (tipos: Farabeuf, Doyen, Finochietto, Weitlaner, Balfour, Gosset).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular e abrir, pré-limpeza, lavar ultrassonicamente (canulados nos bicos de jato), enxaguar, secar e <b>lubrificar as superfícies de atrito</b>.',
+          'Empacotar com SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Evitar que a água seque nos instrumentais, pois pode causar manchas.'
+        ]}
+      ],
+      pool:[
+        {q:'O afastador cirúrgico é um instrumento:',
+         o:['Não cortante, que mantém a exposição do campo','Cortante','De aspiração','De sutura'],a:0,d:2},
+        {q:'Os afastadores cirúrgicos são esterilizados por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se nos afastadores:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Cola','Talco'],a:0,d:2},
+        {q:'É um tipo de afastador cirúrgico:',
+         o:['Farabeuf','Kelly','Adson','Cheron'],a:0,d:2},
+        {q:'Deixar a água secar nos afastadores pode causar:',
+         o:['Manchas','Esterilidade','Lubrificação','Brilho'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-64', code:'POP-CME-64', version:'1.1', emission:'27/05/2019',
+      title:'Montagem da caixa cirúrgica de torácica',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Montar a caixa cirúrgica de torácica (<b>72 peças</b>): cabos de bisturi, pinças variadas (anatômicas, DeBakey, Russa, Cushing, Allis, Duval, Collin, Kocher, Mixter, Kelly, Mosquito, Backhaus), porta-agulhas, tesouras e clamps Mayo.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Colocar <b>fita teste Classe V</b> no interior, empacotar em SMS de 1,50×1,50 m, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: cabo cor azul.'
+        ]}
+      ],
+      pool:[
+        {q:'A caixa cirúrgica de torácica é composta por:',
+         o:['72 peças','7 peças','200 peças','12 peças'],a:0,d:2},
+        {q:'A caixa de torácica é esterilizada por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A identificação da caixa de torácica é por:',
+         o:['Cabo cor azul','Cabo cor verde','Fita amarela','Selo preto'],a:0,d:2},
+        {q:'No interior da caixa de torácica coloca-se:',
+         o:['Fita teste Classe V','Talco','Água','Nada'],a:0,d:2},
+        {q:'A embalagem da caixa de torácica é SMS de:',
+         o:['1,50×1,50 m','50×50 cm','10×10 cm','75×75 cm'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
