@@ -6815,6 +6815,380 @@
         {q:'As doenças priônicas são:',
          o:['Sem cura e sempre fatais','Facilmente curáveis','Transmitidas por mosquito','Benignas'],a:0,d:3}
       ]
+    },
+
+    {
+      id:'pop-cme-78', code:'POP-CME-78', version:'1.1', emission:'29/07/2019',
+      title:'Limpeza do nebulizador da fibrose cística',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O nebulizador reusável da fibrose cística possui válvulas unilaterais que garantem maior aproveitamento do medicamento, tornando o tratamento mais eficaz.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza, lavar manualmente (canulado na ultrassônica no fluxo intermitente), enxaguar e secar; <b>desinfecção em hipoclorito de sódio 0,5% por 30 minutos</b> (instilar no lúmen), enxaguar e secar.',
+          'Inspecionar, empacotar em saco plástico (data, profissional e nome do paciente) e armazenar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Entregar na CME até as 10h (manhã) e 15h (tarde).'
+        ]}
+      ],
+      pool:[
+        {q:'A desinfecção do nebulizador da fibrose cística é feita por imersão em:',
+         o:['Hipoclorito de sódio 0,5% por 30 minutos','Ácido peracético','Álcool 70%','Formol'],a:0,d:3},
+        {q:'O nebulizador da fibrose cística possui válvulas unilaterais que:',
+         o:['Garantem maior aproveitamento do medicamento','Aquecem o ar','Medem a pressão','Filtram bactérias'],a:0,d:2},
+        {q:'A identificação do nebulizador inclui:',
+         o:['Data, profissional e nome do paciente','Apenas a cor','O nome do médico','Nada'],a:0,d:1},
+        {q:'O tempo de desinfecção do nebulizador em hipoclorito é de:',
+         o:['30 minutos','5 minutos','2 horas','1 minuto'],a:0,d:2},
+        {q:'O nebulizador da fibrose cística é um material:',
+         o:['Reusável','De uso único','Descartável sempre','Não processável'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-79', code:'POP-CME-79', version:'1.1', emission:'15/07/2019',
+      title:'Reprocessamento das pinças de vídeo avulsas',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Pinças extras para auxiliar em videocirurgia.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular e abrir, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente (canulados nos bicos de jato), enxaguar, secar e <b>lubrificar as superfícies de atrito</b>.',
+          'Empacotar com SMS, selar com fita Classe I e <b>esterilizar em autoclave a 134 °C</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'As pinças de vídeo avulsas são usadas em:',
+         o:['Videocirurgia','Curativos','Punção lombar','Nebulização'],a:0,d:2},
+        {q:'As pinças de vídeo avulsas são esterilizadas por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Após a inspeção, aplica-se nas pinças:',
+         o:['Lubrificação nas superfícies de atrito','Tinta','Cola','Talco'],a:0,d:2},
+        {q:'Antes da limpeza, as pinças devem ser:',
+         o:['Desarticuladas e abertas','Mantidas fechadas','Amarradas','Descartadas'],a:0,d:2},
+        {q:'A embalagem das pinças de vídeo avulsas é:',
+         o:['SMS','Saco de lixo','Papel jornal','Sem embalagem'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-80', code:'POP-CME-80', version:'1.1', emission:'30/06/2016',
+      title:'Reprocessamento das conexões "T" e "Y"',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Conexões tipo "T" e "Y" usadas na assistência respiratória dos pacientes.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar com ar comprimido e secadora.',
+          'Inspecionar, empacotar em saco plástico e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'As conexões "T" e "Y" são usadas na:',
+         o:['Assistência respiratória','Punção lombar','Cirurgia óssea','Coleta de sangue'],a:0,d:2},
+        {q:'As conexões "T" e "Y" são esterilizadas por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A secagem das conexões é feita com:',
+         o:['Ar comprimido e secadora','Ao sol','Papel toalha','Naturalmente por dias'],a:0,d:1},
+        {q:'A embalagem das conexões "T" e "Y" é:',
+         o:['Saco plástico','SMS','Papel jornal','Sem embalagem'],a:0,d:1},
+        {q:'Antes da lavagem, deve-se atentar à escovação dos:',
+         o:['Lúmens','Cabos','Vidros','Pesos'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-81', code:'POP-CME-81', version:'1.1', emission:'22/12/2009',
+      title:'Confecção do pacote de curativo',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar o pacote de curativo: 20 compressas de gaze, pinça Kelly curva-16 e pinça anatômica-16.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Empacotar em SMS de 50×50 cm, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita amarelo listrado.'
+        ]}
+      ],
+      pool:[
+        {q:'O pacote de curativo contém:',
+         o:['20 gazes, pinça Kelly e pinça anatômica','Sonda vesical','Máscara de O₂','Frasco de soro'],a:0,d:2},
+        {q:'O pacote de curativo é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A embalagem do pacote de curativo é SMS de:',
+         o:['50×50 cm','1,50×1,50 m','3×3 m','10×10 cm'],a:0,d:2},
+        {q:'A fita de identificação do pacote de curativo é:',
+         o:['Amarelo listrado','Verde','Vermelha','Lilás'],a:0,d:2},
+        {q:'O número de gazes no pacote de curativo é:',
+         o:['20','2','100','5'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-82', code:'POP-CME-82', version:'1.1', emission:'22/12/2009',
+      title:'Confecção do pacote de higiene oral',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e composição',items:[
+          'Confeccionar o pacote de higiene oral: 20 compressas de gaze, pinça Kelly reta-16 e abaixador de língua-16.'
+        ]},
+        {n:2,h:'Confecção',items:[
+          'Empacotar em SMS de 50×50 cm, <b>esterilizar em autoclave a 134 °C</b> e armazenar. Identificação: fita azul.'
+        ]}
+      ],
+      pool:[
+        {q:'O pacote de higiene oral contém, entre outros:',
+         o:['Abaixador de língua e pinça Kelly reta','Sonda vesical','Trocater','Máscara'],a:0,d:2},
+        {q:'O pacote de higiene oral é esterilizado por:',
+         o:['Autoclave a 134 °C','Óxido de etileno','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'A fita de identificação do pacote de higiene oral é:',
+         o:['Azul','Amarelo listrado','Verde','Vermelha'],a:0,d:2},
+        {q:'A embalagem do pacote de higiene oral é SMS de:',
+         o:['50×50 cm','1,50×1,50 m','3×3 m','10×10 cm'],a:0,d:2},
+        {q:'O número de gazes no pacote de higiene oral é:',
+         o:['20','2','100','5'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-83', code:'POP-CME-83', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento das espátulas',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'As espátulas (de madeira) são usadas como auxiliares em procedimentos médicos e de enfermagem.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Inspecionar, encaminhar o pacote fechado para fracionamento na empresa reprocessadora e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Material de <b>uso único</b> — descartar após o uso.'
+        ]}
+      ],
+      pool:[
+        {q:'As espátulas (de madeira) são material de:',
+         o:['Uso único (descartar após o uso)','Reuso permanente','Reuso ilimitado','Esterilização em autoclave'],a:0,d:3},
+        {q:'As espátulas são esterilizadas por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'As espátulas são usadas como:',
+         o:['Auxiliares em procedimentos médicos e de enfermagem','Instrumentos de corte','Material de sutura','Aspiração'],a:0,d:1},
+        {q:'O pacote de espátulas é encaminhado para fracionamento à:',
+         o:['Empresa reprocessadora','Farmácia','Lavanderia','Almoxarifado'],a:0,d:2},
+        {q:'Após o uso, as espátulas devem ser:',
+         o:['Descartadas','Relavadas','Reesterilizadas','Guardadas'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-85', code:'POP-CME-85', version:'1.1', emission:'29/01/2021',
+      title:'Limpeza da geladeira',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Realizar o descongelamento e a limpeza interna e externa da geladeira (mensalmente).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desligar da rede elétrica, retirar os materiais para caixa de isopor com gelo reutilizável e, após o descongelamento, limpar com água e detergente neutro.',
+          'Secar com compressa limpa, friccionar com desinfetante de superfície e <b>religar/recolocar os materiais após 1 hora</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Realizar mensalmente, no dia 10.'
+        ]}
+      ],
+      pool:[
+        {q:'A limpeza da geladeira é realizada:',
+         o:['Mensalmente, no dia 10','Diariamente','A cada hora','Anualmente'],a:0,d:2},
+        {q:'Antes de limpar a geladeira, os materiais são:',
+         o:['Retirados para caixa de isopor com gelo reutilizável','Descartados','Esterilizados','Deixados dentro'],a:0,d:2},
+        {q:'Após a limpeza, deve-se religar e recolocar os materiais após:',
+         o:['1 hora','5 minutos','1 dia','Imediatamente'],a:0,d:2},
+        {q:'A limpeza interna da geladeira é feita com:',
+         o:['Água e detergente neutro','Hipoclorito puro','Ácido peracético','Apenas água'],a:0,d:2},
+        {q:'Antes de iniciar a limpeza, a geladeira deve ser:',
+         o:['Desligada da rede elétrica','Mantida ligada','Congelada','Aquecida'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-86', code:'POP-CME-86', version:'1.1', emission:'15/07/2019',
+      title:'Limpeza da lavadora ultrassônica',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Limpar a lavadora ultrassônica (máquina de limpeza automatizada de instrumentais).'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desligar da rede elétrica, friccionar a câmara interna e a parte externa com compressa embebida na solução própria (<b>200 ml de vaselina + 800 ml de álcool</b>) e religar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Periodicidade: <b>diariamente</b>, no final do plantão.'
+        ]}
+      ],
+      pool:[
+        {q:'A limpeza da lavadora ultrassônica é feita:',
+         o:['Diariamente, no final do plantão','Mensalmente','Anualmente','A cada ciclo'],a:0,d:2},
+        {q:'A solução para limpeza da lavadora ultrassônica é:',
+         o:['200 ml de vaselina + 800 ml de álcool','Água e sabão','Hipoclorito puro','Ácido peracético'],a:0,d:3},
+        {q:'Antes de limpar a lavadora ultrassônica, deve-se:',
+         o:['Desligá-la da rede elétrica','Mantê-la ligada','Enchê-la de água','Aquecê-la'],a:0,d:1},
+        {q:'A lavadora ultrassônica serve para:',
+         o:['Limpeza automatizada de instrumentais','Esterilização','Secagem','Armazenamento'],a:0,d:1},
+        {q:'A limpeza da câmara interna é feita por:',
+         o:['Fricção com compressa embebida na solução','Imersão total','Jato de água quente','Ar comprimido'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-87', code:'POP-CME-87', version:'1.1', emission:'10/04/2019',
+      title:'Limpeza dos equipamentos da CME',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Limpar os equipamentos da CME: secadora, desumidificador, pistola de ar comprimido, lupa, etiquetadora, incubadora biológica, telefones e CPU.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desligar o equipamento da rede elétrica, limpar e desinfetar com compressa umedecida em <b>álcool 70%</b> e religar.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Periodicidade: <b>semanalmente, todo domingo</b>, no final do plantão.'
+        ]}
+      ],
+      pool:[
+        {q:'A limpeza dos equipamentos da CME é feita:',
+         o:['Semanalmente, todo domingo','Diariamente','Mensalmente','Anualmente'],a:0,d:2},
+        {q:'A desinfecção dos equipamentos é feita com:',
+         o:['Álcool 70%','Hipoclorito puro','Água sanitária','Ácido peracético'],a:0,d:2},
+        {q:'Antes de limpar um equipamento, deve-se:',
+         o:['Desligá-lo da rede elétrica','Mantê-lo ligado','Molhá-lo','Aquecê-lo'],a:0,d:1},
+        {q:'É um equipamento da CME a ser limpo:',
+         o:['Secadora / incubadora biológica','Autoclave do bloco','Bisturi','Sonda'],a:0,d:1},
+        {q:'A limpeza dos equipamentos ocorre no:',
+         o:['Final do plantão de domingo','Início da semana','Meio do dia','Feriado'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-88', code:'POP-CME-88', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento do Hook + cabo',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O Hook é um eletrodo monopolar cirúrgico usado em cirurgias laparoscópicas.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Desarticular, pré-limpeza (atenção aos lúmens), lavar ultrassonicamente, enxaguar e secar com pano e ar comprimido.',
+          'Inspecionar, empacotar em caixa protegida e <b>esterilizar em óxido de etileno</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O Hook é um eletrodo monopolar usado em:',
+         o:['Cirurgias laparoscópicas','Punção lombar','Nebulização','Curativos'],a:0,d:2},
+        {q:'O Hook + cabo é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O Hook + cabo é empacotado em:',
+         o:['Caixa protegida','Saco de lixo','Papel jornal','Sem embalagem'],a:0,d:1},
+        {q:'Antes da lavagem, o Hook deve ser:',
+         o:['Desarticulado','Esterilizado','Empacotado','Pintado'],a:0,d:1},
+        {q:'O Hook é um eletrodo do tipo:',
+         o:['Monopolar','Bipolar','Térmico','Óptico'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-cme-89', code:'POP-CME-89', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento de frascos de exame laboratorial e patológico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Frascos utilizados para a coleta de exames laboratoriais e patológicos.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Encaminhar o pacote fechado para fracionamento na empresa reprocessadora e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Material de <b>uso único</b> — descartar após o uso.'
+        ]}
+      ],
+      pool:[
+        {q:'Os frascos de exame laboratorial/patológico são material de:',
+         o:['Uso único (descartar após o uso)','Reuso permanente','Reuso ilimitado','Autoclave'],a:0,d:3},
+        {q:'Os frascos de exame são esterilizados por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'Os frascos são usados para:',
+         o:['Coleta de exames laboratoriais e patológicos','Nebulização','Aspiração','Sutura'],a:0,d:2},
+        {q:'O pacote de frascos é encaminhado para fracionamento à:',
+         o:['Empresa reprocessadora','Farmácia','Lavanderia','Almoxarifado'],a:0,d:2},
+        {q:'Após o uso, os frascos de exame devem ser:',
+         o:['Descartados','Relavados','Reesterilizados','Guardados'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-cme-90', code:'POP-CME-90', version:'1.1', emission:'12/04/2019',
+      title:'Reprocessamento do talco do centro cirúrgico',
+      executantes:'Todos os colaboradores da Central de Material e Esterilização',
+      origem:'Central de Material e Esterilização',
+      setores:['cme'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'O talco (silicato de magnésio 100% pó) é usado no procedimento de <b>pleurodese</b>, como agente esclerosante.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Inspecionar, encaminhar o pacote fechado para fracionamento na empresa reprocessadora e <b>esterilizar em óxido de etileno</b>.'
+        ]},
+        {n:3,h:'Observação',items:[
+          'Material de <b>uso único</b> — descartar após o uso; fracionar em pacotes de <b>30 gramas</b>.'
+        ]}
+      ],
+      pool:[
+        {q:'O talco do centro cirúrgico é usado no procedimento de:',
+         o:['Pleurodese (agente esclerosante)','Nebulização','Sutura','Punção lombar'],a:0,d:3},
+        {q:'O talco do CC é esterilizado por:',
+         o:['Óxido de etileno','Autoclave a 134 °C','Fricção com álcool','Fervura'],a:0,d:2},
+        {q:'O talco do CC é fracionado em pacotes de:',
+         o:['30 gramas','1 kg','5 gramas','100 gramas'],a:0,d:3},
+        {q:'O talco do CC é material de:',
+         o:['Uso único (descartar após o uso)','Reuso permanente','Reuso ilimitado','Autoclave'],a:0,d:2},
+        {q:'O talco usado é composto de:',
+         o:['Silicato de magnésio 100% pó','Açúcar','Amido','Gesso'],a:0,d:2}
+      ]
     }
   ];
   return POPS;
