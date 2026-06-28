@@ -3267,6 +3267,462 @@
         {q:'Para ser reutilizado em outro paciente, o material do kit deve:',
          o:['Ser apenas limpo com álcool pelo acompanhante','Seguir os protocolos de desinfecção/esterilização do hospital','Ser usado imediatamente','Ficar 30 dias guardado'],a:1,d:2}
       ]
+    },
+
+    {
+      id:'pop-amb-01', code:'POP-AMB-01', version:'1.0', emission:'02/10/2020',
+      title:'Entrada de pacientes no ambulatório',
+      executantes:'Equipe de enfermagem do ambulatório',
+      origem:'HNR / Demanda espontânea / SISREG',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a recepção e a triagem dos pacientes referenciados ao serviço de ambulatório.'
+        ]},
+        {n:2,h:'Recepção e triagem',items:[
+          'Um servidor escalado permanece na porta de entrada, recepciona o paciente e oferece <b>álcool gel a 70%</b> nas mãos.',
+          'Aplicar o questionário de sintomas gripais (tosse, febre, dor no corpo, falta de ar, perda de olfato/paladar, contato com suspeito) e aferir a temperatura de todos.',
+          'Se todas as respostas forem <b>não</b>, encaminhar à recepção; com mais de uma resposta <b>sim</b>, manter o paciente ao ar livre na frente do ambulatório para conduta ou reagendamento.'
+        ]},
+        {n:3,h:'Identificação e orientações',items:[
+          'Imprimir a etiqueta (nome completo, data de nascimento e, em homônimos, nome da mãe), confirmar os dados e fixá-la no lado esquerdo do tórax.',
+          'Todos devem usar máscara facial e manter distanciamento mínimo de <b>1,5 m</b>; o acesso é permitido até 10 minutos antes do horário agendado.'
+        ]}
+      ],
+      pool:[
+        {q:'Ao recepcionar o paciente na entrada do ambulatório, o servidor deve primeiro:',
+         o:['Oferecer álcool gel a 70% nas mãos','Pesar o paciente','Coletar exames','Aplicar vacina'],a:0,d:1},
+        {q:'Se o paciente apresentar mais de uma resposta SIM no questionário de sintomas, ele deve:',
+         o:['Entrar normalmente na recepção','Permanecer ao ar livre na frente do ambulatório para conduta/reagendamento','Ser internado','Ser dispensado sem atendimento'],a:1,d:2},
+        {q:'A etiqueta de identificação deve ser fixada:',
+         o:['No pulso direito','No lado esquerdo da região torácica','Na testa','Na agenda médica'],a:1,d:1},
+        {q:'O distanciamento mínimo orientado entre os pacientes é de:',
+         o:['0,5 m','1,5 m','3 m','Não há orientação'],a:1,d:1},
+        {q:'Em caso de pacientes com nomes iguais (homônimos), a etiqueta deve conter também:',
+         o:['O nome da mãe','O tipo sanguíneo','O número do SUS','A profissão'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-02', code:'POP-AMB-02', version:'1.0', emission:'02/10/2020',
+      title:'Sala de recepção do ambulatório',
+      executantes:'Técnico de enfermagem',
+      origem:'Pacientes do ambulatório do HNR e externos agendados pelo SISREG ou demanda espontânea',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Recepcionar o usuário que busca atendimento no ambulatório do HNR.'
+        ]},
+        {n:2,h:'Fluxo de recepção',items:[
+          'O paciente retira uma <b>senha</b> e aguarda ser chamado; o recepcionista confirma o horário de agendamento e confere um documento com foto.',
+          'Verificar se há prontuário no hospital — se não houver, encaminhar ao setor de registro para abertura e posterior retorno; fazer o Registro de Atendimento (RA) eletrônico.'
+        ]},
+        {n:3,h:'Identificação',items:[
+          'Imprimir a etiqueta (nome completo, data de nascimento e nome da mãe em homônimos), confirmar com o paciente e fixá-la no lado esquerdo do tórax.',
+          'Orientar o paciente a permanecer na recepção até ser chamado para a verificação de sinais vitais.'
+        ]}
+      ],
+      pool:[
+        {q:'Ao chegar à recepção do ambulatório, o paciente deve primeiro:',
+         o:['Retirar uma senha e aguardar ser chamado','Ir direto ao consultório','Coletar exames','Receber alta'],a:0,d:1},
+        {q:'Se o paciente não tiver prontuário no hospital, o recepcionista deve:',
+         o:['Negar o atendimento','Encaminhá-lo ao setor de registro para abertura do prontuário','Criar um prontuário provisório em papel','Pedir que volte outro dia'],a:1,d:2},
+        {q:'O documento conferido na recepção para confirmar a identidade é:',
+         o:['Um documento com foto','A conta de luz','O cartão de banco','Nenhum'],a:0,d:1},
+        {q:'O Registro de Atendimento (RA) é feito:',
+         o:['Em papel avulso','No prontuário eletrônico para o médico/enfermeiro','Apenas verbalmente','Pela própria recepcionista no fim do dia'],a:1,d:2},
+        {q:'Após a recepção, o paciente é orientado a:',
+         o:['Ir embora','Aguardar a verificação dos sinais vitais','Coletar a própria etiqueta na impressora','Pagar a consulta'],a:1,d:1}
+      ]
+    },
+
+    {
+      id:'pop-amb-03', code:'POP-AMB-03', version:'1.0', emission:'02/10/2020',
+      title:'Sala de procedimento do ambulatório',
+      executantes:'Enfermeiro e técnico de enfermagem',
+      origem:'Pacientes do ambulatório do HNR e externos agendados pelo SISREG',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Coordenar e executar as atividades de atendimento ao cliente de forma cordial e resolutiva, na complexidade da unidade.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Preparar o ambiente, chamar o usuário pelo nome e confirmar nome completo e data de nascimento conferindo com a etiqueta.',
+          'Verificar sinais vitais e peso registrando no prontuário eletrônico; higienizar as mãos antes e após o procedimento.',
+          'Realizar o procedimento conforme solicitação médica/enfermagem, orientar sobre possíveis efeitos adversos, registrar e reorganizar a sala ao final.'
+        ]},
+        {n:3,h:'Procedimentos realizados',items:[
+          'Administração de medicamentos, soro antirrábico/antitetânico, coleta de exames, testes rápidos (HIV, hepatites B e C, sífilis), oxigenoterapia, ECG e curativos limpos.',
+          'Em reações adversas ou qualquer anormalidade, comunicar <b>imediatamente</b> o médico e a enfermeira.'
+        ]}
+      ],
+      pool:[
+        {q:'Antes de iniciar o procedimento, deve-se confirmar a identidade do usuário:',
+         o:['Apenas pela senha','Pelo nome completo e data de nascimento, conferindo com a etiqueta','Pela aparência','Pelo número da sala'],a:1,d:1},
+        {q:'Diante de uma reação adversa do usuário, a conduta é:',
+         o:['Aguardar melhora espontânea','Comunicar imediatamente o médico e a enfermeira','Anotar e seguir o dia','Liberar o paciente'],a:1,d:2},
+        {q:'A higienização das mãos no procedimento deve ocorrer:',
+         o:['Só antes','Antes e após o procedimento','Só após','Apenas se houver sujidade'],a:1,d:1},
+        {q:'Qual destes é um procedimento realizado na sala do ambulatório?',
+         o:['Cirurgia de grande porte','Testes rápidos (HIV, hepatites, sífilis)','Parto','Endoscopia'],a:1,d:1},
+        {q:'Após a realização do procedimento, a sala deve ser:',
+         o:['Deixada como está','Reorganizada para o próximo atendimento','Trancada por 24 h','Higienizada apenas no fim do dia'],a:1,d:1}
+      ]
+    },
+
+    {
+      id:'pop-amb-04', code:'POP-AMB-04', version:'1.1', emission:'20/10/2020',
+      title:'Rotina da sala de material biológico do ambulatório',
+      executantes:'Enfermeiro e/ou técnico de enfermagem do ambulatório e das unidades',
+      origem:'HNR',
+      setores:['ambulatorio'],
+      etapa:1,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar regras para o acondicionamento e o transporte de amostras biológicas para LACEN/SC, Hospital Universitário (HU), HEMOSC, CEPON e Patologia do Hospital Infantil.'
+        ]},
+        {n:2,h:'Organização do ambiente',items:[
+          'Verificar a temperatura da geladeira e do freezer, manter a sala limpa e organizada e higienizar as mãos e as maletas de transporte.',
+          'Conferir o <b>gelox</b> em temperatura adequada para amostras que necessitam de refrigeração.'
+        ]},
+        {n:3,h:'Recebimento e envio',items:[
+          'Na chegada do material, conferir se está dentro das normas do manual de coleta do LACEN; acondicionar corretamente nas maletas para evitar derramamento.',
+          'Anotar no <b>livro de protocolo</b> o nome do paciente, tipo de material, unidade e data da coleta/envio. As maletas são identificadas por laboratório de destino.'
+        ]}
+      ],
+      pool:[
+        {q:'O destino das amostras biológicas processadas nesta sala inclui:',
+         o:['LACEN/SC, HU, HEMOSC e CEPON','Apenas o laboratório interno','A farmácia','O almoxarifado'],a:0,d:1},
+        {q:'Para amostras que necessitam de refrigeração, deve-se conferir o:',
+         o:['Gelox em temperatura adequada','Nível de álcool','Estoque de luvas','Horário de coleta'],a:0,d:2},
+        {q:'O registro do nome do paciente, tipo de material e data de envio é feito no:',
+         o:['Prontuário do médico','Livro de protocolo','Mural da sala','Caderno pessoal'],a:1,d:1},
+        {q:'As maletas de transporte são identificadas conforme:',
+         o:['A cor do material','O laboratório de destino','O peso','O dia da semana'],a:1,d:2},
+        {q:'Antes de iniciar a rotina, deve-se verificar:',
+         o:['A temperatura da geladeira e do freezer','A escala de férias','O estoque da farmácia','A agenda médica'],a:0,d:1}
+      ]
+    },
+
+    {
+      id:'pop-amb-06', code:'POP-AMB-06', version:'1.0', emission:'02/10/2020',
+      title:'Espirometria',
+      executantes:'Médico, enfermeiro e técnico de enfermagem habilitado (SBPT)',
+      origem:'Pacientes do ambulatório e unidades do HNR; externos agendados pelo SISREG',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Exame complementar ao diagnóstico e ao acompanhamento de doenças pulmonares, avaliando a capacidade do ar inspirado.',
+          'Também conhecida como <b>prova de função pulmonar</b> ou prova ventilatória.'
+        ]},
+        {n:2,h:'Execução',items:[
+          'Confirmar identidade, explicar o procedimento, conferir o pedido e o preparo, e calibrar o espirômetro conforme as normas da SBPT.',
+          'Com o paciente sentado e <b>clipe nasal</b>, pedir que respire pelo bocal; encher o pulmão e assoprar com máxima força e rapidez. Aplicar broncodilatador (prescrição), aguardar 10–15 min e repetir.'
+        ]},
+        {n:3,h:'Preparo e contraindicações',items:[
+          'Preparo: repouso de 5–10 min, sem jejum; não ingerir chá/álcool 6 h antes, suspender broncodilatador de ação rápida por 4 h e de ação prolongada por 10 h, e não fumar por 2 h.',
+          'Contraindicações: instabilidade cardiocirculatória, IAM recente, tromboembolismo pulmonar, aneurismas, cirurgia ocular/torácica/abdominal recente, crise hipertensiva ou vômitos.'
+        ]}
+      ],
+      pool:[
+        {q:'A espirometria também é conhecida como:',
+         o:['Prova de função pulmonar','Eletrocardiograma','Hemograma','Raio-X'],a:0,d:1},
+        {q:'No preparo do exame, o paciente deve não fumar por pelo menos:',
+         o:['30 minutos','2 horas','12 horas','24 horas'],a:1,d:2},
+        {q:'Durante o exame, para impedir a saída de ar pelo nariz, utiliza-se:',
+         o:['Máscara facial','Clipe nasal','Cateter nasal','Tampão'],a:1,d:1},
+        {q:'É uma contraindicação à espirometria:',
+         o:['IAM (infarto) recente','Tosse leve','Idade avançada','Hipertensão controlada'],a:0,d:3},
+        {q:'Após aplicar o broncodilatador, deve-se aguardar antes de repetir o exame:',
+         o:['10 a 15 minutos','1 minuto','1 hora','Não se repete'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-07', code:'POP-AMB-07', version:'1.0', emission:'20/10/2020',
+      title:'Atendimento de acidente com material biológico',
+      executantes:'Equipe médica e equipe de enfermagem',
+      origem:'Todos os profissionais de saúde e a população em geral',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Atender profissionais e clientes que se expõem a sangue e outros fluidos biológicos em seus locais de serviço.',
+          'Acidente em serviço é o dano físico ou mental sofrido pelo servidor relacionado ao exercício de suas funções.'
+        ]},
+        {n:2,h:'Avaliação do acidente',items:[
+          'Abrir o registro de atendimento e descrever o acidente: dia/horário, material biológico envolvido, área atingida, uso de EPI e status vacinal para tétano e hepatite B.',
+          'Investigar o status sorológico do <b>paciente-fonte</b>; quando possível, realizar testes rápidos (HIV, HBsAg, Anti-HCV e VDRL) no acidentado e na fonte.'
+        ]},
+        {n:3,h:'Conduta e acompanhamento',items:[
+          'Em fonte desconhecida ou positiva para HIV, após avaliação médica e prescrição, fornecer o <b>antirretroviral (28 dias)</b> com a 1ª dose no momento, informando os efeitos adversos.',
+          'Agendar acompanhamento sorológico (hepatites B e C em 30/90/180 dias; HIV em 30/90 dias; sífilis em 90/180 dias), notificar o acidente à vigilância epidemiológica e vacinar quando indicado.'
+        ]}
+      ],
+      pool:[
+        {q:'Ao descrever o acidente com material biológico, deve-se registrar, entre outros:',
+         o:['Material envolvido, área atingida, uso de EPI e status vacinal','Apenas o nome do servidor','Somente o horário','A cor do uniforme'],a:0,d:2},
+        {q:'Os testes rápidos realizados no acidentado e na fonte incluem:',
+         o:['HIV, HBsAg, Anti-HCV e VDRL','Apenas glicemia','Apenas hemograma','Teste de gravidez'],a:0,d:2},
+        {q:'Quando a fonte é desconhecida ou positiva para HIV e há prescrição, fornece-se:',
+         o:['Antirretroviral por 28 dias, com a 1ª dose no momento','Apenas analgésico','Antibiótico por 7 dias','Nenhuma medicação'],a:0,d:3},
+        {q:'O acompanhamento sorológico para HIV após a exposição é feito em:',
+         o:['30 e 90 dias','Apenas no 1º dia','5 anos','Não há acompanhamento'],a:0,d:3},
+        {q:'Após o atendimento, o acidente deve ser:',
+         o:['Esquecido','Notificado à vigilância epidemiológica do HNR','Resolvido apenas verbalmente','Arquivado sem registro'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-05', code:'POP-AMB-05', version:'1.1', emission:'04/10/2021',
+      title:'Atendimento em sala de vacina',
+      executantes:'Técnico de enfermagem e enfermeiro',
+      origem:'Pacientes atendidos no ambulatório do HNR',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a organização e o funcionamento da sala de imunização, assegurando acolhimento, segurança do paciente, prevenção de infecções e biossegurança.'
+        ]},
+        {n:2,h:'Cadeia de frio e conferência',items:[
+          'Manter a câmara refrigerada entre <b>+2 e +8 °C</b>, com ar-condicionado 24 h e registro diário no mapa de controle de temperatura.',
+          'Realizar a <b>dupla checagem</b> com o enfermeiro (frasco, dose, via e paciente) e conferir aparência, integridade, lote, validade e prazo de uso após abertura.'
+        ]},
+        {n:3,h:'Preparo e administração',items:[
+          'Lembrar dos <b>12 certos da vacinação</b> (indicação, dose, paciente, vacina, validade, via, orientação, temperatura, armazenamento, registro e aprazamento certos).',
+          'Não realizar antissepsia da pele, exceto em sujidade visível (lavar com água e sabão); aspirar a dose só no momento da administração e identificar frascos multidose com data/hora de abertura.',
+          'Observar o paciente quanto a reações imediatas, registrar na carteira de vacinação e nos sistemas (PEP e SI-PNI) e aprazar a lápis as próximas doses.'
+        ]},
+        {n:4,h:'Observações',items:[
+          'Se houver alteração de temperatura na câmara no início do plantão, <b>não utilizar</b> os imunobiológicos — comunicar o enfermeiro e a Central de Imunização.',
+          'A punção da borracha do frasco multidose deve ser em pontos diferentes, evitando o centro; a agulha não pode ficar inserida no frasco.'
+        ]}
+      ],
+      pool:[
+        {q:'A temperatura correta de conservação dos imunobiológicos na câmara refrigerada é:',
+         o:['+2 a +8 °C','0 °C','-20 °C','Temperatura ambiente'],a:0,d:2},
+        {q:'Antes de administrar a vacina, a conferência do frasco/dose/via/paciente é feita por meio da:',
+         o:['Dupla checagem com o enfermeiro','Conferência apenas visual','Pergunta ao acompanhante','Leitura da bula'],a:0,d:2},
+        {q:'Na aplicação de vacinas, a antissepsia da pele com álcool:',
+         o:['É sempre obrigatória','Não é realizada, exceto se houver sujidade visível','Substitui a higiene das mãos','É feita só com clorexidina'],a:1,d:3},
+        {q:'Diante de alteração de temperatura na câmara no início do plantão, deve-se:',
+         o:['Usar as vacinas rapidamente','Não utilizar os imunobiológicos e comunicar o enfermeiro/Central de Imunização','Congelar os frascos','Descartar tudo sem avisar'],a:1,d:2},
+        {q:'A dose do imunobiológico deve ser aspirada:',
+         o:['No início do plantão para todos','Somente no momento da administração','Uma vez por dia','Na véspera'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-08', code:'POP-AMB-08', version:'1.0', emission:'02/10/2020',
+      title:'Atendimento de vítimas de violência sexual',
+      executantes:'Equipe médica e de enfermagem',
+      origem:'Encaminhados pela Rede RAIVS (HU e MCD)',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar o manejo da imunização para hepatite B em vítimas de violência sexual maiores de 15 anos e administrar o imunobiológico.',
+          'O HNR integra a Rede de Atenção Integral às Pessoas em Situação de Violência Sexual (<b>RAIVS</b>); seu papel é administrar a profilaxia para hepatite B dos pacientes encaminhados da MCD e do HU e reencaminhá-los ao serviço de origem.'
+        ]},
+        {n:2,h:'Materiais',items:[
+          'Luvas, algodão, seringa e agulha, bandeja com papel, Imunoglobulina Humana Anti-HBV (IGHAHB) e vacina anti-HBV (recombinante).'
+        ]},
+        {n:3,h:'Execução',items:[
+          'Abrir prontuário e RA, confirmar identidade, pesar o paciente e questionar sobre imunização prévia para hepatite B.',
+          'Orientar e administrar o imunobiológico prescrito, informando sobre os possíveis efeitos adversos.'
+        ]}
+      ],
+      pool:[
+        {q:'O papel do HNR na Rede RAIVS é administrar a profilaxia para:',
+         o:['Hepatite B','Tétano','Raiva','Febre amarela'],a:0,d:2},
+        {q:'Este atendimento é destinado a vítimas de violência sexual com idade:',
+         o:['Maiores de 15 anos completos','Menores de 10 anos','Qualquer idade','Apenas idosos'],a:0,d:2},
+        {q:'Os pacientes são encaminhados ao HNR pela:',
+         o:['Rede RAIVS (HU e MCD)','Farmácia popular','UPA','Próprio domicílio'],a:0,d:1},
+        {q:'Antes de administrar o imunobiológico, deve-se questionar sobre:',
+         o:['Imunização prévia para hepatite B','Tipo sanguíneo','Plano de saúde','Histórico cirúrgico'],a:0,d:2},
+        {q:'Após a profilaxia, o paciente deve ser:',
+         o:['Internado','Reencaminhado para acompanhamento no serviço de origem','Liberado sem orientações','Transferido para a UTI'],a:1,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-09', code:'POP-AMB-09', version:'1.0', emission:'02/10/2020',
+      title:'Atendimento pós-exposição com risco ao tétano',
+      executantes:'Médico, enfermeiro e técnico de enfermagem',
+      origem:'Demanda espontânea ou encaminhados de outras unidades de saúde',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definições',items:[
+          'Orientar e oferecer profilaxia antitetânica de forma clara e segura. O tétano é uma infecção aguda e grave causada pela toxina do <b>Clostridium tetani</b>, não transmitida entre indivíduos.',
+          '<b>Risco mínimo:</b> ferimentos superficiais, limpos, sem corpos estranhos. <b>Alto risco:</b> ferimentos profundos ou sujos, com corpo estranho/tecido desvitalizado, queimaduras, feridas puntiformes, por arma, mordeduras e fraturas expostas.'
+        ]},
+        {n:2,h:'Imunobiológicos',items:[
+          '<b>Vacina dT</b> (dupla adulto), via IM: esquema básico de 3 doses (0, 2 e 4 meses), para maiores de 7 anos.',
+          '<b>SAT</b> (soro antitetânico, heterólogo de equino) e <b>IGHAT</b> (imunoglobulina humana, dose única 250 UI IM) neutralizam a toxina.'
+        ]},
+        {n:3,h:'Execução e observação',items:[
+          'Abrir prontuário/RA, avaliação do enfermeiro (ficha de profilaxia), encaminhar ao médico e executar a prescrição.',
+          'Em aplicação de <b>SAT</b>, puncionar acesso venoso e manter o paciente <b>2 horas em observação</b> (risco de choque anafilático); com <b>IGHAT</b>, observar por 20 minutos. Sem vacinação prévia, aplicar a 1ª dose de dT e orientar continuidade na UBS.'
+        ]}
+      ],
+      pool:[
+        {q:'Um ferimento profundo, sujo e com corpo estranho é classificado como:',
+         o:['Risco mínimo de tétano','Alto risco de tétano','Sem risco','Risco apenas estético'],a:1,d:2},
+        {q:'Após a aplicação do SAT (soro antitetânico), o paciente deve permanecer em observação por:',
+         o:['20 minutos','2 horas','5 minutos','24 horas'],a:1,d:3},
+        {q:'O esquema básico de imunização com a vacina dT consiste em:',
+         o:['Dose única','3 doses (0, 2 e 4 meses)','2 doses anuais','10 doses'],a:1,d:2},
+        {q:'O principal risco da administração de soro heterólogo (SAT) é:',
+         o:['Choque anafilático','Hipotermia','Hipoglicemia','Sonolência'],a:0,d:3},
+        {q:'A imunoglobulina humana antitetânica (IGHAT) é administrada em:',
+         o:['Dose única de 250 UI, via IM','Via oral diária','Via inalatória','Dose dupla EV'],a:0,d:3}
+      ]
+    },
+
+    {
+      id:'pop-amb-10', code:'POP-AMB-10', version:'1.2', emission:'02/10/2020',
+      title:'Profilaxia contra a raiva humana',
+      executantes:'Médico, enfermeiro e técnico de enfermagem',
+      origem:'Demanda espontânea e outras unidades de saúde',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Orientar e oferecer profilaxia contra a raiva humana. A raiva é uma encefalite viral aguda com letalidade de ~100%, transmitida pela saliva de animais infectados (mordedura, arranhadura ou lambedura).'
+        ]},
+        {n:2,h:'Classificação dos acidentes',items:[
+          '<b>Leves:</b> ferimentos superficiais únicos em tronco e membros (exceto mãos, polpas digitais e planta dos pés); lambedura de pele com lesões superficiais.',
+          '<b>Graves:</b> ferimentos em extremidades (cabeça, pescoço, mãos), profundos/múltiplos/extensos, lambedura de mucosas. Em agressões por <b>morcego ou animal silvestre</b>, vacina e soro são indicados independentemente da gravidade.'
+        ]},
+        {n:3,h:'Conduta',items:[
+          'Avaliação do enfermeiro (ficha de profilaxia) quanto à gravidade, tipo e condições do animal, e situação vacinal antitetânica; encaminhar ao médico.',
+          'O <b>SAR</b> (soro antirrábico) ou <b>IGHAR</b> é infiltrado ao redor do ferimento; observação de 2 h para SAR e 20 min para IGHAR. Esquema vacinal antirrábico: <b>0, 3, 7 e 14 dias</b>.',
+          'Se o cão/gato é conhecido e pode ser observado por 10 dias permanecendo saudável, não há necessidade de vacina — assina-se termo de parceria terapêutica.'
+        ]}
+      ],
+      pool:[
+        {q:'A letalidade da raiva humana, quando a doença se instala, é de aproximadamente:',
+         o:['100%','10%','50%','0%'],a:0,d:3},
+        {q:'O esquema vacinal antirrábico humano é aplicado nos dias:',
+         o:['0, 3, 7 e 14','0 e 30','Apenas no 1º dia','1, 2 e 3'],a:0,d:3},
+        {q:'Em agressão por morcego ou animal silvestre, a conduta é:',
+         o:['Indicar vacina e soro independentemente da gravidade da lesão','Apenas lavar o local','Observar o animal','Não fazer nada'],a:0,d:3},
+        {q:'O soro antirrábico (SAR) deve ser aplicado preferencialmente:',
+         o:['Ao redor do ferimento pelo médico','Apenas na veia','Por via oral','Na região do glúteo sempre'],a:0,d:2},
+        {q:'Se o cão/gato agressor é conhecido e fica saudável após 10 dias de observação:',
+         o:['Não há necessidade de vacina antirrábica','Aplica-se o esquema completo mesmo assim','Interna-se o paciente','Aplica-se soro imediatamente'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-11', code:'POP-AMB-11', version:'1.2', emission:'06/05/2026',
+      title:'Realização de testes rápidos (HIV, sífilis, hepatites B e C)',
+      executantes:'Equipe de enfermagem e farmácia',
+      origem:'Todas as unidades de atendimento do HNR',
+      setores:['ambulatorio','assistencial'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo',items:[
+          'Padronizar a realização dos testes rápidos de HIV, sífilis, hepatites B e C e garantir o registro adequado no prontuário.',
+          'Cada kit diagnóstico acompanha uma <b>pipeta exclusiva</b>, sinalizada com o volume correto de sangue — não deve ser substituída.'
+        ]},
+        {n:2,h:'Testagem',items:[
+          'Higienizar as mãos, paramentar-se conforme a precaução, confirmar a identidade do paciente e coletar a amostra por <b>punção digital</b> (dedo anelar, médio ou indicador).',
+          'Depositar o sangue no poço do dispositivo, adicionar a solução tampão e cronometrar — não ultrapassar o tempo de leitura do fabricante. Em precaução/isolamento de contato, toda a realização e leitura ocorrem <b>à beira-leito</b>.'
+        ]},
+        {n:3,h:'Interpretação e comunicação',items:[
+          '<b>Reagente:</b> linhas no controle (C) e no teste (T). <b>Não reagente:</b> só a linha do controle (C). <b>Inválido:</b> ausência da linha de controle (C) — repetir o teste.',
+          'O enfermeiro tem competência para realizar, interpretar e comunicar os resultados, com acolhimento, privacidade e sigilo. Resultado reagente para HIV exige novo teste de laboratório diferente; casos complexos acionam psicologia e médico.'
+        ]}
+      ],
+      pool:[
+        {q:'Em um teste rápido, o resultado REAGENTE é indicado por:',
+         o:['Linhas no controle (C) e no teste (T)','Apenas a linha do controle (C)','Nenhuma linha','Apenas a linha do teste (T)'],a:0,d:2},
+        {q:'Quando aparece apenas a linha do controle (C), o resultado é:',
+         o:['Reagente','Não reagente','Inválido','Inconclusivo'],a:1,d:2},
+        {q:'Se a linha de controle (C) não aparece, o teste é considerado:',
+         o:['Reagente','Não reagente','Inválido (deve ser repetido)','Positivo'],a:2,d:3},
+        {q:'A coleta da amostra para o teste rápido é feita por:',
+         o:['Punção digital','Punção venosa profunda','Coleta de urina','Swab nasal'],a:0,d:1},
+        {q:'Para paciente em precaução/isolamento de contato, a realização e leitura do teste devem ocorrer:',
+         o:['No posto de enfermagem','À beira-leito, sem transportar o material','No laboratório central','Na farmácia'],a:1,d:3}
+      ]
+    },
+
+    {
+      id:'pop-amb-15', code:'POP-AMB-15', version:'1.0', emission:'30/03/2022',
+      title:'Técnica para aplicação do PPD',
+      executantes:'Enfermeiros habilitados',
+      origem:'Setor: Ambulatório',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Conceito e objetivo',items:[
+          'O PPD (Teste Tuberculínico ou Reação de Mantoux) consiste na inoculação <b>intradérmica</b> de derivado proteico do M. tuberculosis para medir a resposta imune celular.',
+          'Auxilia no diagnóstico da infecção latente (ILTB) e da tuberculose, especialmente em contatos intradomiciliares e pessoas vivendo com HIV/aids.'
+        ]},
+        {n:2,h:'Aplicação',items:[
+          'Conferir identidade e pedido, higienizar as mãos, aspirar <b>0,1 ml</b> de PPD e selecionar o terço médio do antebraço esquerdo (local sem pelos, cicatrizes ou veias calibrosas).',
+          'Introduzir o bisel para cima, paralelo à pele, e injetar lentamente 0,1 ml; deve surgir uma <b>pápula esbranquiçada com poros visíveis</b>. Registrar no PEP e anotar dia da inoculação e data/hora da leitura.'
+        ]},
+        {n:3,h:'Orientações e conservação',items:[
+          'Orientar o paciente a não coçar nem aplicar substâncias no local e a <b>retornar em 72 h</b> para a leitura, feita por enfermeiro habilitado.',
+          'Conservar o PPD entre 2 °C e 8 °C, protegido da luz solar, sem congelar; validade de <b>15 dias</b> após a abertura do frasco.'
+        ]}
+      ],
+      pool:[
+        {q:'O PPD (teste tuberculínico) é aplicado por via:',
+         o:['Intradérmica','Intramuscular','Endovenosa','Subcutânea'],a:0,d:2},
+        {q:'O volume de PPD a ser injetado é de:',
+         o:['0,1 ml','1 ml','0,5 ml','2 ml'],a:0,d:2},
+        {q:'A leitura do PPD deve ser realizada após:',
+         o:['72 horas','24 horas','1 hora','7 dias'],a:0,d:2},
+        {q:'Ao injetar o PPD corretamente, deve surgir no local:',
+         o:['Uma pápula esbranquiçada com poros visíveis','Um hematoma','Sangramento intenso','Nenhuma alteração'],a:0,d:3},
+        {q:'Após aberto, o frasco de PPD tem validade de:',
+         o:['15 dias','24 horas','6 meses','1 ano'],a:0,d:2}
+      ]
+    },
+
+    {
+      id:'pop-amb-16', code:'POP-AMB-16', version:'2.0', emission:'30/08/2022',
+      title:'Centrifugação de amostras biológicas',
+      executantes:'Equipe de enfermagem do ambulatório',
+      origem:'Setor: Ambulatório',
+      setores:['ambulatorio'],
+      etapa:2,
+      sections:[
+        {n:1,h:'Objetivo e definição',items:[
+          'Descrever o processo de centrifugação de amostras biológicas e o uso correto da centrífuga para envio aos laboratórios externos.',
+          'A centrifugação separa os componentes do sangue (glóbulos, plaquetas e plasma/soro) por força centrífuga, empurrando o sólido ao fundo e deixando o líquido límpido na parte superior.'
+        ]},
+        {n:2,h:'Preparo',items:[
+          'Antes de centrifugar o tubo de sorologia, aguardar de <b>15 a 30 minutos</b> para a retração do coágulo; usar EPIs e garantir a centrífuga sobre bancada firme.',
+          'Colocar os tubos nas caçapas fazendo o <b>balanceamento</b> e selecionar rotação/tempo conforme o material.'
+        ]},
+        {n:3,h:'Parâmetros e finalização',items:[
+          'Sangue (soro): <b>3.600 rpm por 20 min</b>; plasma citrato: 3.000 rpm por 15 min; urina: 1.700 rpm por 5 min.',
+          'Aguardar a rotação parar totalmente antes de abrir a tampa, retirar os tubos (com pinça se necessário), verificar a separação e higienizar a centrífuga com desinfetante padronizado.'
+        ]}
+      ],
+      pool:[
+        {q:'Antes de centrifugar o tubo de sorologia, deve-se aguardar para retração do coágulo:',
+         o:['15 a 30 minutos','5 segundos','2 horas','Nenhum tempo'],a:0,d:2},
+        {q:'Ao colocar os tubos nas caçapas da centrífuga, é essencial fazer o:',
+         o:['Balanceamento dos tubos','Aquecimento dos tubos','Congelamento','Descarte de metade'],a:0,d:2},
+        {q:'Para obtenção de soro a partir do sangue, o parâmetro é:',
+         o:['3.600 rpm por 20 minutos','1.700 rpm por 5 minutos','100 rpm por 1 hora','3.000 rpm por 15 minutos'],a:0,d:3},
+        {q:'A tampa da centrífuga só deve ser aberta:',
+         o:['Após a rotação parar totalmente','Durante a rotação','A qualquer momento','Na metade do ciclo'],a:0,d:2},
+        {q:'Após o uso, a centrífuga deve ser:',
+         o:['Higienizada com desinfetante de superfície padronizado','Deixada como está','Lavada com água corrente','Coberta sem limpeza'],a:0,d:1}
+      ]
     }
   ];
   return POPS;
