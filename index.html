@@ -1766,7 +1766,15 @@ function toggleAllColabs(cb){
 /* ---------- main render ---------- */
 function render(){
   const right=document.getElementById('topbar-right');
-  if(!session){if(right)right.innerHTML='';$('#app').innerHTML=renderAuth();return;}
+  const tb=document.getElementById('theme-btn');
+  if(!session){
+    if(right)right.innerHTML='';
+    document.documentElement.dataset.theme='dark';   // portal sempre escuro
+    if(tb)tb.style.display='none';                    // sem alternar tema no portal
+    $('#app').innerHTML=renderAuth();return;
+  }
+  document.documentElement.dataset.theme = theme==='dark'?'dark':'';
+  if(tb){tb.style.display='';tb.textContent = theme==='dark'?'☀️':'🌙';}
   if(right)right.innerHTML=renderTopRight();
   let html='';
   if(session.role==='gestor'){
