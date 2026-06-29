@@ -6,6 +6,7 @@
 <title>POPs HNR — Leitura e Avaliação</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="./assets/favicon.png">
 <link rel="apple-touch-icon" href="./assets/favicon.png">
 <link href="./assets/fonts.css" rel="stylesheet">
@@ -332,51 +333,61 @@
   .result .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 
   /* ---- certificado ---- */
-  .cert{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
-    padding:8px;margin-top:16px;animation:fadeUp .3s ease both}
-  .cert-inner{border:2.5px solid var(--primary);border-radius:12px;padding:6px}
-  .cert-inner2{border:1px solid var(--gold);border-radius:9px;padding:42px 38px;text-align:center;position:relative}
-  .cert-inner2 .logo-chip{width:62px;height:62px;border-radius:14px;background:#fff;
-    border:1px solid var(--line);margin:0 auto 16px;padding:6px;display:grid;place-items:center}
-  .cert-inner2 .logo-chip img{width:100%;height:100%;object-fit:contain}
-  .cert-eyebrow{font-size:11px;font-weight:800;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
-  .cert-inner2 h2{font-size:26px;color:var(--primary-dark);margin:8px 0 22px}
-  .cert-inner2 .conf{font-size:14px;color:var(--muted)}
-  .cert-name{font-size:28px;font-weight:800;color:var(--ink);margin:10px 0 2px}
-  .cert-role{font-size:13.5px;color:var(--muted);margin-bottom:22px}
-  .cert-body{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto 24px;line-height:1.7}
-  .cert-pops{display:grid;gap:6px;max-width:520px;margin:0 auto 26px;text-align:left}
-  .cert-pop{display:flex;align-items:center;gap:10px;font-size:13px;background:var(--surface-2);
-    border:1px solid var(--line);border-radius:8px;padding:8px 13px}
-  .cert-pop .ck{color:var(--success);font-weight:800}
-  .cert-pop b{flex:1}
-  .cert-pop span{color:var(--muted);font-size:12px}
-  .cert-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
-    max-width:560px;margin:0 auto;padding-top:10px}
-  .cert-sign{flex:1;text-align:center}
-  .cert-sign .ln{border-top:1.5px solid var(--ink);margin-bottom:6px;opacity:.6}
-  .cert-sign b{font-size:12.5px;display:block}
-  .cert-sign small{font-size:11px;color:var(--muted)}
-  .cert-date{font-size:12.5px;color:var(--muted)}
+  .cert{background:transparent;margin-top:16px;animation:fadeUp .3s ease both}
+  .cert-paper{position:relative;container-type:inline-size;width:100%;aspect-ratio:1000/707;overflow:hidden;
+    color:#0C2236;border-radius:4px;box-shadow:0 18px 50px rgba(8,18,33,.35);
+    background:
+      repeating-radial-gradient(circle at 78% 12%, rgba(12,34,54,.05) 0 1px, transparent 1px 2.4cqw),
+      repeating-radial-gradient(circle at 78% 12%, rgba(185,138,62,.06) 0 1px, transparent 1px 3.6cqw),
+      radial-gradient(120% 120% at 80% -10%, #ffffff 0%, #FBFAF5 45%, #F4F0E6 100%)}
+  .cert-frame{position:absolute;inset:2cqw;border:0.2cqw solid #0C2236;pointer-events:none}
+  .cert-frame::after{content:"";position:absolute;inset:0.6cqw;border:0.1cqw solid #B98A3E}
+  .cert-paper .cc{position:absolute;width:3.2cqw;height:3.2cqw;border:0.16cqw solid #B98A3E;z-index:3}
+  .cert-paper .cc.tl{top:1.4cqw;left:1.4cqw;border-right:0;border-bottom:0}
+  .cert-paper .cc.tr{top:1.4cqw;right:1.4cqw;border-left:0;border-bottom:0}
+  .cert-paper .cc.bl{bottom:1.4cqw;left:1.4cqw;border-right:0;border-top:0}
+  .cert-paper .cc.br{bottom:1.4cqw;right:1.4cqw;border-left:0;border-top:0}
+  .cert-paper-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:5.2cqw 7cqw 4cqw}
+  .cert-top{display:flex;align-items:center;gap:1.1cqw}
+  .cert-top img{width:3.2cqw;height:3.2cqw;border-radius:50%}
+  .cert-top b{font-size:1.4cqw;font-weight:600;letter-spacing:.02em;color:#0C2236}
+  .cert-sub{font-family:'IBM Plex Mono',monospace;font-size:1.05cqw;letter-spacing:.16em;text-transform:uppercase;color:#6a7888;margin-top:.4cqw}
+  .cert-eyebrow{margin-top:2.2cqw;font-family:'IBM Plex Mono',monospace;font-size:1.25cqw;letter-spacing:.34em;text-transform:uppercase;color:#8c6718;font-weight:500}
+  .cert-paper h2{font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:600;font-size:4.6cqw;line-height:1;letter-spacing:-.02em;margin:.6cqw 0 0;color:#0C2236}
+  .cert-paper .conf{margin-top:2.2cqw;font-size:1.35cqw;color:#6a7888}
+  .cert-name{font-family:'Fraunces',serif;font-weight:600;font-size:4cqw;line-height:1.05;margin:.4cqw 0 0;color:#0C2236}
+  .cert-rule{width:28cqw;height:1px;margin:.6cqw auto 0;background:repeating-linear-gradient(90deg,#B98A3E 0 .5cqw,transparent .5cqw 1cqw);opacity:.7}
+  .cert-role{margin-top:.9cqw;font-family:'IBM Plex Mono',monospace;font-size:1.25cqw;letter-spacing:.06em;color:#3a4a5e}
+  .cert-body{max-width:66cqw;margin:2cqw 0 0;font-size:1.37cqw;line-height:1.62;color:#3a4a5e}
+  .cert-body b{color:#0C2236;font-weight:600}
+  .cert-stats{display:flex;margin:2.2cqw 0 0;border:1px solid rgba(12,34,54,.14);border-radius:1.2cqw;overflow:hidden}
+  .cert-stats .st{padding:1.2cqw 2.6cqw;text-align:center}
+  .cert-stats .st + .st{border-left:1px solid rgba(12,34,54,.12)}
+  .cert-stats .v{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:2.3cqw;color:#0C2236;white-space:nowrap}
+  .cert-stats .v.brass{color:#8c6718}
+  .cert-stats .l{font-size:1.05cqw;letter-spacing:.12em;text-transform:uppercase;color:#6a7888;margin-top:.2cqw}
+  .cert-place{margin:2cqw 0 1.6cqw;font-size:1.15cqw;color:#6a7888}
+  .cert-foot{margin-top:auto;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:2cqw}
+  .cert-verif{text-align:left}
+  .cert-verif small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.95cqw;letter-spacing:.12em;text-transform:uppercase;color:#6a7888}
+  .cert-verif b{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:1.2cqw;letter-spacing:.06em;color:#0C2236}
+  .cert-signs{display:flex;gap:4cqw}
+  .cert-sign{text-align:center;min-width:18cqw}
+  .cert-sign .ln{height:1px;background:#0C2236;opacity:.55;margin-bottom:.7cqw}
+  .cert-sign b{display:block;font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:1.4cqw;color:#0C2236}
+  .cert-sign small{font-size:1.05cqw;letter-spacing:.06em;text-transform:uppercase;color:#6a7888}
+  .cert-seal{position:absolute;right:6.4cqw;top:15cqw;width:11.8cqw;height:11.8cqw;z-index:4;filter:drop-shadow(0 .8cqw 1.6cqw rgba(0,0,0,.28))}
+  .cert-seal .cs-ring{position:absolute;inset:0;border-radius:50%;padding:.6cqw;background:repeating-conic-gradient(from 0deg,#E2C078 0deg 2deg,#8c6718 2deg 4deg)}
+  .cert-seal .cs-ring::before{content:"";position:absolute;inset:.3cqw;border-radius:50%;background:conic-gradient(from 0deg,#B98A3E,#E2C078,#B98A3E,#8c6718,#B98A3E)}
+  .cert-seal .cs-face{position:absolute;inset:1.1cqw;border-radius:50%;background:#FBFAF5;z-index:2;display:grid;place-items:center;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.25) inset}
+  .cert-seal .cs-face b{font-family:'Fraunces',serif;font-weight:600;font-size:1.3cqw;color:#8c6718;line-height:1}
+  .cert-seal .cs-face small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.7cqw;letter-spacing:.12em;text-transform:uppercase;color:#6a7888;margin-top:.3cqw}
   .cert-actions{display:flex;gap:10px;justify-content:center;margin-top:18px}
-  /* certificado final (2º) — visual dourado diferenciado */
-  .cert.final .cert-inner{border-color:var(--gold)}
-  .cert.final .cert-inner2{border-color:var(--gold);
-    background:linear-gradient(160deg,var(--gold-soft),var(--surface) 60%)}
-  .cert.final .cert-eyebrow{color:var(--primary)}
-  .cert.final .cert-inner2 h2{color:#8a6a12}
-  .cert.final .cert-name{color:#7a5d10}
-  .cert-seal{position:absolute;top:16px;right:16px;width:78px;height:78px;border-radius:50%;
-    background:radial-gradient(circle at 32% 28%,#f8df8c,var(--gold));color:#5b4708;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    box-shadow:0 4px 12px rgba(176,138,20,.4);transform:rotate(8deg)}
-  .cert-seal b{font-size:24px;line-height:1}
-  .cert-seal span{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;text-align:center;margin-top:2px;line-height:1.15}
   /* modal de pré-visualização do modelo de certificado (gestor) */
   .cert-modal{position:fixed;inset:0;z-index:60;display:none;background:rgba(8,18,33,.62);
     padding:26px 14px;overflow:auto}
   .cert-modal.open{display:flex;align-items:flex-start;justify-content:center}
-  .cm-card{background:var(--surface);border-radius:14px;max-width:780px;width:100%;
+  .cm-card{background:var(--surface);border-radius:14px;max-width:1060px;width:100%;
     box-shadow:0 20px 60px rgba(0,0,0,.4)}
   .cm-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
   .cm-head b{flex:1;font-size:14.5px}
@@ -439,50 +450,94 @@
   .empty b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
   .empty p{font-size:13px;margin:0}
 
-  /* ---- auth ---- */
-  .auth-wrap{position:relative;min-height:calc(100vh - 120px);display:grid;place-items:center;padding:28px 16px}
-  .auth-wrap::before{content:"";position:fixed;inset:0;z-index:0;
-    background-image:linear-gradient(rgba(8,18,33,.42),rgba(8,18,33,.58)),url('./assets/bg-portal.webp');
-    background-size:cover;background-position:center;background-repeat:no-repeat}
-  .auth-wrap>*{position:relative;z-index:1}
-  .auth-card{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);
-    border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;animation:fadeUp .3s ease both}
-  .auth-head{text-align:center;margin-bottom:22px}
-  .auth-head .logo-chip{width:56px;height:56px;border-radius:13px;background:#fff;
-    border:1px solid var(--line);box-shadow:var(--shadow);padding:5px;display:grid;place-items:center;margin:0 auto 14px}
-  .auth-head .logo-chip img{width:100%;height:100%;object-fit:contain}
-  .auth-head h2{font-size:20px}
-  .auth-head p{color:var(--muted);font-size:13.5px;margin-top:5px}
-  .auth-choice{display:grid;gap:12px}
-  .choice-btn{display:flex;align-items:center;gap:14px;text-align:left;width:100%;
-    border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:16px 18px;transition:.15s;color:var(--ink)}
-  .choice-btn:hover{border-color:var(--primary);background:var(--surface-2);transform:translateY(-1px)}
-  .choice-btn .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none}
-  .choice-btn .ic svg{width:21px;height:21px}
-  .ic-blue{background:var(--primary-soft);color:var(--primary)}
-  .ic-red{background:var(--accent-soft);color:var(--accent)}
-  .choice-btn b{font-size:15px;display:block}
-  .choice-btn small{color:var(--muted);font-size:12.5px}
-  .choice-btn .chev{margin-left:auto;color:var(--faint);font-size:18px}
-  .auth-tabs{display:flex;background:var(--surface-2);border:1px solid var(--line);
-    border-radius:10px;padding:3px;margin-bottom:20px}
-  .auth-tabs button{flex:1;border:0;background:transparent;color:var(--muted);
-    font-weight:600;font-size:13.5px;padding:9px;border-radius:7px}
-  .auth-tabs button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(10,77,162,.12)}
-  .field{margin-bottom:14px}
-  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:6px}
-  .field input,.field select{width:100%;font-family:inherit;font-size:14.5px;padding:11px 13px;
-    border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
-  .field input:focus,.field select:focus{outline:none;border-color:var(--primary);
-    box-shadow:0 0 0 3px var(--primary-soft)}
-  .auth-err{display:none;background:var(--danger-soft);color:var(--danger);border-radius:9px;
-    padding:10px 13px;font-size:13px;margin-bottom:14px;font-weight:500}
-  .auth-back{background:transparent;border:0;color:var(--muted);font-size:13px;font-weight:600;
-    margin-top:14px;padding:8px;width:100%}
-  .auth-back:hover{color:var(--ink)}
-  .hint{margin-top:18px;background:var(--surface-2);border:1px dashed var(--line-strong);
-    border-radius:10px;padding:11px 13px;font-size:12px;color:var(--muted);text-align:center}
-  .hint b{color:var(--ink)}
+  /* ---- auth · repaginação "Certidão" (somente tela de portal) ---- */
+  .auth-wrap{
+    --tinta:#0C2236;--tinta2:#0a1b2c;--cardc:#12304D;--card2:#163a5c;
+    --papelc:#E7ECF2;--mutedc:#9BB0C6;--faintc:#7c93a9;
+    --azulc:#6FA0DA;--latao:#C9A256;--latao-hi:#E8CE92;--cruzc:#E0606A;
+    --linec:rgba(231,236,242,.10);--line2c:rgba(231,236,242,.18);
+    position:fixed;inset:0;z-index:30;display:grid;grid-template-columns:1.05fr .95fr;
+    overflow:auto;color:var(--papelc);font-family:'Inter',system-ui,sans-serif}
+  .auth-wrap::before{content:none}
+
+  .auth-ident{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:56px 52px;
+    background:
+      repeating-radial-gradient(circle at 30% 42%, rgba(201,162,86,.055) 0 1px, transparent 1px 17px),
+      repeating-radial-gradient(circle at 30% 42%, rgba(159,182,207,.05) 0 1px, transparent 1px 27px),
+      radial-gradient(120% 90% at 30% 18%, #143150 0%, var(--tinta) 55%, var(--tinta2) 100%)}
+  .auth-ident .ident-in{position:relative;z-index:2;max-width:430px;animation:fadeUp .5s ease both}
+  .seal{position:relative;width:130px;height:130px;margin-bottom:30px;animation:sealPress .7s cubic-bezier(.2,.8,.2,1) both}
+  .seal .ring{position:absolute;inset:0;border-radius:50%;padding:7px;
+    background:repeating-conic-gradient(from 0deg,var(--latao-hi) 0deg 2deg,#9c7a32 2deg 4deg);
+    box-shadow:0 14px 34px rgba(0,0,0,.5),0 2px 0 rgba(232,206,146,.35) inset,0 -3px 7px rgba(0,0,0,.45) inset}
+  .seal .ring::before{content:"";position:absolute;inset:3px;border-radius:50%;
+    background:conic-gradient(from 0deg,var(--latao),var(--latao-hi),var(--latao),#9c7a32,var(--latao))}
+  .seal .ring::after{content:"";position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(12,34,54,.5)}
+  .seal .face{position:absolute;inset:8px;border-radius:50%;overflow:hidden;background:#fff;z-index:2;
+    display:grid;place-items:center;box-shadow:0 1px 3px rgba(0,0,0,.35) inset}
+  .seal .face img{width:84%;height:84%;object-fit:contain}
+  .auth-ident .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--latao-hi);margin-bottom:14px}
+  .auth-ident h1{font-family:'Fraunces',serif;font-optical-sizing:auto;font-weight:600;
+    font-size:clamp(34px,4.1vw,56px);line-height:1;letter-spacing:-.015em;margin:0 0 16px}
+  .auth-ident h1 span{display:block}
+  .auth-ident h1 .thin{font-weight:400;font-style:italic;color:var(--azulc)}
+  .auth-ident .lede{font-size:14.5px;color:var(--mutedc);max-width:370px;margin:0 0 26px}
+  .auth-ident .heritage{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--faintc);letter-spacing:.04em}
+  .auth-ident .heritage .mono{font-family:'IBM Plex Mono',monospace}
+  .auth-ident .heritage .gl-rule{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--latao) 0 4px,transparent 4px 9px);opacity:.5}
+
+  .auth-panel{display:flex;flex-direction:column;justify-content:center;padding:48px 52px;
+    background:linear-gradient(180deg,#0e273e,#0b1f33);border-left:1px solid var(--line2c)}
+  .auth-wrap .auth-card{width:100%;max-width:400px;margin:0 auto;background:transparent;border:0;
+    box-shadow:none;padding:0;border-radius:0;animation:fadeUp .45s ease both}
+  .auth-wrap .auth-head{text-align:left;margin-bottom:22px}
+  .auth-wrap .auth-head .logo-chip{display:none}
+  .auth-wrap .auth-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:26px;letter-spacing:-.01em;color:var(--papelc)}
+  .auth-wrap .auth-head p{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faintc);margin-top:9px}
+  .auth-wrap .auth-choice{display:grid;gap:13px}
+  .auth-wrap .choice-btn{display:flex;align-items:center;gap:15px;text-align:left;width:100%;cursor:pointer;
+    background:var(--cardc);border:1px solid var(--line2c);border-radius:15px;padding:17px 19px;color:var(--papelc);
+    transition:.18s;position:relative;overflow:hidden}
+  .auth-wrap .choice-btn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:transparent;transition:.18s}
+  .auth-wrap .choice-btn:hover{transform:translateY(-2px);border-color:rgba(111,160,218,.5);background:var(--card2)}
+  .auth-wrap .choice-btn:hover::before{background:var(--azulc)}
+  .auth-wrap .choice-btn .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;flex:none}
+  .auth-wrap .choice-btn .ic svg{width:22px;height:22px}
+  .auth-wrap .ic-blue{background:rgba(111,160,218,.16);color:var(--azulc)}
+  .auth-wrap .ic-red{background:rgba(224,96,106,.14);color:var(--cruzc)}
+  .auth-wrap .choice-btn b{font-size:15.5px;display:block;font-weight:600}
+  .auth-wrap .choice-btn small{font-size:12.5px;color:var(--mutedc)}
+  .auth-wrap .choice-btn .chev{margin-left:auto;color:var(--faintc);font-size:20px;transition:.18s}
+  .auth-wrap .choice-btn:hover .chev{color:var(--papelc);transform:translateX(3px)}
+  .auth-wrap .field{margin-bottom:14px}
+  .auth-wrap .field label{display:block;font-size:12px;font-weight:600;color:var(--mutedc);margin-bottom:6px}
+  .auth-wrap .field input,.auth-wrap .field select{width:100%;font-family:inherit;font-size:14.5px;padding:12px 14px;
+    border-radius:11px;background:rgba(0,0,0,.22);border:1px solid var(--line2c);color:var(--papelc);transition:.15s}
+  .auth-wrap .field input::placeholder{color:var(--faintc)}
+  .auth-wrap .field input:focus,.auth-wrap .field select:focus{outline:none;border-color:var(--azulc);box-shadow:0 0 0 3px rgba(111,160,218,.18)}
+  .auth-wrap #cs-matricula,.auth-wrap #c-matricula{font-family:'IBM Plex Mono',monospace;letter-spacing:.08em}
+  .auth-wrap .hint-cert{display:block;margin-top:6px;font-size:11px;color:var(--faintc)}
+  .auth-wrap .btn.block{width:100%;border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:15px;color:#fff;
+    background:#0A4DA2;border-radius:12px;padding:14px;margin-top:6px;transition:.15s;box-shadow:0 8px 20px rgba(10,77,162,.4)}
+  .auth-wrap .btn.block:hover{background:#0c5ec4;transform:translateY(-1px)}
+  .auth-wrap .auth-err{display:none;background:rgba(224,96,106,.12);color:#f3a3a8;border:1px solid rgba(224,96,106,.3);
+    border-radius:10px;padding:10px 13px;font-size:13px;margin-bottom:14px;font-weight:500}
+  .auth-wrap .auth-back{background:transparent;border:0;color:var(--faintc);font-size:13px;font-weight:600;
+    margin-top:14px;padding:8px;width:100%;cursor:pointer}
+  .auth-wrap .auth-back:hover{color:var(--papelc)}
+  @keyframes sealPress{0%{transform:scale(1.08);opacity:0}60%{transform:scale(.99)}100%{transform:scale(1);opacity:1}}
+  @media(max-width:860px){
+    .auth-wrap{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+    .auth-ident{padding:52px 24px 34px;text-align:center;align-items:center}
+    .auth-ident .ident-in{display:flex;flex-direction:column;align-items:center}
+    .seal{width:104px;height:104px;margin-bottom:22px}
+    .auth-ident .lede{margin-left:auto;margin-right:auto}
+    .auth-ident .heritage{width:100%;max-width:340px}
+    .auth-panel{padding:30px 22px 50px;border-left:0;border-top:1px solid var(--line2c)}
+    .auth-wrap .auth-head{text-align:center}
+  }
 
   @media(max-width:640px){
     .kpis{grid-template-columns:repeat(2,1fr)}
@@ -498,8 +553,6 @@
     .stamp-logo img{width:44px;height:44px}
     .stamp-row{grid-column:1/3}
     .matrix .hidesm{display:none}
-    .cert-inner2{padding:28px 16px}
-    .cert-name{font-size:22px}
   }
 
   @media print{
@@ -507,7 +560,9 @@
     .topbar,.no-print,.proto-note{display:none !important}
     main{padding:0;max-width:none}
     .cert{box-shadow:none;padding:0;margin:0}
+    .cert-paper{box-shadow:none;border-radius:0}
     .cert-actions{display:none}
+    @page{size:A4 landscape;margin:8mm}
   }
 </style>
 </head>
@@ -846,10 +901,18 @@ function renderTopRight(){
 }
 
 function renderAuth(){
+  const IDENT = `<aside class="auth-ident"><div class="ident-in">
+      <div class="seal"><div class="ring"></div><div class="face"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></div></div>
+      <div class="eyebrow">Protocolos &amp; Certificação</div>
+      <h1><span>Hospital</span><span>Nereu Ramos</span><span class="thin">enfermagem certificada</span></h1>
+      <p class="lede">Leia os Procedimentos Operacionais Padrão, faça as avaliações e registre sua certificação — tudo num só lugar.</p>
+      <div class="heritage"><span class="mono">DESDE&nbsp;1943</span><span class="gl-rule"></span><span>Florianópolis · SC</span></div>
+    </div></aside>`;
+  const shell = (inner)=>`<div class="auth-wrap">${IDENT}<div class="auth-panel"><div class="auth-card" id="auth-card">${inner}</div></div></div>`;
+
   if(authView==='home'){
-    return `<div class="auth-wrap"><div class="auth-card">
-      <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-        <h2>Portal de POPs</h2><p>Hospital Nereu Ramos · Enfermagem</p></div>
+    return shell(`
+      <div class="auth-head"><h2>Acesse sua conta</h2><p>Portal de protocolos</p></div>
       <div class="auth-choice">
         <button class="choice-btn" onclick="goAuth('colab')">
           <span class="ic ic-blue">${SVG_USER}</span>
@@ -857,22 +920,20 @@ function renderAuth(){
           <span class="chev">›</span></button>
         <button class="choice-btn" onclick="goAuth('gestor')">
           <span class="ic ic-red">${SVG_SHIELD}</span>
-          <span><b>Acesso do gestor</b><small>Acompanhar a equipe</small></span>
+          <span><b>Acesso da gestão</b><small>Acompanhar a equipe</small></span>
           <span class="chev">›</span></button>
-      </div></div></div>`;
+      </div>`);
   }
   if(authView==='gestor'){
     const emailField = window.POPS_LOCAL_MODE ? '' :
       `<div class="field"><label>E-mail</label><input id="g-email" type="email" placeholder="gestora@hnr.br" autocomplete="username" value="${(window.POPS_GESTOR_EMAIL||'').replace(/"/g,'&quot;')}" onkeydown="if(event.key==='Enter')doGestorLogin()"></div>`;
-    return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
-      <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-        <h2>Acesso do gestor</h2><p>Educação Continuada · HNR</p></div>
+    return shell(`
+      <div class="auth-head"><h2>Acesso da gestão</h2><p>Educação Continuada · HNR</p></div>
       <div class="auth-err" id="auth-err"></div>
       ${emailField}
       <div class="field"><label>Senha</label><input id="g-pass" type="password" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doGestorLogin()"></div>
       <button class="btn block" onclick="doGestorLogin()">Entrar</button>
-      <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
-    </div></div>`;
+      <button class="auth-back" onclick="goAuth('home')">← Voltar</button>`);
   }
   const SETOR_OPTS = `<option value="">Selecione o setor…</option>
       <option value="assistencial">Assistencial</option>
@@ -884,56 +945,48 @@ function renderAuth(){
   // ----- COLABORADOR · PRODUÇÃO (e-mail + senha) -----
   if(!window.POPS_LOCAL_MODE){
     if(authView==='colab-signup'){
-      return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
-        <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-          <h2>Criar conta</h2><p>Colaborador · HNR</p></div>
+      return shell(`
+        <div class="auth-head"><h2>Criar conta</h2><p>Colaborador · HNR</p></div>
         <div class="auth-err" id="auth-err"></div>
         <div class="field"><label>Nome completo</label><input id="cs-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
         <div class="field"><label>Setor</label><select id="cs-setor">${SETOR_OPTS}</select></div>
-        <div class="field"><label>Matrícula</label><input id="cs-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
+        <div class="field"><label>Matrícula</label><input id="cs-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"><small class="hint-cert">Aparece no seu certificado.</small></div>
         <div class="field"><label>E-mail</label><input id="cs-email" type="email" placeholder="voce@exemplo.com" autocomplete="email"></div>
         <div class="field"><label>Senha</label><input id="cs-pass" type="password" placeholder="mínimo 6 caracteres" autocomplete="new-password" onkeydown="if(event.key==='Enter')criarConta()"></div>
         <button class="btn block" onclick="criarConta()">Criar conta</button>
-        <button class="auth-back" onclick="goAuth('colab')">← Já tenho conta</button>
-      </div></div>`;
+        <button class="auth-back" onclick="goAuth('colab')">← Já tenho conta</button>`);
     }
     if(authView==='colab-forgot'){
-      return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
-        <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-          <h2>Recuperar senha</h2><p>Enviaremos um link para seu e-mail</p></div>
+      return shell(`
+        <div class="auth-head"><h2>Recuperar senha</h2><p>Link por e-mail</p></div>
         <div class="auth-err" id="auth-err"></div>
         <div class="field"><label>E-mail</label><input id="cf-email" type="email" placeholder="voce@exemplo.com" autocomplete="email" onkeydown="if(event.key==='Enter')recuperarSenha()"></div>
         <button class="btn block" onclick="recuperarSenha()">Enviar link</button>
-        <button class="auth-back" onclick="goAuth('colab')">← Voltar</button>
-      </div></div>`;
+        <button class="auth-back" onclick="goAuth('colab')">← Voltar</button>`);
     }
     // login
-    return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
-      <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-        <h2>Entrar</h2><p>Acesso do colaborador</p></div>
+    return shell(`
+      <div class="auth-head"><h2>Entrar</h2><p>Acesso do colaborador</p></div>
       <div class="auth-err" id="auth-err"></div>
       <div class="field"><label>E-mail</label><input id="cl-email" type="email" placeholder="voce@exemplo.com" autocomplete="email"></div>
       <div class="field"><label>Senha</label><input id="cl-pass" type="password" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')loginColaborador()"></div>
       <button class="btn block" onclick="loginColaborador()">Entrar</button>
       <div style="display:flex;justify-content:space-between;gap:10px;margin-top:12px">
         <button class="auth-back" style="margin:0" onclick="goAuth('colab-forgot')">Esqueci a senha</button>
-        <button class="auth-back" style="margin:0;font-weight:700;color:var(--primary)" onclick="goAuth('colab-signup')">Criar conta →</button>
+        <button class="auth-back" style="margin:0;font-weight:700;color:var(--azulc)" onclick="goAuth('colab-signup')">Criar conta →</button>
       </div>
-      <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
-    </div></div>`;
+      <button class="auth-back" onclick="goAuth('home')">← Voltar</button>`);
   }
 
   // ----- COLABORADOR · DEMO (nome + matrícula + setor) -----
-  return `<div class="auth-wrap"><div class="auth-card" id="auth-card">
-    <div class="auth-head"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
-      <h2>Identificação</h2><p>Acesso do colaborador (demo)</p></div>
+  return shell(`
+    <div class="auth-head"><h2>Identificação</h2><p>Colaborador · demo</p></div>
     <div class="auth-err" id="auth-err"></div>
     <div class="field"><label>Nome completo</label><input id="c-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
     <div class="field"><label>Matrícula</label><input id="c-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
     <div class="field"><label>Setor</label><select id="c-setor">${SETOR_OPTS}</select></div>
     <button class="btn block" onclick="entrarColaborador()">Entrar</button>
-    <button class="auth-back" onclick="goAuth('home')">← Voltar</button>
-  </div></div>`;
+    <button class="auth-back" onclick="goAuth('home')">← Voltar</button>`);
 }
 
 function authErr(msg){
@@ -1312,28 +1365,47 @@ function renderResult(){
 // stage 2 = Conclusão Final (dourado, com selo) — visual diferenciado.
 function certPaperHTML(stage, d){
   const final = stage===2;
-  const titulo = final ? 'Certificado de Conclusão Final' : 'Certificado · Etapa 1 (Fundamentos)';
-  const eyebrow = final ? 'Hospital Nereu Ramos · Conclusão do Programa' : 'Hospital Nereu Ramos · Educação Continuada';
+  const titulo  = final ? 'Trilha de Protocolos' : 'Etapa 1 · Fundamentos';
+  const eyebrow = final ? 'Certificado de Conclusão' : 'Certificado · Etapa 1';
+  const selo    = final ? 'Conclusão' : 'Etapa 1';
+  const etapaTxt= final ? 'Etapas 1 e 2' : 'Etapa 1';
   const corpoTxt = final
-    ? `pela <b>conclusão integral</b> da trilha de capacitação — <b>${d.total} Procedimentos Operacionais Padrão</b> (Etapas 1 e 2) do setor ${setorLabel(d.setor)} — no programa de educação permanente em enfermagem, tendo cumprido todos os requisitos com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`
-    : `pela conclusão da <b>Etapa 1 (Fundamentos)</b> do setor ${setorLabel(d.setor)} — leitura e aprovação nas avaliações de <b>${d.total} POPs</b> (mínimo de ${ETAPA1_MIN} exigido) — no programa de educação permanente em enfermagem, com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por avaliação.`;
-  const rows=(d.pops||[]).map(p=>`<div class="cert-pop"><span class="ck">✓</span>
-      <b>${p.code} — ${p.title}</b><span>${p.hits!=null?p.hits+'/'+QUIZ_SIZE:''}${p.date?' · '+p.date:''}</span></div>`).join('');
-  return `<div class="cert-inner"><div class="cert-inner2">
-        ${final?'<div class="cert-seal" aria-hidden="true"><b>🏆</b><span>Conclusão<br>Final</span></div>':''}
-        <span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span>
+    ? `concluiu integralmente a trilha de capacitação em <b>Procedimentos Operacionais Padrão</b> do setor ${setorLabel(d.setor)}, no programa de educação permanente em enfermagem do Hospital Nereu Ramos, tendo realizado a leitura e sido <b>aprovado(a)</b> em todas as avaliações, com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por POP.`
+    : `concluiu a <b>Etapa 1 (Fundamentos)</b> do setor ${setorLabel(d.setor)}, com leitura e aprovação nas avaliações no programa de educação permanente em enfermagem, com aproveitamento mínimo de ${PASS_MIN}/${QUIZ_SIZE} acertos por POP.`;
+  const comHits = (d.pops||[]).filter(p=>p.hits!=null);
+  const aprov = comHits.length ? Math.round(comHits.reduce((s,p)=>s+p.hits,0)/comHits.length/QUIZ_SIZE*100) : null;
+  const aprovTxt = aprov!=null ? aprov+'%' : '≥'+Math.round(PASS_MIN/QUIZ_SIZE*100)+'%';
+  const ano = new Date().getFullYear();
+  const codigo = 'HNR-'+ano+'-'+String(d.matricula||'').replace(/\D/g,'').padStart(6,'0').slice(-6);
+  return `<div class="cert-paper${final?' final':''}">
+      <div class="cert-frame"></div>
+      <i class="cc tl"></i><i class="cc tr"></i><i class="cc bl"></i><i class="cc br"></i>
+      <div class="cert-seal" aria-hidden="true"><div class="cs-ring"></div><div class="cs-face"><b>HNR</b><small>${selo}</small></div></div>
+      <div class="cert-paper-in">
+        <div class="cert-top"><span class="logo-chip"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"></span><b>HOSPITAL NEREU RAMOS</b></div>
+        <div class="cert-sub">Educação Permanente em Enfermagem · SES-SC</div>
         <div class="cert-eyebrow">${eyebrow}</div>
         <h2>${titulo}</h2>
-        <p class="conf">Conferido a</p>
-        <div class="cert-name">${d.nome}</div>
-        <div class="cert-role">${setorLabel(d.setor)} · Matrícula ${d.matricula}</div>
+        <p class="conf">Certificamos que</p>
+        <div class="cert-name">${d.nome||'—'}</div>
+        <div class="cert-rule"></div>
+        <div class="cert-role">${setorLabel(d.setor)} · Matrícula ${d.matricula||'—'}</div>
         <p class="cert-body">${corpoTxt}</p>
-        <div class="cert-pops">${rows}</div>
-        <div class="cert-foot">
-          <div class="cert-date">Florianópolis, ${todayBR()}</div>
-          <div class="cert-sign"><div class="ln"></div><b>Educação Continuada</b><small>Hospital Nereu Ramos</small></div>
+        <div class="cert-stats">
+          <div class="st"><div class="v brass">${d.total||comHits.length||0}</div><div class="l">POPs concluídos</div></div>
+          <div class="st"><div class="v">${etapaTxt}</div><div class="l">Trilha</div></div>
+          <div class="st"><div class="v">${aprovTxt}</div><div class="l">Aproveitamento</div></div>
         </div>
-      </div></div>`;
+        <div class="cert-place">Florianópolis · SC, ${todayBR()}</div>
+        <div class="cert-foot">
+          <div class="cert-verif"><small>Verificação</small><b>${codigo}</b></div>
+          <div class="cert-signs">
+            <div class="cert-sign"><div class="ln"></div><b>Coordenação</b><small>Educação Permanente</small></div>
+            <div class="cert-sign"><div class="ln"></div><b>Direção de Enfermagem</b><small>Hospital Nereu Ramos</small></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
 }
 function renderCert(){
   const final = certStage===2;
@@ -1769,12 +1841,15 @@ function toggleAllColabs(cb){
 function render(){
   const right=document.getElementById('topbar-right');
   const tb=document.getElementById('theme-btn');
+  const bar=document.querySelector('.topbar');
   if(!session){
     if(right)right.innerHTML='';
     document.documentElement.dataset.theme='dark';   // portal sempre escuro
     if(tb)tb.style.display='none';                    // sem alternar tema no portal
+    if(bar)bar.style.display='none';                  // portal "Certidão" ocupa a tela toda
     $('#app').innerHTML=renderAuth();return;
   }
+  if(bar)bar.style.display='';
   document.documentElement.dataset.theme = theme==='dark'?'dark':'';
   if(tb){tb.style.display='';tb.textContent = theme==='dark'?'☀️':'🌙';}
   if(right)right.innerHTML=renderTopRight();
