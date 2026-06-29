@@ -87,7 +87,7 @@
   /* ---- layout ---- */
   main{max-width:1080px;margin:0 auto;padding:26px 20px 80px}
   .pagehead{margin-bottom:20px}
-  .pagehead h2{font-size:22px}
+  .pagehead h2{font-family:'Fraunces',serif;font-weight:600;font-size:30px;letter-spacing:-.02em}
   .pagehead p{margin:4px 0 0;color:var(--muted);font-size:14px}
   .proto-note{display:inline-flex;align-items:center;gap:6px;font-size:11px;
     color:var(--warn);background:var(--warn-soft);border-radius:20px;
@@ -112,17 +112,37 @@
   .matrix .sel-colab,.matrix .selcol input{width:16px;height:16px;cursor:pointer;accent-color:var(--primary)}
   .btn-report:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 
-  /* ---- progress summary ---- */
-  .mybar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:18px 20px;box-shadow:var(--shadow);margin-bottom:22px;
-    display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-  .mybar .ring{--p:0;width:64px;height:64px;border-radius:50%;flex:none;
-    background:conic-gradient(var(--primary) calc(var(--p)*1%),var(--line) 0);
-    display:grid;place-items:center}
-  .mybar .ring i{width:48px;height:48px;background:var(--surface);border-radius:50%;
-    display:grid;place-items:center;font-style:normal;font-weight:700;font-size:14px}
-  .mybar .txt b{font-size:15px}
-  .mybar .txt p{margin:2px 0 0;color:var(--muted);font-size:13px}
+  /* ---- jornada (hero) ---- */
+  .journey{display:flex;align-items:center;gap:24px;background:linear-gradient(160deg,#0e2c4c,#0c2236);
+    color:#e7ecf2;border-radius:var(--radius);padding:22px 26px;margin-bottom:16px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden}
+  .journey::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-radial-gradient(circle at 88% 18%,rgba(201,162,86,.07) 0 1px,transparent 1px 16px)}
+  .journey .ring2{--p:0;width:82px;height:82px;border-radius:50%;flex:none;display:grid;place-items:center;
+    background:conic-gradient(#E2C078 calc(var(--p)*1%),rgba(255,255,255,.14) 0)}
+  .journey .ring2 i{width:62px;height:62px;border-radius:50%;background:#0c2236;display:grid;place-items:center;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;color:#fff;font-style:normal}
+  .journey .jtext{flex:1;min-width:0;position:relative;z-index:1}
+  .journey .jhi{font-family:'Fraunces',serif;font-weight:600;font-size:22px}
+  .journey .jtext p{margin:4px 0 13px;font-size:13.5px;color:#aebfd0}
+  .journey .jtext p b{color:#fff}
+  .stepper{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  .step{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#8ea3ba;white-space:nowrap;
+    border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 13px}
+  .step .n{font-family:'IBM Plex Mono',monospace;opacity:.85}
+  .step.on{color:#0c2236;background:#E2C078;border-color:#E2C078}
+  .step.done{color:#bfe8d0;border-color:rgba(70,192,130,.45)}
+  .step.lock{opacity:.6}
+  .dash{width:40px;flex:none;height:1px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.3) 0 5px,transparent 5px 10px)}
+  /* continue de onde parou */
+  .nextup{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);
+    border-left:4px solid var(--primary);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow);
+    margin-bottom:22px;cursor:pointer;transition:.15s}
+  .nextup:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(10,77,162,.12)}
+  .nextup .grow{flex:1;min-width:0}
+  .nextup .lab{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);font-weight:600}
+  .nextup h3{font-size:16px;margin-top:3px}
+  .nextup .c{font-size:12px;color:var(--muted);margin-top:2px}
 
   /* ---- certificate banner ---- */
   .cert-banner{background:linear-gradient(120deg,var(--gold-soft),var(--surface));
@@ -150,25 +170,30 @@
   .btn-gold:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
   /* ---- pop cards ---- */
-  .grid{display:grid;gap:14px}
-  .popcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:18px 20px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center;
-    transition:border-color .15s,transform .15s;animation:fadeUp .3s ease both}
-  .popcard:hover{border-color:var(--line-strong);transform:translateY(-1px)}
-  .popcard .code{font-size:12px;font-weight:700;color:var(--primary);
-    background:var(--primary-soft);border-radius:7px;padding:4px 9px;flex:none}
-  .popcard .meta{flex:1;min-width:0}
-  .popcard h3{font-size:16px;line-height:1.3}
-  .popcard .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
-  .seal{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
-    color:var(--gold);margin-top:5px}
-  .badge{font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;
-    display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-  .badge.pending{color:var(--pending);background:var(--pending-soft)}
+  .grid{display:flex;flex-direction:column;gap:10px}
+  .popcard{position:relative;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line-strong);
+    border-radius:13px;padding:15px 20px;box-shadow:0 1px 2px rgba(10,77,162,.05);
+    display:grid;grid-template-columns:auto 1fr auto auto;gap:18px;align-items:center;
+    transition:border-color .15s,transform .15s,box-shadow .15s;animation:fadeUp .3s ease both}
+  .popcard:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+  .popcard.pass{border-left-color:var(--success)}
+  .popcard.next{border-left-color:var(--primary);background:linear-gradient(90deg,var(--primary-soft),var(--surface) 42%)}
+  .popcard.fail{border-left-color:var(--danger)}
+  .popcard .code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--primary);
+    background:var(--primary-soft);border-radius:7px;padding:5px 9px;white-space:nowrap}
+  .popcard.pass .code{color:var(--success);background:var(--success-soft)}
+  .popcard .meta{min-width:0}
+  .popcard .ptag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:var(--primary);margin-bottom:3px}
+  .popcard h3{font-size:15px;font-weight:600;line-height:1.3}
+  .popcard .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .badge{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+  .badge.pending{color:var(--faint);background:var(--surface-2)}
   .badge.read{color:var(--warn);background:var(--warn-soft)}
-  .badge.pass{color:var(--success);background:var(--success-soft)}
+  .badge.pass{color:#9c7a1e;background:#f7eed5;border:1px solid #e6d49b}
   .badge.fail{color:var(--danger);background:var(--danger-soft)}
-  .badge.locked{color:var(--faint);background:var(--pending-soft)}
+  .badge.locked{color:var(--faint);background:var(--surface-2)}
   .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
   /* buscador de POPs */
   .popsearch{margin:6px 0 18px}
@@ -192,17 +217,17 @@
   .pill.mine{color:var(--success);background:var(--success-soft)}
   .hi{background:var(--warn-soft);color:var(--warn);border-radius:3px;padding:0 2px;font-weight:700}
   /* etapas */
-  .etapa-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-    margin:22px 0 10px;flex-wrap:wrap}
-  .etapa-head h2,.etapa-head h3{font-size:15px;font-weight:700}
-  .etapa-prog{font-size:12.5px;color:var(--muted)}
-  .etapa-prog.ok{color:var(--success);font-weight:700}
-  .etapa-lock{font-size:12.5px;color:var(--faint);font-weight:600}
+  .etapa-head{display:flex;align-items:baseline;gap:14px;margin:30px 0 6px;flex-wrap:wrap}
+  .etapa-head h2,.etapa-head h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;letter-spacing:-.01em}
+  .etapa-prog{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted)}
+  .etapa-prog b{color:var(--success)}
+  .etapa-prog.ok{color:var(--success);font-weight:600}
+  .etapa-lock{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9c7a1e;font-weight:500}
   .etapa-sub{margin:2px 0 10px;color:var(--muted);font-size:13px}
-  .etapa-bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:0 0 14px}
-  .etapa-bar i{display:block;height:100%;background:var(--success);border-radius:99px;transition:width .4s ease}
-  .popcard.is-locked{opacity:.62}
-  .popcard.is-locked:hover{transform:none;border-color:var(--line)}
+  .etapa-bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:8px 0 16px}
+  .etapa-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#4d8fe0);border-radius:99px;transition:width .4s ease}
+  .popcard.is-locked{opacity:.62;border-left-color:var(--line-strong)}
+  .popcard.is-locked:hover{transform:none;box-shadow:0 1px 2px rgba(10,77,162,.05)}
   .btn{border:0;border-radius:9px;font-weight:600;font-size:13.5px;padding:9px 16px;
     background:var(--primary);color:#fff;transition:.15s}
   .btn:hover{background:var(--primary-dark)}
@@ -210,6 +235,8 @@
   [data-theme="dark"] .btn{color:#0e1622}
   .btn.ghost{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
   .btn.ghost:hover{background:var(--line)}
+  .btn.warn{background:var(--danger-soft);color:var(--danger)}
+  .btn.warn:hover{background:#f9d9dc}
   .btn:disabled{opacity:.5;cursor:not-allowed}
   .btn.block{width:100%;padding:13px;font-size:15px}
 
@@ -544,8 +571,11 @@
     .topbar-inner{padding:10px 14px}
     main{padding:18px 14px 70px}
     .brand span{display:none}
-    .popcard{flex-wrap:wrap}
-    .popcard .badge{order:3}
+    .popcard{grid-template-columns:auto 1fr;gap:10px 14px}
+    .popcard .badge{grid-column:2;justify-self:start}
+    .popcard .btn{grid-column:1/3;justify-self:stretch;justify-content:center}
+    .journey{flex-direction:column;align-items:flex-start;gap:18px}
+    .nextup{flex-wrap:wrap}
     .article .body{padding-left:18px;padding-right:18px}
     .stamp{padding:14px}
     .stamp-grid{grid-template-columns:64px 1fr}
@@ -1011,22 +1041,28 @@ async function carregarResultadosGestor(){
 }
 
 /* ---------- colaborador: lista ---------- */
+let nextPopId=null;   // POP "próximo recomendado" (1º pendente/reprovado da trilha)
 function popCardHTML(p, idx){
   const s=statusOf(p.id);
-  const cls={pending:'pending',pass:'pass',fail:'fail',locked:'locked'}[s.k];
   const isLocked=s.k==='locked';
-  const label=s.score!=null?`${s.label} · ${s.hits}/${QUIZ_SIZE}`:s.label;
-  const cta=isLocked?'🔒 Bloqueado':(s.k==='pass'?'Revisar leitura':(s.k==='fail'?'Reler e refazer':'Ler POP'));
-  const seal=s.k==='pass'?`<span class="seal">🎖 Aprovado${s.date?' · '+s.date:''}</span>`:'';
-  return `<div class="popcard${isLocked?' is-locked':''}" style="animation-delay:${idx*60}ms">
+  const isNext = !isLocked && (s.k==='pending'||s.k==='fail') && p.id===nextPopId;
+  const rail = isLocked?'is-locked':(s.k==='pass'?'pass':(s.k==='fail'?'fail':(isNext?'next':'')));
+  const cta=isLocked?'🔒':(s.k==='pass'?'Revisar':(s.k==='fail'?'Reler e refazer':'Ler POP'));
+  const btnCls=isLocked?'':(s.k==='fail'?'warn':(isNext?'':'ghost'));
+  const nota = s.hits!=null?s.hits:(s.score!=null?s.score:'—');
+  const badge = s.k==='pass'
+      ? `<span class="badge pass">🎖 Aprovado · ${nota}/${QUIZ_SIZE}</span>`
+      : s.k==='fail'
+        ? `<span class="badge fail"><span class="dot"></span>Reprovado · ${nota}/${QUIZ_SIZE}</span>`
+        : isLocked
+          ? `<span class="badge locked"><span class="dot"></span>Bloqueado</span>`
+          : `<span class="badge pending"><span class="dot"></span>Pendente</span>`;
+  const tag = isNext ? `<span class="ptag">▸ Próximo recomendado</span>` : '';
+  return `<div class="popcard ${rail}" style="animation-delay:${idx*45}ms">
       <span class="code mono">${p.code}</span>
-      <div class="meta">
-        <h3>${p.title}</h3>
-        <div class="sub">Versão ${p.version} · ${p.executantes}</div>
-        ${seal}
-      </div>
-      <span class="badge ${cls}"><span class="dot"></span>${label}</span>
-      <button class="btn" ${isLocked?'disabled':`onclick="openPop('${p.id}')"`}>${cta}</button>
+      <div class="meta">${tag}<h3>${p.title}</h3><div class="sub">Versão ${p.version} · ${p.executantes}</div></div>
+      ${badge}
+      <button class="btn ${btnCls}" ${isLocked?'disabled':`onclick="openPop('${p.id}')"`}>${cta}</button>
     </div>`;
 }
 function etapaSectionHTML(e){
@@ -1173,6 +1209,20 @@ function renderColabList(){
         ? `Para concluir a Etapa 1, leia e responda ao menos ${e1meta} POPs. Comece pelo primeiro.`
         : `Etapa 1: ${Math.min(e1now,e1meta)} de ${e1meta} POPs concluídos · faltam ${falta1}.`);
   const ringPct = e1ok ? pr.pct : (e1meta?Math.round(Math.min(e1now,e1meta)/e1meta*100):0);
+  const ordemTrilha = [...popsEtapa(session.setor,1), ...(etapa2Unlocked()?popsEtapa(session.setor,2):[])];
+  const nextPop = ordemTrilha.find(p=>{ const k=statusOf(p.id).k; return k==='pending'||k==='fail'; }) || null;
+  nextPopId = nextPop ? nextPop.id : null;
+  const step2Cls = !hasE2 ? 'lock' : (e2ok ? 'done' : (etapa2Unlocked() ? 'on' : 'lock'));
+  const stepper = `<div class="stepper">
+        <span class="step ${e1ok?'done':'on'}"><span class="n">①</span> ${ETAPA_LABEL[1]}</span>
+        <span class="dash"></span>
+        <span class="step ${step2Cls}"><span class="n">②</span> ${ETAPA_LABEL[2]}${(hasE2&&!etapa2Unlocked())?' 🔒':''}</span>
+      </div>`;
+  const nextupHTML = nextPop ? `<div class="nextup fade-up" onclick="openPop('${nextPop.id}')">
+        <div class="grow"><div class="lab">Continue de onde parou</div>
+          <h3>${nextPop.title}</h3><div class="c mono">${nextPop.code} · Versão ${nextPop.version}</div></div>
+        <button class="btn" onclick="event.stopPropagation();openPop('${nextPop.id}')">Continuar →</button>
+      </div>` : '';
   return `
     <div class="pagehead fade-up">
       <h2>Meus procedimentos</h2>
@@ -1181,10 +1231,11 @@ function renderColabList(){
     ${buscadorBlocoHTML()}
     <div id="list-default">
       ${banners}
-      <div class="mybar fade-up">
-        <div class="ring" style="--p:${ringPct}"><i>${ringPct}%</i></div>
-        <div class="txt"><b>Olá, ${session.nome.split(' ')[0]}</b><p>${hello}</p></div>
+      <div class="journey fade-up">
+        <div class="ring2" style="--p:${ringPct}"><i>${ringPct}%</i></div>
+        <div class="jtext"><div class="jhi">Olá, ${session.nome.split(' ')[0]}</div><p>${hello}</p>${stepper}</div>
       </div>
+      ${nextupHTML}
       ${etapaSectionHTML(1)}
       ${etapaSectionHTML(2)}
     </div>
