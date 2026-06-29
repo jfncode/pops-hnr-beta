@@ -424,52 +424,79 @@
   .cm-close:hover{background:var(--line)}
   .cm-body{padding:18px}
   .cm-body .cert.cert-preview{box-shadow:none;padding:0}
-  .kpi-link{cursor:pointer;transition:transform .15s,border-color .15s}
-  .kpi-link:hover{border-color:var(--gold);transform:translateY(-1px)}
-  .kpi .see{display:block;font-size:10px;color:var(--primary);font-weight:600;margin-top:3px}
+  .kpi-link{cursor:pointer;transition:.15s}
+  .kpi-link:hover{border-color:#e6d49b;transform:translateY(-1px)}
+  .kpi .see{display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#9c7a1e;font-weight:500;margin-top:3px}
 
-  /* ---- gestor ---- */
-  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
-  .kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:16px 18px;box-shadow:var(--shadow);animation:fadeUp .3s ease both}
-  .kpi .v{font-size:26px;font-weight:700;line-height:1}
-  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:5px}
+  /* ---- gestor: dashboard ---- */
+  .present{display:grid;grid-template-columns:auto 1fr;gap:30px;background:linear-gradient(160deg,#0e2c4c,#0c2236);
+    color:#e7ecf2;border-radius:var(--radius);padding:24px 28px;margin-bottom:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;animation:fadeUp .3s ease both}
+  .present::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(circle at 92% 14%,rgba(201,162,86,.06) 0 1px,transparent 1px 18px)}
+  .present .big{position:relative;z-index:1;display:flex;align-items:center;gap:20px}
+  .present .pring{--p:0;width:104px;height:104px;border-radius:50%;flex:none;display:grid;place-items:center;
+    background:conic-gradient(#46c082 calc(var(--p)*1%),rgba(255,255,255,.13) 0)}
+  .present .pring i{width:80px;height:80px;border-radius:50%;background:#0c2236;display:flex;flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .present .pring i b{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:24px;color:#fff}
+  .present .pring i span{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#8ea3ba;margin-top:1px}
+  .present .lead .k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E2C078}
+  .present .lead h3{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-top:3px;color:#fff}
+  .present .lead p{font-size:13px;color:#aebfd0;margin:5px 0 0}
+  .bysetor{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;align-content:center}
+  .sbar{display:grid;grid-template-columns:96px 1fr 42px;align-items:center;gap:11px;font-size:12px}
+  .sbar .nm{color:#cdd9e6;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sbar .track{height:7px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden}
+  .sbar .track i{display:block;height:100%;background:linear-gradient(90deg,#46c082,#E2C078);border-radius:99px}
+  .sbar .pc{font-family:'IBM Plex Mono',monospace;color:#fff;text-align:right}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-bottom:18px}
+  .kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);animation:fadeUp .3s ease both}
+  .kpi .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:30px;line-height:1;color:var(--ink)}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:7px}
   .kpi .v.green{color:var(--success)}
   .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);overflow:hidden;margin-bottom:22px;animation:fadeUp .3s ease both}
-  .panel-head{padding:16px 22px;border-bottom:1px solid var(--line);
-    display:flex;align-items:center;justify-content:space-between}
-  .panel-head h3{font-size:15px}
-  .panel-head span{font-size:12.5px;color:var(--muted)}
-  .matrix{width:100%;border-collapse:collapse;font-size:13px}
-  .matrix th,.matrix td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
-  .matrix thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;
-    color:var(--muted);font-weight:600;background:var(--surface-2)}
+    box-shadow:var(--shadow);overflow:hidden;margin-bottom:18px;animation:fadeUp .3s ease both}
+  .panel-head{padding:15px 20px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .panel-head h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px}
+  .panel-head span{font-size:12px;color:var(--muted)}
+  .legend{display:flex;gap:14px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .lg-pass{background:var(--success)}.lg-fail{background:var(--danger)}.lg-pend{background:#eef3f8;border:1px solid var(--line-strong)}.lg-na{background:#f1f5f9}
+  .mwrap{overflow-x:auto}
+  .matrix{border-collapse:separate;border-spacing:0;font-size:12.5px;min-width:100%}
+  .matrix th,.matrix td{padding:0;text-align:center}
+  .matrix thead th{position:sticky;top:0;background:var(--surface-2);font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;font-weight:600;color:var(--muted);padding:10px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .matrix th.person-h,.matrix td.person-c{position:sticky;left:0;z-index:2;background:var(--surface);text-align:left;
+    padding:9px 16px;border-bottom:1px solid var(--line);box-shadow:1px 0 0 var(--line)}
+  .matrix thead th.person-h{z-index:3;background:var(--surface-2)}
   .matrix tbody tr:last-child td{border-bottom:0}
-  .matrix .person{display:flex;align-items:center;gap:10px}
-  .matrix .person b{font-weight:600;font-size:13.5px}
-  .matrix .person small{color:var(--faint);font-size:11.5px;display:block}
-  .cell{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12.5px}
-  .cell.pass{color:var(--success)} .cell.fail{color:var(--danger)}
-  .cell.read{color:var(--warn)} .cell.pending{color:var(--faint)}
-  .cell.na{color:var(--faint);opacity:.55;font-weight:500}
-  .cell .ic{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
-  .cellbtn{border:0;background:transparent;padding:4px 6px;margin:-4px -6px;border-radius:8px;
-    display:inline-flex;align-items:center;gap:7px;transition:.12s}
-  .cellbtn:hover{background:var(--surface-2);outline:1px solid var(--line-strong)}
-  .cellbtn .eye{font-size:12px;opacity:.45}
-  .cellbtn:hover .eye{opacity:1}
-  .pbar{height:7px;background:var(--line);border-radius:20px;overflow:hidden;min-width:90px}
-  .pbar i{display:block;height:100%;background:var(--primary);border-radius:20px}
-  .pcompact{display:flex;align-items:center;gap:10px}
-  .pcompact b{font-size:13px;width:38px;text-align:right}
-  .perpop-row{display:flex;align-items:center;gap:14px;padding:11px 22px;border-bottom:1px solid var(--line)}
+  .person{display:flex;align-items:center;gap:10px;min-width:210px}
+  .person .selc{accent-color:var(--primary);width:15px;height:15px;cursor:pointer;flex:none}
+  .person .avatar{width:32px;height:32px;border-radius:50%;background:var(--primary-soft);color:var(--primary);display:grid;place-items:center;font-weight:700;font-size:12px;flex:none}
+  .person b{font-weight:600;font-size:13px;white-space:nowrap}
+  .person small{display:block;color:var(--faint);font-size:11px}
+  .matrix td.cellw{padding:5px;border-bottom:1px solid var(--line)}
+  .cell{width:38px;height:30px;border-radius:6px;display:grid;place-items:center;margin:0 auto;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px}
+  .cell.pass{background:var(--success);color:#fff}
+  .cell.fail{background:var(--danger);color:#fff}
+  .cell.pending{background:#eef3f8;color:var(--faint);border:1px solid var(--line)}
+  .cell.na{background:transparent;color:#cdd7e0}
+  .matrix td.prog{position:sticky;right:0;background:var(--surface);padding:8px 16px;border-bottom:1px solid var(--line);box-shadow:-1px 0 0 var(--line)}
+  .matrix th.prog-h{position:sticky;right:0;z-index:3;background:var(--surface-2)}
+  .pcompact{display:flex;align-items:center;gap:9px;min-width:120px}
+  .pbar{flex:1;height:6px;background:var(--line);border-radius:99px;overflow:hidden;min-width:80px}
+  .pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#4d8fe0);border-radius:99px}
+  .pcompact b{font-family:'IBM Plex Mono',monospace;font-size:12px;width:42px;text-align:right}
+  .perpop-row{display:flex;align-items:center;gap:16px;padding:11px 20px;border-bottom:1px solid var(--line)}
   .perpop-row:last-child{border-bottom:0}
   .perpop-row .nm{flex:1;min-width:0}
   .perpop-row .nm b{font-size:13.5px;font-weight:600}
   .perpop-row .nm small{display:block;color:var(--faint);font-size:11.5px}
-  .perpop-row .code{font-size:12px;font-weight:700;color:var(--primary);
+  .perpop-row .code{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--primary);
     background:var(--primary-soft);border-radius:7px;padding:4px 9px;flex:none}
+  .perpop-row .pcompact{flex:none;min-width:150px}
 
   /* ---- empty state ---- */
   .empty{padding:36px 20px;text-align:center;color:var(--muted)}
@@ -568,6 +595,10 @@
 
   @media(max-width:640px){
     .kpis{grid-template-columns:repeat(2,1fr)}
+    .present{grid-template-columns:1fr;gap:18px}
+    .bysetor{grid-template-columns:1fr}
+    .present .big{gap:16px}
+    .present .pring{width:88px;height:88px}.present .pring i{width:68px;height:68px}
     .topbar-inner{padding:10px 14px}
     main{padding:18px 14px 70px}
     .brand span{display:none}
@@ -1533,12 +1564,11 @@ function renderGestor(){
     const totalMine=mineSet.size;
     let done=0;
     const cells=popsOrd.map(p=>{
-      if(!mineSet.has(p.id)) return `<td><span class="cell na">—</span></td>`;
+      if(!mineSet.has(p.id)) return `<td class="cellw"><span class="cell na" title="Não se aplica">—</span></td>`;
       const r=byKey[col.matricula+'|'+p.id];
-      let cls='pending', lbl='Pendente';
-      if(r){ if(r.status==='aprovado'){ cls='pass'; lbl='Aprovado'; done++; } else { cls='fail'; lbl='Refazer'; } }
-      const extra=r?` ${r.acertos}/${r.total}`:'';
-      return `<td><span class="cell ${cls}"><span class="ic"></span>${lbl}${extra}</span></td>`;
+      if(r && r.status==='aprovado'){ done++; return `<td class="cellw"><span class="cell pass" title="Aprovado ${r.acertos}/${r.total}">${r.acertos}</span></td>`; }
+      if(r){ return `<td class="cellw"><span class="cell fail" title="Refazer ${r.acertos}/${r.total}">${r.acertos}</span></td>`; }
+      return `<td class="cellw"><span class="cell pending" title="Pendente">·</span></td>`;
     }).join('');
     const pct=totalMine?Math.round(done/totalMine*100):0;
     const e1=etapaDoneSet(col.setor,1,aprovCol);
@@ -1546,11 +1576,10 @@ function renderGestor(){
     const finalOk=e1 && (e2pops.length===0 || etapaDoneSet(col.setor,2,aprovCol));
     const medal=finalOk?' 🏆':(e1?' 🥇':'');
     return `<tr>
-      <td class="no-print selcol"><input type="checkbox" class="sel-colab" value="${col.matricula}" aria-label="Selecionar ${col.nome}"></td>
-      <td><div class="person"><div class="avatar">${initials(col.nome)}</div>
+      <td class="person-c"><div class="person"><input type="checkbox" class="selc sel-colab no-print" value="${col.matricula}" aria-label="Selecionar ${col.nome}"><div class="avatar">${initials(col.nome)}</div>
         <div><b>${col.nome}${medal}</b><small>${setorLabel(col.setor)} · mat. ${col.matricula}</small></div></div></td>
       ${cells}
-      <td class="hidesm"><div class="pcompact"><div class="pbar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div></td>
+      <td class="prog"><div class="pcompact"><div class="pbar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div></td>
     </tr>`;
   }).join('');
 
@@ -1568,6 +1597,25 @@ function renderGestor(){
     </div>`;
   }).join('');
 
+  const SETORES=Object.keys(SETOR_LABELS);
+  const bySetor=SETORES.map(st=>{
+    const cs=colabs.filter(c=>c.setor===st);
+    let ap=0, el=0;
+    cs.forEach(c=>{ const mine=popsDoSetor(c.setor); el+=mine.length;
+      const aprov=new Set(res.filter(r=>r.matricula===c.matricula&&r.status==='aprovado').map(r=>r.pop_id));
+      ap+=mine.filter(p=>aprov.has(p.id)).length; });
+    return {label:setorLabel(st), pct: el?Math.round(ap/el*100):0, n:cs.length};
+  }).filter(x=>x.n>0);
+  const pctCert=colabs.length?Math.round(certFinal/colabs.length*100):0;
+  const presentHTML = colabs.length ? `<div class="present fade-up">
+      <div class="big">
+        <div class="pring" style="--p:${pctCert}"><i><b>${pctCert}%</b><span>certificados</span></i></div>
+        <div class="lead"><div class="k">Programa · visão geral</div>
+          <h3>${certFinal} de ${colabs.length} concluíram a trilha</h3>
+          <p>${aprovacoes} aprovações · ${pendencias} pendências · ${colabs.length} colaboradores</p></div>
+      </div>
+      <div class="bysetor">${bySetor.map(s=>`<div class="sbar"><span class="nm">${s.label}</span><span class="track"><i style="width:${s.pct}%"></i></span><span class="pc">${s.pct}%</span></div>`).join('')}</div>
+    </div>` : '';
   return `
     <div class="pagehead gestor-head fade-up">
       <div>
@@ -1580,6 +1628,7 @@ function renderGestor(){
         <button class="btn-report btn-search" onclick="goBusca()">${ICON_SEARCH}Buscar POPs</button>
       </div>
     </div>
+    ${presentHTML}
     <div class="kpis">
       <div class="kpi"><div class="v">${colabs.length}</div><div class="l">Colaboradores</div></div>
       <div class="kpi"><div class="v green">${aprovacoes}</div><div class="l">Aprovações</div></div>
@@ -1588,9 +1637,11 @@ function renderGestor(){
       <div class="kpi"><div class="v" style="color:var(--warn)">${pendencias}</div><div class="l">Pendências</div></div>
     </div>
     <div class="panel">
-      <div class="panel-head"><h3>Matriz de conclusão</h3><span>marque p/ relatório individual · 🥇 Etapa 1 · 🏆 final</span></div>
-      ${vazio || `<div style="overflow-x:auto"><table class="matrix">
-        <thead><tr><th class="no-print selcol"><input type="checkbox" onclick="toggleAllColabs(this)" aria-label="Selecionar todos"></th><th>Colaborador</th>${popsOrd.map(p=>`<th>${p.code.replace('POP-ENF-','ENF-')}</th>`).join('')}<th class="hidesm">Progresso</th></tr></thead>
+      <div class="panel-head"><h3>Matriz de conclusão</h3>
+        <div class="legend"><span><i class="lg-pass"></i>Aprovado</span><span><i class="lg-fail"></i>Refazer</span><span><i class="lg-pend"></i>Pendente</span><span><i class="lg-na"></i>N/A</span></div>
+      </div>
+      ${vazio || `<div class="mwrap"><table class="matrix">
+        <thead><tr><th class="person-h"><label style="display:flex;align-items:center;gap:9px;cursor:pointer"><input type="checkbox" class="selc no-print" onclick="toggleAllColabs(this)" aria-label="Selecionar todos">Colaborador</label></th>${popsOrd.map(p=>`<th title="${(p.title||'').replace(/"/g,'&quot;')}">${p.code.replace('POP-','')}</th>`).join('')}<th class="prog-h">Progresso</th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>`}
     </div>
