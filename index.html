@@ -438,7 +438,9 @@
   .empty p{font-size:13px;margin:0}
 
   /* ---- auth ---- */
-  .auth-wrap{min-height:calc(100vh - 120px);display:grid;place-items:center;padding:28px 16px}
+  .auth-wrap{position:relative;min-height:calc(100vh - 120px);display:grid;place-items:center;padding:28px 16px;
+    background-image:linear-gradient(rgba(8,18,33,.40),rgba(8,18,33,.55)),url('./assets/bg-portal.webp');
+    background-size:cover;background-position:center;background-repeat:no-repeat}
   .auth-card{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);
     border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;animation:fadeUp .3s ease both}
   .auth-head{text-align:center;margin-bottom:22px}
