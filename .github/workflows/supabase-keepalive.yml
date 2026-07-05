@@ -1,0 +1,23 @@
+name: Supabase Keep-Alive
+
+# Evita o auto-pause do free tier (7 dias sem atividade) fazendo uma
+# query leve no projeto de produção a cada 3 dias.
+on:
+  schedule:
+    - cron: '0 12 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST
+        run: |
+          # Chave publishable (pública, mesma exposta no front em js/config.js)
+          APIKEY="sb_publishable_ur6YVHSauhBePuCOhKi1iA_2SxQhZLo"
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://ezkohniydtijcycqevqj.supabase.co/rest/v1/colaboradores?select=matricula&limit=1" \
+            -H "apikey: $APIKEY" \
+            -H "Authorization: Bearer $APIKEY")
+          echo "HTTP $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
