@@ -729,6 +729,7 @@ let lastResult = null;
 let quizState = null;   // {list:[{q,o,a}], cur, answers[], tLeft, timerId}
 let theme = 'light';
 let aprovadosServidor = [];   // pop_ids aprovados no servidor (lockout central)
+let sorteio = null;   // {e1:[ids], e2:[ids]} do colaborador logado (30 POPs sorteados)
 let meuProgresso = {};        // cache local do colaborador: pop_id -> {status,hits,score,date,detail}
 let resultadosGestor = [];    // resultados das provas (servidor)
 let colaboradoresGestor = []; // todos os colaboradores cadastrados (servidor)
@@ -759,22 +760,43 @@ function meusPops(){ return popsDoSetor(session && session.setor); }
 const byNome = (a,b) => (a.nome||'').localeCompare(b.nome||'', 'pt-BR', {sensitivity:'base'});
 const byCode = (a,b) => (a.code||'').localeCompare(b.code||'', 'pt-BR', {numeric:true});
 
+function seedColaborador(){ return (session && session.matricula && session.matricula!=='—') ? session.matricula : (session && (session.id||session.email||'anon')) || 'anon'; }
+function candidatosEtapaIds(setor, e){ return popsDoSetor(setor).filter(p=>popEtapa(p)===e).sort(byCode).map(p=>p.id); }
+function sorteioValido(s){ return s && Array.isArray(s.e1) && Array.isArray(s.e2) && s.e1.length>0 && s.e2.length>0; }
+async function garantirSorteio(){
+  if(!session || session.role!=='colaborador'){ sorteio=null; return; }
+  let s = sorteioValido(sorteio) ? sorteio : null;
+  if(!s && POPApi.getSorteio){ try{ s = await POPApi.getSorteio(); }catch{ s=null; } }
+  if(!sorteioValido(s)){
+    s = POPCore.sortear(candidatosEtapaIds(session.setor,1), candidatosEtapaIds(session.setor,2), seedColaborador(), 15);
+    if(POPApi.salvarSorteio){ try{ await POPApi.salvarSorteio(s); }catch{} }
+  }
+  sorteio = s;
+}
+
 /* ---------- etapas / 2 certificados ----------
    Trilha do colaborador = POPs do seu setor, divididos por etapa (campo p.etapa).
    Etapa 1 → 1º certificado. Etapa 2 (questões só de alta dificuldade) fica
    bloqueada até concluir a Etapa 1; ao concluí-la, libera o certificado final. */
 const ETAPA_LABEL = {1:'Etapa 1 · Fundamentos', 2:'Etapa 2 · Avançado'};
 const popEtapa = p => (p && p.etapa===2) ? 2 : 1;
+// pool de candidatos do setor por etapa (usado no sorteio e no fallback do gestor)
 function popsEtapa(setor, e){ return popsDoSetor(setor).filter(p => popEtapa(p)===e).sort(byCode); }
-// Meta de conclusão da etapa. Etapa 1 → ler e responder ao menos ETAPA1_MIN (15)
-// POPs da área (ou todos, se o setor tiver menos de 15). Etapa 2 → todos os POPs da etapa.
-function metaEtapa(setor, e){ const n=popsEtapa(setor,e).length; return e===1 ? Math.min(ETAPA1_MIN, n) : n; }
-function aprovadosEtapaSet(setor, e, aprovSet){ return popsEtapa(setor,e).filter(p=>aprovSet.has(p.id)).length; }
-function aprovadosEtapa(e){ return popsEtapa(session && session.setor, e).filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length; }
-function etapaDoneSet(setor, e, aprovSet){ const meta=metaEtapa(setor,e); return meta>0 && aprovadosEtapaSet(setor,e,aprovSet) >= meta; }
-function etapaDone(e){ const meta=metaEtapa(session && session.setor, e); return meta>0 && aprovadosEtapa(e) >= meta; }
+// ids da seção (15 sorteados) de um colaborador {setor, sorteio}
+function secaoIds(col, e){
+  const s = col && col.sorteio, key = e===1?'e1':'e2';
+  if(s && Array.isArray(s[key]) && s[key].length) return s[key];
+  return [];
+}
+// POPs da seção do colaborador LOGADO, em objetos, ordenados por código
+function trilhaEtapa(e){ return secaoIds({setor:(session&&session.setor), sorteio}, e).map(pop).filter(Boolean).sort(byCode); }
+function metaEtapa(col, e){ return secaoIds(col, e).length; }
+function aprovadosEtapaSet(col, e, aprovSet){ return secaoIds(col,e).filter(id=>aprovSet.has(id)).length; }
+function aprovadosEtapa(e){ const set=new Set(aprovadosServidor); return aprovadosEtapaSet({setor:(session&&session.setor), sorteio}, e, set); }
+function etapaDoneSet(col, e, aprovSet){ const meta=metaEtapa(col,e); return meta>0 && aprovadosEtapaSet(col,e,aprovSet) >= meta; }
+function etapaDone(e){ const meta=metaEtapa({setor:(session&&session.setor), sorteio}, e); return meta>0 && aprovadosEtapa(e) >= meta; }
 function etapa2Unlocked(){ return etapaDone(1); }
-function temEtapa2(){ return popsEtapa(session && session.setor, 2).length>0; }
+function temEtapa2(){ return trilhaEtapa(2).length>0; }
 
 function statusOf(pid){
   if(POPCore.isLocked(pid, aprovadosServidor)){
@@ -810,6 +832,7 @@ async function entrarColaborador(){   // modo DEMO (nome+matrícula+setor)
   session={role:'colaborador', matricula, nome, setor};
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
+  await garantirSorteio();
   screen='list'; render(); window.scrollTo(0,0);
 }
 function aplicarPerfil(p){
@@ -823,6 +846,7 @@ async function loginColaborador(){   // PRODUÇÃO (e-mail+senha)
   aplicarPerfil(r.profile);
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
+  await garantirSorteio();
   screen='list'; render(); window.scrollTo(0,0);
 }
 async function criarConta(){
@@ -836,6 +860,7 @@ async function criarConta(){
   aplicarPerfil(r.profile);
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
+  await garantirSorteio();
   screen='list'; render(); window.scrollTo(0,0);
 }
 async function recuperarSenha(){
@@ -853,7 +878,7 @@ async function carregarAprovados(){
     aprovadosServidor=r.aprovados||[];
   }catch{ aprovadosServidor=[]; }
 }
-function logout(){ clearQuizTimer(); if(window.popsSupabaseLogout)window.popsSupabaseLogout(); session=null; salvarSessao(); aprovadosServidor=[]; meuProgresso={}; resultadosGestor=[]; authView='home'; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
+function logout(){ clearQuizTimer(); if(window.popsSupabaseLogout)window.popsSupabaseLogout(); session=null; salvarSessao(); aprovadosServidor=[]; sorteio=null; meuProgresso={}; resultadosGestor=[]; authView='home'; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
 function openPop(id){
   if(session && session.role==='colaborador'){
     const p=pop(id);
@@ -1120,10 +1145,10 @@ function popCardHTML(p, idx){
     </div>`;
 }
 function etapaSectionHTML(e){
-  const ps=popsEtapa(session.setor, e);
+  const ps=trilhaEtapa(e);
   if(!ps.length) return '';
   const doneN=ps.filter(p=>POPCore.isLocked(p.id, aprovadosServidor)).length;
-  const meta=metaEtapa(session.setor, e);
+  const meta=metaEtapa({setor:session.setor, sorteio}, e);
   const locked = e===2 && !etapa2Unlocked();
   let hint, prog='';
   if(locked){
@@ -1241,7 +1266,7 @@ function renderColabList(){
   }
   const pr=userProgress();
   const e1ok=etapaDone(1), e2ok=etapaDone(2), hasE2=temEtapa2();
-  const e1now=aprovadosEtapa(1), e1meta=metaEtapa(session.setor,1);
+  const e1now=aprovadosEtapa(1), e1meta=metaEtapa({setor:session.setor, sorteio},1);
   const banners = [
     e1ok ? `<div class="cert-banner">
       <div class="medal">🥇</div>
@@ -1574,10 +1599,10 @@ function renderGestor(){
   colabs.forEach(col=>{
     const aprov=new Set(res.filter(r=>r.matricula===col.matricula&&r.status==='aprovado').map(r=>r.pop_id));
     totalCells+=popsDoSetor(col.setor).length;
-    const e1=etapaDoneSet(col.setor,1,aprov);
-    const e2pops=popsEtapa(col.setor,2);
+    const e1=etapaDoneSet(col,1,aprov);
+    const e2pops=secaoIds(col,2);
     if(e1) cert1++;
-    if(e1 && (e2pops.length===0 || etapaDoneSet(col.setor,2,aprov))) certFinal++;
+    if(e1 && (e2pops.length===0 || etapaDoneSet(col,2,aprov))) certFinal++;
   });
   const pendencias=Math.max(0, totalCells - aprovacoes);
 
@@ -1594,9 +1619,9 @@ function renderGestor(){
       return `<td class="cellw"><span class="cell pending" title="Pendente">·</span></td>`;
     }).join('');
     const pct=totalMine?Math.round(done/totalMine*100):0;
-    const e1=etapaDoneSet(col.setor,1,aprovCol);
-    const e2pops=popsEtapa(col.setor,2);
-    const finalOk=e1 && (e2pops.length===0 || etapaDoneSet(col.setor,2,aprovCol));
+    const e1=etapaDoneSet(col,1,aprovCol);
+    const e2pops=secaoIds(col,2);
+    const finalOk=e1 && (e2pops.length===0 || etapaDoneSet(col,2,aprovCol));
     const medal=finalOk?' 🏆':(e1?' 🥇':'');
     return `<tr>
       <td class="person-c"><div class="person"><input type="checkbox" class="selc sel-colab no-print" value="${esc(col.matricula)}" aria-label="Selecionar ${esc(col.nome)}"><div class="avatar">${initials(col.nome)}</div>
@@ -1840,13 +1865,13 @@ function individualReportPage(col, stamp){
   const aprov = new Set(res.filter(r=>r.status==='aprovado').map(r=>r.pop_id));
   const stColor = {pass:'#1a8f54',fail:'#d3202a',pending:'#90a3b3',locked:'#b9c4d0'};
   const stLabel = {pass:'Aprovado',fail:'Refazer',pending:'Pendente',locked:'Bloqueado'};
-  const e1pops = popsEtapa(col.setor,1), e2pops = popsEtapa(col.setor,2);
-  const e1done = etapaDoneSet(col.setor,1,aprov), e2done = etapaDoneSet(col.setor,2,aprov);
+  const e1pops = secaoIds(col,1).map(pop).filter(Boolean), e2pops = secaoIds(col,2).map(pop).filter(Boolean);
+  const e1done = etapaDoneSet(col,1,aprov), e2done = etapaDoneSet(col,2,aprov);
   const e2unlocked = e1done;
   const finalOk = e1done && (e2pops.length===0 || e2done);
   const e1ok = e1pops.filter(p=>aprov.has(p.id)).length;
   const e2ok = e2pops.filter(p=>aprov.has(p.id)).length;
-  const meta1 = metaEtapa(col.setor,1);
+  const meta1 = metaEtapa(col,1);
   const totalPops = e1pops.length + e2pops.length, totalOk = e1ok + e2ok;
   const pct1 = meta1?Math.round(Math.min(e1ok,meta1)/meta1*100):0;
   const pct2 = e2pops.length?Math.round(e2ok/e2pops.length*100):0;
@@ -2004,12 +2029,12 @@ document.getElementById('logo-src').src=LOGO_URI;
     // produção: a verdade é a sessão do Supabase (auto-retoma de onde parou)
     let perfil=null; try{ perfil=await POPApi.currentProfile(); }catch{}
     if(perfil && perfil.is_gestor){ session={role:'gestor'}; salvarSessao(); await carregarResultadosGestor(); }
-    else if(perfil){ aplicarPerfil(perfil); salvarSessao(); carregarProgressoLocal(); await carregarAprovados(); }
+    else if(perfil){ aplicarPerfil(perfil); salvarSessao(); carregarProgressoLocal(); await carregarAprovados(); await garantirSorteio(); }
     else { session=null; salvarSessao(); }
     render(); return;
   }
   // demo (?demo=1) ou sem Supabase: comportamento via localStorage
-  if(session && session.role==='colaborador'){ carregarProgressoLocal(); await carregarAprovados(); }
+  if(session && session.role==='colaborador'){ carregarProgressoLocal(); await carregarAprovados(); await garantirSorteio(); }
   else if(session && session.role==='gestor'){ await carregarResultadosGestor(); }
   render();
 })();
