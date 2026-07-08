@@ -40,7 +40,18 @@ language sql security definer stable as $$
 
 create policy colab_sel on colaboradores for select to authenticated using (id = auth.uid() or eh_gestor());
 create policy colab_ins on colaboradores for insert to authenticated with check (id = auth.uid());
-create policy colab_upd on colaboradores for update to authenticated using (id = auth.uid());
+create policy colab_upd on colaboradores for update to authenticated using (id = auth.uid()) with check (id = auth.uid());
+
+-- SEGURANCA (critico): as policies acima autorizam a LINHA (id = auth.uid()),
+-- mas nao as COLUNAS. Sem a trava abaixo, qualquer colaborador logado poderia rodar
+--   update colaboradores set is_gestor = true where id = auth.uid()
+-- e se auto-promover a gestor, ganhando leitura da PII de todos (violacao de LGPD).
+-- Column privileges tiram is_gestor do alcance do cliente: so a migracao (owner)
+-- e o service_role podem escrever essa coluna.
+revoke insert, update on colaboradores from anon, authenticated;
+grant insert (id, nome, setor, matricula, email) on colaboradores to authenticated;
+grant update (nome, setor, matricula, email) on colaboradores to authenticated;
+
 create policy res_sel on resultados for select to authenticated using (user_id = auth.uid() or eh_gestor());
 
 create function salvar_resultado(r jsonb) returns void
