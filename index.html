@@ -689,6 +689,7 @@
 <script src="./js/config.js"></script>
 <script src="./data/pops.js"></script>
 <script src="./js/core.js"></script>
+<script src="./js/portal-core.js"></script>
 <script src="./js/api.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./js/supabase-backend.js"></script>
@@ -891,7 +892,7 @@ function backToList(){ clearQuizTimer(); consulta=false; screen=(session&&sessio
 function goCert(stage){ certStage = (stage===2?2:1); screen='cert'; render(); window.scrollTo(0,0); }
 
 /* ---------- buscador de POPs (consulta) ---------- */
-const normTxt = s => (s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const normTxt = PortalCore.normTxt;
 function popIndex(p){
   if(p._idx) return p._idx;
   const secs = (p.sections||[]).map(s =>
