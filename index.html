@@ -923,7 +923,11 @@ function openPop(id){
   }
   clearQuizTimer(); activePop=id; consulta=false; screen='reader'; render(); window.scrollTo(0,0);
 }
-function backToList(){ clearQuizTimer(); consulta=false; screen=(session&&session.role==='gestor')?'busca':'list'; activePop=null; render(); window.scrollTo(0,0); }
+function backToList(){
+  clearQuizTimer();
+  if(consulta && consultaOrigem==='biblioteca'){ consulta=false; consultaOrigem='busca'; screen='biblioteca'; activePop=null; render(); window.scrollTo(0,0); return; }
+  consulta=false; screen=(session&&session.role==='gestor')?'busca':'list'; activePop=null; render(); window.scrollTo(0,0);
+}
 function goCert(stage){ certStage = (stage===2?2:1); screen='cert'; render(); window.scrollTo(0,0); }
 
 /* ---------- buscador de POPs (consulta) ---------- */
@@ -963,7 +967,7 @@ function highlight(text, q){
 }
 function consultarPop(id){
   if(!buscadorLiberado()){ alert('A consulta livre de POPs é liberada após concluir os 2 certificados.'); return; }
-  clearQuizTimer(); activePop=id; consulta=true; screen='reader'; render(); window.scrollTo(0,0);
+  clearQuizTimer(); activePop=id; consulta=true; consultaOrigem='busca'; screen='reader'; render(); window.scrollTo(0,0);
 }
 
 /* ---------- quiz engine (sorteio + cronômetro) ---------- */
@@ -1375,10 +1379,15 @@ function sectionHTML(s){
 }
 
 function renderReader(){
-  const p=pop(activePop);
+  const hit=docById(activePop);
+  const p=hit?hit.doc:pop(activePop);
+  const kind=hit?hit.kind:'pop';
+  const TIPO={pop:'POP · Procedimento Operacional Padrão', regimento:'Regimento institucional',
+              protocolo:'Protocolo assistencial', curso:'Curso · módulo'};
+  const voltarLabel = (consulta && consultaOrigem==='biblioteca') ? '← Voltar' : '← Voltar à busca';
   const readtop = consulta
     ? `<div class="readtop no-print"><div class="row">
-        <button class="back" onclick="backToList()">← Voltar à busca</button>
+        <button class="back" onclick="backToList()">${voltarLabel}</button>
         <span class="label">📖 Modo consulta</span>
       </div></div>`
     : `<div class="readtop no-print"><div class="row">
@@ -1392,10 +1401,10 @@ function renderReader(){
       <div class="stamp">
         <div class="stamp-grid">
           <div class="stamp-logo"><img src="${LOGO()}" alt="HNR" onerror="logoFail(this)"><small>HOSPITAL<br>NEREU RAMOS</small></div>
-          <div class="stamp-title"><small>POP · Procedimento Operacional Padrão</small><h2>${p.title}</h2></div>
-          <div class="stamp-meta"><span class="stamp-code mono">${p.code}</span>
-            <div><b>Emissão:</b> ${p.emission}</div><div><b>Versão:</b> ${p.version}</div></div>
-          <div class="stamp-row"><span><b>Origem:</b> ${p.origem}</span><span><b>Executante(s):</b> ${p.executantes}</span></div>
+          <div class="stamp-title"><small>${TIPO[kind]||TIPO.pop}</small><h2>${p.title}</h2></div>
+          <div class="stamp-meta"><span class="stamp-code mono">${p.code||''}</span>
+            ${p.emission?`<div><b>Emissão:</b> ${p.emission}</div>`:''}${p.version?`<div><b>Versão:</b> ${p.version}</div>`:''}</div>
+          <div class="stamp-row"><span><b>Origem:</b> ${p.origem||'Hospital Nereu Ramos'}</span>${p.executantes?`<span><b>Executante(s):</b> ${p.executantes}</span>`:''}</div>
         </div>
       </div>
       <div class="body">
@@ -1403,7 +1412,11 @@ function renderReader(){
         <div class="endmark" id="endmark">— fim do procedimento —</div>
       </div>
     </article>
-    ${consulta ? `
+    ${consulta && kind!=='pop' ? `
+    <div class="quizgate no-print" id="gate">
+      <div class="lock">📖 Leitura livre — ${TIPO[kind]||''}</div>
+      <button class="btn block" style="margin-top:10px" onclick="backToList()">← Voltar</button>
+    </div>` : consulta ? `
     <div class="quizgate no-print" id="gate">
       <div class="lock">📖 Consulta — leitura livre deste POP</div>
       ${session.role==='colaborador' && meusPops().some(x=>x.id===activePop)
