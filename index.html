@@ -102,6 +102,34 @@
     padding:8px 13px;font-size:13px;font-weight:600;color:var(--muted);transition:.15s}
   .logout:hover{border-color:var(--accent);color:var(--accent)}
 
+  /* ---- hub (Portal do Colaborador) ---- */
+  .hub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+  @media(max-width:720px){.hub-grid{grid-template-columns:1fr}}
+  .hubcard{position:relative;display:flex;flex-direction:column;gap:10px;text-align:left;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);cursor:pointer;font-family:inherit;color:var(--ink);
+    transition:transform .15s,border-color .15s;animation:fadeUp .3s ease both}
+  .hubcard:hover{transform:translateY(-2px);border-color:var(--primary)}
+  .hubcard .hc-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none}
+  .hubcard .hc-ic svg{width:22px;height:22px}
+  .hc-blue{background:var(--primary-soft);color:var(--primary)}
+  .hc-green{background:var(--success-soft);color:var(--success)}
+  .hc-gold{background:var(--gold-soft);color:var(--gold)}
+  .hc-red{background:var(--accent-soft);color:var(--accent)}
+  .hubcard h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px}
+  .hubcard p{margin:0;color:var(--muted);font-size:13.5px;flex:1;line-height:1.45}
+  .hubcard .hc-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;
+    border-top:1px solid var(--line);padding-top:12px;font-size:12.5px;color:var(--faint)}
+  .hubcard .hc-cta{font-weight:700;color:var(--primary)}
+  .hub-bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:2px}
+  .hub-bar i{display:block;height:100%;background:var(--primary);border-radius:99px}
+  .badge-soon{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    background:var(--warn-soft);color:var(--warn);padding:4px 10px;border-radius:999px;flex:none}
+  .bib-empty{background:var(--surface);border:1px dashed var(--line-strong);border-radius:var(--radius);
+    padding:46px 20px;text-align:center;color:var(--muted)}
+  .bib-empty .big{font-size:34px;margin-bottom:8px}
+  .bib-empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+
   /* ---- layout ---- */
   main{max-width:1080px;margin:0 auto;padding:26px 20px 80px}
   .pagehead{margin-bottom:20px}
@@ -698,6 +726,7 @@
 <script src="./js/supabase-backend.js"></script>
 <script src="./js/local-backend.js"></script>
 <script src="./js/seed-demo.js"></script>
+<script src="./js/hub.js"></script>
 <script>
 /* =========================================================================
    PROTÓTIPO — dados em memória. Espelha schema Supabase futuro:
@@ -724,7 +753,7 @@ const db = { pops: window.POPS };
 /* ---------- state ---------- */
 let session = JSON.parse(localStorage.getItem('pops_sessao') || 'null'); // colaborador {role,matricula,nome,setor} ou {role:'gestor'}
 let authView = 'home';
-let screen = 'list';
+let screen = 'hub';
 let activePop = null;
 let consulta = false;          // leitor aberto em modo consulta (leitura livre, sem avaliação)
 let popQuery = '';             // termo do buscador de POPs
@@ -734,6 +763,9 @@ let quizState = null;   // {list:[{q,o,a}], cur, answers[], tLeft, timerId}
 let theme = 'light';
 let aprovadosServidor = [];   // pop_ids aprovados no servidor (lockout central)
 let sorteio = null;   // {e1:[ids], e2:[ids]} do colaborador logado (30 POPs sorteados)
+let bibKind = null;            // qual biblioteca está aberta ('regimentos'|'protocolos')
+let bibQuery = '';             // termo da busca da biblioteca
+let consultaOrigem = 'busca';  // de onde a consulta abriu ('busca'|'biblioteca')
 let meuProgresso = {};        // cache local do colaborador: pop_id -> {status,hits,score,date,detail}
 let resultadosGestor = [];    // resultados das provas (servidor)
 let colaboradoresGestor = []; // todos os colaboradores cadastrados (servidor)
@@ -837,7 +869,7 @@ async function entrarColaborador(){   // modo DEMO (nome+matrícula+setor)
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
   await garantirSorteio();
-  screen='list'; render(); window.scrollTo(0,0);
+  screen='hub'; render(); window.scrollTo(0,0);
 }
 function aplicarPerfil(p){
   session={role:'colaborador', matricula:(p&&p.matricula)||'—', nome:(p&&p.nome)||'', setor:(p&&p.setor)||''};
@@ -851,7 +883,7 @@ async function loginColaborador(){   // PRODUÇÃO (e-mail+senha)
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
   await garantirSorteio();
-  screen='list'; render(); window.scrollTo(0,0);
+  screen='hub'; render(); window.scrollTo(0,0);
 }
 async function criarConta(){
   const nome=fval('#cs-nome'), setor=fval('#cs-setor'), matricula=fval('#cs-matricula'),
@@ -865,7 +897,7 @@ async function criarConta(){
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
   await garantirSorteio();
-  screen='list'; render(); window.scrollTo(0,0);
+  screen='hub'; render(); window.scrollTo(0,0);
 }
 async function recuperarSenha(){
   const email=fval('#cf-email');
@@ -882,7 +914,7 @@ async function carregarAprovados(){
     aprovadosServidor=r.aprovados||[];
   }catch{ aprovadosServidor=[]; }
 }
-function logout(){ clearQuizTimer(); if(window.popsSupabaseLogout)window.popsSupabaseLogout(); session=null; salvarSessao(); aprovadosServidor=[]; sorteio=null; meuProgresso={}; resultadosGestor=[]; authView='home'; screen='list'; activePop=null; render(); window.scrollTo(0,0); }
+function logout(){ clearQuizTimer(); if(window.popsSupabaseLogout)window.popsSupabaseLogout(); session=null; salvarSessao(); aprovadosServidor=[]; sorteio=null; meuProgresso={}; resultadosGestor=[]; authView='home'; screen='hub'; activePop=null; render(); window.scrollTo(0,0); }
 function openPop(id){
   if(session && session.role==='colaborador'){
     const p=pop(id);
@@ -1008,9 +1040,11 @@ function renderTopRight(){
   let nm,sub;
   if(session.role==='gestor'){ nm='Gestor'; sub='Educação Continuada'; }
   else { nm=session.nome; sub=setorLabel(session.setor)+' · mat. '+esc(session.matricula); }
+  const home = (session.role==='colaborador' && screen!=='hub')
+    ? `<button class="logout" onclick="goHub()">⌂ Início</button>` : '';
   return `<div class="who2"><div class="avatar">${initials(nm)}</div>
       <div class="nm"><b>${esc(nm)}</b><small>${sub}</small></div></div>
-    <button class="logout" onclick="logout()">Sair</button>`;
+    ${home}<button class="logout" onclick="logout()">Sair</button>`;
 }
 
 function renderAuth(){
@@ -2014,7 +2048,10 @@ function render(){
     else html=renderGestor();
   }
   else{
-    if(screen==='list')html=renderColabList();
+    if(screen==='hub')html=renderHub();
+    else if(screen==='biblioteca')html=renderBiblioteca();
+    else if(screen==='cursos')html=renderCursos();
+    else if(screen==='list')html=renderColabList();
     else if(screen==='reader')html=renderReader();
     else if(screen==='quiz')html=renderQuiz();
     else if(screen==='result')html=renderResult();
@@ -2022,6 +2059,7 @@ function render(){
   }
   $('#app').innerHTML=html;
   if(screen==='busca'||(session.role==='colaborador'&&screen==='list'))wireSearch();
+  if(session.role==='colaborador'&&screen==='biblioteca')wireBibSearch();
   if(session.role==='colaborador'&&screen==='reader'&&!consulta)wireReadGate();
   if(session.role==='colaborador'&&screen==='quiz')updateTimerUI();
 }
