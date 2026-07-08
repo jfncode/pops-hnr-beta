@@ -1157,7 +1157,10 @@ async function doGestorLogin(){
   render(); window.scrollTo(0,0);
 }
 async function carregarResultadosGestor(){
-  try{ const r=await POPApi.getResultados(); resultadosGestor=r.resultados||[]; colaboradoresGestor=r.colaboradores||[]; }
+  try{ const r=await POPApi.getResultados();
+    // resultados de módulos de curso (id 'curso-*') ficam fora dos relatórios de POPs
+    resultadosGestor=(r.resultados||[]).filter(x=>!String(x.pop_id||'').startsWith('curso-'));
+    colaboradoresGestor=r.colaboradores||[]; }
   catch{ resultadosGestor=[]; colaboradoresGestor=[]; }
 }
 
