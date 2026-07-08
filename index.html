@@ -741,12 +741,14 @@ function salvarProgressoLocal(){ localStorage.setItem(chaveProg(), JSON.stringif
 /* ---------- helpers ---------- */
 const $ = s => document.querySelector(s);
 const pop = id => db.pops.find(p=>p.id===id);
-const initials = n => n.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+// escapa dado controlado pelo usuário (nome/setor/matrícula) antes do innerHTML — evita XSS armazenado
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const initials = n => esc(String(n||'').trim().split(/\s+/).map(w=>w[0]||'').slice(0,2).join('').toUpperCase());
 const LOGO = () => LOGO_URI;
 
 /* ---------- setores ---------- */
 const SETOR_LABELS = {assistencial:'Assistencial', uti:'UTI', cc:'Centro Cirúrgico', ambulatorio:'Ambulatório / Hospital Dia', cme:'CME'};
-const setorLabel = s => SETOR_LABELS[s] || s || '—';
+const setorLabel = s => esc(SETOR_LABELS[s] || s || '—');
 // POPs disponíveis para um setor. Setor desconhecido/vazio → todos (fallback p/ dados legados).
 function popsDoSetor(setor){
   if(!setor || !SETOR_LABELS[setor]) return db.pops;
@@ -976,9 +978,9 @@ function renderTopRight(){
   if(!session) return '';
   let nm,sub;
   if(session.role==='gestor'){ nm='Gestor'; sub='Educação Continuada'; }
-  else { nm=session.nome; sub=setorLabel(session.setor)+' · mat. '+session.matricula; }
+  else { nm=session.nome; sub=setorLabel(session.setor)+' · mat. '+esc(session.matricula); }
   return `<div class="who2"><div class="avatar">${initials(nm)}</div>
-      <div class="nm"><b>${nm}</b><small>${sub}</small></div></div>
+      <div class="nm"><b>${esc(nm)}</b><small>${sub}</small></div></div>
     <button class="logout" onclick="logout()">Sair</button>`;
 }
 
@@ -1249,7 +1251,7 @@ function renderColabList(){
     </div>`:'',
     (hasE2 && e2ok) ? `<div class="cert-banner">
       <div class="medal">🏆</div>
-      <div class="tx"><b>Parabéns, ${session.nome.split(' ')[0]}! Trilha concluída.</b>
+      <div class="tx"><b>Parabéns, ${esc(session.nome.split(' ')[0])}! Trilha concluída.</b>
         <p>Você concluiu as duas etapas (${pr.total} POPs). Certificado final disponível.</p></div>
       <button class="btn-gold" onclick="goCert(2)">${ICON_CERT}Certificado final</button>
     </div>`:'',
@@ -1285,7 +1287,7 @@ function renderColabList(){
       ${banners}
       <div class="journey fade-up">
         <div class="ring2" style="--p:${ringPct}"><i>${ringPct}%</i></div>
-        <div class="jtext"><div class="jhi">Olá, ${session.nome.split(' ')[0]}</div><p>${hello}</p>${stepper}</div>
+        <div class="jtext"><div class="jhi">Olá, ${esc(session.nome.split(' ')[0])}</div><p>${hello}</p>${stepper}</div>
       </div>
       ${nextupHTML}
       ${etapaSectionHTML(1)}
@@ -1490,9 +1492,9 @@ function certPaperHTML(stage, d){
         <div class="cert-eyebrow">${eyebrow}</div>
         <h2>${titulo}</h2>
         <p class="conf">Certificamos que</p>
-        <div class="cert-name">${d.nome||'—'}</div>
+        <div class="cert-name">${esc(d.nome||'—')}</div>
         <div class="cert-rule"></div>
-        <div class="cert-role">${setorLabel(d.setor)} · Matrícula ${d.matricula||'—'}</div>
+        <div class="cert-role">${setorLabel(d.setor)} · Matrícula ${esc(d.matricula||'—')}</div>
         <p class="cert-body">${corpoTxt}</p>
         <div class="cert-stats">
           <div class="st"><div class="v brass">${d.total||comHits.length||0}</div><div class="l">POPs concluídos</div></div>
@@ -1597,8 +1599,8 @@ function renderGestor(){
     const finalOk=e1 && (e2pops.length===0 || etapaDoneSet(col.setor,2,aprovCol));
     const medal=finalOk?' 🏆':(e1?' 🥇':'');
     return `<tr>
-      <td class="person-c"><div class="person"><input type="checkbox" class="selc sel-colab no-print" value="${col.matricula}" aria-label="Selecionar ${col.nome}"><div class="avatar">${initials(col.nome)}</div>
-        <div><b>${col.nome}${medal}</b><small>${setorLabel(col.setor)} · mat. ${col.matricula}</small></div></div></td>
+      <td class="person-c"><div class="person"><input type="checkbox" class="selc sel-colab no-print" value="${esc(col.matricula)}" aria-label="Selecionar ${esc(col.nome)}"><div class="avatar">${initials(col.nome)}</div>
+        <div><b>${esc(col.nome)}${medal}</b><small>${setorLabel(col.setor)} · mat. ${esc(col.matricula)}</small></div></div></td>
       ${cells}
       <td class="prog"><div class="pcompact"><div class="pbar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div></td>
     </tr>`;
@@ -1714,7 +1716,7 @@ function generateReport(){
     const pct = totalMine?Math.round(done/totalMine*100):0;
     const cert = isCertified(col)?'<span class="yes">✔ Sim</span>':'<span class="no">—</span>';
     return `<tr>
-      <td class="nm"><b>${col.nome}</b><small>mat. ${col.matricula}</small></td>
+      <td class="nm"><b>${esc(col.nome)}</b><small>mat. ${esc(col.matricula)}</small></td>
       <td class="em">${setorLabel(col.setor)}</td>
       ${cells}
       <td class="pc"><b>${pct}%</b><small>${done}/${totalMine}</small></td>
@@ -1737,7 +1739,7 @@ function generateReport(){
   }).join('');
 
   const certList = colabs.filter(isCertified)
-    .map(c=>`<li><b>${c.nome}</b>${c.setor?` · ${setorLabel(c.setor)}`:''}${c.matricula?` · mat. ${c.matricula}`:''}</li>`).join('')
+    .map(c=>`<li><b>${esc(c.nome)}</b>${c.setor?` · ${setorLabel(c.setor)}`:''}${c.matricula?` · mat. ${esc(c.matricula)}`:''}</li>`).join('')
     || '<li class="muted">Nenhum colaborador concluiu todos os POPs até o momento.</li>';
 
   const html = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
@@ -1868,7 +1870,7 @@ function individualReportPage(col, stamp){
       <div class="meta"><div>Emitido em <b>${stamp}</b></div><div>Critério: ≥ ${PASS_MIN}/${QUIZ_SIZE} acertos</div></div>
     </div>
     <div class="person"><div class="av">${initials(col.nome)}</div>
-      <div><b>${col.nome}</b><small>${setorLabel(col.setor)} · Matrícula ${col.matricula} · ${statusGeral}</small></div></div>
+      <div><b>${esc(col.nome)}</b><small>${setorLabel(col.setor)} · Matrícula ${esc(col.matricula)} · ${statusGeral}</small></div></div>
     <div class="kpis">
       <div class="kpi"><div class="v">${totalOk}/${totalPops}</div><div class="l">POPs aprovados</div></div>
       <div class="kpi"><div class="v">${pct1}%</div><div class="l">Etapa 1 (${Math.min(e1ok,meta1)}/${meta1} · meta ${meta1})</div></div>
