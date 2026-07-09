@@ -861,7 +861,7 @@ function toggleTheme(){
 }
 
 /* ---------- nav ---------- */
-function goAuth(v){ authView=v; render(); }
+function goAuth(v){ authView=v; if(v!=='colab-signup') signupCheck=null; render(); }
 async function entrarColaborador(){   // modo DEMO (nome+matrícula+setor)
   const nome=fval('#c-nome'), matricula=fval('#c-matricula'), setor=fval('#c-setor');
   if(!nome||!matricula||!setor){ authErr('Preencha nome completo, matrícula e setor.'); return; }
@@ -886,13 +886,19 @@ async function loginColaborador(){   // PRODUÇÃO (e-mail+senha)
   screen='hub'; render(); window.scrollTo(0,0);
 }
 async function criarConta(){
-  const nome=fval('#cs-nome'), setor=fval('#cs-setor'), matricula=fval('#cs-matricula'),
-        email=fval('#cs-email'), senha=fval('#cs-pass');
+  const ok = signupCheck && signupCheck.ok;
+  // ok=true → dados oficiais da lista (read-only); modo aberto → formulário (editável)
+  const nome = ok ? signupCheck.nome : fval('#cs-nome');
+  const setor = (ok && signupCheck.setor) ? signupCheck.setor : fval('#cs-setor');
+  const matricula = ok ? signupCheck.matricula : fval('#cs-matricula');
+  const email = ok ? signupCheck.email : fval('#cs-email');
+  const senha = fval('#cs-pass');
   if(!nome||!setor||!email||!senha){ authErr('Preencha nome, setor, e-mail e senha.'); return; }
   if(senha.length<6){ authErr('A senha precisa de ao menos 6 caracteres.'); return; }
   const r=await POPApi.signUp({nome, setor, matricula, email, senha});
   if(!r.ok){ authErr(r.erro || 'Não foi possível criar a conta.'); return; }
   if(!r.hasSession){ authView='colab'; render(); authErr('Conta criada! Confirme seu e-mail e depois entre.'); return; }
+  signupCheck=null;
   aplicarPerfil(r.profile);
   salvarSessao(); carregarProgressoLocal();
   await carregarAprovados();
@@ -1096,16 +1102,44 @@ function renderAuth(){
   // ----- COLABORADOR · PRODUÇÃO (e-mail + senha) -----
   if(!window.POPS_LOCAL_MODE){
     if(authView==='colab-signup'){
+      const q = s => String(s||'').replace(/"/g,'&quot;');
+      if(!signupCheck){
+        // PASSO 1 — identificar na lista oficial
+        return shell(`
+          <div class="auth-head"><h2>Criar conta</h2><p>Passo 1 de 2 · Identificação</p></div>
+          <div class="auth-err" id="auth-err"></div>
+          <div class="field"><label>Matrícula</label><input id="cs-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"></div>
+          <div class="field"><label>E-mail</label><input id="cs-email" type="email" placeholder="voce@exemplo.com" autocomplete="email" onkeydown="if(event.key==='Enter')validarCadastro()"></div>
+          <button class="btn block" onclick="validarCadastro()">Continuar →</button>
+          <button class="auth-back" onclick="goAuth('colab')">← Já tenho conta</button>`);
+      }
+      if(signupCheck.ok){
+        // PASSO 2 — nome veio da lista oficial (somente leitura)
+        const setorField = signupCheck.setor
+          ? `<div class="field"><label>Setor</label><input type="text" value="${q(SETOR_LABELS[signupCheck.setor]||signupCheck.setor)}" disabled></div>`
+          : `<div class="field"><label>Setor</label><select id="cs-setor">${SETOR_OPTS}</select></div>`;
+        return shell(`
+          <div class="auth-head"><h2>Criar conta</h2><p>Passo 2 de 2 · Confirmação</p></div>
+          <div class="auth-err" id="auth-err"></div>
+          <div class="field"><label>Nome completo (lista oficial)</label><input type="text" value="${q(signupCheck.nome)}" disabled></div>
+          <div class="field"><label>Matrícula</label><input type="text" value="${q(signupCheck.matricula)}" disabled></div>
+          <div class="field"><label>E-mail</label><input type="text" value="${q(signupCheck.email)}" disabled></div>
+          ${setorField}
+          <div class="field"><label>Senha</label><input id="cs-pass" type="password" placeholder="mínimo 6 caracteres" autocomplete="new-password" onkeydown="if(event.key==='Enter')criarConta()"></div>
+          <button class="btn block" onclick="criarConta()">Criar conta</button>
+          <button class="auth-back" onclick="signupCheck=null;render()">← Corrigir dados</button>`);
+      }
+      // PASSO 2 — lista vazia (cadastro aberto, formulário completo como hoje)
       return shell(`
-        <div class="auth-head"><h2>Criar conta</h2><p>Colaborador · HNR</p></div>
+        <div class="auth-head"><h2>Criar conta</h2><p>Passo 2 de 2 · Seus dados</p></div>
         <div class="auth-err" id="auth-err"></div>
         <div class="field"><label>Nome completo</label><input id="cs-nome" type="text" placeholder="Seu nome completo" autocomplete="name"></div>
         <div class="field"><label>Setor</label><select id="cs-setor">${SETOR_OPTS}</select></div>
-        <div class="field"><label>Matrícula</label><input id="cs-matricula" type="text" inputmode="numeric" placeholder="Sua matrícula"><small class="hint-cert">Aparece no seu certificado.</small></div>
-        <div class="field"><label>E-mail</label><input id="cs-email" type="email" placeholder="voce@exemplo.com" autocomplete="email"></div>
+        <div class="field"><label>Matrícula</label><input id="cs-matricula" type="text" inputmode="numeric" value="${q(signupCheck.matricula)}"><small class="hint-cert">Aparece no seu certificado.</small></div>
+        <div class="field"><label>E-mail</label><input id="cs-email" type="email" value="${q(signupCheck.email)}" autocomplete="email"></div>
         <div class="field"><label>Senha</label><input id="cs-pass" type="password" placeholder="mínimo 6 caracteres" autocomplete="new-password" onkeydown="if(event.key==='Enter')criarConta()"></div>
         <button class="btn block" onclick="criarConta()">Criar conta</button>
-        <button class="auth-back" onclick="goAuth('colab')">← Já tenho conta</button>`);
+        <button class="auth-back" onclick="signupCheck=null;render()">← Voltar</button>`);
     }
     if(authView==='colab-forgot'){
       return shell(`
@@ -1146,6 +1180,18 @@ function authErr(msg){
   if(c){c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake');}
 }
 function fval(sel){const e=document.querySelector(sel);return e?e.value.trim():'';}
+let signupCheck=null; // cadastro 2 passos: null=passo 1 | {aberto:true,...} | {ok:true,nome,setor,...}
+async function validarCadastro(){
+  const matricula=fval('#cs-matricula'), email=fval('#cs-email');
+  if(!matricula||!email){ authErr('Informe matrícula e e-mail.'); return; }
+  let r=null;
+  try{ r=await POPApi.validarMatricula(matricula, email); }catch{}
+  if(!r || r.erro){ authErr('Não foi possível validar agora — tente de novo em instantes.'); return; }
+  if(r.aberto){ signupCheck={aberto:true, matricula, email}; }
+  else if(r.ok){ signupCheck={ok:true, matricula, email, nome:r.nome, setor:r.setor||''}; }
+  else { authErr('Matrícula e e-mail não conferem com a lista oficial — procure a Educação Continuada.'); return; }
+  render();
+}
 
 async function doGestorLogin(){
   const pass=fval('#g-pass');
