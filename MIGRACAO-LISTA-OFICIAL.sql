@@ -18,14 +18,14 @@ revoke all on lista_oficial from anon, authenticated;
 
 -- lista está ativa? (vazia = cadastro aberto como hoje)
 create or replace function lista_ativa() returns boolean
-language sql security definer stable as $$
+language sql security definer stable set search_path = public, pg_temp as $$
   select exists(select 1 from lista_oficial); $$;
 revoke all on function lista_ativa() from public;
 
 -- validação de UX no formulário (roda ANTES de existir conta → grant a anon).
 -- Não revela qual campo errou; só responde no match exato do PAR matrícula+e-mail.
 create or replace function validar_matricula(p_matricula text, p_email text)
-returns jsonb language plpgsql security definer stable as $$
+returns jsonb language plpgsql security definer stable set search_path = public, pg_temp as $$
 declare reg lista_oficial%rowtype;
 begin
   if not lista_ativa() then return jsonb_build_object('aberto', true); end if;
@@ -41,7 +41,7 @@ grant execute on function validar_matricula(text,text) to anon, authenticated;
 -- ENFORCEMENT real na camada de dados: sem isto a allowlist seria só cosmética
 -- (o cliente tem grant de insert/update em colaboradores e poderia pular o RPC).
 create or replace function colaboradores_valida_lista()
-returns trigger language plpgsql security definer as $$
+returns trigger language plpgsql security definer set search_path = public, pg_temp as $$
 declare reg lista_oficial%rowtype;
 begin
   if new.is_gestor then return new; end if;          -- contas de gestão são criadas por migração
