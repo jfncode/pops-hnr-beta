@@ -219,7 +219,12 @@
   .stepper{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
   .step{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#8ea3ba;white-space:nowrap;
     border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 13px}
-  .step .n{font-family:'IBM Plex Mono',monospace;opacity:.85}
+  .step .n{width:19px;height:19px;border-radius:50%;display:inline-grid;place-items:center;flex:none;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;background:rgba(255,255,255,.14);color:inherit}
+  .step.on .n{background:#0c2236;color:#E2C078}
+  .step.done .n.ok{background:rgba(70,192,130,.9);color:#04160c}
+  .step .n svg{width:12px;height:12px}
+  .step > svg{width:12px;height:12px;margin-left:3px;opacity:.8}
   .step.on{color:#0c2236;background:#E2C078;border-color:#E2C078}
   .step.done{color:#bfe8d0;border-color:rgba(70,192,130,.45)}
   .step.lock{opacity:.6}
@@ -279,11 +284,12 @@
   .popcard .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
   .badge{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;
     display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
-  .badge.pending{color:var(--faint);background:var(--surface-2)}
+  .badge.pending{color:var(--muted);background:var(--surface-2)}
   .badge.read{color:var(--warn);background:var(--warn-soft)}
   .badge.pass{color:#9c7a1e;background:#f7eed5;border:1px solid #e6d49b}
   .badge.fail{color:var(--danger);background:var(--danger-soft)}
-  .badge.locked{color:var(--faint);background:var(--surface-2)}
+  .badge.locked{color:var(--muted);background:var(--surface-2)}
+  .badge svg{width:14px;height:14px;flex:none}
   .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
   /* buscador de POPs */
   .popsearch{margin:6px 0 18px}
@@ -298,7 +304,8 @@
   .popsearch .clr:hover{background:var(--surface-2)}
   .popsearch.locked input{cursor:not-allowed;background:var(--surface-2);color:var(--faint)}
   .popsearch.locked .sb svg{color:var(--faint)}
-  .popsearch .hint{margin-top:7px;font-size:12.5px;color:var(--faint)}
+  .popsearch .hint{margin-top:8px;font-size:12.5px;color:var(--muted);display:flex;align-items:flex-start;gap:7px}
+  .popsearch .hint svg{width:14px;height:14px;flex:none;margin-top:1px;color:var(--faint)}
   .res-head{font-size:13px;color:var(--muted);font-weight:600;margin:4px 0 10px}
   .res-head b{color:var(--ink)}
   .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
@@ -318,6 +325,17 @@
   .etapa-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#4d8fe0);border-radius:99px;transition:width .4s ease}
   .popcard.is-locked{opacity:.62;border-left-color:var(--line-strong)}
   .popcard.is-locked:hover{transform:none;box-shadow:0 1px 2px rgba(10,77,162,.05)}
+  /* ícones SVG da lista (medalha, cadeado, bandeira, etapas) */
+  .ptag svg{width:11px;height:11px;margin-right:4px;vertical-align:-1px}
+  .btn svg{width:16px;height:16px;flex:none}
+  .btn.lockbtn{display:grid;place-items:center;background:var(--surface-2);color:var(--faint);
+    border:1px solid var(--line);cursor:not-allowed;padding:9px 13px}
+  .btn.lockbtn:hover{background:var(--surface-2)}
+  .cert-banner .medal svg{width:26px;height:26px;color:#fff}
+  .etapa-lock{display:inline-flex;align-items:center;gap:5px}
+  .etapa-lock svg{width:13px;height:13px}
+  .etapa-prog.ok{display:inline-flex;align-items:center;gap:5px}
+  .etapa-prog.ok svg{width:13px;height:13px}
   .btn{border:0;border-radius:9px;font-weight:600;font-size:13.5px;padding:9px 16px;
     background:var(--primary);color:#fff;transition:.15s}
   .btn:hover{background:var(--primary-dark)}
@@ -637,7 +655,9 @@
 
   /* ---- empty state ---- */
   .empty{padding:36px 20px;text-align:center;color:var(--muted)}
-  .empty .ic{font-size:30px;margin-bottom:8px}
+  .empty .ic{width:48px;height:48px;margin:0 auto 12px;border-radius:14px;display:grid;place-items:center;
+    background:var(--surface-2);color:var(--faint);border:1px solid var(--line)}
+  .empty .ic svg{width:24px;height:24px}
   .empty b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
   .empty p{font-size:13px;margin:0}
 
@@ -839,6 +859,14 @@ const ICON_REPORT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const SVG_OK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
 const SVG_X='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
 const SVG_REDO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>';
+const SVG_MEDAL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg>';
+const SVG_TROPHY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>';
+const SVG_FLAG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>';
+const SVG_ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+const SVG_MEDAL_S='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>';
+const SVG_BOOK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>';
+const SVG_SEARCH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>';
+const SVG_FOLDER='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>';
 const ICON_SEARCH = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>`;
 
 const db = { pops: window.POPS };
@@ -1317,22 +1345,24 @@ function popCardHTML(p, idx){
   const isLocked=s.k==='locked';
   const isNext = !isLocked && (s.k==='pending'||s.k==='fail') && p.id===nextPopId;
   const rail = isLocked?'is-locked':(s.k==='pass'?'pass':(s.k==='fail'?'fail':(isNext?'next':'')));
-  const cta=isLocked?'🔒':(s.k==='pass'?'Revisar':(s.k==='fail'?'Reler e refazer':'Ler POP'));
   const btnCls=isLocked?'':(s.k==='fail'?'warn':(isNext?'':'ghost'));
   const nota = s.hits!=null?s.hits:(s.score!=null?s.score:'—');
   const badge = s.k==='pass'
-      ? `<span class="badge pass">🎖 Aprovado · ${nota}/${QUIZ_SIZE}</span>`
+      ? `<span class="badge pass">${SVG_MEDAL_S}Aprovado · ${nota}/${QUIZ_SIZE}</span>`
       : s.k==='fail'
         ? `<span class="badge fail"><span class="dot"></span>Reprovado · ${nota}/${QUIZ_SIZE}</span>`
         : isLocked
           ? `<span class="badge locked"><span class="dot"></span>Bloqueado</span>`
           : `<span class="badge pending"><span class="dot"></span>Pendente</span>`;
-  const tag = isNext ? `<span class="ptag">▸ Próximo recomendado</span>` : '';
+  const tag = isNext ? `<span class="ptag">${SVG_FLAG}Próximo recomendado</span>` : '';
+  const acao = isLocked
+    ? `<button class="btn lockbtn" disabled aria-label="POP bloqueado">${SVG_LOCK}</button>`
+    : `<button class="btn ${btnCls}" onclick="openPop('${p.id}')">${s.k==='pass'?'Revisar':(s.k==='fail'?'Reler e refazer':'Ler POP')}</button>`;
   return `<div class="popcard ${rail}" style="animation-delay:${idx*45}ms">
       <span class="code mono">${p.code}</span>
       <div class="meta">${tag}<h3>${p.title}</h3><div class="sub">Versão ${p.version} · ${p.executantes}</div></div>
       ${badge}
-      <button class="btn ${btnCls}" ${isLocked?'disabled':`onclick="openPop('${p.id}')"`}>${cta}</button>
+      ${acao}
     </div>`;
 }
 function etapaSectionHTML(e){
@@ -1343,11 +1373,11 @@ function etapaSectionHTML(e){
   const locked = e===2 && !etapa2Unlocked();
   let hint, prog='';
   if(locked){
-    hint = `<span class="etapa-lock">🔒 Desbloqueia ao concluir a Etapa 1</span>`;
+    hint = `<span class="etapa-lock">${SVG_LOCK}Desbloqueia ao concluir a Etapa 1</span>`;
   } else if(e===1){
     const falta=Math.max(meta-doneN, 0);
     hint = etapaDone(1)
-      ? `<span class="etapa-prog ok">✓ Meta atingida · ${doneN} POPs (meta ${meta})</span>`
+      ? `<span class="etapa-prog ok">${SVG_OK}Meta atingida · ${doneN} POPs (meta ${meta})</span>`
       : `<span class="etapa-prog"><b>${Math.min(doneN,meta)}/${meta}</b> · faltam ${falta} para concluir</span>`;
     const pct=meta?Math.round(Math.min(doneN,meta)/meta*100):0;
     prog = `<p class="etapa-sub">Para concluir a <b>Etapa 1</b>, leia e responda a avaliação de <b>ao menos ${meta} POPs</b> da sua área. POPs extras contam como reforço.</p>
@@ -1367,7 +1397,7 @@ function searchBoxHTML(){
       <input id="pop-search" type="text" autocomplete="off" placeholder="Buscar POP por nome, código ou assunto…" value="${v}">
       <button class="clr" title="Limpar busca" onclick="clearSearch()" style="display:${popQuery?'block':'none'}">×</button>
     </div>
-    <div class="hint">📖 ${session && session.role==='gestor' ? `Consulta de qualquer um dos ${db.pops.length} POPs cadastrados.` : `Consulta livre de qualquer um dos ${db.pops.length} POPs. A avaliação continua em “Meus procedimentos”.`}</div>
+    <div class="hint">${SVG_BOOK}<span>${session && session.role==='gestor' ? `Consulta de qualquer um dos ${db.pops.length} POPs cadastrados.` : `Consulta livre de qualquer um dos ${db.pops.length} POPs. A avaliação continua em “Meus procedimentos”.`}</span></div>
   </div>`;
 }
 // Buscador: o gestor tem acesso direto; o colaborador só após os 2 certificados.
@@ -1383,7 +1413,7 @@ function renderBuscaGestor(){
     <div class="pagehead fade-up"><h2>Consulta de POPs</h2>
       <p>Busque e leia qualquer um dos ${db.pops.length} POPs cadastrados.</p></div>
     ${searchBoxHTML()}
-    <div id="list-default"><div class="empty"><div class="ic">🔎</div><b>Digite para buscar</b><p>Por nome, código (ex.: POP-ENF-50) ou assunto.</p></div></div>
+    <div id="list-default"><div class="empty"><div class="ic">${SVG_SEARCH}</div><b>Digite para buscar</b><p>Por nome, código (ex.: POP-ENF-50) ou assunto.</p></div></div>
     <div id="search-results" style="display:none"></div>`;
 }
 function searchLockedHTML(){
@@ -1392,7 +1422,7 @@ function searchLockedHTML(){
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <input type="text" disabled placeholder="Buscador de POPs — bloqueado">
     </div>
-    <div class="hint">🔒 A <b>consulta livre de POPs</b> é liberada quando você conclui as <b>duas etapas</b> e obtém os <b>2 certificados</b>. Continue sua trilha em “Meus procedimentos”.</div>
+    <div class="hint">${SVG_LOCK}<span>A <b>consulta livre de POPs</b> é liberada quando você conclui as <b>duas etapas</b> e obtém os <b>2 certificados</b>. Continue sua trilha em “Meus procedimentos”.</span></div>
   </div>`;
 }
 function buscadorBlocoHTML(){ return buscadorLiberado() ? searchBoxHTML() : searchLockedHTML(); }
@@ -1412,10 +1442,10 @@ function resultCardHTML(r){
 }
 function searchResultsInnerHTML(){
   if(normTxt(popQuery).trim().length<2)
-    return `<div class="empty"><div class="ic">🔎</div><b>Digite ao menos 2 letras</b><p>Busque por nome, código (ex.: POP-ENF-50) ou assunto.</p></div>`;
+    return `<div class="empty"><div class="ic">${SVG_SEARCH}</div><b>Digite ao menos 2 letras</b><p>Busque por nome, código (ex.: POP-ENF-50) ou assunto.</p></div>`;
   const res=searchPops(popQuery);
   if(!res.length)
-    return `<div class="empty"><div class="ic">🗂</div><b>Nenhum POP encontrado.</b><p>Tente outro termo ou verifique a grafia.</p></div>`;
+    return `<div class="empty"><div class="ic">${SVG_FOLDER}</div><b>Nenhum POP encontrado.</b><p>Tente outro termo ou verifique a grafia.</p></div>`;
   return `<div class="res-head"><b>${res.length}</b> resultado${res.length>1?'s':''} encontrado${res.length>1?'s':''}</div>
     <div class="grid">${res.map(resultCardHTML).join('')}</div>`;
 }
@@ -1451,7 +1481,7 @@ function renderColabList(){
     return `<div class="pagehead fade-up"><h2>Meus procedimentos</h2>
       <p>Setor <b>${setorLabel(session.setor)}</b>.</p></div>
       ${buscadorBlocoHTML()}
-      <div id="list-default"><div class="empty"><div class="ic">🗂</div><b>Nenhuma avaliação para o seu setor ainda</b>
+      <div id="list-default"><div class="empty"><div class="ic">${SVG_FOLDER}</div><b>Nenhuma avaliação para o seu setor ainda</b>
         <p>Os POPs do setor <b>${setorLabel(session.setor)}</b> serão disponibilizados em breve. Use a busca acima para consultar qualquer POP.</p></div></div>
       <div id="search-results" style="display:none"></div>`;
   }
@@ -1460,13 +1490,13 @@ function renderColabList(){
   const e1now=aprovadosEtapa(1), e1meta=metaEtapa({setor:session.setor, sorteio},1);
   const banners = [
     e1ok ? `<div class="cert-banner">
-      <div class="medal">🥇</div>
+      <div class="medal">${SVG_MEDAL}</div>
       <div class="tx"><b>Etapa 1 concluída!</b>
         <p>${hasE2?'Etapa 2 liberada. ':''}Seu certificado da Etapa 1 está disponível.</p></div>
       <button class="btn-gold" onclick="goCert(1)">${ICON_CERT}Certificado · Etapa 1</button>
     </div>`:'',
     (hasE2 && e2ok) ? `<div class="cert-banner">
-      <div class="medal">🏆</div>
+      <div class="medal">${SVG_TROPHY}</div>
       <div class="tx"><b>Parabéns, ${esc(session.nome.split(' ')[0])}! Trilha concluída.</b>
         <p>Você concluiu as duas etapas (${pr.total} POPs). Certificado final disponível.</p></div>
       <button class="btn-gold" onclick="goCert(2)">${ICON_CERT}Certificado final</button>
@@ -1483,10 +1513,11 @@ function renderColabList(){
   const nextPop = ordemTrilha.find(p=>{ const k=statusOf(p.id).k; return k==='pending'||k==='fail'; }) || null;
   nextPopId = nextPop ? nextPop.id : null;
   const step2Cls = !hasE2 ? 'lock' : (e2ok ? 'done' : (etapa2Unlocked() ? 'on' : 'lock'));
+  const stepN=(done,n)=> done?`<span class="n ok">${SVG_OK}</span>`:`<span class="n">${n}</span>`;
   const stepper = `<div class="stepper">
-        <span class="step ${e1ok?'done':'on'}"><span class="n">①</span> ${ETAPA_LABEL[1]}</span>
+        <span class="step ${e1ok?'done':'on'}">${stepN(e1ok,'1')}${ETAPA_LABEL[1]}</span>
         <span class="dash"></span>
-        <span class="step ${step2Cls}"><span class="n">②</span> ${ETAPA_LABEL[2]}${(hasE2&&!etapa2Unlocked())?' 🔒':''}</span>
+        <span class="step ${step2Cls}">${stepN(hasE2&&e2ok,'2')}${ETAPA_LABEL[2]}${(hasE2&&!etapa2Unlocked())?SVG_LOCK:''}</span>
       </div>`;
   const nextupHTML = nextPop ? `<div class="nextup fade-up" onclick="openPop('${nextPop.id}')">
         <div class="grow"><div class="lab">Continue de onde parou</div>
