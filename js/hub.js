@@ -38,35 +38,58 @@ function hubProgressoPops(){
   }
   return {label:'Trilha concluída 🏆', pct:100};
 }
-function hubCardHTML(o, idx){
-  return `<button class="hubcard" style="animation-delay:${idx*60}ms" onclick="${o.onclick}">
-    <span class="hc-ic ${o.ic}">${o.icon}</span>
-    <h3>${o.title}</h3><p>${o.desc}</p>
-    ${o.bar!=null?`<div class="hub-bar"><i style="width:${o.bar}%"></i></div>`:''}
-    <span class="hc-foot"><span>${o.foot}</span><span class="hc-cta">Entrar →</span></span>
+const SVG_SOON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+
+function hubHeroHTML(pr){
+  const done=pr.pct>=100;
+  const cta=done?'Rever meus procedimentos':(pr.pct>0?'Continuar minha trilha':'Começar minha trilha');
+  return `<button class="hub-hero" onclick="goPops()">
+    <div class="hero-main">
+      <span class="hero-badge">${done?'Trilha concluída':'Sua trilha ativa'}</span>
+      <div class="hero-head"><span class="hero-ic">${HUB_ICONS.pops}</span>
+        <div><h3>POPs · Procedimentos Operacionais Padrão</h3>
+          <p>Leia os procedimentos do seu setor, faça as avaliações e emita seus certificados.</p></div></div>
+      <span class="hero-cta">${cta} →</span>
+    </div>
+    <div class="hero-prog">
+      <div class="hero-ring" style="--p:${pr.pct}"><span><b>${pr.pct}%</b></span></div>
+      <span class="hero-step">${pr.label}</span>
+    </div>
+  </button>`;
+}
+function areaCardHTML(o, idx){
+  const foot = o.soon
+    ? `<span class="ac-soon">${SVG_SOON}${o.foot}</span>`
+    : `<span>${o.foot}</span><span class="ac-cta">Abrir →</span>`;
+  return `<button class="areacard ${o.cls}${o.soon?' is-soon':''}" style="animation-delay:${(idx+2)*70}ms" onclick="${o.onclick}">
+    <span class="ac-ic ${o.ic}">${o.icon}</span>
+    <h4>${o.title}</h4><p>${o.desc}</p>
+    <span class="ac-foot">${foot}</span>
   </button>`;
 }
 function renderHub(){
   const primeiro=esc((session.nome||'').trim().split(/\s+/)[0]||'colaborador');
   const pr=hubProgressoPops();
   const nReg=(window.REGIMENTOS||[]).length, nProt=(window.PROTOCOLOS||[]).length, nCur=(window.CURSOS||[]).length;
-  const cards=[
-    { onclick:'goPops()', ic:'hc-blue', icon:HUB_ICONS.pops, title:'POPs',
-      desc:'Procedimentos Operacionais Padrão do seu setor — leia, faça as avaliações e emita seus certificados.',
-      bar:pr.pct, foot:pr.label },
-    { onclick:"goBiblioteca('regimentos')", ic:'hc-gold', icon:HUB_ICONS.regimentos, title:'Regimentos',
+  const areas=[
+    { onclick:"goBiblioteca('regimentos')", cls:'area-gold', ic:'hc-gold', icon:HUB_ICONS.regimentos, title:'Regimentos',
       desc:'Regimentos e normas institucionais do hospital, para leitura e consulta.',
-      bar:null, foot: nReg? `${nReg} documento${nReg>1?'s':''}` : 'Em preparação' },
-    { onclick:"goBiblioteca('protocolos')", ic:'hc-green', icon:HUB_ICONS.protocolos, title:'Protocolos',
+      soon:!nReg, foot: nReg? `${nReg} documento${nReg>1?'s':''}` : 'Em preparação' },
+    { onclick:"goBiblioteca('protocolos')", cls:'area-green', ic:'hc-green', icon:HUB_ICONS.protocolos, title:'Protocolos',
       desc:'Protocolos assistenciais e manuais técnicos, para leitura e consulta.',
-      bar:null, foot: nProt? `${nProt} documento${nProt>1?'s':''}` : 'Em preparação' },
-    { onclick:'goCursos()', ic:'hc-red', icon:HUB_ICONS.cursos, title:'Cursos',
+      soon:!nProt, foot: nProt? `${nProt} documento${nProt>1?'s':''}` : 'Em preparação' },
+    { onclick:'goCursos()', cls:'area-red', ic:'hc-red', icon:HUB_ICONS.cursos, title:'Cursos',
       desc:'Trilhas de capacitação com avaliação e certificado.',
-      bar:null, foot: nCur? `${nCur} curso${nCur>1?'s':''}` : 'Em breve' },
+      soon:!nCur, foot: nCur? `${nCur} curso${nCur>1?'s':''}` : 'Em breve' },
   ];
-  return `<div class="pagehead fade-up"><h2>Olá, ${primeiro} 👋</h2>
-      <p>Bem-vindo à Área do Colaborador do Hospital Nereu Ramos. O que você quer acessar?</p></div>
-    <div class="hub-grid">${cards.map(hubCardHTML).join('')}</div>`;
+  const h=new Date().getHours();
+  const saud=h<12?'Bom dia':(h<18?'Boa tarde':'Boa noite');
+  return `<div class="hub-head fade-up">
+      <div class="hub-eyebrow">Portal do Colaborador</div>
+      <h2>${saud}, ${primeiro}.</h2>
+      <p>Tudo do Hospital Nereu Ramos em um só lugar. Por onde você quer começar?</p></div>
+    ${hubHeroHTML(pr)}
+    <div class="area-grid">${areas.map(areaCardHTML).join('')}</div>`;
 }
 
 /* ---------- bibliotecas (regimentos / protocolos) ---------- */
