@@ -15,7 +15,9 @@
 -- 1) Trava a coluna is_gestor: cliente nunca escreve. Owner/service_role mantem acesso.
 revoke insert, update on public.colaboradores from anon, authenticated;
 grant insert (id, nome, setor, matricula, email) on public.colaboradores to authenticated;
-grant update (nome, setor, matricula, email) on public.colaboradores to authenticated;
+-- inclui id: o upsert do PostgREST gera ON CONFLICT DO UPDATE SET id=excluded.id,...
+-- e exige UPDATE na coluna; a policy (with check id = auth.uid()) impede troca de dono.
+grant update (id, nome, setor, matricula, email) on public.colaboradores to authenticated;
 
 -- 2) Reforca a policy de UPDATE com WITH CHECK (impede tambem trocar o proprio id).
 alter policy colab_upd on public.colaboradores

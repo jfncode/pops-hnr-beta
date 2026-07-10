@@ -59,6 +59,13 @@
 
   POPApi.currentProfile = fetchPerfil;   // usado no auto-resume e no check de gestor
 
+  // valida matrícula+e-mail contra a lista oficial (passo 1 do cadastro)
+  POPApi.validarMatricula = async function (matricula, email) {
+    const { data, error } = await sb.rpc('validar_matricula', { p_matricula: matricula, p_email: email });
+    if (error) return { erro: error.message };
+    return data || { ok: false };
+  };
+
   POPApi.salvarSorteio = async function (sorteio) {
     const { data: s } = await sb.auth.getSession();
     if (!s || !s.session) return { ok: false };
