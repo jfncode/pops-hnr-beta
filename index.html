@@ -99,7 +99,9 @@
   .avatar{width:32px;height:32px;border-radius:50%;background:var(--primary-soft);
     color:var(--primary);display:grid;place-items:center;font-weight:700;font-size:12px;flex:none}
   .logout{border:1px solid var(--line);background:var(--surface);border-radius:9px;
-    padding:8px 13px;font-size:13px;font-weight:600;color:var(--muted);transition:.15s}
+    padding:8px 13px;font-size:13px;font-weight:600;color:var(--muted);transition:.15s;
+    display:inline-flex;align-items:center;gap:6px}
+  .logout svg{width:15px;height:15px;flex:none}
   .logout:hover{border-color:var(--accent);color:var(--accent)}
 
   /* ---- hub (Portal do Colaborador) ---- */
@@ -315,7 +317,8 @@
   .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
   .pill{font-size:11px;font-weight:600;color:var(--primary);background:var(--primary-soft);
     padding:2px 8px;border-radius:20px}
-  .pill.mine{color:var(--success);background:var(--success-soft)}
+  .pill.mine{color:var(--success);background:var(--success-soft);display:inline-flex;align-items:center;gap:4px}
+  .pill.mine svg{width:12px;height:12px;flex:none}
   .hi{background:var(--warn-soft);color:var(--warn);border-radius:3px;padding:0 2px;font-weight:700}
   /* etapas */
   .etapa-head{display:flex;align-items:baseline;gap:14px;margin:30px 0 6px;flex-wrap:wrap}
@@ -357,7 +360,8 @@
   .readtop .row{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px}
   .readtop .back{border:1px solid var(--line);background:var(--surface);border-radius:8px;
     padding:7px 12px;font-size:13px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px}
-  .readtop .label{font-size:12.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+  .readtop .label{font-size:12.5px;color:var(--muted);font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+  .readtop .label svg{width:15px;height:15px;flex:none}
   .readbar{height:6px;background:var(--line);border-radius:20px;flex:1;overflow:hidden}
   .readbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),#4d8fe0);border-radius:20px;transition:width .12s}
   #readpct{font-family:'IBM Plex Mono',monospace;font-size:12px}
@@ -880,6 +884,11 @@ const SVG_MEDAL_S='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 const SVG_BOOK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>';
 const SVG_SEARCH='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>';
 const SVG_FOLDER='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>';
+const SVG_HOME='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>';
+// Ícones inline para os relatórios impressos (documento em nova janela — sem acesso aos consts de tela)
+const REP_PRINT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-3px;margin-right:6px"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>';
+const REP_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>';
+const REP_CIRCLE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="9"/></svg>';
 const SVG_USERS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
 const SVG_ALERTTRI='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
 const ICON_SEARCH = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>`;
@@ -1194,7 +1203,7 @@ function renderTopRight(){
   if(session.role==='gestor'){ nm='Gestor'; sub='Educação Continuada'; }
   else { nm=session.nome; sub=setorLabel(session.setor)+' · mat. '+esc(session.matricula); }
   const home = (session.role==='colaborador' && screen!=='hub')
-    ? `<button class="logout" onclick="goHub()">⌂ Início</button>` : '';
+    ? `<button class="logout" onclick="goHub()">${SVG_HOME}Início</button>` : '';
   return `<div class="who2"><div class="avatar">${initials(nm)}</div>
       <div class="nm"><b>${esc(nm)}</b><small>${sub}</small></div></div>
     ${home}<button class="logout" onclick="logout()">Sair</button>`;
@@ -1423,7 +1432,7 @@ function renderBuscaGestor(){
   return `
     <div class="readtop no-print"><div class="row">
       <button class="back" onclick="goGestorHome()">← Voltar ao painel</button>
-      <span class="label">🔎 Buscador de POPs</span>
+      <span class="label">${SVG_SEARCH}Buscador de POPs</span>
     </div></div>
     <div class="pagehead fade-up"><h2>Consulta de POPs</h2>
       <p>Busque e leia qualquer um dos ${db.pops.length} POPs cadastrados.</p></div>
@@ -1444,7 +1453,7 @@ function buscadorBlocoHTML(){ return buscadorLiberado() ? searchBoxHTML() : sear
 function resultCardHTML(r){
   const p=r.p;
   const pills=(p.setores||[]).map(s=>`<span class="pill">${setorLabel(s)}</span>`).join('');
-  const mineTag = (session.role==='colaborador' && r.mine) ? '<span class="pill mine">✓ seu setor</span>' : '';
+  const mineTag = (session.role==='colaborador' && r.mine) ? `<span class="pill mine">${SVG_CHECK}seu setor</span>` : '';
   return `<div class="popcard">
     <span class="code mono">${highlight(p.code,popQuery)}</span>
     <div class="meta">
@@ -1583,7 +1592,7 @@ function renderReader(){
   const readtop = consulta
     ? `<div class="readtop no-print"><div class="row">
         <button class="back" onclick="backToList()">${voltarLabel}</button>
-        <span class="label">📖 Modo consulta</span>
+        <span class="label">${SVG_BOOK}Modo consulta</span>
       </div></div>`
     : `<div class="readtop no-print"><div class="row">
         <button class="back" onclick="backToList()">← Voltar</button>
@@ -1615,11 +1624,11 @@ function renderReader(){
     </div>
     ${consulta && kind!=='pop' ? `
     <div class="quizgate no-print" id="gate">
-      <div class="lock">📖 Leitura livre — ${TIPO[kind]||''}</div>
+      <div class="lock">${SVG_BOOK}Leitura livre — ${TIPO[kind]||''}</div>
       <button class="btn block" style="margin-top:10px" onclick="backToList()">← Voltar</button>
     </div>` : consulta ? `
     <div class="quizgate no-print" id="gate">
-      <div class="lock">📖 Consulta — leitura livre deste POP</div>
+      <div class="lock">${SVG_BOOK}Consulta — leitura livre deste POP</div>
       ${session.role==='colaborador' && meusPops().some(x=>x.id===activePop)
         ? `<h3>Este POP é do seu setor</h3>
            <p style="color:var(--muted);font-size:14px;margin-bottom:12px">Você pode fazer a avaliação para certificação.</p>
@@ -2012,7 +2021,7 @@ function generateReport(){
       return `<td class="st"><span class="tag" style="color:${stColor[k]};border-color:${stColor[k]}33;background:${stColor[k]}14">${stLabel[k]}</span>${extra}</td>`;
     }).join('');
     const pct = totalMine?Math.round(done/totalMine*100):0;
-    const cert = isCertified(col)?'<span class="yes">✔ Sim</span>':'<span class="no">—</span>';
+    const cert = isCertified(col)?'<span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;vertical-align:-2px;margin-right:3px"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Sim</span>':'<span class="no">—</span>';
     return `<tr>
       <td class="nm"><b>${esc(col.nome)}</b><small>mat. ${esc(col.matricula)}</small></td>
       <td class="em">${setorLabel(col.setor)}</td>
@@ -2081,7 +2090,7 @@ function generateReport(){
   </style></head><body>
     <div class="toolbar no-print">
       <b>Relatório pronto — use “Imprimir / Salvar PDF”.</b>
-      <button class="print" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+      <button class="print" onclick="window.print()">${REP_PRINT}Imprimir / Salvar PDF</button>
       <button class="close" onclick="window.close()">Fechar</button>
     </div>
     <div class="head">
@@ -2175,8 +2184,8 @@ function individualReportPage(col, stamp){
       <div class="kpi"><div class="v">${pct2}%</div><div class="l">Etapa 2 (${e2ok}/${e2pops.length})</div></div>
     </div>
     <div class="certs">
-      <div class="certbox ${e1done?'on':''}">${e1done?'✔':'○'} Certificado · Etapa 1 (Fundamentos)</div>
-      <div class="certbox ${finalOk?'on':''}">${finalOk?'✔':'○'} Certificado Final</div>
+      <div class="certbox ${e1done?'on':''}">${e1done?REP_CHECK:REP_CIRCLE}Certificado · Etapa 1 (Fundamentos)</div>
+      <div class="certbox ${finalOk?'on':''}">${finalOk?REP_CHECK:REP_CIRCLE}Certificado Final</div>
     </div>
     <h2 class="sec">Etapa 1 · Fundamentos <small style="font-weight:600;color:#90a3b3">— conclusão: ao menos ${meta1} POPs da área</small></h2>
     <table><thead><tr><th>Código</th><th>Procedimento</th><th>Situação</th><th>Acertos</th><th>Tentativas</th></tr></thead>
@@ -2238,7 +2247,7 @@ function abrirRelatorioIndividual(cols){
   </style></head><body>
     <div class="toolbar no-print">
       <b>${cols.length===1?'Relatório individual pronto':(cols.length+' relatórios individuais prontos')} — use “Imprimir / Salvar PDF”.</b>
-      <button class="print" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+      <button class="print" onclick="window.print()">${REP_PRINT}Imprimir / Salvar PDF</button>
       <button class="close" onclick="window.close()">Fechar</button>
     </div>
     ${pages}
