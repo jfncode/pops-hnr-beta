@@ -79,14 +79,27 @@
     }
     return a;
   }
-  function sortear(idsE1, idsE2, seed, n) {
+  // Escolhe n ids priorizando os "aptos" (dificuldade suficiente) sobre o resto.
+  // Aptos e resto são embaralhados separadamente com o MESMO rng (determinístico
+  // por semente), aptos primeiro. Sem aptSet → embaralho simples, como antes.
+  function pickPref(ids, aptSet, rng, n) {
+    ids = ids || [];
+    if (!aptSet) return seededShuffle(ids, rng).slice(0, n);
+    const apt = [], rest = [];
+    for (const id of ids) (aptSet.has(id) ? apt : rest).push(id);
+    return seededShuffle(apt, rng).concat(seededShuffle(rest, rng)).slice(0, n);
+  }
+  // aptE1/aptE2: arrays (ou Sets) de ids plenamente aptos por etapa. Opcionais —
+  // quando ausentes, o sorteio é o embaralho simples de antes (retrocompatível).
+  function sortear(idsE1, idsE2, seed, n, aptE1, aptE2) {
     n = n || 15;
     const rng = mulberry32(hashString(seed));
+    const setOf = (x) => (x == null ? null : (x instanceof Set ? x : new Set(x)));
     return {
-      e1: seededShuffle(idsE1 || [], rng).slice(0, n),
-      e2: seededShuffle(idsE2 || [], rng).slice(0, n),
+      e1: pickPref(idsE1, setOf(aptE1), rng, n),
+      e2: pickPref(idsE2, setOf(aptE2), rng, n),
     };
   }
 
-  return { shuffle, sample, drawQuiz, scoreQuiz, aprovou, isLocked, hashString, mulberry32, seededShuffle, sortear };
+  return { shuffle, sample, drawQuiz, scoreQuiz, aprovou, isLocked, hashString, mulberry32, seededShuffle, sortear, pickPref };
 }));

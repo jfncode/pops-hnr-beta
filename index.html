@@ -949,7 +949,11 @@ async function garantirSorteio(){
   let s = sorteioValido(sorteio) ? sorteio : null;
   if(!s && POPApi.getSorteio){ try{ s = await POPApi.getSorteio(); }catch{ s=null; } }
   if(!sorteioValido(s)){
-    s = POPCore.sortear(candidatosEtapaIds(session.setor,1), candidatosEtapaIds(session.setor,2), seedColaborador(), 15);
+    s = POPCore.sortear(
+      candidatosEtapaIds(session.setor,1), candidatosEtapaIds(session.setor,2),
+      seedColaborador(), 15,
+      candidatosAptosIds(session.setor,1), candidatosAptosIds(session.setor,2)
+    );
     if(POPApi.salvarSorteio){ try{ await POPApi.salvarSorteio(s); }catch{} }
   }
   sorteio = s;
@@ -961,6 +965,15 @@ async function garantirSorteio(){
    bloqueada até concluir a Etapa 1; ao concluí-la, libera o certificado final. */
 const ETAPA_LABEL = {1:'Etapa 1 · Fundamentos', 2:'Etapa 2 · Avançado'};
 const popEtapa = p => (p && p.etapa===2) ? 2 : 1;
+// POP "plenamente apto" para a etapa: pool tem >= QUIZ_SIZE questões na faixa de
+// dificuldade exigida (etapa 1: d>=2 média-alta; etapa 2: d>=3 alta). Usado para
+// priorizar no sorteio, evitando degradação quando há POPs melhores disponíveis.
+function popAptoQuiz(p, e){
+  const floor = e===2 ? 3 : 2;
+  const n = (p && Array.isArray(p.pool) ? p.pool : []).filter(q => (q.d==null?2:q.d) >= floor).length;
+  return n >= QUIZ_SIZE;
+}
+function candidatosAptosIds(setor, e){ return candidatosEtapaIds(setor,e).filter(id => popAptoQuiz(pop(id), e)); }
 // pool de candidatos do setor por etapa (usado no sorteio e no fallback do gestor)
 function popsEtapa(setor, e){ return popsDoSetor(setor).filter(p => popEtapa(p)===e).sort(byCode); }
 // ids da seção (15 sorteados) de um colaborador {setor, sorteio}
