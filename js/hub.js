@@ -36,7 +36,7 @@ function hubProgressoPops(){
     const now=aprovadosEtapa(2), meta=metaEtapa(col,2);
     return {label:`Etapa 2 · ${Math.min(now,meta)}/${meta}`, pct:meta?Math.round(Math.min(now,meta)/meta*100):0};
   }
-  return {label:'Trilha concluída 🏆', pct:100};
+  return {label:'Trilha concluída', pct:100};
 }
 const SVG_SOON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
 
@@ -95,9 +95,11 @@ function renderHub(){
 /* ---------- bibliotecas (regimentos / protocolos) ---------- */
 const BIB_META = {
   regimentos:{ titulo:'Regimentos', sub:'Regimentos e normas institucionais — leitura livre.',
-               colecao:()=>window.REGIMENTOS||[], vazio:'Os regimentos estão sendo preparados pela Educação Continuada e aparecerão aqui.' },
+               colecao:()=>window.REGIMENTOS||[], vazio:'Os regimentos estão sendo preparados pela Educação Continuada e aparecerão aqui.',
+               icon:HUB_ICONS.regimentos, tint:'gold' },
   protocolos:{ titulo:'Protocolos', sub:'Protocolos assistenciais e manuais — leitura livre.',
-               colecao:()=>window.PROTOCOLOS||[], vazio:'Os protocolos estão sendo preparados pela Educação Continuada e aparecerão aqui.' },
+               colecao:()=>window.PROTOCOLOS||[], vazio:'Os protocolos estão sendo preparados pela Educação Continuada e aparecerão aqui.',
+               icon:HUB_ICONS.protocolos, tint:'green' },
 };
 function bibDocCardHTML(d, idx){
   return `<div class="popcard" style="animation-delay:${idx*45}ms">
@@ -111,11 +113,11 @@ function bibListaHTML(){
   const meta=BIB_META[bibKind]; if(!meta) return '';
   const docs=meta.colecao();
   if(!docs.length)
-    return `<div class="bib-empty fade-up"><div class="big">📚</div>
+    return `<div class="bib-empty fade-up"><div class="ic ${meta.tint}">${meta.icon}</div>
       <b>Em preparação</b><p>${meta.vazio}</p></div>`;
   const list = bibQuery.trim().length>=2 ? PortalCore.searchDocs(docs, bibQuery) : docs.slice();
   if(!list.length)
-    return `<div class="empty"><div class="ic">🗂</div><b>Nada encontrado.</b><p>Tente outro termo ou verifique a grafia.</p></div>`;
+    return `<div class="empty"><div class="ic">${SVG_FOLDER}</div><b>Nada encontrado.</b><p>Tente outro termo ou verifique a grafia.</p></div>`;
   return `<div class="grid">${list.map(bibDocCardHTML).join('')}</div>`;
 }
 function renderBiblioteca(){
@@ -158,7 +160,7 @@ function renderCursos(){
             <div class="sub">${esc(c.descricao||'')} · ${(c.modulos||[]).length} módulo${(c.modulos||[]).length>1?'s':''}</div></div>
           <span class="badge-soon">Disponível em breve</span>
         </div>`).join('')}</div>`
-    : `<div class="bib-empty fade-up"><div class="big">🎓</div>
+    : `<div class="bib-empty fade-up"><div class="ic red">${HUB_ICONS.cursos}</div>
         <b>Em breve</b><p>As trilhas de capacitação com avaliação e certificado estão em preparação pela Educação Continuada.</p></div>`;
   return `
     <div class="readtop no-print"><div class="row">
