@@ -19,12 +19,22 @@
   // índice da correta. O gabarito (índice) fica no objeto retornado — correção
   // é no cliente (ver spec).
   function drawQuiz(pool, n, minD) {
-    // Sorteia questões com dificuldade >= minD (padrão 2 = média). A etapa 2
-    // usa minD=3 (somente alta). Nunca sorteia questões fáceis (d<2).
+    // Preferência de dificuldade: etapa 1 usa minD=2 (média-alta), etapa 2 usa
+    // minD=3 (somente alta). Sorteia n questões PRIORIZANDO a faixa exigida.
+    // Se o pool não tem n questões nessa faixa, completa com as MAIS DIFÍCEIS
+    // restantes (degradação mínima) — nunca escolhe fácil por preferência e
+    // nunca devolve menos que o disponível (senão a UI trava ao avançar).
     const floor = Math.max(2, minD || 2);
-    let eligible = pool.filter((q) => (q.d == null ? 2 : q.d) >= floor);
-    if (eligible.length < n) eligible = pool.filter((q) => (q.d == null ? 2 : q.d) >= 2);
-    return sample(eligible, n).map((q) => {
+    const dOf = (q) => (q.d == null ? 2 : q.d);
+    // 1) faixa exigida, sorteada aleatoriamente entre si
+    let pick = shuffle(pool.filter((q) => dOf(q) >= floor));
+    // 2) completa com o resto, das mais difíceis para as mais fáceis
+    if (pick.length < n) {
+      const resto = shuffle(pool.filter((q) => dOf(q) < floor))
+        .sort((a, b) => dOf(b) - dOf(a));
+      pick = pick.concat(resto);
+    }
+    return pick.slice(0, n).map((q) => {
       const order = shuffle(q.o.map((t, i) => ({ t, ok: i === q.a })));
       return { q: q.q, o: order.map((x) => x.t), a: order.findIndex((x) => x.ok) };
     });
