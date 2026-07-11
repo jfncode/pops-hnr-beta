@@ -1159,8 +1159,9 @@ function pickOpt(j){
   const b=$('#nextbtn'); if(b) b.disabled=false;
 }
 function nextQuestion(timedOut=false){
+  if(!quizState) return; // já finalizando (double-click/tap ou timeout concorrente)
   clearQuizTimer();
-  if(quizState.cur < QUIZ_SIZE-1){
+  if(quizState.cur < quizState.list.length-1){
     quizState.cur++;
     render(); window.scrollTo(0,0);
     startTimer();
@@ -1169,20 +1170,23 @@ function nextQuestion(timedOut=false){
   }
 }
 async function finishQuiz(){
+  if(!quizState) return; // guard de reentrância: double-click/tap em "Finalizar" não refinaliza
   clearQuizTimer();
-  const {hits,total}=POPCore.scoreQuiz(quizState.list, quizState.answers);
+  // Snapshot e zera o estado ANTES de qualquer await: uma 2ª chamada cai no guard
+  // acima, e as leituras pós-await usam `st` (nunca o quizState já nulo).
+  const st=quizState; quizState=null;
+  const {hits,total}=POPCore.scoreQuiz(st.list, st.answers);
   const score=Math.round(hits/total*100);
   const passed=POPCore.aprovou(hits, PASS_MIN);
   const p=pop(activePop);
   const today=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
-  const detail={qs:quizState.list, ans:quizState.answers.slice()};
+  const detail={qs:st.list, ans:st.answers.slice()};
   meuProgresso[p.id]={status:passed?'aprovado':'reprovado', hits, score, date:today, detail};
   salvarProgressoLocal();
   const resultado={matricula:session.matricula,nome:session.nome,setor:session.setor,pop_id:p.id,pop_codigo:p.code,status:passed?'aprovado':'reprovado',score,acertos:hits,total,detalhe:detail};
   try{ await POPApi.salvar(resultado); }catch{ console.warn('resultado enfileirado para reenvio'); }
   if(passed && !aprovadosServidor.includes(p.id)) aprovadosServidor.push(p.id);
-  lastResult={score,hits,total,passed,drawn:quizState.list,answers:quizState.answers.slice()};
-  quizState=null;
+  lastResult={score,hits,total,passed,drawn:st.list,answers:st.answers.slice()};
   screen='result'; render(); window.scrollTo(0,0);
 }
 
