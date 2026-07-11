@@ -965,11 +965,17 @@ async function garantirSorteio(){
    bloqueada até concluir a Etapa 1; ao concluí-la, libera o certificado final. */
 const ETAPA_LABEL = {1:'Etapa 1 · Fundamentos', 2:'Etapa 2 · Avançado'};
 const popEtapa = p => (p && p.etapa===2) ? 2 : 1;
+// Dificuldade mínima das questões sorteadas por etapa (fonte única de verdade —
+// usada tanto no quiz (drawQuiz) quanto na aptidão do sorteio, pra nunca divergir).
+// Ambas as etapas usam d>=2 (média-alta): a etapa 2 foi afrouxada de d>=3 para
+// d>=2 em 2026-07-11 por falta de questões altas no acervo. Para voltar a exigir
+// só alta na etapa 2, troque por: e===2 ? 3 : 2.
+const dificuldadeMinEtapa = e => 2;
 // POP "plenamente apto" para a etapa: pool tem >= QUIZ_SIZE questões na faixa de
-// dificuldade exigida (etapa 1: d>=2 média-alta; etapa 2: d>=3 alta). Usado para
-// priorizar no sorteio, evitando degradação quando há POPs melhores disponíveis.
+// dificuldade exigida. Usado para priorizar no sorteio, evitando degradação
+// quando há POPs melhores disponíveis.
 function popAptoQuiz(p, e){
-  const floor = e===2 ? 3 : 2;
+  const floor = dificuldadeMinEtapa(e);
   const n = (p && Array.isArray(p.pool) ? p.pool : []).filter(q => (q.d==null?2:q.d) >= floor).length;
   return n >= QUIZ_SIZE;
 }
@@ -1139,7 +1145,7 @@ function startQuiz(){
   const p=pop(activePop);
   if(POPCore.isLocked(activePop, aprovadosServidor)){ alert('Você já foi aprovado neste POP. Não é possível refazer.'); return; }
   if(popEtapa(p)===2 && !etapa2Unlocked()){ alert('Conclua a Etapa 1 para desbloquear a Etapa 2.'); return; }
-  const drawn=POPCore.drawQuiz(p.pool, QUIZ_SIZE, popEtapa(p)===2 ? 3 : 2);
+  const drawn=POPCore.drawQuiz(p.pool, QUIZ_SIZE, dificuldadeMinEtapa(popEtapa(p)));
   quizState={list:drawn,cur:0,answers:Array(QUIZ_SIZE).fill(null),tLeft:QTIME,timerId:null};
   screen='quiz'; render(); window.scrollTo(0,0);
   startTimer();
