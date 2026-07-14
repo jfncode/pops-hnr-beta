@@ -856,13 +856,13 @@
       <div class="auth-links">
         <div class="links-label">Serviços do servidor</div>
         <div class="links-grid">
-          <a class="svc-btn" href="https://sigrhportal.sea.sc.gov.br/SIGRHNovoPortal/#/auth" target="_blank" rel="noopener" aria-label="Assinar ponto — SIGRH (abre em nova aba)">
+          <a class="svc-btn" href="https://sgpe.sea.sc.gov.br/sgpe/" target="_blank" rel="noopener" aria-label="Assinar ponto — SGPe (abre em nova aba)">
             <span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
-            <span><b>Assinar Ponto</b><small>SIGRH</small></span>
+            <span><b>Assinar Ponto</b><small>SGPe</small></span>
             <span class="ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span></a>
-          <a class="svc-btn gold" href="https://sgpe.sea.sc.gov.br/sgpe/" target="_blank" rel="noopener" aria-label="Contracheque — SGPe (abre em nova aba)">
+          <a class="svc-btn gold" href="https://sigrhportal.sea.sc.gov.br/SIGRHNovoPortal/#/auth" target="_blank" rel="noopener" aria-label="Contracheque — SIGRH (abre em nova aba)">
             <span class="ic ic-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg></span>
-            <span><b>Contracheque</b><small>SGPe</small></span>
+            <span><b>Contracheque</b><small>SIGRH</small></span>
             <span class="ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span></a>
         </div>
       </div></div></div></main>
@@ -1270,19 +1270,19 @@ function renderTopRight(){
 }
 
 function renderAuth(){
-  // acessos externos do servidor — SIGRH (ponto) e SGPe (contracheque)
+  // acessos externos do servidor — SGPe (assinar ponto) e SIGRH (contracheque)
   const SVG_EXT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
   const AUTH_LINKS = `
       <div class="auth-links">
         <div class="links-label">Serviços do servidor</div>
         <div class="links-grid">
-          <a class="svc-btn" href="https://sigrhportal.sea.sc.gov.br/SIGRHNovoPortal/#/auth" target="_blank" rel="noopener" aria-label="Assinar ponto — SIGRH (abre em nova aba)">
+          <a class="svc-btn" href="https://sgpe.sea.sc.gov.br/sgpe/" target="_blank" rel="noopener" aria-label="Assinar ponto — SGPe (abre em nova aba)">
             <span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
-            <span><b>Assinar Ponto</b><small>SIGRH</small></span>
+            <span><b>Assinar Ponto</b><small>SGPe</small></span>
             <span class="ext">${SVG_EXT}</span></a>
-          <a class="svc-btn gold" href="https://sgpe.sea.sc.gov.br/sgpe/" target="_blank" rel="noopener" aria-label="Contracheque — SGPe (abre em nova aba)">
+          <a class="svc-btn gold" href="https://sigrhportal.sea.sc.gov.br/SIGRHNovoPortal/#/auth" target="_blank" rel="noopener" aria-label="Contracheque — SIGRH (abre em nova aba)">
             <span class="ic ic-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg></span>
-            <span><b>Contracheque</b><small>SGPe</small></span>
+            <span><b>Contracheque</b><small>SIGRH</small></span>
             <span class="ext">${SVG_EXT}</span></a>
         </div>
       </div>`;
