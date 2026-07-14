@@ -67,9 +67,7 @@ function areaCardHTML(o, idx){
     <span class="ac-foot">${foot}</span>
   </button>`;
 }
-function renderHub(){
-  const primeiro=esc((session.nome||'').trim().split(/\s+/)[0]||'colaborador');
-  const pr=hubProgressoPops();
+function hubAreasHTML(){
   const nReg=(window.REGIMENTOS||[]).length, nProt=(window.PROTOCOLOS||[]).length, nCur=(window.CURSOS||[]).length;
   const areas=[
     { onclick:"goBiblioteca('regimentos')", cls:'area-gold', ic:'hc-gold', icon:HUB_ICONS.regimentos, title:'Regimentos',
@@ -82,6 +80,11 @@ function renderHub(){
       desc:'Trilhas de capacitação com avaliação e certificado.',
       soon:!nCur, foot: nCur? `${nCur} curso${nCur>1?'s':''}` : 'Em breve' },
   ];
+  return `<div class="area-grid">${areas.map(areaCardHTML).join('')}</div>`;
+}
+function renderHub(){
+  const primeiro=esc((session.nome||'').trim().split(/\s+/)[0]||'colaborador');
+  const pr=hubProgressoPops();
   const h=new Date().getHours();
   const saud=h<12?'Bom dia':(h<18?'Boa tarde':'Boa noite');
   return `<div class="hub-head fade-up">
@@ -89,7 +92,7 @@ function renderHub(){
       <h2>${saud}, ${primeiro}.</h2>
       <p>Tudo do Hospital Nereu Ramos em um só lugar. Por onde você quer começar?</p></div>
     ${hubHeroHTML(pr)}
-    <div class="area-grid">${areas.map(areaCardHTML).join('')}</div>`;
+    ${hubAreasHTML()}`;
 }
 
 /* ---------- bibliotecas (regimentos / protocolos) ---------- */
@@ -129,7 +132,7 @@ function renderBiblioteca(){
     </div></div>` : '';
   return `
     <div class="readtop no-print"><div class="row">
-      <button class="back" onclick="goHub()">← Início</button>
+      <button class="back" onclick="goHub()">${session&&session.role==='gestor'?'← Painel':'← Início'}</button>
       <span class="label">${meta.titulo}</span>
     </div></div>
     <div class="pagehead fade-up"><h2>${meta.titulo}</h2><p>${meta.sub}</p></div>
@@ -164,7 +167,7 @@ function renderCursos(){
         <b>Em breve</b><p>As trilhas de capacitação com avaliação e certificado estão em preparação pela Educação Continuada.</p></div>`;
   return `
     <div class="readtop no-print"><div class="row">
-      <button class="back" onclick="goHub()">← Início</button>
+      <button class="back" onclick="goHub()">${session&&session.role==='gestor'?'← Painel':'← Início'}</button>
       <span class="label">Cursos</span>
     </div></div>
     <div class="pagehead fade-up"><h2>Cursos</h2><p>Trilhas de capacitação com avaliação e certificado.</p></div>

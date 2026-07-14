@@ -189,6 +189,7 @@
     color:var(--warn);background:var(--warn-soft);border-radius:20px;
     padding:3px 10px;font-weight:600;margin-top:10px}
   .gestor-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+  .gestor-areas{margin:2px 0 24px}
   .btn-report{flex:none;border:0;border-radius:11px;font-weight:700;font-size:13.5px;
     letter-spacing:.01em;padding:11px 20px;cursor:pointer;color:#fff;white-space:nowrap;
     display:inline-flex;align-items:center;gap:8px;
@@ -2035,6 +2036,10 @@ function renderGestor(){
         <button class="btn-report btn-search" onclick="goBusca()">${ICON_SEARCH}Buscar POPs</button>
       </div>
     </div>
+    <div class="gestor-areas no-print fade-up">
+      <div class="hub-eyebrow">Biblioteca institucional</div>
+      ${hubAreasHTML()}
+    </div>
     ${presentHTML}
     <div class="kpis">
       <div class="kpi"><span class="kpi-ic blue">${SVG_USERS}</span><div class="v">${colabs.length}</div><div class="l">Colaboradores</div></div>
@@ -2366,6 +2371,8 @@ function render(){
   if(session.role==='gestor'){
     if(screen==='busca')html=renderBuscaGestor();
     else if(screen==='reader')html=renderReader();
+    else if(screen==='biblioteca')html=renderBiblioteca();
+    else if(screen==='cursos')html=renderCursos();
     else html=renderGestor();
   }
   else{
@@ -2380,7 +2387,7 @@ function render(){
   }
   $('#app').innerHTML=html;
   if(screen==='busca'||(session.role==='colaborador'&&screen==='list'))wireSearch();
-  if(session.role==='colaborador'&&screen==='biblioteca')wireBibSearch();
+  if(screen==='biblioteca')wireBibSearch();
   if(session.role==='colaborador'&&screen==='reader'&&!consulta)wireReadGate();
   if(screen==='reader')wireTOC();
   if(session.role==='colaborador'&&screen==='quiz')updateTimerUI();
